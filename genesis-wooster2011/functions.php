@@ -79,33 +79,11 @@ function child_read_more_link() {
 /** Add support for custom header image. **/
 add_theme_support( 'genesis-custom-header', array( 'textcolor' => '', 'header_image' => '%s/images/headers/kauke_towers_940x198.jpg', 'no_header_text' => true, 'width' => 940, 'height' => 198 ) );
 
-/** Add support for 3-column footer widgets **/
-add_theme_support( 'genesis-footer-widgets', 3 );
-
 /** Tell WordPress to run wooster_twentyeleven_setup() when the 'after_setup_theme' hook is run. **/
 add_action( 'after_setup_theme', 'wooster_twentyeleven_setup' );
 
 if ( !function_exists( 'wooster_twentyeleven_setup' ) ):
 function wooster_twentyeleven_setup() {
-	// Register widget areas
-	genesis_register_sidebar(array(
-		'name' => __( 'Primary Widget Area', 'genesis' ),
-		'id' => 'primary-widget-area',
-		'description' => __( 'The primary widget area', 'genesis' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>'
-	));
-	genesis_register_sidebar(array(
-		'name' => __( 'Secondary Widget Area', 'genesis' ),
-		'id' => 'secondary-widget-area',
-		'description' => __( 'The secondary widget area', 'genesis' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>'
-	));
 
 	/** Add default posts and comments RSS feed links to head **/
 	add_theme_support( 'automatic-feed-links' );
@@ -122,7 +100,7 @@ function wooster_twentyeleven_setup() {
 	/** ... and thus ends the changeable header business. **/
 	
 	/** Wordpress 3.1 support to remove header upload. **/
-	remove_theme_support( 'custom-header-uploads' );
+	/** remove_theme_support( 'custom-header-uploads' ); **/
 	
 	/**
 	 * Customize the footer section

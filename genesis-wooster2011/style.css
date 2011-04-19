@@ -100,14 +100,16 @@ textarea,
 .sticky,
 .taxonomy-description,
 .wp-caption {
-	background-color: #f7f7f7;
-	border: 1px solid #e6e6e6;
+	background: #fdfcf6 url(images/boxbg.gif) repeat-x;
+        border-top: 1px solid #e1d3bd;
+	border-bottom: 1px solid #e1d3bd;
 }
 
 ol,
 ol li,
 ul,
-ul li {
+ul li,
+.widget-area ul li {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -118,9 +120,8 @@ ol li {
 }
 
 ul li {
-	list-style-type: square;
+	list-style-type: none;
 }
-
 
 /* Hyperlinks
 ------------------------------------------------------------ */
@@ -430,7 +431,7 @@ li.sfHover {
 #nav li li a:link,
 #nav li li a:visited {
 	background: #edac12 url(images/menubg.gif);
-	border: 1px solid #e1d3bd;
+	border: 1px solid #666;
 	border-top-width: 0;
 	color: #000;
 	font-size: 11px;
@@ -845,6 +846,7 @@ h1.entry-title a:visited, h2.entry-title a:visited {
 
 .page h1 {
 	margin: 0 0 5px;
+        font-size: 19px;
 }
 
 h2 a:hover {
@@ -867,12 +869,9 @@ h4 {
 }
 
 .widget-area h4 {
-	background-color: #f7f7f7;
-	border-bottom: 1px solid #e6e6e6;
-	font-size: 12px;
+	font-size: 1.17em;
 	font-weight: bold;
 	padding: 5px 5px 5px 10px;
-	text-transform: uppercase;
 }
 
 h5 {
@@ -895,9 +894,15 @@ h6 {
 
 .archive-page ul li,
 .entry-content ul li {
-	list-style-type: square;
+	list-style-type: none;
 	margin: 0 0 0 20px;
 	padding: 0;
+}
+
+.archive-page ul li:before,
+.entry-content ul li:before {
+        color: #edac12;
+	content: "\00BB \0020";
 }
 
 .entry-content .post ol li,
@@ -908,7 +913,14 @@ h6 {
 .archive-page ul li,
 .entry-content .post ul li,
 .entry-content .page ul li {
-	list-style-type: square;
+	list-style-type: none;
+}
+
+.archive-page ul li:before,
+.entry-content .post ul li:before,
+.entry-content .page ul li:before {
+        color: #edac12;
+	content: "\00BB \0020";
 }
 
 .archive-page ul ul,
@@ -1147,8 +1159,9 @@ p.wp-caption-text {
 }
 
 .sidebar .widget {
-	background-color: #fff;
-	border: 1px solid #e6e6e6;
+	background: #fdfcf6 url(images/boxbg.gif) repeat-x;
+	border-top: 1px solid #e1d3bd;
+        border-bottom: 1px solid #e1d3bd;
 	margin: 0 0 15px;
 	padding: 0 0 10px;
 }
@@ -1168,8 +1181,13 @@ p.wp-caption-text {
 }
 
 .widget-area ul li {
-	list-style-type: square;
+	list-style-type: none;
  	word-wrap: break-word;
+}
+
+.widget-area ul li:before {
+        color: #edac12;
+	content: "\00BB \0020";
 }
 
 .widget-area ol li {
