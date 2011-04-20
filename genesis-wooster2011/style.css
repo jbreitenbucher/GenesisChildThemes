@@ -828,7 +828,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+#header p#title {
 	font-weight: bold;
 	clear: both;
 }
@@ -843,16 +844,24 @@ h2 a:visited {
 	font-size: 19px;
 }
 
-h1.entry-title, h2.entry-title,
-h1.entry-title a, h2.entry-title a,
-h1.entry-title a:visited, h2.entry-title a:visited {
+.page h1.entry-title, h1.entry-title, h2.entry-title,
+.page h1.entry-title a, h1.entry-title a, h2.entry-title a,
+.page h1.entry-title a:visited, h1.entry-title a:visited, h2.entry-title a:visited {
 	color: #B33A1E !important;
 	font-size: 26px !important;
 }
 
+.page h1.entry-title,
+.page h1.entry-title a,
+.page h1.entry-title a:visited {
+	color: #B33A1E !important;
+	font-size: 26px !important;
+        font-weight: normal;
+}
+
 .page h1 {
 	margin: 0 0 5px;
-        font-size: 19px;
+        font-size: 22px;
 }
 
 h2 a:hover {
