@@ -92,7 +92,6 @@ body {
 }
 
 blockquote,
-input,
 select,
 textarea,
 .author-box,
@@ -103,6 +102,13 @@ textarea,
 	background: #fdfcf6 url(images/boxbg.gif) repeat-x;
         border-top: 1px solid #e1d3bd;
 	border-bottom: 1px solid #e1d3bd;
+}
+
+input,
+select,
+textarea,
+.author-box {
+	border: 1px solid #e1d3bd;
 }
 
 ol,
@@ -1267,9 +1273,10 @@ div.gform_footer input.button,
 .reply a,
 .reply a:visited,
 .searchsubmit,
-#submit {
-	background-color: #333;
-	border: 1px solid #666;
+#submit,
+input {
+	background-color: #edac12;
+	border: 1px solid #e1d3bd;
 	color: #fff;
 	cursor: pointer;
 	font-size: 11px;
@@ -1282,10 +1289,11 @@ div.gform_footer input.button:hover,
 .enews #subbutton:hover,
 .reply a:hover,
 .searchsubmit:hover,
-#submit:hover {
-	background-color: #000;
-	border: 1px solid #666;
-	color: #fff;
+#submit:hover,
+input:hover {
+	background-color: #fdfcf6;
+	border: 1px solid #e1d3bd;
+	color: #999;
 	text-decoration: none;
 }
 
@@ -1535,7 +1543,7 @@ div.gform_footer input.button:hover,
 .comment-list li,
 .ping-list li {
 	font-weight: bold;
-	margin: 15px 0 5px;
+	margin: 15px 0 15px;
 	padding: 10px 5px 10px 10px;
 }
 
@@ -1569,13 +1577,13 @@ div.gform_footer input.button:hover,
 
 .thread-alt,
 .thread-even {
-	background-color: #f7f7f7;
+	background: #fdfcf6 url(images/boxbg.gif) repeat-x;
 }
 
 .alt,
 .depth-1,
 .even {
-	border: 1px solid #e6e6e6;
+	border: 1px solid #e1d3bd;
 }
 
 
