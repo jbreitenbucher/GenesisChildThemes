@@ -1,9 +1,7 @@
 /*
 	Theme Name: Your At Home Bar Theme
 	Theme URL: http://yourathomebar.com
-	Description: This is a theme developed for YourAtHomeBar.com and using the Genesis Framework. Inspired by Black-Letterhead by Ulysses Ronquillo. Comissioned by The Pedestal Group. The theme has a custom homepage with three widget areas (top left, top right, and bottom). The homepage also has a custom sidebar.
-	  
-	  The theme supports all the differnt layout options available from Genesis.
+	Description: This is a theme developed for YourAtHomeBar.com and using the Genesis Framework. Inspired by Black-Letterhead by Ulysses Ronquillo. Comissioned by The Pedestal Group. The theme has a custom homepage with three widget areas (top left, top right, and bottom). The homepage also has a custom sidebar. The theme supports all the differnt layout options available from Genesis.
 	Author: The Pedestal Group
 	Author URI: http://thepedestalgroup.com
 	Version: 1.1
@@ -1150,6 +1148,14 @@ h6 {
 .entry-content .post ul li,
 .entry-content .page ul li {
 	list-style-type: square;
+}
+
+.featuredpost ul li,
+.featuredpage ul li {
+	font-size: .6em;
+	background: url('images/martini-dry.png') left top no-repeat;
+	margin: -3px 0 2px 30px;
+	padding: 0 0 0 20px;
 }
 
 .archive-page ul ul,
