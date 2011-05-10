@@ -1150,8 +1150,8 @@ h6 {
 	list-style-type: square;
 }
 
-.featuredpost ul li,
-.featuredpage ul li {
+.entry-content .post ul li,
+.entry-content .page ul li {
 	font-size: .6em;
 	background: url('images/martini-dry.png') left top no-repeat;
 	margin: -3px 0 2px 30px;
@@ -1483,6 +1483,14 @@ p.wp-caption-text {
 	overflow: hidden;
 	margin: 0 0 15px;
 	padding: 10px 10px 5px;
+}
+
+.featuredpost ul li,
+.featuredpage ul li {
+	font-size: .6em;
+	background: url('images/martini-dry.png') left top no-repeat;
+	margin: -3px 0 2px 30px;
+	padding: 0 0 0 20px;
 }
 
 .more-from-category {
