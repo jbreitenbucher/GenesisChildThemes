@@ -14,12 +14,6 @@ remove_action('genesis_footer', 'genesis_footer_markup_close', 15);
 remove_action( 'genesis_before_post_content', 'genesis_post_info' );
 remove_action( 'genesis_after_post_content', 'genesis_post_meta' );
 
-/** Add support for post thumbnails **/
-if ( function_exists( 'add_theme_support' ) ) { 
-  add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 290, 179, true );
-}
-
 /** Add new image sizes for the Dynamic Content Gallery **/
 add_image_size('Dynamic Content Gallery', 610, 225, TRUE);
 
@@ -67,7 +61,22 @@ genesis_register_sidebar(array(
 ));
 
 /** Create a custom taxonomy for drink ingredients **/
-register_taxonomy("Ingredients", array("post"), array("hierarchical" => false, "label" => "Ingredients", "singular_label" => "Ingredient", "rewrite" => true));
+add_action( 'init', 'create_ingredient' );
+function create_ingredient() {
+$labels = array(
+    'name' => _x( 'Ingredients', 'taxonomy general name' ),
+    'singular_name' => _x( 'Ingredient', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Locations' ),
+    'all_items' => __( 'All Ingredients' ),
+    'parent_item' => __( 'Parent Ingredient' ),
+    'parent_item_colon' => __( 'Parent Ingredient:' ),
+    'edit_item' => __( 'Edit Ingredient' ),
+    'update_item' => __( 'Update Ingredient' ),
+    'add_new_item' => __( 'Add New Ingredient' ),
+    'new_item_name' => __( 'New Ingredient Name' ),
+  );
+register_taxonomy("ingredient", 'post', array("hierarchical" => false, 'labels' => $labels));
+}
 
 /** Add support for asides to use for drinking facts **/
 add_theme_support( 'post-formats', array( 'aside','video' ) );
@@ -81,7 +90,7 @@ class Widget_Custom_tax_tag_cloud {
     function widget($args){
         echo $args['before_widget'];
         echo $args['before_title'] . 'Drinks by Ingredient' . $args['after_title'];
-        $cloud_args = array('taxonomy' => 'Ingredients');
+        $cloud_args = array('taxonomy' => 'ingredient');
         wp_tag_cloud( $cloud_args ); 
         echo $args['after_widget'];
     }
@@ -95,6 +104,7 @@ class Widget_Custom_tax_tag_cloud {
 if ( !function_exists('AddThumbColumn') && function_exists('add_theme_support') ) {
     // for post and page
     add_theme_support('post-thumbnails', array( 'post', 'page' ) );
+		set_post_thumbnail_size( 290, 179, true );
     function AddThumbColumn($cols) {
         $cols['thumbnail'] = __('Thumbnail');
         return $cols;
@@ -115,7 +125,7 @@ if ( !function_exists('AddThumbColumn') && function_exists('add_theme_support') 
                     }
                 }
                     if ( isset($thumb) && $thumb ) {
-                        echo $thumb;
+												echo $thumb;
                     } else {
                         echo __('None');
                     }
@@ -128,6 +138,31 @@ if ( !function_exists('AddThumbColumn') && function_exists('add_theme_support') 
     add_filter( 'manage_pages_columns', 'AddThumbColumn' );
     add_action( 'manage_pages_custom_column', 'AddThumbValue', 10, 2 );
 }
+
+/** Display an Ingredients column on the Post/Page List **/
+add_filter( 'manage_posts_columns', 'yahb_columns' ); //Filter out Post Columns with 2 custom columns
+ 
+function yahb_columns($defaults) {
+    $defaults['ingredient'] = __('Ingredients'); //Ingredients is name of column
+    return $defaults;
+}
+ 
+add_action('manage_posts_custom_column', 'yahb_custom_column', 10, 2); //Just need a single function to add multiple columns
+ 
+function yahb_custom_column($column_name, $post_id) {
+    global $wpdb;
+    if( $column_name == 'ingredient' ) {
+            $tags = get_the_terms($post->ID, 'ingredient'); //lang is the first custom taxonomy slug
+            if ( !empty( $tags ) ) {
+                $out = array();
+                foreach ( $tags as $c )
+                    $out[] = "<a href='edit.php?lang=$c->slug'> " . esc_html(sanitize_term_field('name', $c->name, $c->term_id, 'lang', 'display')) . "</a>";
+                echo join( ', ', $out );
+            } else {
+                _e('No Ingredients');  //No Taxonomy term defined
+            }
+        }
+    }
 
 /** Remove the some Genesis Components **/
 add_action( 'widgets_init', 'yourathomebar_unregister_genesis_components' );
@@ -420,3 +455,73 @@ class YourAtHomeBar_Featured_Post extends Genesis_Featured_Post {
 		<?php
 		}
 	}
+
+	add_action('widgets_init', create_function('', "register_widget('YourAtHomeBar_Youtube_Video');"));
+
+	class YourAtHomeBar_Youtube_Video extends WP_Widget {
+			/** constructor */
+			function YourAtHomeBar_Youtube_Video() {
+				parent::WP_Widget(false, $name = 'Your At Home Bar YouTube Widget', array('description' => 'A widget for adding YouTube videos requiring just the video\'s ID, desired width and desired height.'));
+			}
+
+			function widget($args, $instance) {
+				extract($args);
+
+				// defaults
+				$instance = wp_parse_args( (array) $instance, array(
+					'title' => '',
+					'youtube_id' => '',
+					'width' => 290,
+					'height' => 237
+				) );
+
+				echo $before_widget;
+
+					// Set up the author bio
+					if (!empty($instance['title']))
+						echo $before_title . apply_filters('widget_title', $instance['title']) . $after_title;
+
+						echo '<iframe width="'.esc_attr($instance['width']).'" height="'.esc_attr($instance['height']).'" src="http://www.youtube.com/embed/'.esc_attr($instance['youtube_id']).'" frameborder="0" allowfullscreen></iframe>';
+
+				echo $after_widget;
+			}
+
+			function update($new_instance, $old_instance) {
+				return $new_instance;
+			}
+
+			function form($instance) {
+
+				// ensure value exists
+				$instance = wp_parse_args( (array)$instance, array(
+					'title' => '',
+					'youtube_id' => '',
+					'width' => 290,
+					'height' => 237
+				) );
+
+		?>
+
+				<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'genesis'); ?>:</label>
+				<input type="text" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" /></p>
+
+			<div class="genesis-widget-column">
+
+				<div class="genesis-widget-column">
+
+				<p><label for="<?php echo $this->get_field_id('youtube_id'); ?>"><?php _e('YouTube Video ID', 'genesis'); ?>:</label>
+				<input type="text" id="<?php echo $this->get_field_id('youtube_id'); ?>" name="<?php echo $this->get_field_name('youtube_id'); ?>" value="<?php echo esc_attr( $instance['youtube_id'] ); ?>" size="14" /></p>
+
+				<p><label for="<?php echo $this->get_field_id('width'); ?>"><?php _e('Video Width', 'genesis'); ?>:</label>
+				<input type="text" id="<?php echo $this->get_field_id('width'); ?>" name="<?php echo $this->get_field_name('width'); ?>" value="<?php echo esc_attr( $instance['width'] ); ?>" size="3" /></p>
+
+				<p><label for="<?php echo $this->get_field_id('height'); ?>"><?php _e('Video Height', 'genesis'); ?>:</label>
+				<input type="text" id="<?php echo $this->get_field_id('height'); ?>" name="<?php echo $this->get_field_name('height'); ?>" value="<?php echo esc_attr( $instance['height'] ); ?>" size="3" /></p>
+
+				</div>
+
+			</div>
+
+			<?php
+			}
+		}
