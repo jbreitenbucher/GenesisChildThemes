@@ -1150,9 +1150,10 @@ h6 {
 	list-style-type: square;
 }
 
-.entry-content .post ul li,
-.entry-content .page ul li {
+.post .entry-content ul li,
+.page .entry-content ul li {
 	font-size: .6em;
+	list-style-type: none;
 	background: url('images/martini-dry.png') left top no-repeat;
 	margin: -3px 0 2px 30px;
 	padding: 0 0 0 20px;
@@ -1372,6 +1373,26 @@ p.wp-caption-text {
 	margin-right: 10px;
 }
 
+#sidebar-home .category-toasts {
+        background: #333;
+}
+
+#sidebar-home .category-toasts p {
+        color: #fff;
+        font-style: italic;
+        font-size: .5em;
+}
+
+#sidebar-home .category-daily-fact p {
+        color:#FD5A1E;
+        font-size: .5em;
+}
+
+#sidebar-home .featuredpost {
+        margin: 0 0 5px;
+        padding: 0 0 5px;
+}
+
 .content-sidebar #sidebar {
 	margin-right: 10px;
 }
@@ -1441,6 +1462,18 @@ p.wp-caption-text {
 	list-style-type: decimal;
 }
 
+.sidebar .widget_yourathomebar_youtube_video {
+        margin: 5px 5px 5px;
+        padding: 5px 5px 5px 0;
+}
+
+#easy_sign_up_widget {
+        margin: 0 20px;
+}
+
+#easy_sign_up_widget label {
+        font-size: .9em;
+}
 
 /* Tag Cloud
 ------------------------------------------------------------ */
