@@ -162,9 +162,10 @@ a img {
 ------------------------------------------------------------ */
 
 #header {
-	background: url('images/header-image.png') center center no-repeat;
+	background: url('images/big-logo.png') center center no-repeat;
 	height: 100px;
-	padding: 20px 0 20px 0;
+	padding: 80px 0 0 0;
+	margin: 0 0 -40px 0;
 	width: 960px;
 }
 
@@ -190,7 +191,9 @@ a img {
 }
 
 #description {
-	padding: 80px 0 0 0;
+	position: absolute;
+	left: -999em;
+	padding: 0 0 0 0;
 	font-size: 1.2em;
 	text-align: center;
 	letter-spacing: .6em;
@@ -1767,7 +1770,7 @@ div.gform_footer input.button:hover,
 #footer .gototop {
 	float: left;
 	padding: 0 0 0 5px;
-	width: 200px;
+	width: 190px;
 }
 
 #footer .gototop a {
@@ -1779,7 +1782,7 @@ div.gform_footer input.button:hover,
 	float: right;
 	padding: 0 10px 0 0;
 	text-align: right;
-	width: 740px;
+	width: 730px;
 }
 
 
