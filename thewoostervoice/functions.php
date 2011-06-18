@@ -41,11 +41,13 @@ function thewoostervoice_include_sidebar() {
 }
 
 // Add new image sizes
-add_image_size('Mini Square', 82, 82, TRUE);
-add_image_size('Square', 132, 132, TRUE);
-add_image_size('Featured Stories', 540, 334, TRUE);
-add_image_size('Bottom Features', 460, 176, TRUE);
-add_image_size('Large Square', 214, 214, TRUE);
+add_image_size('Mini Square', 68, 68, TRUE);
+add_image_size('Square', 83, 83, TRUE);
+add_image_size('X-Large Square (Full page story)', 332, 332, TRUE);
+add_image_size('Featured Stories (Image Only)', 568, 351, TRUE);
+add_image_size('Featured Stories (Landscape Image & Text)', 568, 83, TRUE);
+add_image_size('Bottom Features (Landscape)', 455, 68, TRUE);
+
 
 // Force layout on homepage
 add_filter('genesis_pre_get_option_site_layout', 'thewoostervoice_home_layout');

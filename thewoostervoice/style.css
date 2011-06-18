@@ -358,13 +358,14 @@ li.sfHover {
 /***** TopNav ********************/
 
 #topnav {
-	width: 940px;
-	font-size: 11px;
-	font-weight: bold;
+	width: 960px;
+	background: #e9ab17;
 	margin: 0 auto 0;
 	padding: 5px 0 5px 0;
+	font-family:Myriad Pro, Calibri, Tahoma, Verdana, Geneva, sans-serif;
+	font-size:15px;
 	text-transform: uppercase;
-	border-bottom: 1px solid #CCCCCC;
+	border-bottom:#333 solid 3px;
 	overflow: hidden;
 	}
 
@@ -383,6 +384,7 @@ li.sfHover {
 	}
 	
 .topnav-right p {
+	margin-right: 10px;
 	float: right;
 	}
 	
@@ -402,17 +404,22 @@ li.sfHover {
 	padding: 0;
 	}
 	
+#topnav li a:after {
+	padding: 0 0 0 6px;
+	content:" |";
+}
+	
 #topnav li a {
 	color: #333333;
 	display: block;
     margin: 0;
-	padding: 2px 10px 2px 10px;
+	padding: 2px 10px 2px 0px;
 	text-decoration: none;
 	position: relative;	
 	}
 
 #topnav li a:hover, #topnav li a:active, #topnav .current_page_item a, #topnav .current-cat a, #topnav .current-menu-item {
-	color: #006699;
+	color: #333;
 	}
 	
 #topnav li a.sf-with-ul {
@@ -486,10 +493,11 @@ li.sfHover {
 ------------------------------------------------------------ */
 
 #nav {
-	background-color: #fff;
-	/*border-bottom: 1px solid #666;*/
+	background-color: #333;
+	font-family:Myriad Web Pro, Myriad Pro, Calibri, Tahoma, verdana, sans-serif;
+	font-size:15px;
 	clear: both;
-	color: #333;
+	color: #fff;
 	overflow: hidden;
 	text-transform: uppercase;
 	width: 960px;
@@ -506,9 +514,9 @@ li.sfHover {
 }
 
 #nav li a {
-	color: #333;
+	color: #fff;
 	display: block;
-	font-size: 12px;
+	font-size: 15px;
 	padding: 7px 10px 5px;
 	position: relative;
 	text-decoration: none;
@@ -520,7 +528,7 @@ li.sfHover {
 #nav .current-cat a,
 #nav .current-menu-item a {
 	background-color: #e9ab17;
-	color: #fff;
+	color: #333;
 }
 
 #nav li a.sf-with-ul {
@@ -626,6 +634,8 @@ li.sfHover {
 
 #subnav {
 	background-color: #e9ab17;
+	font-family:Myriad Web Pro, Myriad Pro, Calibri, Tahoma, verdana, sans-serif;
+	font-size:15px;
 	border-bottom: 2px solid #666;
 	clear: both;
 	color: #fff;
@@ -647,7 +657,7 @@ li.sfHover {
 #subnav li a {
 	color: #fff;
 	display: block;
-	font-size: 12px;
+	font-size: 15px;
 	padding: 7px 10px 5px;
 	position: relative;
 	text-decoration: none;
@@ -775,7 +785,7 @@ li.sfHover {
 .featuredpost .post, .featuredpage .page {
 	margin: 0;
 	padding: 10px 0 0 0;
-	border-bottom: 1px dotted #AAAAAA;
+	/*border-bottom: 1px dotted #AAAAAA;*/
 	overflow: hidden;
 	clear: both;
 	}
@@ -785,6 +795,11 @@ li.sfHover {
 	margin: 0 0 5px 0;
 	padding: 4px;
 	border: 1px solid #DDDDDD;
+	}
+	
+.home .featuredpost img, .home .featuredpage img {
+	margin-left: 5%;
+	margin-right: 5%;
 	}
 	
 .more-from-category {
@@ -816,7 +831,7 @@ li.sfHover {
 
 #content-sidebar-wrap {
 	float: left;
-	width: 800px;
+	width: 810px;
 }
 
 .content-sidebar #content-sidebar-wrap,
@@ -839,7 +854,7 @@ li.sfHover {
 
 #content {
 	float: left;
-	width: 555px;
+	width: 568px;
 	margin-left: 10px;
 }
 
@@ -848,12 +863,12 @@ li.sfHover {
 }
 
 .home.content-sidebar #content, .home.sidebar-content #content {
-	width: 550px;
+	width: 578px;
 }
 
 .content-sidebar #content,
 .sidebar-content #content {
-	width: 695px;
+	width: 708px;
 }
 
 .sidebar-content #content,
@@ -861,8 +876,12 @@ li.sfHover {
 	float: right;
 }
 
+.sidebar-content-sidebar #content, .sidebar-sidebar-content #content {
+	margin-left: 0;
+}
+
 .full-width-content #content {
-	width: 960px;
+	width: 950px;
 }
 
 blockquote {
@@ -1031,14 +1050,35 @@ h2 a:visited {
 	padding-top:5px;
 }*/
 
-h2 {
+.home h4 {
 	font-family:Calibri, Verdana, Tahoma, Geneva, sans-serif;	
 	font-weight:bold;
-	font-size:16px;
+	font-size:20px;
 	text-align:left;
 	text-transform:uppercase;
 	padding-top:5px;
 	color:#e9ab17;
+}
+
+.home h2 {
+	font-family:Myriad Web Pro, Myriad Pro, Tahoma, Verdana, sans-serif;
+	font-size:12px;
+	color:#600;
+	/*padding-left:5px;
+	padding-bottom:3px;
+	padding-top:5px;*/
+}
+
+#home-sibebar-left.widget-area h2, #home-sidebar-left h2 a {
+	font-size:14px;
+	text-align: center;
+	font-weight: bold;
+	line-height: 16px;
+}
+
+.home h2 a {
+	font-size:16px;
+	color:#600;
 }
 
 h2 a:hover {
@@ -1161,6 +1201,9 @@ h6 {
 	text-transform: uppercase;
 }
 
+.addthis_toolbox {
+	padding-bottom: 10px;
+}
 
 /* Post Meta
 ------------------------------------------------------------ */
@@ -1335,35 +1378,53 @@ p.wp-caption-text {
 .sidebar {
 	display: inline;
 	float: right;
-	width: 235px;
+	width: 232px;
 	margin-right: 10px;
 }
 
+.content-sidebar-sidebar .sidebar {
+	margin-right: 0;
+}
+
+.single .sidebar, .page .sidebar {
+	background-color: #eee;
+}
+
 .home .sidebar {
-	width: 400px;
+	width: 372px;
 	float: right;
 	margin-right: 0;
 }
 
 #home-sidebar-left {
-	width: 155px;
+	width: 130px;
 	float: left;
+	background-color: #eee;
 }
 
-#home-sidebar-right {
-	width: 225px;
+.home #home-sidebar-right {
+	width: 222px;
 	float: right;
 	margin-right: 10px;
+	background-color: #eee;
 }
 
 #sidebar-alt {
 	float: left;
-	width: 155px;
+	width: 130px;
+	margin-left: 10px;
 }
 
-.sidebar-content #sidebar,
+.sidebar-content #sidebar {
+	float: left;
+	margin-left: 10px;
+	margin-right: 0;
+}
+
 .sidebar-sidebar-content #sidebar {
 	float: left;
+	margin-left: 0;
+	margin-right: 10px;
 }
 
 .content-sidebar-sidebar #sidebar-alt {
@@ -1382,7 +1443,14 @@ p.wp-caption-text {
 .sidebar .widget {
 	background-color: #fff;
 	border: 1px solid #e6e6e6;
-	margin: 0 0 15px;
+	margin: 5px 5px 15px;
+	padding: 0 0 10px;
+}
+
+.sidebar #home-sidebar-left .widget {
+	background-color: #eee;
+	border: 0px solid #E6E6E6;
+	margin: 5px 5px 15px;
 	padding: 0 0 10px;
 }
 
@@ -1525,7 +1593,7 @@ div.gform_footer input.button:hover,
 	font-size: 11px;
 	margin: 5px 4px 0 0;
 	padding: 4px 0 4px 5px;
-	width: 200px;
+	width: 60%;
 }
 
 
