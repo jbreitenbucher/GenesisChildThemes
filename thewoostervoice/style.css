@@ -831,7 +831,7 @@ li.sfHover {
 
 #content-sidebar-wrap {
 	float: left;
-	width: 810px;
+	width: 792px;
 }
 
 .content-sidebar #content-sidebar-wrap,
@@ -854,7 +854,7 @@ li.sfHover {
 
 #content {
 	float: left;
-	width: 568px;
+	width: 544px;
 	margin-left: 10px;
 }
 
@@ -863,12 +863,12 @@ li.sfHover {
 }
 
 .home.content-sidebar #content, .home.sidebar-content #content {
-	width: 578px;
+	width: 554px;
 }
 
 .content-sidebar #content,
 .sidebar-content #content {
-	width: 708px;
+	width: 702px;
 }
 
 .sidebar-content #content,
@@ -881,7 +881,8 @@ li.sfHover {
 }
 
 .full-width-content #content {
-	width: 950px;
+	width: 940px;
+	margin-right: 10px;
 }
 
 blockquote {
@@ -1378,7 +1379,8 @@ p.wp-caption-text {
 .sidebar {
 	display: inline;
 	float: right;
-	width: 232px;
+	width: 227px;
+	margin-left: 10px;
 	margin-right: 10px;
 }
 
@@ -1391,34 +1393,33 @@ p.wp-caption-text {
 }
 
 .home .sidebar {
-	width: 372px;
+	width: 386px;
 	float: right;
-	margin-right: 0;
 }
 
 #home-sidebar-left {
-	width: 130px;
+	width: 148px;
 	float: left;
 	background-color: #eee;
 }
 
 .home #home-sidebar-right {
-	width: 222px;
+	width: 228px;
 	float: right;
-	margin-right: 10px;
+	margin-left: 10px;
 	background-color: #eee;
 }
 
 #sidebar-alt {
 	float: left;
-	width: 130px;
+	width: 148px;
 	margin-left: 10px;
 }
 
 .sidebar-content #sidebar {
 	float: left;
 	margin-left: 10px;
-	margin-right: 0;
+	margin-right: 10px;
 }
 
 .sidebar-sidebar-content #sidebar {
@@ -1518,7 +1519,7 @@ p.wp-caption-text {
 .featuredpost .post {
 	margin: 0 0 15px;
 	overflow: hidden;
-	padding: 10px 10px 5px;
+	padding: 10px 0px 5px 10px;
 }
 
 .more-from-category {
