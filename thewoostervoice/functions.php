@@ -41,12 +41,39 @@ function thewoostervoice_include_sidebar() {
 }
 
 // Add new image sizes
-add_image_size('Mini Square', 68, 68, TRUE);
-add_image_size('Square', 83, 83, TRUE);
+add_image_size('Mini Square', 49, 49, TRUE);
+add_image_size('Square', 80, 80, TRUE);
 add_image_size('X-Large Square (Full page story)', 332, 332, TRUE);
-add_image_size('Featured Stories (Image Only)', 568, 351, TRUE);
-add_image_size('Featured Stories (Landscape Image & Text)', 568, 83, TRUE);
-add_image_size('Bottom Features (Landscape)', 455, 68, TRUE);
+add_image_size('Featured Stories (Image Only)', 544, 336, TRUE);
+add_image_size('Featured Stories (Landscape Image & Text)', 544, 80, TRUE);
+add_image_size('Bottom Features (Landscape)', 455, 49, TRUE);
+
+add_filter('widget_text', 'do_shortcode');
+add_filter('the_excerpt', 'do_shortcode');
+add_filter('get_the_excerpt', 'do_shortcode');
+
+function improved_trim_excerpt($text) {
+        global $post;
+        if ( '' == $text ) {
+                $text = get_the_content('');
+                $text = apply_filters('the_content', $text);
+                $text = str_replace('\]\]\>', ']]&gt;', $text);
+                $text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
+                $text = strip_tags($text, '<p>');
+                $excerpt_length = 80;
+                $words = explode(' ', $text, $excerpt_length + 1);
+                if (count($words)> $excerpt_length) {
+                        array_pop($words);
+                        array_push($words, '[...]<br /><span class="post-meta">[post_categories sep=", " before="Published in: "] | [post_comments zero="Leave a Comment" one="1 Comment" more="% Comments"]</span>');
+                        $text = implode(' ', $words);
+                }
+        }
+        return $text;
+}
+remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+add_filter('get_the_excerpt', 'improved_trim_excerpt');
+remove_filter('the_excerpt', 'wp_trim_excerpt');
+add_filter('the_excerpt', 'improved_trim_excerpt');
 
 
 // Force layout on homepage
