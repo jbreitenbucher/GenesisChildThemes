@@ -5,7 +5,7 @@
     Author: The Pedestal Group
     Author URI: http://thepedestalgroup.com/
  
-    Version: 1.0
+    Version: 1.1
  
     Tags: custom-background, custom-header, featured-images, threaded-comments, two-columns
  
@@ -142,6 +142,8 @@ a img {
 
 body {
 	background-color: #fff;
+	position: relative;
+	margin-bottom: 40px;
 }
 
 
@@ -149,33 +151,83 @@ body {
 ------------------------------------------------------------ */
 
 #wrap {
+	position: relative;
 	margin: 0 auto;
 	width: 842px;
 }
 
+/* Top
+------------------------------------------------------------ */
+
+#top {
+	position: relative;
+	margin: 0 auto;
+	width: 800px;
+	height: 104px;
+}
+
+img {
+	padding: 14px 0 0 14px;
+}
+
+.logo {
+	float: left;
+	margin-top: 0;
+	border-top: 6px solid #e7840a;
+	width: 320px;
+}
+
+.address {
+	width: 200px;
+	color: #666;
+	float: right;
+}
+
+.name {
+	color: #666;
+	font-weight: bold;
+}
+
+.address a {
+	float:right;
+	color: #666;
+	text-decoration: none;
+}
+
+.phone {
+	padding: 0;
+	color: #666;
+	float: right;
+	font-size: 14px;
+	font-weight: bold;
+}
 
 /* Header
 ------------------------------------------------------------ */
 
 #header {
-	margin: 96px auto 0;
-	padding: 0 0 0 0;
+	position:relative;
+	margin: 0 auto -17px;
+	background-position: left bottom;
 	min-height: 258px;
-	overflow: hidden;
 	width: 800px;
+	z-index:1;
 }
 
 #title-area {
-	margin: -48px 0 0 0;
+	position:relative;
+	margin: 0;
 	float: left;
 	overflow: hidden;
-	width: 320px;
+	width: 320px !important;
 }
 
 #title {
+	position: inherit;
 	font-size: 30px;
 	line-height: 30px;
 	margin: 0;
+	padding: 14px 0 0;
 }
 
 #title a,
@@ -185,13 +237,27 @@ body {
 }
 
 #description {
+	position:inherit;
 	font-size: 14px;
 }
 
 #header .widget-area {
 	float: right;
-	padding: 68px 25px 0 0;
+	margin: -32px 25px 0 0;
 	width: 294px;
+}
+
+#header .widget-area .textwidget {
+	margin-top: -5px;
+	background-color: rgba(255,255,255,.7);
+	-webkit-border-radius: 0 0 7px 7px;
+	-moz-border-radius: 0 0 7px 7px;
+	border-radius: 0 0 7px 7px;
+}
+
+#header .widget-area .textwidget h2{
+	font: bold 16px Arial, Helvetica, Tahoma, sans-serif;
+	margin-bottom: -6px;
 }
 
 
@@ -340,7 +406,6 @@ li li a .sf-sub-indicator {
 	left: -9999px;
 	position: absolute;
 	width: 160px;
-	z-index: 9999;
 }
 
 #header ul.nav li ul a,
@@ -365,14 +430,43 @@ li li a .sf-sub-indicator {
 ------------------------------------------------------------ */
 
 #nav {
-	background-color: #333;
-	border-bottom: 1px solid #666;
+	position:relative;
+	background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.18, rgb(88,88,90)),
+        color-stop(0.66, rgb(136,136,138)));
+        background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(88,88,90) 18%,
+        rgb(136,136,138) 66%);
 	clear: both;
 	color: #fff;
-	margin: 0 auto;
+	margin: 17px auto 0;
 	overflow: hidden;
-	text-transform: uppercase;
+	text-transform: none;
+	font-weight: bold;
 	width: 800px;
+	height: 46px;
+	z-index:1;
+}
+
+/*Visible to only Opera*/
+@media all and (min-width: 0) {
+#nav {
+	position:relative;
+        background: #666 url('images/menu-background.png') repeat-x;
+	clear: both;
+	color: #fff;
+	margin: 17px auto 0;
+	overflow: hidden;
+	text-transform: none;
+	font-weight: bold;
+	width: 800px;
+	height: 46px;
+	z-index:1;
+}
 }
 
 #nav ul {
@@ -381,15 +475,20 @@ li li a .sf-sub-indicator {
 }
 
 #nav li {
+	width: 159px;
 	float: left;
 	list-style-type: none;
+	border-right: 1px solid #fff;
+	border-bottom: 1px solid #fff;
 }
 
 #nav li a {
 	color: #fff;
 	display: block;
-	font-size: 13px;
-	padding: 7px 10px 5px;
+	font-size: 14px;
+	/*padding: 12px 10px 5px;*/
+	text-align: center;
+	line-height: 46px;
 	position: relative;
 	text-decoration: none;
 }
@@ -399,8 +498,19 @@ li li a .sf-sub-indicator {
 #nav .current_page_item a,
 #nav .current-cat a,
 #nav .current-menu-item a {
-	background-color: #000;
+	height: 46px;
+	background-color: #e7840a;
 	color: #fff;
+}
+
+.home #nav li:first-child a {
+	background-color: #e7840a;
+	border-bottom: 1px solid #e7840a;
+}
+
+#nav li:last-child {
+	width: 160px;
+	border-right: none;
 }
 
 #nav li li a,
@@ -427,7 +537,6 @@ li li a .sf-sub-indicator {
 	left: -9999px;
 	position: absolute;
 	width: 160px;
-	z-index: 9999;
 }
 
 #nav li ul a {
@@ -569,10 +678,14 @@ li li a .sf-sub-indicator {
 ------------------------------------------------------------ */
 
 #inner {
+	position: inherit;
 	background-color: #fff;
-	margin: 0px auto;
+	margin: -120px auto 0;
 	overflow: hidden;
 	width: 842px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
 }
 
 
@@ -601,7 +714,7 @@ li li a .sf-sub-indicator {
 
 #content-sidebar-wrap {
 	float: left;
-	padding: 0 21px 0;
+	padding: 20px 21px 90px;
 	width: 800px;
 }
 
@@ -616,6 +729,33 @@ li li a .sf-sub-indicator {
 	float: right;
 }
 
+.under-nav {
+	position:relative;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	width: 319px;
+	height: 24px;
+	margin:120px 0 0 21px;
+	text-align: center;
+	background-color: #5e5e61;
+	z-index:2;
+}
+
+.home .under-nav, .page-id-9 .under-nav {
+	background-color: #e7840a;
+	border-top: 1px solid #e7840a;
+}
+
+.under-nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.under-nav a:hover {
+	color: #75d675;
+	text-decoration: none;
+}
 
 /* Content
 ------------------------------------------------------------ */
@@ -811,16 +951,29 @@ h4 {
 }
 
 .widget-area h4 {
-	background-color: #f5f5f5;
-	border-bottom: 1px solid #ddd;
+	background-color: #e7840a;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 5px 5px 5px 10px;
 	text-transform: uppercase;
+	-webkit-border-radius: 7px 7px 0 0;
+	-moz-border-radius: 7px 7px 0 0;
+	border-radius: 7px 7px 0 0;
 }
 
 .widget-area h4 a {
-	color: #333;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: none;
+	text-decoration: none;
+}
+
+.widget-area h4 {
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: none;
 	text-decoration: none;
 }
 
@@ -1079,13 +1232,19 @@ p.wp-caption-text {
 
 .sidebar .widget {
 	background-color: #fff;
-	border: 1px solid #ddd;
+	/*border: 1px solid #ddd;*/
 	margin: 0 0 15px;
 	padding: 0 0 10px;
 }
 
 .widget-area .textwidget {
 	padding: 5px 10px 0;
+}
+
+.widget-area .textwidget p {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	line-height: 14px;
 }
 
 .widget-area ol,
@@ -1355,30 +1514,33 @@ div.gform_footer input.button:hover,
 ------------------------------------------------------------ */
 
 #footer {
-	background-color: #333;
+	position:relative;
+	background-color: #ececec;
+	border: 2px solid #e3e3e3;
 	clear: both;
 	font-size: 12px;
-	margin: 0 auto;
+	margin: -80px auto 0;
 	overflow: hidden;
 	padding: 6px 0 5px;
 	text-transform: uppercase;
 	width: 800px;
+	z-index:1;
 }
 
 #footer p {
-	color: #fff;
+	color: #5e5e5e;
 	font-size: 12px;
 }
 
 #footer a,
 #footer a:visited {
-	color: #fff;
+	color: #5e5e5e;
 }
 
 #footer .gototop {
 	float: left;
 	padding: 0 0 0 5px;
-	width: 167px;
+	width: 187px;
 }
 
 #footer .gototop a {
@@ -1390,7 +1552,7 @@ div.gform_footer input.button:hover,
 	float: right;
 	padding: 0 10px 0 0;
 	text-align: right;
-	width: 617px;
+	width: 598px;
 }
 
 

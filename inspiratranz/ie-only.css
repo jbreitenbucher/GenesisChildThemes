@@ -1,0 +1,17 @@
+/* IE Specific */
+
+/* Primary Navigation
+------------------------------------------------------------ */
+#nav {
+	position:relative;
+    background-image: url('images/menu-background.png') repeat-x;
+	clear: both;
+	color: #fff;
+	margin: 17px auto 0;
+	overflow: hidden;
+	text-transform: none;
+	font-weight: bold;
+	width: 800px;
+	height: 46px;
+	z-index:1;
+}
