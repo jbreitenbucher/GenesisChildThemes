@@ -26,7 +26,6 @@ add_theme_support( 'genesis-custom-header', array( 'width' => 800, 'height' => 2
 genesis_set_default_layout( 'sidebar-content' );
 
 /** Unregister other site layouts */
-genesis_unregister_layout( 'full-width-content' );
 genesis_unregister_layout( 'content-sidebar' );
 genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
@@ -39,6 +38,46 @@ genesis_register_sidebar(array(
 	'description' => 'This is the widget area on the right of the homepage.',
 	'before_title'=>'<h4 class="widgettitle">','after_title'=>'</h4>'
 ));
+genesis_register_sidebar(array(
+	'name'=>'Homepage Bottom',
+	'id' => 'homepage-bottom',
+	'description' => 'This is the widget area on the bottom of the homepage.',
+	'before_title'=>'<h4 class="widgettitle">','after_title'=>'</h4>'
+));
+genesis_register_sidebar(array(
+	'name'=>'Sustainability Bottom',
+	'id' => 'sustainability-bottom',
+	'description' => 'This is the widget area on the bottom of the sustainability page.',
+	'before_title'=>'<h4 class="widgettitle">','after_title'=>'</h4>'
+));
+
+/** Add a widget area above the footer */
+if(is_page('Home')) {
+	add_action('genesis_before_footer', 'include_bottom_widgets');
+	function include_bottom_widgets() {
+	    require(CHILD_DIR.'/home-bottom-widgets.php');
+	}
+}
+
+if(is_page('Sustainability')) {
+	add_action('genesis_before_footer', 'include_bottom_widgets');
+	function include_bottom_widgets() {
+	    require(CHILD_DIR.'/sustainability-bottom-widgets.php');
+	}
+}
+
+// Modify back to top text
+add_filter('genesis_footer_backtotop_text', 'custom_footer_backtotop_text');
+function custom_footer_backtotop_text($backtotop) {
+    $backtotop = '';
+    return $backtotop;
+}
+// Modify credits section
+add_filter('genesis_footer_creds_text', 'custom_footer_creds_text');
+function custom_footer_creds_text($creds) {
+    $creds = '[footer_copyright] ' . get_bloginfo('name');
+    return $creds;
+}
 
 /** Add the Saftey and Sustainability links */
 function include_under_nav() {
