@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage P2
+ * @subpackage Reunion
  */
 ?>
 	<script type="text/javascript">
@@ -31,7 +31,7 @@ $post_type = p2_get_posting_type();
 ?>
 <div id="postbox">
 		<ul id="post-types">
-			<li><a id="post"<?php if ( $post_type == 'post' ) : ?> class="selected"<?php endif; ?> href="<?php echo site_url( '?p=post' ); ?>" title="<?php _e( 'Blog Post', 'p2' ); ?>"><?php _e( 'Blog Post', 'p2' ); ?></a></li>
+			<li><a id="post"<?php if ( $post_type == 'post' ) : ?> class="selected"<?php endif; ?> href="<?php echo site_url( '?p=post' ); ?>" title="<?php _e( 'Memory', 'p2' ); ?>"><?php _e( 'Memory', 'p2' ); ?></a></li>
 		</ul>
 
 		<div class="avatar">
@@ -47,10 +47,11 @@ $post_type = p2_get_posting_type();
 				</label>
 				<?php endif; ?>
 
-				<div id="postbox-type-post" class="post-input <?php if ( 'post' == p2_get_posting_type() ) echo ' selected'; ?>">
-					<input type="text" name="posttitle" id="posttitle" tabindex="1" value=""
-						onfocus="this.value=(this.value=='<?php echo esc_js( __( 'Post Title', 'p2' ) ); ?>') ? '' : this.value;"
-						onblur="this.value=(this.value=='') ? '<?php echo esc_js( __( 'Post Title', 'p2' ) ); ?>' : this.value;" />
+				<div id="postbox-type-post" class="post-input <?php if ( 'post' == p2_get_posting_type() || !isset($_GET['p']) ) echo ' selected'; ?>">
+				      <input type="text" name="posttitle" id="posttitle" tabindex="1"
+				         value="<?php esc_attr_e( 'Add a title to your memory', 'p2' ); ?>"
+				         onfocus="this.value=(this.value=='<?php echo esc_js( __( 'Add a title to your memory', 'p2' ) ); ?>') ? '' : this.value;"
+				         onblur="this.value=(this.value=='') ? '<?php echo esc_js( __( 'Add a title to your memory', 'p2' ) ); ?>' : this.value;" />
 				</div>
 				<?php if ( current_user_can( 'upload_files' ) ): ?>
 				<div id="media-buttons" class="hide-if-no-js">

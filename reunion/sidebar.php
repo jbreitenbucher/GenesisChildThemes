@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage P2
+ * @subpackage Reunion
  */
 ?>
 <?php if ( !p2_get_hide_sidebar() ) : ?>
@@ -20,7 +20,7 @@
 	
 		</div> <!-- // primary-sidebar -->
 		
-		<div id="secondary-sidebar">
+		<!--<div id="secondary-sidebar">
 			<ul>
 				<?php 
 					if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Secondary Sidebar') ) {
@@ -31,6 +31,6 @@
 
 			<div class="clear"></div>
 
-		</div> <!-- // secondary-sidebar -->
+		</div>--> <!-- // secondary-sidebar -->
 	</div> <!-- // sidebar -->
 <?php endif; ?>

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage P2
+ * @subpackage Reunion
  */
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -27,28 +27,16 @@
 
 </div>
 
-<div id="access" role="navigation">
-
-    <?php /*
-
-    Allow screen readers / text browsers to skip the navigation menu and
-    get right to the good stuff. */ ?>
-
-    <div class="skip-link screen-reader-text">
-        <a href="#content" title="<?php esc_attr_e( 'Skip to content', 'p2' ); ?>">
-        <?php _e( 'Skip to content', 'p2' ); ?></a>
-    </div>
-
-    <?php /*
-
-    Our navigation menu.  If one isn't filled out, wp_nav_menu falls
-    back to wp_page_menu.  The menu assigned to the primary position is
-    the one used.  If none is assigned, the menu with the lowest ID is
-    used. */
-
-    wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
-
-</div><!-- #access -->
+<div id="menu-container">
+	<?php
+		$locations = get_nav_menu_locations();
+		if ($locations[ 'primary' ]) {
+			wp_nav_menu( array( 'container' => 'div', 'container_id' => 'p2menu', 'theme_location' => 'primary' ) );
+		} else { ?>
+			<ul class='simplemenu'> <?php echo wp_list_pages('exclude=;&depth=1&sort_column=menu_order&title_li=' . ('') . '' ); ?> </ul>
+		<?php }
+	?>
+</div>
 
 <div id="wrapper">
 	<?php get_sidebar(); ?>
