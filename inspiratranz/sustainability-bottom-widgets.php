@@ -4,17 +4,16 @@
  *
  * If none of the sidebars have widgets, then let's bail early.
  */
-if (   ! is_active_sidebar( 'Sustainability Bottom'  )
-)
+if ( !is_active_sidebar( 'sustainability-bottom'  ) )
 	return;
 // If we get this far, we have widgets. Let do this.
 
 ?>
 
-<div id="footer-widget-area">
-	<?php if ( is_active_sidebar( 'Sustainability Bottom' ) ) : ?>
-		<div id="first" class="widget-area">
-				<?php dynamic_sidebar( 'Sustainability Bottom' ); ?>
+<div id="footer-widgets">
+	<?php if ( is_active_sidebar( 'sustainability-bottom' ) ) : ?>
+		<div id="first" class="widget-area footer-widgets-1">
+				<?php dynamic_sidebar( 'sustainability-bottom' ); ?>
 		</div><!-- #first .widget-area -->
 	<?php endif; ?>
 	

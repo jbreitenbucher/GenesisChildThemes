@@ -52,18 +52,16 @@ genesis_register_sidebar(array(
 ));
 
 /** Add a widget area above the footer */
-if(is_page('Home')) {
-	add_action('genesis_before_footer', 'include_bottom_widgets');
-	function include_bottom_widgets() {
-	    require(CHILD_DIR.'/home-bottom-widgets.php');
+add_action('genesis_before_footer', 'include_bottom_widgets');
+function include_bottom_widgets() {
+	if(is_front_page()) {
+		require(CHILD_DIR.'/home-bottom-widgets.php');
 	}
-}
-
-if(is_page('Sustainability')) {
-	add_action('genesis_before_footer', 'include_bottom_widgets');
-	function include_bottom_widgets() {
-	    require(CHILD_DIR.'/sustainability-bottom-widgets.php');
+	elseif(is_page('sustainability')) {
+		require(CHILD_DIR.'/sustainability-bottom-widgets.php');
 	}
+	else
+		return;
 }
 
 // Modify back to top text

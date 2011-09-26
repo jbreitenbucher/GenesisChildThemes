@@ -691,6 +691,11 @@ li li a .sf-sub-indicator {
 	border-radius: 7px;
 }
 
+.home #inner {
+	padding-bottom: 90px;
+}
+
+
 
 /* Breadcrumb
 ------------------------------------------------------------ */
@@ -780,10 +785,6 @@ li li a .sf-sub-indicator {
 
 .full-width-content #content {
 	width: 800px;
-}
-
-.home #content {
-        margin-top: -40px;
 }
 
 blockquote {
@@ -932,7 +933,8 @@ h6 {
 h1,
 h2,
 h2 a,
-h2 a:visited {
+h2 a:visited,
+#content h4 {
 	font-family: "Arial Black", Arial, Helvetica, Tahoma, sans-serif;
 	font-size: 16px;
 	line-height: 19px;
@@ -946,12 +948,14 @@ h2 a:visited {
 #content h2 a,
 #content h2 a:visited,
 .home .widget-area .textwidget h2,
-.page-id-17 .widget-area .textwidget h2 {
+.page-id-17 .widget-area .textwidget h2,
+#content h4 {
 	text-transform: uppercase;
 }
 
 #content h1,
-#content h2 {
+#content h2,
+#content h4 {
 	border-bottom: 1px dotted #5e5e5e;
 }
 
@@ -1012,7 +1016,7 @@ h4 {
 	text-decoration: none;
 }
 
-#sidebar.widget-area h4 {
+#sidebar.widget-area h4, #footer-widgets h4 {
 	font-family: "Arial Black", Arial, Helvetica, Tahoma, sans-serif;
 	color: #5e5e5e;
 	font-size: 16px;
@@ -1024,7 +1028,7 @@ h4 {
 	letter-spacing: -1px;
 }
 
-#footer-widgets h4 {
+/*#footer-widgets h4 {
 	background: none;
 	border: none;
 	color: #fff;
@@ -1033,7 +1037,7 @@ h4 {
 	margin: 0 0 5px;
 	padding: 0;
 	text-transform: uppercase;
-}
+}*/
 
 h5 {
 	font-size: 12px;
@@ -1533,21 +1537,32 @@ div.gform_footer input.button:hover,
 
 #footer-widgets {
 	position:relative;
-	background-color: #ececec;
-	border: 2px solid #e3e3e3;
+	/*background-color: #ececec;*/
+	/*border: 2px solid #e3e3e3;*/
 	clear: both;
 	color: #fff;
 	font-size: 12px;
 	margin: 0 auto;
-	overflow: hidden;
 	padding: 10px 0 0;
 	width: 800px;
-	margin: -90px auto 0;
+	margin: -180px auto 0;
 	text-transform: uppercase;
 	z-index:1;
-	-webkit-border-radius: 7px;
+	/*-webkit-border-radius: 7px;
     -moz-border-radius: 7px;
-    border-radius: 7px;
+    border-radius: 7px;*/
+}
+
+.home #footer-widgets .widget-area .textwidget {
+	height: 112px;
+	font-size: 13px;
+	line-height: 16px;
+	background-image: none;
+	background-color: #ececec;
+	border: 2px solid #e3e3e3;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
 }
 
 #footer-widgets .wrap {
