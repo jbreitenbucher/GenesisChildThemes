@@ -1,0 +1,396 @@
+/*
+Theme Name:     Wooster 2011
+Theme URI:      http://scotblogs.wooster.edu
+Description:    Twenty Ten modified for the College of Wooster by Dwight Nagy, based on the design of 'Wooster Fallseason' by Persa Zula.
+Author:         Dwight Nagy
+Author URI:     
+Template:       twentyten
+Version:        1.0
+*/
+
+@import url("../twentyten/style.css");
+
+body {
+	background: #f1f1f1 url(images/bg.gif) repeat fixed;
+	font-family:Verdana, Tahoma, Arial, Serif;
+	color: #333333;
+}
+
+#wrapper {
+	background: #fff;
+	margin-top: 35px;
+	padding: 0 7px;
+}
+
+#content,
+#content input,
+#content textarea {
+	color: #333;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+#content .entry-title {
+	color: #B33A1E;
+	font-size: 26px;
+}
+
+.entry-title a:link,
+.entry-title a:visited {
+	color: #B33A1E;
+	text-decoration: none;
+}
+.entry-title a:active,
+.entry-title a:hover {
+	color: #B33A1E;
+	text-decoration: none;
+}
+
+.entry-utility{
+background: #FCFCFC;
+border-bottom: 1px solid #EAEAEA;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+
+.hentry{
+margin-bottom: 24px;
+}
+
+.entry-content img,
+.entry-content object,
+.entry-content embed{
+padding: 3px;
+border: 1px solid #DCDCDC;
+}
+
+/* =Fonts
+-------------------------------------------------------------- */
+body,
+input,
+textarea,
+#site-info,
+.page-title span,
+.pingback a.url {
+	font-family: Verdana, Tahoma, Arial, Serif;
+}
+h1,h2,h3,h4,h5,h6,
+h3#comments-title,
+h3#reply-title,
+#cancel-comment-reply-link,
+.form-allowed-tags,
+#site-title,
+#site-description,
+#wp-calendar,
+.comment-meta,
+.comment-body tr th,
+.comment-body thead th,
+.entry-content label,
+.entry-content tr th,
+.entry-content thead th,
+.entry-meta,
+.entry-title,
+.entry-utility,
+#respond label,
+.navigation,
+.page-title,
+.pingback p,
+.reply,
+.widget-title,
+.wp-caption-text,
+input[type=submit] {
+	font-family: Georgia, Verdana, Arial, Serif;
+}
+pre {
+	font-family: "Courier 10 Pitch", Courier, monospace;
+}
+code {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+h1,h2,h3,h4,h5,h6{
+color: #333333;
+font-weight: bold;
+}
+
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
+color: #333333;
+margin: 0px 0px 0px 0px;
+}
+
+#content h1{
+font-size: 22px;
+}
+#content h2{
+font-size: 19px;
+}
+
+#content p, #content ul, #content ol, #content dd, #content pre, #content hr {
+margin-bottom: 14px;
+}
+
+.entry-meta a,
+.entry-utility a {
+Color: #C22F0E;
+}
+
+.meta-sep img{
+position: relative;
+top:1px;
+}
+
+.meta-prep img{
+position: relative;
+top:2px;
+}
+
+.author{
+margin-right: 10px;
+}
+
+.entry-meta a:hover,
+.entry-utility a:hover {
+	color: #C22F0E;
+	text-decoration: underline;
+}
+
+a:link,
+a:visited {
+	color: #C22F0E;
+	text-decoration: none;
+}
+a:active,
+a:hover {
+	color: #C22F0E;
+	text-decoration: underline;
+}
+
+body,
+input,
+textarea {
+	color: #666;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+#content p {
+	font-size: 13px;
+	line-height: 19px;
+}
+
+/* ----------------- HEADER ----------------- */
+#branding {
+	background: #2b2b2b url(images/topbg.gif) repeat-x;
+	position: relative;
+}
+
+#header {
+	padding: 7px 0 0 0;
+	margin-top: 10px;
+}
+
+#site-title {
+	float: left;
+	font-size: 32px;
+	line-height: 36px;
+	margin: 42px 0 0 25px;
+	width: 700px;
+}
+#site-title a {
+	color: #EDAC12;
+	font-weight: normal;
+	text-decoration: none;
+}
+#site-title a:hover {
+	color: #FFF;
+}
+#site-description {
+	float: left;
+	clear: left;
+	font-size: 14px;
+	font-style: normal;
+	margin: 0 0 16px 25px;
+	width: 700px;
+	color: #AAA;
+}
+
+/* This is the custom header image */
+#branding img {
+	border-top: 2px solid #FFF;
+	border-bottom: 2px solid #FFF;
+	display: inline;
+	margin-bottom: -4px;
+}
+
+#main {
+	background: #FFF url(images/border1.gif) repeat-x;
+}
+
+/* =Footer
+-------------------------------------------------------------- */
+
+#footer {
+	margin-bottom: 35px;
+}
+#colophon {
+	border-top: none;
+	margin-top: none;
+	overflow: hidden;
+	padding: 7px 20px 7px 20px;
+}
+#site-info {
+	background: #FFFFFF url(images/border2.gif) repeat-x;
+	color: #333333;
+	padding-top: 14px;
+	padding-bottom: 7px;
+	line-height: 13px;
+	font-weight: normal;
+	width: 890px;
+	font-size: 11px;
+}
+#site-info a {
+	color: #000;
+	text-decoration: none;
+}
+
+/* =Menu
+-------------------------------------------------------------- */
+
+#access .menu,
+#access div.menu ul,{
+font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+
+#access {
+	background: #000 url(images/menubg.gif);
+	display: block;
+	float: left;
+	margin: 0 auto;
+	width: 940px;
+	margin-bottom: 2px;
+}
+#access .menu-header,
+div.menu {
+	font-size: 13px;
+	margin-left: 12px;
+	width: 928px;
+}
+#access .menu-header ul,
+div.menu ul {
+	list-style: none;
+	margin: 0;
+}
+#access .menu-header li,
+div.menu li {
+	float: left;
+	position: relative;
+}
+#access a {
+	color: #000;
+	display: block;
+	line-height: 38px;
+	padding: 0 10px;
+	text-decoration: none;
+	font-weight: bold;
+}
+#access ul ul {
+	box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+	display: none;
+	position: absolute;
+	top: 38px;
+	left: 0;
+	float: left;
+	width: 180px;
+	z-index: 99999;
+}
+#access ul ul li {
+	min-width: 180px;
+}
+#access ul ul ul {
+	left: 100%;
+	top: 0;
+}
+#access ul ul a {
+	background: #333;
+	line-height: 1em;
+	padding: 10px;
+	width: 160px;
+	height: auto;
+}
+#access li:hover > a,
+#access ul ul :hover > a {
+	background: none;
+	color: #93240B;;
+}
+#access ul li:hover > ul {
+	display: block;
+}
+#access ul li.current_page_item > a,
+#access ul li.current-menu-ancestor > a,
+#access ul li.current-menu-item > a,
+#access ul li.current-menu-parent > a {
+	color: #93240B;;
+}
+* html #access ul li.current_page_item a,
+* html #access ul li.current-menu-ancestor a,
+* html #access ul li.current-menu-item a,
+* html #access ul li.current-menu-parent a,
+* html #access ul li a:hover {
+	color: #93240B;;
+}
+
+/* ------------SIDEBAR----------- */
+.widget-container{
+background: #FDFCF6 url(images/boxbg.gif) repeat-x;
+border-top: 1px solid #E1D3BD;
+border-bottom: 1px solid #E1D3BD;
+}
+
+.widget-title{
+color: #333;
+font-weight: bold;
+margin:5px;
+}
+
+#main .widget-area ul ul {
+list-style: none;
+margin-left: 5px;
+}
+
+#main .widget-area ul ul li {
+margin-bottom: 10px;
+}
+
+#primary, #secondary {
+width: 240px;
+}
+
+.widget-container h1,
+.widget-container h2,
+.widget-container h3,
+.widget-container h4,
+.widget-container h5,
+.widget-container h6 {
+margin-left: 5px;
+}
+
+.widget-container p{
+margin-left: 5px;
+}
+
+.widget_rss a.rsswidget,
+.widget_rss a:hover.rsswidget{
+color: #C22F0E;
+}
+
+.widget_rss .widget-title,
+.widget_rss .widget-title a,
+.widget_rss .widget-title a:hover{
+color: #333;
+}
+
+.widget_search #s{
+margin-left: 5px;
+}
