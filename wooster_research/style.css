@@ -1,0 +1,17 @@
+/*
+	Theme Name: Wooster Research
+	Theme URL: http://voices.wooster.edu/wooster-research
+	Description: The Wooster Research theme for WordPress is stylish, customizable, simple, and readable -- make it yours with a custom menu, header image, and background. Wooster Research supports six widgetized areas (two in the sidebar, four in the footer) and featured images (thumbnails for gallery posts and custom header images for posts and pages). It includes stylesheets for print and the admin Visual Editor, special styles for posts in the "Asides" and "Gallery" categories, and has an optional one-column page template that removes the sidebar.
+	Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style
+	Author: Jon Breitenbucher
+	Author URI: http://jon.breitenbuhcer.net
+	Version: 1.0
+	
+	Template: twentyten
+
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-license.php
+*/
+@import url("../twentyten/style.css");
+#access{overflow: visible;}
+#main{clear: both;}
