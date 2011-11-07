@@ -12,7 +12,7 @@
 define('HEADER_TEXTCOLOR', '');
 
 // No CSS, just IMG call. The %s is a placeholder for the theme template directory URI.
-define( 'HEADER_IMAGE', get_bloginfo('stylesheet_directory') .'/images/headers/kauke_towers_940x198.jpg' );
+define( 'HEADER_IMAGE', get_stylesheet_directory_uri() . '/images/headers/kauke_towers_940x198.jpg' );
 
 /**
  * Defines a value used by WordPress. 940 is the default width of the layout.
@@ -31,8 +31,8 @@ register_default_headers( cms_theme_headers() );
 function cms_theme_headers() {
 	global $themename;
     $list = array();
-	$imagepath = STYLESHEETPATH .'/images/headers/';
-	$imageurl = get_bloginfo('stylesheet_directory');
+	$imagepath = get_stylesheet_directory() .'/images/headers/';
+	$imageurl = get_stylesheet_directory_uri();
     $dir_handle = @opendir($imagepath) or die("Unable to open $path"); 
     while($file = readdir($dir_handle)){ 
         if($file == "." || $file == ".."){continue;} 

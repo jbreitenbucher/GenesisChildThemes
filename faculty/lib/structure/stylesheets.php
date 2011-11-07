@@ -362,7 +362,7 @@ function faculty_create_stylesheets() {
     faculty_make_stylesheet_path_writable();
     
     $css_prefix = '/* ' . __('This file is auto-generated from the style.css, the settings page and custom.css. Any direct edits here will be lost if the settings page is saved', FACULTY_DOMAIN) .' */'."\n";
-    $css = file_get_contents(CHILD_DIR . '/style.css');  
+    $css = file_get_contents( get_stylesheet_directory() . '/style.css');  
     $css .= faculty_prepare_settings_stylesheet();
 //    if ( file_exists(faculty_get_custom_stylesheet_path()) ) {
     if ( faculty_is_custom_stylesheet_used() ) {
@@ -448,6 +448,6 @@ function faculty_minify_css($css) {
     // Converts all zeros value into short-hand
     $css = preg_replace('/0 0 0 0/', '0', $css);
     // Ensures image path is correct, if we're serving .css file from subfolder
-    $css = preg_replace('/url\(([\'"]?)images\//', 'url(${1}' . CHILD_URL . '/images/', $css);
+    $css = preg_replace('/url\(([\'"]?)images\//', 'url(${1}' . get_stylesheet_directory_uri() . '/images/', $css);
     return apply_filters('faculty_minify_css', $css);
 }

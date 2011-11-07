@@ -43,7 +43,7 @@ function faculty_get_design_option( $opt ) {
  * @since 1.0
  */
 function faculty_get_version() {
-    $theme_data = get_theme_data(CHILD_DIR . '/style.css');
+    $theme_data = get_theme_data( get_stylesheet_directory() . '/style.css');
     return $theme_data['Version'];
 }
 

@@ -7,15 +7,15 @@
  * @subpackage Customizations
  *
 **/
-$wordmark_url = get_bloginfo('stylesheet_directory') .'/images/wordmark.gif';
+$wordmark_url = get_stylesheet_directory_uri() .'/images/wordmark.gif';
 ?>
 
 <div id="branding">
 	<div class="wrap">
-		<div class="alignleft">
+		<div class="alignleft wordmark">
 			<a href="http://wooster.edu"><img src="<?php echo $wordmark_url ?>"></a>
 		</div>
-		<div class="alignright">
+		<div class="alignright tagline">
 			<p>Independent Minds, Working Together.</p> 
 		</div>
 	</div>

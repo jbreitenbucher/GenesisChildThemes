@@ -22,3 +22,8 @@
 #design-settings form {
     margin: 1em 0;
 }
+.postbox {
+	position: relative;
+	min-width: 255px;
+	z-index: 1 !important;
+}

@@ -23,14 +23,15 @@ define('FACULTY_SETTINGS_FIELD', 'faculty_settings');
 define('FACULTY_DOMAIN', 'faculty');
 
 // Functions
-require_once(CHILD_DIR.'/lib/functions/I18n.php');
-require_once(CHILD_DIR.'/lib/functions/design-settings.php');
+require_once( get_stylesheet_directory() . '/lib/functions/I18n.php');
+require_once( get_stylesheet_directory() . '/lib/functions/design-settings.php');
+require_once( get_stylesheet_directory() . '/lib/functions/widgets.php');
 
 // Structure
-require_once(CHILD_DIR.'/lib/structure/stylesheets.php');
-require_once(CHILD_DIR.'/lib/structure/export.php');
-require_once(CHILD_DIR.'/lib/structure/import.php');
+require_once( get_stylesheet_directory() . '/lib/structure/stylesheets.php');
+require_once( get_stylesheet_directory() . '/lib/structure/export.php');
+require_once( get_stylesheet_directory() . '/lib/structure/import.php');
 
 // Settings pages
-require_once(CHILD_DIR.'/lib/admin/design-settings.php');
-require_once(CHILD_DIR.'/lib/admin/custom-header.php');
+require_once( get_stylesheet_directory() . '/lib/admin/design-settings.php');
+require_once( get_stylesheet_directory() . '/lib/admin/custom-header.php');

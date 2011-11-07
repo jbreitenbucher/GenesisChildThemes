@@ -1,6 +1,6 @@
 <?php
 /**
- * This file controls all parts of the Prose Child Theme Settings.
+ * This file controls all parts of the Faculty Child Theme Settings.
  *
  * @package Faculty
  * @author StudioPress & Gary Jones
@@ -907,7 +907,7 @@ function faculty_save_settings($newvalue, $oldvalue) {
  */
 function faculty_settings_styles() {
         wp_enqueue_style('farbtastic');
-        wp_enqueue_style('faculty-admin', CHILD_URL . '/lib/css/admin.css', array(), faculty_get_version());
+        wp_enqueue_style('faculty-admin', get_stylesheet_directory_uri() . '/lib/css/admin.css', array(), faculty_get_version());
 }
 
 /**
@@ -920,11 +920,11 @@ function faculty_settings_styles() {
  */
 function faculty_settings_scripts() {
         global $_faculty_settings_pagehook;
-	wp_enqueue_script('common');
-	wp_enqueue_script('wp-lists');
-	wp_enqueue_script('postbox');
+				wp_enqueue_script('common');
+				wp_enqueue_script('wp-lists');
+				wp_enqueue_script('postbox');
         wp_enqueue_script('farbtastic');
-        wp_enqueue_script('faculty-admin', CHILD_URL.'/lib/js/admin.js', array('farbtastic'), faculty_get_version(), true);
+        wp_enqueue_script('faculty-admin', get_stylesheet_directory_uri() . '/lib/js/admin.js', array('farbtastic', 'jquery'), faculty_get_version(), true);
         $params = array(
             'pageHook'      => $_faculty_settings_pagehook,
             'firstTime'     => !is_array(get_user_option('closedpostboxes_'.$_faculty_settings_pagehook)), // Delete closedpostboxes_genesis_page_design-settings in usermeta table to test

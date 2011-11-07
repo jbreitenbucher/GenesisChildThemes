@@ -31,7 +31,7 @@ jQuery(document).ready(function($) {
         
     // Add color picker to color input boxes.
     $('input:text.color-picker', $design_settings).each(function (i) {
-        $(this).after('<div id="picker-' + i + '" style="z-index: 100; background: #EEE; border: 1px solid #CCC; position: absolute; display: block;"></div>');
+        $(this).after('<div id="picker-' + i + '" style="z-index: 100 !important; background: #EEE; border: 1px solid #CCC; position: absolute; display: block;"></div>');
         $('#picker-' + i).hide().farbtastic($(this));
     })
     .focus(function() {

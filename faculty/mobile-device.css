@@ -1,19 +1,5 @@
 /*
-	Theme Name: Faculty
-	Theme URL: http://instructionaltechnology.wooster.edu/themes/faculty
-	Description: Faculty is a 2 or 3-column Widget-ready child theme created for the Genesis Theme Framework.
-	Author: Jon Breitenbucher
-	Author URI: http://orthogonalcreations.com
-	
-	Version: 1.1
-	
-	Tags: custom-background, custom-header, custom-menu, featured-images, fixed-width, left-sidebar, one-column, right-sidebar, sticky-post, theme-options, threaded-comments, three-columns, translation-ready, two-columns, widgeted
-		
-	Template: genesis
-	Template Version: 1.7.1
-	
-	License: GNU General Public License v2.0+
-	License URI: http://www.opensource.org/licenses/gpl-license.php
+	Used to present the site to mobile browsers.
 */
 
 /* Table of Contents
@@ -80,9 +66,9 @@ body {
 	background: #F3F3F3;
 	color: #222222;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	font-size: 15px;
+	font-size: 100%;
 	margin: 0 auto 0;
-	line-height: 24px;
+	line-height: 1.5em;
 }
 	
 /***** Hyperlinks ********************/
@@ -109,10 +95,10 @@ a:focus, a:hover, a:active {
 
 #wrap {
 	background: #FFFFFF;
-	width: 940px;
-	margin: 15px auto 0;
-	padding: 10px;
-	border: 5px solid #EDEDED;
+	width: auto;
+	margin: .015957446em auto 0;
+	padding: .010638297em;
+	border: .005319148936em solid #EDEDED;
 	-moz-border-radius: 1em 3em 1em 3em;
 	-khtml-border-radius: 1em 3em 1em 3em;
 	-webkit-border-radius: 1em 3em 1em 3em;
@@ -124,10 +110,10 @@ a:focus, a:hover, a:active {
 
 #branding {
 	background: #F3F3F3;
-	width: 938px;
+	width: auto;
 	color: #666666;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	font-size: 13px;
+	font-size: .813em;
 	margin: 0 auto 0;
 	text-transform: uppercase;
 	border: 1px solid #DDDDDD;
@@ -139,17 +125,17 @@ a:focus, a:hover, a:active {
 	}
 
 .wordmark {
-	padding: 25px;
+	padding: .026595744em;
 	}
 	
 .tagline {
-	padding: 25px 10px 0 0;
+	padding: .026595744em .010638297em 0 0;
 	}
 
 /***** Header  ********************/
 
 #header {
-	width: 100%; 
+	width: auto; 
 	height: 150px;
 	}
 
@@ -487,8 +473,8 @@ a:focus, a:hover, a:active {
 /***** Inner ********************/
 
 #inner {
-	width: 940px;
-	margin: 15px auto 0;
+	width: auto;
+	margin: .015957446em auto 0;
 	clear: both;
 	}
 	
@@ -501,19 +487,19 @@ a:focus, a:hover, a:active {
 	background-color: #ddd;
 	box-shadow: 0 1px 3px #666;
 	clear: both;
-	margin: 0 auto 20px;
+	margin: 0 auto .022222em;
 	overflow: hidden;
-	padding: 20px;
-	width: 900px;
+	padding: .022222em;
+	width:auto;
 }
 
 .slider {
-	float: left;
-	width: 610px;
+	float: none;
+	width: auto;
 }
 
 .featured .slider {
-	width: 900px;
+	width: auto;
 }
 
 #genesis-slider {
@@ -527,8 +513,8 @@ a:focus, a:hover, a:active {
 .featured-top {
 	margin: 0 auto;
 	overflow: hidden;
-	padding: 0 0 15px;
-	width: 940px;
+	padding: 0 0 .015957446em;
+	width: auto;
 }
 
 .featured-top p {
@@ -537,14 +523,14 @@ a:focus, a:hover, a:active {
 }
 
 .featured-top-left {
-	float: left;
-	width: 460px;
+	float: none;
+	width: auto;
 	padding-right: 10px;
 }
 
 .featured-top-right {
-	float: right;
-	width: 460px;
+	float: none;
+	width: auto;
 	padding-left: 10px;
 }
 
@@ -555,26 +541,26 @@ a:focus, a:hover, a:active {
 .featured-middle {
 	margin: 0 auto;
 	overflow: hidden;
-	padding: 0 0 15px;
-	width: 940px;
+	padding: 0 0 .015957446emx;
+	width: auto;
 }
 
 .featured-middle-left {
-	float: left;
-	width: 299px;
+	float: none;
+	width: auto;
 	padding-right: 11px;
 }
 
 .featured-middle-center {
-	float: left;
-	width: 299px;
+	float: none;
+	width: auto;
 	padding-left: 10px;
 	padding-right: 10px;
 }
 
 .featured-middle-right {
-	float: right;
-	width: 299px;
+	float: none;
+	width: auto;
 	padding-left: 10px;
 }
 
@@ -585,8 +571,8 @@ a:focus, a:hover, a:active {
 .featured-bottom {
 	margin: 0 auto;
 	overflow: hidden;
-	padding: 0 0 15px;
-	width: 940px;
+	padding: 0 0 .015957446em;
+	width: auto;
 }
 
 .featured-bottom p {
@@ -595,14 +581,14 @@ a:focus, a:hover, a:active {
 }
 
 .featured-bottom-left {
-	float: left;
-	width: 460px;
+	float: none;
+	width: auto;
 	padding-right: 10px;
 }
 
 .featured-bottom-right {
-	float: right;
-	width: 460px;
+	float: none;
+	width: auto;
 	padding-left: 10px;
 }
 
@@ -633,52 +619,52 @@ a:focus, a:hover, a:active {
 /***** Content-Sidebar Wrap ********************/
 
 #content-sidebar-wrap {
-	width: 760px;
-	float: left;
+	width: auto;
+	float: none;
 	}
 
 .page-template-landing-php #content-sidebar-wrap {
-	width: 700px;
+	width: auto;
 	margin: 0 auto 0;
 	float: none;
 	}
 
 .sidebar-content #content-sidebar-wrap, .content-sidebar #content-sidebar-wrap {
-	width: 920px;
+	width: auto;
 	}
 
 .sidebar-sidebar-content #content-sidebar-wrap, .sidebar-content-sidebar #content-sidebar-wrap {
-	float: right;
+	float: none;
 	}
 
 /***** Content ********************/
 
 #content {
-	float: left;
-	width: 470px;
+	float: none;
+	width: auto;
 	margin: 0;
 	padding: 0;
 	}
 	
 .sidebar-content #content, .sidebar-sidebar-content #content {
-	float: right;
+	float: none;
 	}
 
 .sidebar-content #content, .content-sidebar #content {
-	width: 630px;
+	width: auto;
 	margin: 0;
 	padding: 0;
 	}
 
 .full-width-content #content {
-	width: 920px;
+	width: auto;
 	margin: 0;
 	padding: 0;
 	border: none;
 	}
 	
 .page-template-landing-php #content {
-	width: 700px;
+	width: auto;
 	margin: 0 auto 0;
 	}
 
@@ -1570,318 +1556,3 @@ img.wp-smiley, img.wp-wink {
 	margin: 0;
 	padding: 0;
 	}
-	
-/* Responsive Design - Menu and Logo
------------------------------------------------------------- */
-
-@media only screen and (min-width: 600px) and (max-width: 960px) {
-	
-	#title-area,
-	#title,
-	#description {
-		text-align: center; 
-		margin: 0 auto;
-		width: 100%;
-	}
-	
-	/* This allows the header to be centered at lower resolutions when no header right widget */
-	.header-full-width #title-area {
-		width: 270px;
-		margin: 0 auto;
-		float: none;
-	}
-	
-	/* This allows the header to be centered at lower resolutions */
-	.header-image #title-area {
-			float: none;
-	}
-	
-	/* When title is text, header is 120px tall */
-	.header-widget #header .wrap {
-		overflow: visible;
-		height: 150px;
-	}
-	
-	/* When using an image, bump it up to 170px */
-	.header-image.header-widget #header .wrap {
-		height: 150px;
-	}
-	
-	#header .widget-area,
-	#header .nav {
-		border-top: 1px solid #ddd;
-		margin-top: 20px;
-		padding-top: 2px;
-		float: left;
-		position: relative;
-		width: 100%;
-	}
-	
-	#header .widget-area .widget_nav_menu {
-		border-top: 1px solid #eee;
-	}
-	
-	#header .widget-area ul,
-	#nav ul,
-	#subnav ul {
-		clear:left;
-		float:left;
-		list-style:none;
-		margin-left: 0;
-		position:relative;
-		left:50%;
-		text-align:center;
-	}
-	
-	#header .widget-area ul li,
-	#nav ul li,
-	#subnav ul li {
-		position:relative;
-		right:50%;
-	}
-		
-}
-
-@media only screen and (max-width: 600px) {
-
-	.header-image #title-area,
-	.header-image #title,
-	.header-image #title a {
-		background-position: center top;
-		float: none;
-		margin: 0 auto;
-		width: 100%;
-	}
-	
-	#header .widget-area {
-		border-top: 1px solid #ddd;
-		margin-top: 20px;
-		padding-top: 2px;
-		width: 100%;
-	}
-	
-	#header .widget-area .widget_nav_menu {
-		border-top: 1px solid #eee;
-		padding-top: 10px;
-	}
-
-	#header ul.nav li ul,
-	#header ul.menu li ul,
-	#header .widget-area ul,
-	#header .widget-area li,
-	#nav ul,
-	#nav ul li,
-	#nav li ul,
-	#subnav ul,
-	#subnav ul li,
-	#subnav li ul {
-		float:none;
-		clear:both;
-		margin:0;
-		display:block;
-		padding:0;
-		width:100%;
-	}
-	
-	#header .widget-area li,
-	#nav li,
-	#subnav li {
-		margin:0!important;
-	}
-
-	#header .widget-area li a,
-	#nav li a,
-	#subnav li a {
-		display:block;
-	}
-	
-	#header ul.nav li li a,
-	#header ul.menu li li a,
-	#nav li li a,
-	#subnav li li a {
-		background-color: transparent;
-		color: #333;
-		font-size: 11px;
-		padding: 5px 10px;
-		position: relative;
-		width: auto;
-}
-
-	#header ul.nav li li a:hover,
-	#header ul.nav li li a:active,
-	#header ul.menu li li a:hover,
-	#header ul.menu li li a:active,
-	#nav li li a:hover,
-	#subnav li li a:hover {
-		background-color: #ddd;
-	}
-
-	#header ul.nav li li a .sf-sub-indicator,
-	#header ul.menu li li a .sf-sub-indicator,
-	#nav li li a .sf-sub-indicator,
-	#subnav li li a .sf-sub-indicator {
-		background: none;
-		top: 0;
-	}
-
-	#header ul.nav li ul,
-	#header ul.menu li ul,
-	#nav li ul,
-	#subnav li ul {
-		display: block;
-		visibility: visible;
-		height: 100%;
-		left: 0;
-		position: relative;
-		width: auto;
-	}
-
-	#header ul.nav li ul a,
-	#header ul.menu li ul a,
-	#nav li ul a,
-	#subnav li ul a {
-		width: auto;
-	}
-
-	#header ul.nav li ul ul,
-	#header ul.menu li ul ul,
-	#nav li ul ul,
-	#subnav li ul ul {
-		margin: 0;
-	}
-	
-}
-
-/* Responsive Design - Featured Image / Home Header
------------------------------------------------------------- */
-@media only screen and (min-width: 600px) and (max-width: 960px) {
-
-	.featured-image {
-		padding: 10px;
-	}
-	
-	.home #genesis-slider {
-		width: 95%;
-	}
-	
-	.home #genesis-slider .genesis-slider-wrap {
-		width: 100%;
-		overflow: hidden;
-	}
-
-	#inner {
-		width: 100%;
-	}	
-}	
-
-@media only screen and (max-width: 600px) {
-
-	.featured-image {
-		padding: 0px;
-	}
-	
-	.home #genesis-slider {
-		width: 100%;
-		padding: 0;
-	}
-
-	.home #genesis-slider .genesis-slider-wrap {
-		width: 100%;
-		overflow: hidden;
-	}
-
-	#inner {
-		width: 100%;
-	}	
-	
-}
-
-
-/* Responsive Design - Structural Columns
------------------------------------------------------------- */
-
-@media only screen and (min-width: 600px) and (max-width: 800px) {
-	
-	.content-sidebar-sidebar #content-sidebar-wrap,
-	.sidebar-content-sidebar #content-sidebar-wrap,
-	.sidebar-sidebar-content #content-sidebar-wrap,
-	.content-sidebar-sidebar #content,
-	.sidebar-content-sidebar #content,
-	.sidebar-sidebar-content #content {
-		margin: 0;
-	}
-	
-	.content-sidebar-sidebar #sidebar,
-	.content-sidebar-sidebar #sidebar-alt,
-	.sidebar-content-sidebar #sidebar,
-	.sidebar-content-sidebar #sidebar-alt,
-	.sidebar-sidebar-content #sidebar,
-	.sidebar-sidebar-content #sidebar-alt {
-		margin: 20px 0 0 0;
-		width: 48%;	
-	}
-	
-	.content-sidebar-sidebar #sidebar-alt,
-	.sidebar-content-sidebar #sidebar-alt,
-	.sidebar-sidebar-content #sidebar-alt {
-		float: right;
-	}
-}
-
-@media only screen and (max-width: 600px) {
-
-	#content-sidebar-wrap,
-	.content-sidebar-sidebar #content,
-	.sidebar-content-sidebar #content,
-	.sidebar-sidebar-content #content,
-	.content-sidebar #content,
-	.sidebar-content #content,
-	.full-width-content #content,
-	.content-sidebar-sidebar #sidebar,
-	.sidebar-content-sidebar #sidebar,
-	.sidebar-sidebar-content #sidebar,
-	.content-sidebar #sidebar,
-	.sidebar-content #sidebar,
-	.content-sidebar-sidebar #sidebar-alt,
-	.sidebar-content-sidebar #sidebar-alt,
-	.sidebar-sidebar-content #sidebar-alt,
-	.featured,
-	.slider,
-	.featured-top,
-	.featured-top-left,
-	.featured-top-right,
-	.featured-middle,
-	.featured-middle-left,
-	.featured-middle-center,
-	.featured-middle-right,
-	.featured-bottom,
-	.featured-bottom-left,
-	.featured-bottom-right,
-	#footer-widgets,
-	.footer-widgets-1,
-	.footer-widgets-2,
-	.footer-widgets-3,
-	.footer-widgets-4,
-	#footer .gototop,
-	#footer .creds {
-		margin: 0 0 10px;
-		width: 100%;
-	}
-	
-	.sidebar-sidebar-content #content-sidebar-wrap {
-		float: none;
-		margin-left: 0;
-		width: 100%;
-	}
-
-	.footer-widgets-1 .widget,
-	.footer-widgets-2 .widget,
-	.footer-widgets-3 .widget,
-	.footer-widgets-4 .widget {
-		border-right-width: 1px;
-		-moz-border-radius: 10px;
-		-webkit-border-radius: 10px;
-		border-radius: 10px;
-	}
-	
-}
