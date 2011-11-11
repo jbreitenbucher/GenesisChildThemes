@@ -12,10 +12,14 @@
 	<?php endif; ?>
 	<div id="main">
 		<h2>
-			<?php if ( is_home() or is_front_page() ) : ?>
+			<?php if ( is_home() ) : ?>
+
+				<?php _e( 'Recent Memories' , 'p2' ); ?>
+
+			<?php //elseif ( is_home() or is_front_page() ) : ?>
 		
-				<?php _e( 'Recent Updates' , 'p2' ); ?> <?php if ( p2_get_page_number() > 1 ) printf( __( 'Page %s', 'p2' ), p2_get_page_number() ); ?>
-				<a class="rss" href="<?php bloginfo( 'rss2_url' ); ?>">RSS</a>
+				<?php //_e( 'Recent Updates' , 'p2' ); ?> <?php //if ( p2_get_page_number() > 1 ) printf( __( 'Page %s', 'p2' ), p2_get_page_number() ); ?>
+				<!--<a class="rss" href="<?php bloginfo( 'rss2_url' ); ?>">RSS</a>-->
 
 			<?php elseif ( is_author() ) : ?>
 				
@@ -45,23 +49,25 @@
 				<!--<a href="#" id="togglecomments"> <?php _e( 'Toggle Comment Threads', 'p2' ); ?></a> | <a href="#directions" id="directions-keyboard"><?php _e( 'Keyboard Shortcuts', 'p2' ); ?></a>-->
 			</span>
 		</h2>
-	
-		<ul id="postlist">
-		<?php if ( have_posts() ) : ?>
+			<?php if ( is_home() ) {
+				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+				query_posts( array ( 'category_name' => 'status', 'paged' => $paged ) ); } ?>
+				
+			<ul id="postlist">
+			<?php if ( have_posts() ) : ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
-	    		<?php p2_load_entry(); // loads entry.php ?>
-			<?php endwhile; ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+		    		<?php p2_load_entry(); // loads entry.php ?>
+				<?php endwhile; ?>
 
-		<?php else : ?>
+			<?php else : ?>
 			
-			<li class="no-posts">
-		    	<h3><?php _e( 'No posts yet!', 'p2' ); ?></h3>
-			</li>
-			
-		<?php endif; ?>
-		</ul>
-		
+				<li class="no-posts">
+			    	<h3><?php _e( 'No posts yet!', 'p2' ); ?></h3>
+				</li>
+			<?php endif; ?>
+			</ul>
+
 		<div class="navigation">
 			<p class="nav-older"><?php next_posts_link( __( '&larr; Older posts', 'p2' ) ); ?></p>
 			<p class="nav-newer"><?php previous_posts_link( __( 'Newer posts &rarr;', 'p2' ) ); ?></p>
