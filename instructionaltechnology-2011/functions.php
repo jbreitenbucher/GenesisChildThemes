@@ -18,7 +18,8 @@ genesis_unregister_layout( 'sidebar-content-sidebar' );
 add_image_size('home-bottom', 150, 130, TRUE);
 add_image_size('home-middle', 287, 120, TRUE);
 add_image_size('home-featured', 870, 320, TRUE);
-add_image_size('profile-picture', 110, 90, TRUE);
+add_image_size('profile-picture-listing', 222, 137, TRUE);
+add_image_size('profile-picture-single', 222, 137, TRUE);
 
 /** Add suport for custom background */
 add_custom_background();
@@ -71,7 +72,7 @@ function create_itpeople_post_type() {
 		'description' => 'A post type for entering staff information.',
 		'public' => true,
 		'hierarchical' => false,
-		'supports' => array(),
+		'supports' => array('thumbnail','excerpt'),
 		'rewrite' => array('slug' => 'people'),
 		'has_archive' => true,
 	);
@@ -154,12 +155,6 @@ function itpeople_create_metaboxes( $meta_boxes ) {
 			'desc' => 'Give a brief description about your technology interests and your duties.',
 			'id' => $prefix . 'about_me_wysiwyg',
 			'type' => 'wysiwyg'
-		),
-		array(
-			'name' => 'Profile Image',
-			'desc' => 'Upload an image or enter an URL.',
-			'id' => $prefix . 'profile_image',
-			'type' => 'file'
 		),
 		array(
 			'name' => 'Role',

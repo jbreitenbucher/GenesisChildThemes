@@ -2172,12 +2172,18 @@ body.it-red {
 .it-red #footer a:visited {
 	color: #e297a1;
 }
+
 .contact {
         width:350px;
         padding-bottom:20px;
 }
+
 .person {
         padding: 20px 0 0 0;
+}
+
+.name {
+	font-size: 20px;
 }
 
 .archive-page ul.feedlist li, .entry-content ul.feedlist li {
