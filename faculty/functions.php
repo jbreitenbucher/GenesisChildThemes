@@ -21,16 +21,7 @@ add_image_size( 'featured-top-bottom', 460, 288, TRUE );
 add_image_size( 'featured-middle', 299, 187, TRUE );
 add_image_size( 'featured-footer', 215, 134, TRUE );
 add_image_size( 'slider', 590, 300, TRUE );
-
-function custom_rotator_use_this_post($truthy) {
-  if (!has_post_thumbnail())
-    return false;
-  else
-    return true;
-}
- 
-remove_filter('wp_rotator_use_this_post','wp_rotator_use_this_post');
-add_filter('wp_rotator_use_this_post','custom_rotator_use_this_post');
+add_image_size( 'featured', 900, 300, TRUE );
 
 /** Add support for custom background */
 if ( function_exists( 'add_custom_background' ) ) {
@@ -43,9 +34,15 @@ function wooster_include_branding() {
 }
 add_action('genesis_before_header', 'wooster_include_branding');
 
+/** Remove the Header Right widget area */
+function remove_some_widgets() {
+	unregister_sidebar('header-right');
+}
+add_action( 'widgets_init', 'remove_some_widgets', 11 ); 
+
 /** Reposition the Primary Navigation */
-remove_action('genesis_after_header', 'genesis_do_nav');
-add_action('genesis_before_header', 'genesis_do_nav');
+//remove_action('genesis_after_header', 'genesis_do_nav');
+//add_action('genesis_before_header', 'genesis_do_nav');
 
 /**
  * Modify the size of the Gravatar in the author box
@@ -74,9 +71,9 @@ add_filter('genesis_footer_creds_text', 'faculty_footer_creds_text');
 
 /** Register widget areas */
 genesis_register_sidebar( array(
-	'id'			=> 'slider',
-	'name'			=> __( 'Slider', FACULTY_DOMAIN ),
-	'description'	=> __( 'This is the slider section.', FACULTY_DOMAIN ),
+	'id'			=> 'featured-top',
+	'name'			=> __( 'Featured Top', FACULTY_DOMAIN ),
+	'description'	=> __( 'This is a featured area under the header with a background.', FACULTY_DOMAIN ),
 ) );
 genesis_register_sidebar( array(
 	'id'			=> 'featured-top-left',
