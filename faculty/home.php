@@ -7,7 +7,7 @@ add_action( 'genesis_meta', 'wooster_home_genesis_meta' );
  */
 function wooster_home_genesis_meta() {
 
-	if ( is_active_sidebar( 'slider' ) || is_active_sidebar( 'featured-top-left' ) || is_active_sidebar( 'featured-top-right' ) || is_active_sidebar( 'featured-middle-left' ) || is_active_sidebar( 'featured-middle-center' ) || is_active_sidebar( 'featured-middle-right' ) || is_active_sidebar( 'featured-bottom-left' ) || is_active_sidebar( 'featured-bottom-right' ) ) {
+	if ( is_active_sidebar( 'featured-top' ) || is_active_sidebar( 'featured-top-left' ) || is_active_sidebar( 'featured-top-right' ) || is_active_sidebar( 'featured-middle-left' ) || is_active_sidebar( 'featured-middle-center' ) || is_active_sidebar( 'featured-middle-right' ) || is_active_sidebar( 'featured-bottom-left' ) || is_active_sidebar( 'featured-bottom-right' ) ) {
 	
 		remove_action( 'genesis_loop', 'genesis_do_loop' );
 		add_action( 'genesis_loop', 'wooster_home_loop_helper' );
@@ -22,15 +22,11 @@ function wooster_home_genesis_meta() {
  */
 function wooster_home_loop_helper() {
 
-		if ( is_active_sidebar( 'slider' ) ) {
+		if ( is_active_sidebar( 'featured-top' ) ) {
 		
-			echo '<div class="featured">';
-		
-				echo '<div class="slider">';
-				dynamic_sidebar( 'slider' );
-				echo '</div><!-- end .slider -->';
-
-			echo '</div><!-- end .featured -->';	
+				echo '<div class="featured-top">';
+				dynamic_sidebar( 'featured-top' );
+				echo '</div><!-- end .featured-top -->';	
 		
 		}
 		
