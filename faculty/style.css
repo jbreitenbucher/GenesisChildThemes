@@ -1597,7 +1597,7 @@ img.wp-smiley, img.wp-wink {
 	
 	/* This allows the header to be centered at lower resolutions when no header right widget */
 	.header-full-width #title-area {
-		width: 270px;
+		width: 28.7234042%;
 		margin: 0 auto;
 		float: none;
 	}
@@ -1674,6 +1674,10 @@ img.wp-smiley, img.wp-wink {
 		background-position: center top;
 		float: none;
 		margin: 0 auto;
+		width: 100%;
+	}
+	
+	#header img {
 		width: 100%;
 	}
 
@@ -1827,7 +1831,7 @@ img.wp-smiley, img.wp-wink {
 	}
 	
 	.featured {
-		width: 90%;
+		width: 100%;
 	}
 		
 	.featured .slider {
@@ -1844,7 +1848,7 @@ img.wp-smiley, img.wp-wink {
 		overflow: hidden;
 	}
 
-	#inner {
+	#inner, #inner img {
 		width: 100%;
 	}
 	
@@ -1855,6 +1859,10 @@ img.wp-smiley, img.wp-wink {
 ------------------------------------------------------------ */
 
 @media only screen and (min-width: 600px) and (max-width: 800px) {
+	
+	#inner img {
+		width: 100%;
+	}
 	
 	.content-sidebar-sidebar #content-sidebar-wrap,
 	.sidebar-content-sidebar #content-sidebar-wrap,
@@ -1880,6 +1888,57 @@ img.wp-smiley, img.wp-wink {
 	.sidebar-sidebar-content #sidebar-alt {
 		float: right;
 	}
+	
+	.featured,
+	.featured-top,
+	.featured-middle,
+	.featured-bottom,
+	#footer-widgets {
+		width:  100%;
+	}
+	
+	.featured-top-left,
+	.featured-top-right,
+	.featured-bottom-left,
+	.featured-bottom-right {
+		width: 100%;
+	}
+	
+	.featured-middle-left,
+	.featured-middle-center,
+	.featured-middle-right {
+		width: 100%;
+	}
+	
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3,
+	.footer-widgets-4 {
+		width: 100%;
+	}
+	
+	#branding, #nav {
+		margin: 0 auto;
+		width: 100%;
+	}
+	
+	.wordmark, .tagline {
+		float: none;
+		width: 100%;
+	}
+	
+	.tagline {
+		padding:0 0 0 15px;
+		margin: -25px 0 0 15px;
+	}
+	
+	#footer .gototop,
+	#footer .creds {
+		width: 100%;
+		float: none;
+		text-align: left;
+		margin: 0 0 0 30px;
+	}
 }
 
 @media only screen and (max-width: 600px) {
@@ -1904,6 +1963,7 @@ img.wp-smiley, img.wp-wink {
 	.content-sidebar-sidebar #sidebar-alt,
 	.sidebar-content-sidebar #sidebar-alt,
 	.sidebar-sidebar-content #sidebar-alt,
+	.featured,
 	.featured-top,
 	.featured-top-left,
 	.featured-top-right,
@@ -1914,15 +1974,22 @@ img.wp-smiley, img.wp-wink {
 	.featured-bottom,
 	.featured-bottom-left,
 	.featured-bottom-right,
+	#footer,
 	#footer-widgets,
 	.footer-widgets-1,
 	.footer-widgets-2,
 	.footer-widgets-3,
-	.footer-widgets-4,
-	#footer .gototop,
-	#footer .creds {
+	.footer-widgets-4 {
 		margin: 0 0 10px;
 		width: 100%;
+	}
+	
+	#footer .gototop,
+	#footer .creds {
+		width: 100%;
+		float: none;
+		text-align: left;
+		margin: 0 20px 0 20px;
 	}
 	
 	.sidebar-sidebar-content #content-sidebar-wrap {
