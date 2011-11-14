@@ -22,6 +22,16 @@ add_image_size( 'featured-middle', 299, 187, TRUE );
 add_image_size( 'featured-footer', 215, 134, TRUE );
 add_image_size( 'slider', 590, 300, TRUE );
 
+function custom_rotator_use_this_post($truthy) {
+  if (!has_post_thumbnail())
+    return false;
+  else
+    return true;
+}
+ 
+remove_filter('wp_rotator_use_this_post','wp_rotator_use_this_post');
+add_filter('wp_rotator_use_this_post','custom_rotator_use_this_post');
+
 /** Add support for custom background */
 if ( function_exists( 'add_custom_background' ) ) {
     add_custom_background();

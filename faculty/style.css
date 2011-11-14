@@ -1576,332 +1576,21 @@ img.wp-smiley, img.wp-wink {
 	padding: 0;
 	}
 	
-/* Responsive Design - Menu and Logo
+/* Responsive Design
 ------------------------------------------------------------ */
-
-@media only screen and (min-width: 600px) and (max-width: 960px) {
-	
-	#wrap {
-		width: 100%;
-	}
-	
-	#title-area,
-	#title,
-	#description {
-		text-align: center; 
-		margin: 0 auto;
-		width: 100%;
-	}
-	
-	/* This allows the header to be centered at lower resolutions when no header right widget */
-	.header-full-width #title-area {
-		width: 270px;
-		margin: 0 auto;
-		float: none;
-	}
-	
-	/* This allows the header to be centered at lower resolutions */
-	.header-image #title-area {
-			float: none;
-	}
-	
-	/* When title is text, header is 120px tall */
-	.header-widget #header .wrap {
-		overflow: visible;
-		height: 150px;
-	}
-	
-	/* When using an image, bump it up to 170px */
-	.header-image.header-widget #header .wrap {
-		height: 150px;
-	}
-	
-	#header .widget-area,
-	#header .nav {
-		border-top: 1px solid #ddd;
-		margin-top: 20px;
-		padding-top: 2px;
-		float: left;
-		position: relative;
-		width: 100%;
-	}
-	
-	#header .widget-area .widget_nav_menu {
-		border-top: 1px solid #eee;
-	}
-	
-	#header .widget-area ul,
-	#nav ul,
-	#subnav ul {
-		clear:left;
-		float:left;
-		list-style:none;
-		margin-left: 0;
-		position:relative;
-		left:50%;
-		text-align:center;
-	}
-	
-	#header .widget-area ul li,
-	#nav ul li,
-	#subnav ul li {
-		position:relative;
-		right:50%;
-	}
-		
-}
-
-@media only screen and (max-width: 600px) {
-	
-	#branding, #nav {
-		margin: 0 auto;
-		width: 100%;
-	}
-	
-	.wordmark, .tagline {
-		float: none;
-		width: 100%;
-	}
-	
-	.tagline {
-		padding:0 0 0 15px;
-		margin: -25px 0 0 15px;
-	}
-	
-	#header {
-		background-position: center top;
-		float: none;
-		margin: 0 auto;
-		width: 100%;
-	}
-
-	.header-image #title-area,
-	.header-image #title,
-	.header-image #title a {
-		background-position: center top;
-		float: none;
-		margin: 0 auto;
-		width: 100%;
-	}
-	
-	#header .widget-area {
-		border-top: 1px solid #ddd;
-		margin-top: 20px;
-		padding-top: 2px;
-		width: 100%;
-	}
-	
-	#header .widget-area .widget_nav_menu {
-		border-top: 1px solid #eee;
-		padding-top: 10px;
-	}
-
-	#header ul.nav li ul,
-	#header ul.menu li ul,
-	#header .widget-area ul,
-	#header .widget-area li,
-	#nav ul,
-	#nav ul li,
-	#nav li ul,
-	#subnav ul,
-	#subnav ul li,
-	#subnav li ul {
-		float:none;
-		clear:both;
-		margin:0;
-		display:block;
-		padding:0;
-		width:100%;
-	}
-	
-	#header .widget-area li,
-	#nav li,
-	#subnav li {
-		margin:0!important;
-	}
-
-	#header .widget-area li a,
-	#nav li a,
-	#subnav li a {
-		display:block;
-	}
-	
-	#header ul.nav li li a,
-	#header ul.menu li li a,
-	#nav li li a,
-	#subnav li li a {
-		background-color: transparent;
-		color: #333;
-		font-size: 11px;
-		padding: 5px 10px;
-		position: relative;
-		width: auto;
-}
-
-	#header ul.nav li li a:hover,
-	#header ul.nav li li a:active,
-	#header ul.menu li li a:hover,
-	#header ul.menu li li a:active,
-	#nav li li a:hover,
-	#subnav li li a:hover {
-		background-color: #ddd;
-	}
-
-	#header ul.nav li li a .sf-sub-indicator,
-	#header ul.menu li li a .sf-sub-indicator,
-	#nav li li a .sf-sub-indicator,
-	#subnav li li a .sf-sub-indicator {
-		background: none;
-		top: 0;
-	}
-
-	#header ul.nav li ul,
-	#header ul.menu li ul,
-	#nav li ul,
-	#subnav li ul {
-		display: block;
-		visibility: visible;
-		height: 100%;
-		left: 0;
-		position: relative;
-		width: auto;
-	}
-
-	#header ul.nav li ul a,
-	#header ul.menu li ul a,
-	#nav li ul a,
-	#subnav li ul a {
-		width: auto;
-	}
-
-	#header ul.nav li ul ul,
-	#header ul.menu li ul ul,
-	#nav li ul ul,
-	#subnav li ul ul {
-		margin: 0;
-	}
-	
-	.wordmark, .tagline {
-		float: none;
-	}
-	
-}
-
-/* Responsive Design - Featured Image / Home Header
------------------------------------------------------------- */
-@media only screen and (min-width: 600px) and (max-width: 940px) {
-
-	.featured-image {
-		padding: 10px;
-	}
-	
-	.featured {
-		width: 100%;
-	}
-	
-	#genesis-slider {
-		width: 95%;
-	}
-	
-	#genesis-slider, #slides, .genesis-slider-wrap {
-		width: 100%;
-		overflow: hidden;
-	}
-	
-	#genesis-slider .genesis-slider-wrap {
-		width: 100%;
-		overflow: hidden;
-	}
-
-	#inner {
-		width: 100%;
-	}	
-}	
 
 @media only screen and (max-width: 600px) {
 
-	.featured-image {
-		padding: 0px;
-	}
-	
-	.featured {
-		width: 90%;
-	}
-		
-	.featured .slider {
-		width: 95%;
-	}
-	
-	#genesis-slider {
-		width: 100%;
-		padding: 0;
-	}
-
-	#genesis-slider .genesis-slider-wrap {
-		width: 100%;
-		overflow: hidden;
-	}
-
-	#inner {
-		width: 100%;
-	}
-	
-}
-
-
-/* Responsive Design - Structural Columns
------------------------------------------------------------- */
-
-@media only screen and (min-width: 600px) and (max-width: 800px) {
-	
-	.content-sidebar-sidebar #content-sidebar-wrap,
-	.sidebar-content-sidebar #content-sidebar-wrap,
-	.sidebar-sidebar-content #content-sidebar-wrap,
+	.sidebar,
 	.content-sidebar-sidebar #content,
-	.sidebar-content-sidebar #content,
-	.sidebar-sidebar-content #content {
-		margin: 0;
-	}
-	
-	.content-sidebar-sidebar #sidebar,
-	.content-sidebar-sidebar #sidebar-alt,
-	.sidebar-content-sidebar #sidebar,
-	.sidebar-content-sidebar #sidebar-alt,
-	.sidebar-sidebar-content #sidebar,
-	.sidebar-sidebar-content #sidebar-alt {
-		margin: 20px 0 0 0;
-		width: 48%;	
-	}
-	
-	.content-sidebar-sidebar #sidebar-alt,
-	.sidebar-content-sidebar #sidebar-alt,
-	.sidebar-sidebar-content #sidebar-alt {
-		float: right;
-	}
-}
-
-@media only screen and (max-width: 600px) {
-
-	#wrap {
-		width: 100%;
-	}
-
-	#content-sidebar-wrap,
-	.content-sidebar-sidebar #content,
+	.content-sidebar #content,
+	.full-width-content #content-sidebar-wrap,
+	.full-width-content #content,
+	.sidebar-content #content,
 	.sidebar-content-sidebar #content,
 	.sidebar-sidebar-content #content,
-	.content-sidebar #content,
-	.sidebar-content #content,
-	.full-width-content #content,
-	.full-width-content #content-sidebar-wrap,
-	.content-sidebar-sidebar #sidebar,
-	.sidebar-content-sidebar #sidebar,
-	.sidebar-sidebar-content #sidebar,
-	.content-sidebar #sidebar,
-	.sidebar-content #sidebar,
-	.content-sidebar-sidebar #sidebar-alt,
-	.sidebar-content-sidebar #sidebar-alt,
-	.sidebar-sidebar-content #sidebar-alt,
+	#content-sidebar-wrap,
+	.featured,
 	.featured-top,
 	.featured-top-left,
 	.featured-top-right,
@@ -1913,30 +1602,225 @@ img.wp-smiley, img.wp-wink {
 	.featured-bottom-left,
 	.featured-bottom-right,
 	#footer-widgets,
-	.footer-widgets-1,
-	.footer-widgets-2,
-	.footer-widgets-3,
-	.footer-widgets-4,
+	#footer .creds,
 	#footer .gototop,
-	#footer .creds {
-		margin: 0 0 10px;
-		width: 100%;
-	}
-	
-	.sidebar-sidebar-content #content-sidebar-wrap {
-		float: none;
-		margin-left: 0;
+	#branding,
+	#nav,
+	#header .widget-area,
+	#inner,
+	#sidebar-alt,
+	#title-area,
+	#wrap {
 		width: 100%;
 	}
 
-	.footer-widgets-1 .widget,
-	.footer-widgets-2 .widget,
-	.footer-widgets-3 .widget,
-	.footer-widgets-4 .widget {
-		border-right-width: 1px;
-		-moz-border-radius: 10px;
-		-webkit-border-radius: 10px;
-		border-radius: 10px;
+	.featured .slider {
+		margin: 20px;
+		width: 100%;
 	}
 	
+	#jFlowSlider {
+		width:100% !important;
+	}
+	
+	.featured {
+		padding: 0;
+	}
+	
+	#genesis-slider, #slides, .genesis-slider-wrap {
+		width:100% !important;
+	}
+	
+	#genesis-slider {
+		padding: 0 !important;
+	}
+
+	#header {
+		overflow: hidden;
+	}
+
+	#description,
+	#footer .creds,
+	#footer .gototop,
+	#title,
+	#title-area {
+		text-align: center;
+	}
+
+	#header ul.menu,
+	#nav li.right,
+	#nav ul,
+	#subnav ul {
+		float: none;
+	}
+
+	#nav li.right {
+		padding: 0;
+	}
+
+	#header ul.menu li,
+	#nav li,
+	#subnav li {
+		display: block;
+		text-align: center;
+		width: 100%;
+	}
+
+	#header ul.menu li a:hover,
+	#header ul.menu li a:active,
+	#header ul.menu li:hover a,
+	#header ul.menu .current_page_item a,
+	#header ul.menu .current-cat a,
+	#header ul.menu .current-menu-item a {
+		-moz-border-radius: 0;
+		-webkit-border-radius: 0;
+		background-color: #000;
+		border-radius: 0;
+		box-shadow: none;
+	}
+
+	#header .widget-area {
+		padding: 20px 0 0;
+	}
+
+	#inner {
+		margin: 15px auto 0;
+	}
+
+	#home-welcome p {
+		padding: 0 20px;
+	}
+
+	.breadcrumb {
+		background: #ddd url(images/gradient-res.png) repeat-x;
+	}
+
+	.archive-page {
+		width: 100%;
+	}
+
+	.enews #subbox {
+		width: 65%;
+	}
+
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3,
+	.footer-widgets-4 {
+		margin: 0;
+		width: 100%;
+	}
+
+}
+
+@media only screen and (min-width: 600px) and (max-width: 940px) {
+
+	#footer .creds,
+	#footer .gototop,
+	#header .widget-area,
+	#inner,
+	#title-area,
+	#wrap {
+		width: 100%;
+	}
+
+	#wrap {
+		overflow: hidden;
+	}
+
+	#description,
+	#footer .creds,
+	#footer .gototop,
+	#title,
+	#title-area {
+		text-align: center;
+	}
+
+	#header {
+		overflow: visible;
+	}
+
+	#header .widget-area {
+		padding: 30px 0 20px;
+	}
+
+	#header .searchform {
+		float: none;
+	}
+
+	#header ul.menu {
+		float: none;
+	}
+
+	#header .widget_nav_menu {
+		float: left;
+		width: 100%;
+		position: relative;
+	}
+
+	#header .widget_nav_menu ul.menu {
+		clear: left;
+		float: left;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		left: 50%;
+	}
+
+	#header .widget_nav_menu ul.menu > li {
+		display: block;
+		float: left;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		right: 50%;
+	}
+
+	#inner {
+		margin: 15px auto 0;
+	}
+
+	.content-sidebar #content,
+	.sidebar-content #content {
+		width: 65%;
+	}
+
+	.content-sidebar-sidebar #content-sidebar-wrap,
+	.sidebar-sidebar-content #content-sidebar-wrap,
+	.sidebar-content-sidebar #content-sidebar-wrap {
+		width: 80%;
+	}
+
+	.content-sidebar-sidebar #content,
+	.sidebar-sidebar-content #content,
+	.sidebar-content-sidebar #content {
+		width: 60%;
+	}
+
+	.content-sidebar-sidebar #sidebar-alt,
+	.sidebar-sidebar-content #sidebar-alt,
+	.sidebar-content-sidebar #sidebar-alt {
+		width: 15%;
+	}
+
+	.content-sidebar .sidebar,
+	.sidebar-content .sidebar,
+	.content-sidebar-sidebar .sidebar,
+	.sidebar-sidebar-content .sidebar,
+	.sidebar-content-sidebar .sidebar {
+		width: 30%;
+	}
+
+	.archive-page {
+		width: 100%;
+	}
+
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3,
+	.footer-widgets-4 {
+		margin: 0;
+		width: 100%;
+	}
+
 }
