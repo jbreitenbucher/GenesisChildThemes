@@ -30,34 +30,57 @@ function faculty_settings_defaults() {
 		
 		##################### wrap
 		'wrap_background_color' => '#FFFFFF',
-        'wrap_background_color_select' => 'hex',
+		'wrap_background_color_select' => 'hex',
 		'wrap_margin_top' => "15",
 		'wrap_margin_bottom' => "0",
 		'wrap_padding' => "10",
 		'wrap_border' => "5",
 		'wrap_border_color' => '#EDEDED',
 		'wrap_border_style' => 'solid',
-		'wrap_corner_radius' => "5",
+		'wrap_corner_radius' => "1em 3em 1em 3em",
 		'wrap_background_shadow' => "none",
+		
+		##################### branding
+		'branding_background_color' => '#F3F3F3',
+		'branding_background_color_select' => 'hex',
+		'branding_font_color' => '#666666',
+		'branding_font_size' => '13',
+		'branding_border' => "1",
+		'branding_border_color' => '#DDDDDD',
+		'branding_border_style' => 'solid',
+		'branding_corner_radius' => "1em 3em 0em 0em",
+		
+		##################### branding wordmark
+		'branding_wordmark_top_padding' => "25",
+		'branding_wordmark_left_padding' => "25",
+		'branding_wordmark_font_color' => '#666666',
+		'branding_wordmark_font_size' => '36',
+		'branding_wordmark_link_decoration' => 'none',
+		
+		##################### branding tagline
+		'branding_tagline_top_padding' => "25",
+		'branding_tagline_right_padding' => "10",
+		'branding_tagline_font_color' => '#666666',
+		'branding_tagline_font_size' => '13',
 		
 		##################### header
 		'header_image_height' => '150',
 		'header_title_area_width' => '450',
 		'header_widget_area_width' => '478',
 		'header_background_color' => '#FFFFFF',
-        'header_background_color_select' => 'hex',
+		'header_background_color_select' => 'hex',
 		
 		##################### header title
 		'header_top_padding' => "40",
-        'header_left_padding' => "20",
+		'header_left_padding' => "20",
 		'header_title_font_color' => '#222222',
 		'header_title_font_family' => "'Palatino Linotype', 'Book Antiqua', Palatino, serif",
 		'header_title_font_size' => '36',
 		'header_title_line_height' => '42',
 		
 		##################### header tagline
-        'header_tagline_top_padding' => "0",
-        'header_tagline_left_padding' => "20",
+		'header_tagline_top_padding' => "0",
+		'header_tagline_left_padding' => "20",
 		'header_tagline_font_color' => '#999999',
 		'header_tagline_font_family' => "'Palatino Linotype', 'Book Antiqua', Palatino, serif",
 		'header_tagline_font_size' => '15',
@@ -65,7 +88,7 @@ function faculty_settings_defaults() {
 		
 		##################### primary nav
 		'primary_nav_background_color' => '#F3F3F3',
-        'primary_nav_background_color_select' => 'hex',
+		'primary_nav_background_color_select' => 'hex',
 		'primary_nav_border' => "1",
 		'primary_nav_border_color' => '#DDDDDD',
 		'primary_nav_border_style' => 'solid',
@@ -73,19 +96,19 @@ function faculty_settings_defaults() {
 		'primary_nav_inner_border_color' => '#FFFFFF',
 		'primary_nav_inner_border_style' => 'solid',
 		'primary_nav_font_family' => "'Palatino Linotype', 'Book Antiqua', Palatino, serif",
-        'primary_nav_font_size' => '13',
+		'primary_nav_font_size' => '13',
 		'primary_nav_link_color' => '#666666',
 		'primary_nav_link_background' => '#F3F3F3',
-        'primary_nav_link_background_select' => 'hex',
-        'primary_nav_link_decoration' => 'none',
+		'primary_nav_link_background_select' => 'hex',
+		'primary_nav_link_decoration' => 'none',
 		'primary_nav_link_hover' => '#FFFFFF',
 		'primary_nav_link_hover_background' => '#444444',
-        'primary_nav_link_hover_background_select' => 'hex',
-        'primary_nav_link_hover_decoration' => 'none',
+		'primary_nav_link_hover_background_select' => 'hex',
+		'primary_nav_link_hover_decoration' => 'none',
 		
 		##################### secondary nav
 		'secondary_nav_background_color' => '#F3F3F3',
-        'secondary_nav_background_color_select' => 'hex',
+		'secondary_nav_background_color_select' => 'hex',
 		'secondary_nav_border' => "1",
 		'secondary_nav_border_color' => '#DDDDDD',
 		'secondary_nav_border_style' => 'solid',
@@ -93,55 +116,55 @@ function faculty_settings_defaults() {
 		'secondary_nav_inner_border_color' => '#FFFFFF',
 		'secondary_nav_inner_border_style' => 'solid',
 		'secondary_nav_font_family' => "'Palatino Linotype', 'Book Antiqua', Palatino, serif",
-        'secondary_nav_font_size' => '13',
+		'secondary_nav_font_size' => '13',
 		'secondary_nav_link_color' => '#666666',
 		'secondary_nav_link_background' => '#F3F3F3',
-        'secondary_nav_link_decoration' => 'none',
-        'secondary_nav_link_background_select' => 'hex',
+		'secondary_nav_link_decoration' => 'none',
+		'secondary_nav_link_background_select' => 'hex',
 		'secondary_nav_link_hover' => '#FFFFFF',
 		'secondary_nav_link_hover_background' => '#444444',
-        'secondary_nav_link_hover_background_select' => 'hex',
-        'secondary_nav_link_hover_decoration' => 'none',
+		'secondary_nav_link_hover_background_select' => 'hex',
+		'secondary_nav_link_hover_decoration' => 'none',
 		
 		##################### breadcrumb navigation
 		'breadcrumb_font_color' => '#222222',
-        'breadcrumb_border' => "1",
+		'breadcrumb_border' => "1",
 		'breadcrumb_border_color' => '#AAAAAA',
 		'breadcrumb_border_style' => 'dotted',
-        'breadcrumb_font_size' => '13',
+		'breadcrumb_font_size' => '13',
 		'breadcrumb_text_transform' => 'none',
 		
 		##################### post info
 		'post_info_background_color' => '#F9F9F9',
-        'post_info_background_color_select' => 'hex',
+		'post_info_background_color_select' => 'hex',
 		'post_info_font_color' => '#666666',
-        'post_info_font_size' => '13',
+		'post_info_font_size' => '13',
 		'post_info_text_transform' => 'none',
 		
 		##################### post meta
 		'post_meta_background_color' => '#F9F9F9',
-        'post_meta_background_color_select' => 'hex',
+		'post_meta_background_color_select' => 'hex',
 		'post_meta_font_color' => '#666666',
-        'post_meta_font_size' => '13',
+		'post_meta_font_size' => '13',
 		'post_meta_text_transform' => 'none',
 		
 		##################### blockquotes
-        'blockquotes_background_color' => '#F3F3F3',
-        'blockquotes_background_color_select' => 'hex',
-  		'blockquotes_font_color' => '#222222',
+		'blockquotes_background_color' => '#F3F3F3',
+		'blockquotes_background_color_select' => 'hex',
+		'blockquotes_font_color' => '#222222',
 		'blockquotes_font_family' => "'Palatino Linotype', 'Book Antiqua', Palatino, serif",
 		'blockquotes_font_style' => 'normal',
-        'blockquotes_border' => "1",
+		'blockquotes_border' => "1",
 		'blockquotes_border_color' => '#DDDDDD',
 		'blockquotes_border_style' => 'solid',
 		
 		##################### notice box
-        'notice_background_color' => '#F5F8FA',
-        'notice_background_color_select' => 'hex',
-  		'notice_font_color' => '#222222',
+		'notice_background_color' => '#F5F8FA',
+		'notice_background_color_select' => 'hex',
+		'notice_font_color' => '#222222',
 		'notice_font_family' => "'Palatino Linotype', 'Book Antiqua', Palatino, serif",
 		'notice_font_style' => 'normal',
-        'notice_border' => "1",
+		'notice_border' => "1",
 		'notice_border_color' => '#D7E8F0',
 		'notice_border_style' => 'solid',
 		
@@ -181,11 +204,20 @@ function faculty_settings_defaults() {
 		'sidebar_headline_text_transform' => 'none',
 		
 		##################### footer widget area
-        'footer_background_color' => '#F3F3F3',
-        'footer_background_color_select' => 'hex',
-        'footer_border' => "1",
-		'footer_border_color' => '#DDDDDD',
-		'footer_border_style' => 'solid',
+		'footer_widget_background_color' => '#F3F3F3',
+		'footer_widget_background_color_select' => 'hex',
+		'footer_widget_border' => "1",
+		'footer_widget_border_color' => '#DDDDDD',
+		'footer_widget_border_style' => 'solid',
+		
+		##################### footer widgets widget background
+		'footer_widgets_widget_background_color' => '#999999',
+		'footer_widgets_widget_background_color_select' => 'hex',
+		'footer_widgets_widget_border' => "1",
+		'footer_widgets_widget_border_color' => '#DDDDDD',
+		'footer_widgets_widget_border_style' => 'solid',
+		'footer_widgets_widget_corner_radius' => "1em",
+		'footer_widgets_widget_background_shadow' => "0 1px 3px #F3F3F3",
 		
 		##################### footer widget headlines
 		'footer_headline_border' => "1",
@@ -198,17 +230,22 @@ function faculty_settings_defaults() {
 		'footer_headline_font_weight' => 'normal',
 		'footer_headline_text_transform' => 'none',
             
-        ##################### footer widget links
+    ##################### footer widget links
 		'footer_widget_link_color' => '#222222',
 		'footer_widget_link_decoration' => 'none',
 		'footer_widget_link_hover' => '#222222',
 		'footer_widget_link_hover_decoration' => 'underline',
 				
 		##################### footer
+		'footer_background_color' => '#666666',
 		'footer_font_color' => '#222222',
 		'footer_font_size' => '13',
 		'footer_font_weight' => 'normal',
 		'footer_text_transform' => 'uppercase',
+		'footer_border' => "1",
+		'footer_border_color' => '#DDDDDD',
+		'footer_border_style' => 'solid',
+		'footer_corner_radius' => "0em 0em 1em 3em",
 		
 		##################### footer links
 		'footer_link_color' => '#222222',
@@ -217,23 +254,23 @@ function faculty_settings_defaults() {
 		'footer_link_hover_decoration' => 'underline',
 		
 		##################### input box
-        'input_background_color' => '#F3F3F3',
-        'input_background_color_select' => 'hex',
-  		'input_font_color' => '#666666',
+		'input_background_color' => '#F3F3F3',
+		'input_background_color_select' => 'hex',
+		'input_font_color' => '#666666',
 		'input_font_family' => "'Palatino Linotype', 'Book Antiqua', Palatino, serif",
 		'input_font_style' => 'normal',
-        'input_border' => "1",
+		'input_border' => "1",
 		'input_border_color' => '#DDDDDD',
 		'input_border_style' => 'solid',
 	
 		##################### buttons
 		'button_background_color' => '#444444',
-        'button_background_color_select' => 'hex',
+		'button_background_color_select' => 'hex',
 		'button_background_hover_color' => '#222222',
-        'button_background_hover_color_select' => 'hex',
+		'button_background_hover_color_select' => 'hex',
 		'button_font_color' => '#FFFFFF',
 		'button_font_family' => "'Palatino Linotype', 'Book Antiqua', Palatino, serif",
-        'button_font_size' => '13',
+		'button_font_size' => '13',
 		'button_text_transform' => 'uppercase',
 
 		##################### install flag (do not edit)
@@ -304,29 +341,64 @@ function faculty_get_mapping() {
                 array('wrap_border_style', 'string'),
                 array('wrap_border_color', 'string')
             ),
-            '-moz-border-radius' => array(
-                array('wrap_corner_radius','px')
-            ),
-            '-khtml-border-radius' => array(
-                array('wrap_corner_radius','px')
-            ),
-            '-webkit-border-radius' => array(
-                array('wrap_corner_radius','px')
-            ),
-            'border-radius' => array(
-                array('wrap_corner_radius','px')
-            ),
+            '-moz-border-radius' => 'wrap_corner_radius',
+            '-khtml-border-radius' => 'wrap_corner_radius',
+            '-webkit-border-radius' => 'wrap_corner_radius',
+            'border-radius' => 'wrap_corner_radius',
             '-moz-box-shadow' => 'wrap_background_shadow',
             '-webkit-box-shadow' => 'wrap_background_shadow'
         ),
-        '#header' => array(
-            'height' => array(
-                array('header_image_height','px')
+				'#branding' => array(
+						'color' => 'branding_font_color',
+						'font-size' => array(
+				        array('branding_font_size','px')
+				    ),
+				    'background-color' => 'branding_background_color',
+				    'background-color_select' => 'branding_background_color_select',
+				    'border' => array(
+				        array('branding_border','px'),
+				        array('branding_border_style', 'string'),
+				        array('branding_border_color', 'string')
+				    ),
+				    '-moz-border-radius' => 'branding_corner_radius',
+				    '-khtml-border-radius' => 'branding_corner_radius',
+				    '-webkit-border-radius' => 'branding_corner_radius',
+				    'border-radius' => 'branding_corner_radius',
+				),
+				'.wordmark' => array(
+            'padding-top' => array(
+                array('branding_wordmark_top_padding','px')
             ),
-			'background-color' => array(
-				array('header_background_color', 'string')
-			)
+            'padding-left' => array(
+                array('branding_wordmark_left_padding','px')
+            )
         ),
+				'.wordmark a, .wordmark a:hover' => array(
+            'color' => 'branding_wordmark_font_color',
+						'text-decoration' => 'branding_wordmark_link_decoration',
+            'font-size' => array(
+                array('branding_wordmark_font_size','px')
+            )
+        ),
+				'.tagline' => array(
+						'color' => 'branding_tagline_font_color',
+						'font-size' => array(
+                array('branding_tagline_font_size','px')
+            ),
+            'padding-top' => array(
+                array('branding_tagline_top_padding','px')
+            ),
+            'padding-right' => array(
+                array('branding_tagline_right_padding','px')
+            )
+        ),
+        '#header' => array(
+				            'height' => array(
+				                array('header_image_height','px')
+				            ),
+				            'background-color' => 'header_background_color',
+				            'background-color_select' => 'header_background_color_select'
+				        ),
         '#title-area' => array(
             'width' => array(
                 array('header_title_area_width','px')
@@ -409,7 +481,7 @@ function faculty_get_mapping() {
         '#nav li.right a, #nav li.rss a, #nav li.twitter a' => array(
             'color' => 'primary_nav_link_color',
         ),
-        '#nav li a:hover, #nav li a:active, #nav .current_page_item a, #nav .current-menu-item a' => array(
+        '#nav li a:hover, #nav li a:active, #nav .current_page_item a, #nav .current-cat a, #nav .current-menu-item a' => array(
             'background-color' => 'primary_nav_link_hover_background',
             'background-color_select' => 'primary_nav_link_hover_background_select',
             'color' => 'primary_nav_link_hover',
@@ -456,7 +528,7 @@ function faculty_get_mapping() {
             'color' => 'secondary_nav_link_color',
             'text-decoration' => 'secondary_nav_link_decoration'
         ),
-        '#subnav li a:hover, #subnav li a:active, #subnav .current_page_item a, #subnav .current-menu-item a' => array(
+        '#subnav li a:hover, #subnav li a:active, #subnav .current_page_item a, #subnav .current-cat a, #subnav .current-menu-item a' => array(
             'background-color' => 'secondary_nav_link_hover_background',
             'background-color_select' => 'secondary_nav_link_hover_background_select',
             'color' => 'secondary_nav_link_hover',
@@ -591,16 +663,31 @@ function faculty_get_mapping() {
             ),
             'text-transform' => 'sidebar_headline_text_transform'
         ),
-        '#footer-widgeted' => array(
-            'background-color' => 'footer_background_color',
-            'background-color_select' => 'footer_background_color_select',
+        '#footer-widgets' => array(
+            'background-color' => 'footer_widget_background_color',
+            'background-color_select' => 'footer_widget_background_color_select',
             'border' => array(
-                array('footer_border','px'),
-                array('footer_border_style','string'),
-                array('footer_border_color','string')
-            ),
+                array('footer_widget_border','px'),
+                array('footer_widget_border_style','string'),
+                array('footer_widget_border_color','string')
+            )
         ),
-        '#footer-widgeted h4' => array(
+				'#footer-widgets .widget' => array(
+            'background-color' => 'footer_widgets_widget_background_color',
+            'background-color_select' => 'footer_widgets_widget_background_color_select',
+            'border' => array(
+                array('footer_widgets_widget_border','px'),
+                array('footer_widgets_widget_border_style','string'),
+                array('footer_widgets_widget_border_color','string')
+            ),
+						'-moz-border-radius' => 'footer_widgets_widet_corner_radius',
+				    '-khtml-border-radius' => 'footer_widgets_widet_corner_radius',
+				    '-webkit-border-radius' => 'footer_widgets_widet_corner_radius',
+				    'border-radius' => 'footer_widgets_widet_corner_radius',
+						'-moz-box-shadow' => 'footer_widgets_widget_background_shadow',
+            '-webkit-box-shadow' => 'footer_widgets_widget_background_shadow'
+        ),
+        '#footer-widgets h4' => array(
             'color' => 'footer_headline_font_color',
             'font-family' => 'footer_headline_font_family',
             'font-size' => array(
@@ -615,21 +702,32 @@ function faculty_get_mapping() {
             ),
             'text-transform' => 'footer_headline_text_transform'
         ),
-        '#footer-widgeted a, #footer-widgeted a:visited, #footer-widgeted li a, #footer-widgeted li a:visited' => array(
+        '#footer-widgets a, #footer-widgets a:visited, #footer-widgets li a, #footer-widgets li a:visited' => array(
             'color' => 'footer_widget_link_color',
             'text-decoration' => 'footer_widget_link_decoration'
         ),
-        '#footer-widgeted a:hover, #footer-widgeted li a:hover' => array(
+        '#footer-widgets a:hover, #footer-widgets li a:hover' => array(
             'color' => 'footer_widget_link_hover',
             'text-decoration' => 'footer_widget_link_hover_decoration'
         ),
         '#footer' => array(
             'color' => 'footer_font_color',
+						'background-color' => 'footer_background_color',
+	          'background-color_select' => 'footer_background_color_select',
             'font-size' => array(
                 array('footer_font_size', 'px')
             ),
             'font-weight' => 'footer_font_weight',
-            'text-transform' => 'footer_text_transform'
+            'text-transform' => 'footer_text_transform',
+						'border' => array(
+				        array('footer_border','px'),
+				        array('footer_border_style', 'string'),
+				        array('footer_border_color', 'string')
+				    ),
+				    '-moz-border-radius' => 'footer_corner_radius',
+				    '-khtml-border-radius' => 'footer_corner_radius',
+				    '-webkit-border-radius' => 'footer_corner_radius',
+				    'border-radius' => 'footer_corner_radius',
         ),
         '#footer a, #footer a:visited' => array(
             'color' => 'footer_link_color',
@@ -986,10 +1084,10 @@ else {
 		
 		<?php screen_icon('themes'); ?>
 		<h2 id="top-buttons">
-			<?php _e('Design Settings', FACULTY_DOMAIN); ?>
-			<input type="submit" class="button-primary add-new-h2" value="<?php _e('Save Settings', FACULTY_DOMAIN) ?>" />
-			<input type="submit" class="button-highlighted button-reset add-new-h2" name="<?php echo FACULTY_SETTINGS_FIELD; ?>[reset]" value="<?php _e('Reset Settings', FACULTY_DOMAIN); ?>" />
-		</h2>
+		            <?php _e('Design Settings', FACULTY_DOMAIN); ?>
+		            <input type="submit" class="button-primary" value="<?php _e('Save Settings', FACULTY_DOMAIN) ?>" />
+		            <input type="submit" class="button-highlighted button-reset" name="<?php echo FACULTY_SETTINGS_FIELD; ?>[reset]" value="<?php _e('Reset Settings', FACULTY_DOMAIN); ?>" />
+		        </h2>
 		
 		<div class="metabox-holder">
 			<div class="postbox-container" style="<?php echo $width; ?>">
@@ -1023,6 +1121,9 @@ function faculty_settings_boxes() {
 	add_meta_box('faculty-settings-global', __('Global Styles', FACULTY_DOMAIN), 'faculty_settings_global', $_faculty_settings_pagehook, 'column1');
 	add_meta_box('faculty-settings-global-links', __('Global Links', FACULTY_DOMAIN), 'faculty_settings_global_links', $_faculty_settings_pagehook, 'column1');
 	add_meta_box('faculty-settings-wrap', __('Wrap (content area)', FACULTY_DOMAIN), 'faculty_settings_wrap', $_faculty_settings_pagehook, 'column1');
+		add_meta_box('faculty-settings-branding', __('Branding', FACULTY_DOMAIN), 'faculty_settings_branding', $_faculty_settings_pagehook, 'column1');
+	add_meta_box('faculty-settings-branding-wordmark', __('Branding Wordmark', FACULTY_DOMAIN), 'faculty_settings_branding_wordmark', $_faculty_settings_pagehook, 'column1');
+	add_meta_box('faculty-settings-branding-tagline', __('Faculty Information', FACULTY_DOMAIN), 'faculty_settings_branding_tagline', $_faculty_settings_pagehook, 'column1');
 	add_meta_box('faculty-settings-header', __('Header', FACULTY_DOMAIN), 'faculty_settings_header', $_faculty_settings_pagehook, 'column1');
 	add_meta_box('faculty-settings-header-title', __('Header Title', FACULTY_DOMAIN), 'faculty_settings_header_title', $_faculty_settings_pagehook, 'column1');
 	add_meta_box('faculty-settings-header-tagline', __('Header Tagline', FACULTY_DOMAIN), 'faculty_settings_header_tagline', $_faculty_settings_pagehook, 'column1');
@@ -1037,6 +1138,7 @@ function faculty_settings_boxes() {
 	add_meta_box('faculty-settings-headline-links', __('Post Title Links', FACULTY_DOMAIN), 'faculty_settings_headline_links', $_faculty_settings_pagehook, 'column2');
 	add_meta_box('faculty-settings-sidebar-headline', __('Sidebar Widget Headline', FACULTY_DOMAIN), 'faculty_settings_sidebar_headline', $_faculty_settings_pagehook, 'column2');
 	add_meta_box('faculty-settings-footer-widget', __('Footer Widget Area', FACULTY_DOMAIN), 'faculty_settings_footer_widget', $_faculty_settings_pagehook, 'column2');
+	add_meta_box('faculty-settings-footer-widgets-widget', __('Footer Widgets Background', FACULTY_DOMAIN), 'faculty_settings_footer_widgets_widget', $_faculty_settings_pagehook, 'column2');
     add_meta_box('faculty-settings-footer-headline', __('Footer Widget Headline', FACULTY_DOMAIN), 'faculty_settings_footer_headline', $_faculty_settings_pagehook, 'column2');
 	add_meta_box('faculty-settings-footer-widget-links', __('Footer Widget Links', FACULTY_DOMAIN), 'faculty_settings_footer_widget_links', $_faculty_settings_pagehook, 'column2');
 	add_meta_box('faculty-settings-footer', __('Footer', FACULTY_DOMAIN), 'faculty_settings_footer', $_faculty_settings_pagehook, 'column2');
@@ -1093,10 +1195,56 @@ function faculty_settings_wrap() {
     faculty_setting_line(faculty_add_size_setting('wrap_margin_bottom', __('Bottom Margin', FACULTY_DOMAIN)));
     faculty_setting_line(faculty_add_size_setting('wrap_padding', __('Padding', FACULTY_DOMAIN)));
     faculty_setting_line(faculty_add_border_setting('wrap_border', __('Border', FACULTY_DOMAIN)));
-    faculty_setting_line(faculty_add_size_setting('wrap_corner_radius', __('Rounded Corner Radius', FACULTY_DOMAIN)));
+    faculty_setting_line(faculty_add_text_setting('wrap_corner_radius', __('Rounded Corner Radius', FACULTY_DOMAIN)));
+		faculty_setting_line(faculty_add_note(__('Sample for corner radius:', FACULTY_DOMAIN) . ' <code>1em 3em 1em 3em</code>'));
     faculty_setting_line(faculty_add_text_setting('wrap_background_shadow', __('Background Shadow', FACULTY_DOMAIN)));
     do_action('faculty_settings_wrap');
     faculty_setting_line(faculty_add_note(__('Sample for background shadow:', FACULTY_DOMAIN) . ' <code>0 1px 3px #333333</code>'));
+}
+
+/**
+ * Add settings to the Branding box. Does faculty_settings_branding action hook.
+ * 
+ * @author Jon Breitenbucher
+ * @version 1.0
+ */
+function faculty_settings_branding() { 
+    faculty_setting_line(faculty_add_background_color_setting('branding_background_color', __('Background', FACULTY_DOMAIN)));
+    faculty_setting_line(faculty_add_color_setting('branding_font_color', __('Font Color', FACULTY_DOMAIN)));
+faculty_setting_line(faculty_add_size_setting('branding_font_size', __('Font Size', FACULTY_DOMAIN)));
+    faculty_setting_line(faculty_add_border_setting('branding_border', __('Border', FACULTY_DOMAIN)));
+    faculty_setting_line(faculty_add_text_setting('branding_corner_radius', __('Rounded Corner Radius', FACULTY_DOMAIN)));
+		faculty_setting_line(faculty_add_note(__('Sample for corner radius:', FACULTY_DOMAIN) . ' <code>1em 3em 0em 0em</code>'));
+    do_action('faculty_settings_branding');
+}
+
+/**
+ * Add settings to the Branding Wordmark box. Does faculty_settings_header_title action hook.
+ * 
+ * @author Jon Breitenbucher
+ * @version 1.0
+ */
+function faculty_settings_branding_wordmark() {
+    faculty_setting_line(faculty_add_size_setting('branding_wordmark_top_padding', __('Top Padding', FACULTY_DOMAIN)));
+ faculty_setting_line(faculty_add_size_setting('branding_wordmark_left_padding', __('Left Padding', FACULTY_DOMAIN)));
+  faculty_setting_line(faculty_add_color_setting('branding_wordmark_font_color', __('Font Color', FACULTY_DOMAIN)));
+    faculty_setting_line(faculty_add_size_setting('branding_wordmark_font_size', __('Font Size', FACULTY_DOMAIN)));
+faculty_setting_line(faculty_add_select_setting('branding_wordmark_link_decoration', __('Link Decoration', FACULTY_DOMAIN), 'decoration'));
+    do_action('faculty_settings_branding_wordmark');
+}
+
+/**
+ * Add settings to the Branding Tagline box. Does faculty_settings_header_title action hook.
+ * 
+ * @author Jon Breitenbucher
+ * @version 1.0
+ */
+function faculty_settings_branding_tagline() {
+    faculty_setting_line(faculty_add_size_setting('branding_tagline_top_padding', __('Top Padding', FACULTY_DOMAIN)));
+ faculty_setting_line(faculty_add_size_setting('branding_tagline_right_padding', __('Right Padding', FACULTY_DOMAIN)));
+  faculty_setting_line(faculty_add_color_setting('branding_tagline_font_color', __('Font Color', FACULTY_DOMAIN)));
+    faculty_setting_line(faculty_add_size_setting('branding_tagline_font_size', __('Font Size', FACULTY_DOMAIN)));
+    do_action('faculty_settings_branding_tagline');
 }
 
 /**
@@ -1321,9 +1469,25 @@ function faculty_settings_sidebar_headline() {
  * @version 1.0
  */
 function faculty_settings_footer_widget() { 
-    faculty_setting_line(faculty_add_background_color_setting('footer_background_color', __('Background', FACULTY_DOMAIN)));
-    faculty_setting_line(faculty_add_border_setting('footer_border', __('Border', FACULTY_DOMAIN)));
+    faculty_setting_line(faculty_add_background_color_setting('footer_widget_background_color', __('Background', FACULTY_DOMAIN)));
+    faculty_setting_line(faculty_add_border_setting('footer_widget_border', __('Border', FACULTY_DOMAIN)));
     do_action('faculty_settings_footer_widget');
+}
+
+/**
+ * Add settings to the Footer Widgets Background box. Does faculty_settings_footer_widgets_widget action hook.
+ * 
+ * @author Jon Breitenbucher
+ * @version 1.0
+ */
+function faculty_settings_footer_widgets_widget() { 
+    faculty_setting_line(faculty_add_background_color_setting('footer_widgets_widget_background_color', __('Background', FACULTY_DOMAIN)));
+    faculty_setting_line(faculty_add_border_setting('footer_widgets_widget_border', __('Border', FACULTY_DOMAIN)));
+		faculty_setting_line(faculty_add_text_setting('footer_widgets_widget_corner_radius', __('Rounded Corner Radius', FACULTY_DOMAIN)));
+		faculty_setting_line(faculty_add_note(__('Sample for corner radius:', FACULTY_DOMAIN) . ' <code>1em</code>'));
+		faculty_setting_line(faculty_add_text_setting('footer_widgets_widget_background_shadow', __('Background Shadow', FACULTY_DOMAIN)));
+		faculty_setting_line(faculty_add_note(__('Sample for background shadow:', FACULTY_DOMAIN) . ' <code>0 1px 3px #333333</code>'));
+    do_action('faculty_settings_footer_widgets_widget');
 }
 
 /**
@@ -1364,11 +1528,15 @@ function faculty_settings_footer_widget_links() {
  * @author Gary Jones
  * @version 1.0
  */
-function faculty_settings_footer() { 
+function faculty_settings_footer() {
+	faculty_setting_line(faculty_add_background_color_setting('footer_background_color', __('Background', FACULTY_DOMAIN)));
     faculty_setting_line(faculty_add_color_setting('footer_font_color', __('Font Color', FACULTY_DOMAIN)));
     faculty_setting_line(faculty_add_size_setting('footer_font_size', __('Font Size', FACULTY_DOMAIN)));
     faculty_setting_line(faculty_add_select_setting('footer_font_weight', __('Font Weight', FACULTY_DOMAIN), 'weight'));
     faculty_setting_line(faculty_add_select_setting('footer_text_transform', __('Text Transform', FACULTY_DOMAIN), 'transform'));
+		faculty_setting_line(faculty_add_border_setting('footer_border', __('Border', FACULTY_DOMAIN)));
+    faculty_setting_line(faculty_add_text_setting('footer_corner_radius', __('Rounded Corner Radius', FACULTY_DOMAIN)));
+		faculty_setting_line(faculty_add_note(__('Sample for corner radius:', FACULTY_DOMAIN) . ' <code>0em 0em 1em 3em</code>'));
     do_action('faculty_settings_footer');
 }
 

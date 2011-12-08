@@ -22,8 +22,16 @@
 #design-settings form {
     margin: 1em 0;
 }
-.postbox {
-	position: relative;
-	min-width: 255px;
-	z-index: 1 !important;
+#design-settings.wrap.genesis-metaboxes {
+	width: 99%;
+	padding-bottom: 20px;
+}
+#design-settings.wrap.genesis-metaboxes .inside {
+	padding: 0 10px;
+	overflow: visible;
+}
+#design-settings.wrap.genesis-metaboxes .metabox-holder {
+	width: 99%;
+	overflow: hidden;
+	clear: both;
 }

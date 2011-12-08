@@ -48,7 +48,7 @@ jQuery(document).ready(function($) {
     $('.bottom-buttons input:last').css({'float': 'right', 'margin-top': '-180px'});
     
     // Add toggle button functionality.
-    $('<button id="toggle-meta-boxes" class="button button-secondary add-new-h2">' + faculty.toggleAll + '</button>"')
+    $('<button id="toggle-meta-boxes" class="button button-secondary">' + faculty.toggleAll + '</button>"')
     .appendTo($('#top-buttons', $design_settings))
     .click(function() {
         $('div.postbox').toggleClass('closed');

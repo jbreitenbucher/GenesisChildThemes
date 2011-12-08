@@ -34,4 +34,7 @@ require_once( get_stylesheet_directory() . '/lib/structure/import.php');
 
 // Settings pages
 require_once( get_stylesheet_directory() . '/lib/admin/design-settings.php');
-require_once( get_stylesheet_directory() . '/lib/admin/custom-header.php');
+//require_once( get_stylesheet_directory() . '/lib/admin/custom-header.php');
+
+// Fluid images
+wp_enqueue_script( 'faculty-image', get_stylesheet_directory() . '/lib/js/imgSizer.js' );

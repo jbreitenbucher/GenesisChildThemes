@@ -73,6 +73,58 @@
 
 */
 
+/* Reset
+------------------------------------------------------------ */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 /* Defaults
 ------------------------------------------------------------ */
 
@@ -139,11 +191,27 @@ a:focus, a:hover, a:active {
 	}
 
 .wordmark {
-	padding: 25px;
+	padding-top: 25px;
+	padding-left: 25px;
+	padding-bottom: 25px;
 	}
 	
+.wordmark h1 {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	}
+	
+.wordmark a, .wordmark a:hover {
+	color: #666666;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 36px;
+	text-decoration: none;
+}
+	
 .tagline {
-	padding: 25px 10px 0 0;
+	color: #666666;
+	font-size: 13px;
+	padding-top: 25px;
+	padding-right: 10px;
 	}
 
 /***** Header  ********************/
@@ -420,7 +488,7 @@ a:focus, a:hover, a:active {
 	position: relative;
 	}
 
-#subnav li a:hover, #subnav li a:active, #subnav .current_page_item a, #subnav .current-cat a, #subnav .current-menu-item {
+#subnav li a:hover, #subnav li a:active, #subnav .current_page_item a, #subnav .current-cat a, #subnav .current-menu-item a {
 	background: #444444;
 	color: #FFFFFF;
 	}
@@ -811,6 +879,10 @@ a:focus, a:hover, a:active {
 #content .post ul ul, #content .page ul ul, #content .post ol ol, #content .page ol ol {
 	padding: 0;
 	}
+	
+#content .post ul, #content .page ul, #header .widget-area ul {
+list-style:none;
+}
 
 /***** Post Info ********************/
 	
@@ -1298,6 +1370,17 @@ img.wp-smiley, img.wp-wink {
 	border: none !important;
 	}
 	
+.footer-widgets #submit, .searchsubmit {
+	font-size:1em;
+	width: 18%;
+	padding:.4% .6% .4% .6%;
+}
+
+.footer-widgets .s {
+	width: 76%;
+	padding:3% 0 .4% .5%;
+}
+	
 /***** Contact Form ********************/
 
 .gform_wrapper input, .gform_wrapper textarea, .gform_wrapper select {
@@ -1330,17 +1413,10 @@ img.wp-smiley, img.wp-wink {
 ------------------------------------------------------------ */
  
 #footer-widgets {
-	/*-moz-border-radius: 0em 0em 1em 3em;
-	-khtml-border-radius: 0em 0em 1em 3em;
-	-webkit-border-radius: 0em 0em 1em 3em;
-	border-radius: 0em 0em 1em 3em;*/
-	-moz-box-shadow: 0 1px 3px #000; 
-	-webkit-box-shadow: 0 1px 3px #000;
 	background-color:#444444;
-	box-shadow: 0 1px 3px #000;
 	margin: 0 auto;
 	overflow: hidden;
-	width: 940px;
+	width: 938px;
 }
 
 #footer-widgets .wrap {
@@ -1581,7 +1657,7 @@ img.wp-smiley, img.wp-wink {
 /* Responsive Design - Menu and Logo
 ------------------------------------------------------------ */
 
-@media only screen and (min-width: 600px) and (max-width: 960px) {
+@media only screen and (min-device-width: 600px) and (max-device-width: 960px) {
 	
 	#wrap {
 		width: 100%;
@@ -1653,7 +1729,7 @@ img.wp-smiley, img.wp-wink {
 		
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-device-width: 600px) {
 	
 	#branding, #nav {
 		margin: 0 auto;
@@ -1674,10 +1750,6 @@ img.wp-smiley, img.wp-wink {
 		background-position: center top;
 		float: none;
 		margin: 0 auto;
-		width: 100%;
-	}
-	
-	#header img {
 		width: 100%;
 	}
 
@@ -1795,7 +1867,7 @@ img.wp-smiley, img.wp-wink {
 
 /* Responsive Design - Featured Image / Home Header
 ------------------------------------------------------------ */
-@media only screen and (min-width: 600px) and (max-width: 940px) {
+@media only screen and (min-device-width: 600px) and (max-device-width: 940px) {
 
 	.featured-image {
 		padding: 10px;
@@ -1824,7 +1896,7 @@ img.wp-smiley, img.wp-wink {
 	}	
 }	
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-device-width: 600px) {
 
 	.featured-image {
 		padding: 0px;
@@ -1847,10 +1919,6 @@ img.wp-smiley, img.wp-wink {
 		width: 100%;
 		overflow: hidden;
 	}
-
-	#inner, #inner img {
-		width: 100%;
-	}
 	
 }
 
@@ -1858,11 +1926,7 @@ img.wp-smiley, img.wp-wink {
 /* Responsive Design - Structural Columns
 ------------------------------------------------------------ */
 
-@media only screen and (min-width: 600px) and (max-width: 800px) {
-	
-	#inner img {
-		width: 100%;
-	}
+@media only screen and (min-device-width: 600px) and (max-device-width: 800px) {
 	
 	.content-sidebar-sidebar #content-sidebar-wrap,
 	.sidebar-content-sidebar #content-sidebar-wrap,
@@ -1941,7 +2005,7 @@ img.wp-smiley, img.wp-wink {
 	}
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-device-width: 600px) {
 
 	#wrap {
 		width: 100%;
