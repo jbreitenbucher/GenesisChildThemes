@@ -50,4 +50,4 @@ function it_role_loop() {?>
 	<?php
 	}
 
-	genesis();
+genesis();

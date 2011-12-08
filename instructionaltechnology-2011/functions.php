@@ -18,8 +18,8 @@ genesis_unregister_layout( 'sidebar-content-sidebar' );
 add_image_size('home-bottom', 150, 130, TRUE);
 add_image_size('home-middle', 287, 120, TRUE);
 add_image_size('home-featured', 870, 320, TRUE);
-add_image_size('profile-picture-listing', 222, 137, TRUE);
-add_image_size('profile-picture-single', 222, 137, TRUE);
+add_image_size('profile-picture-listing', 325, 183, TRUE);
+add_image_size('profile-picture-single', 325, 183, TRUE);
 
 /** Add suport for custom background */
 add_custom_background();
@@ -53,19 +53,19 @@ add_action( 'init', 'create_itpeople_post_type' );
 
 function create_itpeople_post_type() {
 	$labels = array(
-		'name' => _x('People', 'post type general name'),
-		    'singular_name' => _x('Person', 'post type singular name'),
+		'name' => _x('Staff', 'post type general name'),
+		    'singular_name' => _x('Staff Member', 'post type singular name'),
 		    'add_new' => _x('Add New', 'person'),
-		    'add_new_item' => __('Add New Person'),
-		    'edit_item' => __('Edit Person'),
-		    'new_item' => __('New Person'),
-		    'all_items' => __('All People'),
-		    'view_item' => __('View Person'),
-		    'search_items' => __('Search People'),
-		    'not_found' =>  __('No people found'),
-		    'not_found_in_trash' => __('No people found in Trash'), 
+		    'add_new_item' => __('Add New Staff Member'),
+		    'edit_item' => __('Edit Staff Member'),
+		    'new_item' => __('New Staff Memeber'),
+		    'all_items' => __('All Staff'),
+		    'view_item' => __('View Staff Member'),
+		    'search_items' => __('Search Staff'),
+		    'not_found' =>  __('No staff found'),
+		    'not_found_in_trash' => __('No staff found in Trash'), 
 		    'parent_item_colon' => '',
-		    'menu_name' => 'People'
+		    'menu_name' => 'Staff'
 	);
 	$args = array(
 		'labels' => $labels,
@@ -77,6 +77,22 @@ function create_itpeople_post_type() {
 		'has_archive' => true,
 	);
 	register_post_type('itpeople',$args);
+}
+
+/** Customize the icon for the itpeople post type */
+add_action('admin_head', 'set_staff_icon');
+function set_staff_icon() {
+	global $post_type;
+	?>
+	<style>
+	<?php if (($_GET['post_type'] == 'itpeople') || ($post_type == 'itpeople')) : ?>
+	#icon-edit { background:transparent url('<?php echo get_bloginfo('url');?>/wp-admin/images/icons32.png') no-repeat -600px -5px; }
+	<?php endif; ?>
+ 
+	#adminmenu #menu-posts-itpeople div.wp-menu-image{background:transparent url('<?php echo get_bloginfo('url');?>/wp-admin/images/menu.png') no-repeat scroll -300px -33px;}
+	#adminmenu #menu-posts-itpeople:hover div.wp-menu-image,#adminmenu #menu-posts-itpeople.wp-has-current-submenu div.wp-menu-image{background:transparent url('<?php echo get_bloginfo('url');?>/wp-admin/images/menu.png') no-repeat scroll -300px -1px;}		
+        </style>
+        <?php
 }
 
 /** Remove support for Title and WYSIWYG editor on itpeople post type */
