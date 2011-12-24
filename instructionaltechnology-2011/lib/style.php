@@ -27,6 +27,7 @@ function it_theme_settings_style_box() {
 		'it-gray'		=> __( 'Gray', 'instructionaltechnology' ),
 		'it-green'	=> __( 'Green', 'instructionaltechnology' ),
 		'it-red'		=> __( 'Red', 'instructionaltechnology' ),
+		'it-wooster'		=> __( 'Wooster', 'instructionaltechnology' ),
 	) );
 	
 ?>

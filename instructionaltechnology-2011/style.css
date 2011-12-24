@@ -2173,6 +2173,176 @@ body.it-red {
 	color: #e297a1;
 }
 
+/* Wooster
+------------------------------------------------------------ */
+
+body.it-wooster {
+	background: #ddd url(images/wooster/body.jpg) bottom repeat-x;
+}
+
+.it-wooster #wrap {
+	background: url(images/wooster/wrap.jpg) repeat-x;
+}
+
+.it-wooster a,
+.it-wooster a:visited {
+	color: #BE0F34;
+}
+
+.it-wooster #header {
+	padding-top: 30px;
+}
+
+.it-wooster #header ul.nav,
+.it-wooster #header ul.menu,
+.it-wooster #nav {
+	background: #EEB211 url(images/wooster/none.png);
+}
+
+.it-wooster #header ul.nav li a,
+.it-wooster #header ul.menu li a,
+.it-wooster #nav li a {
+	background: url(images/wooster/nav-line.png) no-repeat right;
+	color: #000;
+}
+
+.it-wooster #header ul.nav li.noline a,
+.it-wooster #header ul.menu li.noline a,
+.it-wooster #nav li.noline a,
+.it-wooster #nav li.noline a  {
+	background: none;
+}
+
+.it-wooster #header ul.nav li a:hover,
+.it-wooster #header ul.nav li a:active,
+.it-wooster #header ul.nav .current_page_item a,
+.it-wooster #header ul.nav .current-cat a,
+.it-wooster #header ul.nav .current-menu-item a,
+.it-wooster #header ul.menu li a:hover,
+.it-wooster #header ul.menu li a:active,
+.it-wooster #header ul.menu .current_page_item a,
+.it-wooster #header ul.menu .current-cat a,
+.it-wooster #header ul.menu .current-menu-item a,
+.it-wooster #nav li a:hover,
+.it-wooster #nav li a:active,
+.it-wooster #nav .current_page_item a,
+.it-wooster #nav .current-cat a,
+.it-wooster #nav .current-menu-item a {
+	color: #fff; /*#333*/
+}
+
+.it-wooster #header ul.nav li li a,
+.it-wooster #header ul.nav li li a:link,
+.it-wooster #header ul.nav li li a:visited,
+.it-wooster #header ul.menu li li a,
+.it-wooster #header ul.menu li li a:link,
+.it-wooster #header ul.menu li li a:visited,
+.it-wooster #nav li li a,
+.it-wooster #nav li li a:link,
+.it-wooster #nav li li a:visited {
+	background-color: #EEB211; /*#828282;*/
+	border: 1px solid #FFC708; /*#aaa*/
+	border-top-width: 0;
+	color: #000; /*#fff*/
+}
+
+.it-wooster #header ul.nav li li a:hover,
+.it-wooster #header ul.nav li li a:active,
+.it-wooster #header ul.menu li li a:hover,
+.it-wooster #header ul.menu li li a:active,
+.it-wooster #nav li li a:hover,
+.it-wooster #nav li li a:active {
+	background-color: #FFC708; /*#737373*/
+	color: #fff; /*#fff*/
+}
+
+.it-wooster #subnav {
+	background-color: #555;
+}
+
+.it-wooster #subnav li a:hover,
+.it-wooster #subnav li a:active,
+.it-wooster #subnav .current_page_item a,
+.it-wooster #subnav .current-cat a,
+.it-wooster #subnav .current-menu-item a {
+	background-color: #444;
+}
+
+.it-wooster #subnav li li a,
+.it-wooster #subnav li li a:link,
+.it-wooster #subnav li li a:visited {
+	background-color: #444;
+	border: 1px solid #555;
+	border-top-width: 0;
+}
+
+.it-wooster #subnav li li a:hover,
+.it-wooster #subnav li li a:active {
+	background-color: #555;
+}
+
+.it-wooster h1,
+.it-wooster h2,
+.it-wooster h2 a,
+.it-wooster h2 a:visited,
+.it-wooster h3,
+.it-wooster h4,
+.it-wooster h5,
+.it-wooster h6 {
+	color: #BE0F34;
+}
+
+.it-wooster .featured h2 a,
+.it-wooster .featured h2 a:visited {
+	color: #555;
+}
+
+.it-wooster h2 a:hover,
+.it-wooster .featured h2 a:hover {
+	color: #999;
+}
+
+.it-wooster .home-bottom h4,
+.it-wooster .home-middle h4,
+.it-wooster .widget-area h4 {
+	color: #fff;
+}
+
+.it-wooster .home-bottom-1 h4,
+.it-wooster .home-middle-1 h4 {
+	background: url(images/wooster/headline-1.png);
+}
+
+.it-wooster .home-middle-2 h4 {
+	background: url(images/wooster/headline-2.png);
+}
+
+.it-wooster .home-bottom-2 h4,
+.it-wooster .home-middle-3 h4 {
+	background: url(images/wooster/headline-3.png);
+}
+
+.it-wooster div.gform_footer input.button,
+.it-wooster .enews #subbutton,
+.it-wooster .searchsubmit,
+.it-wooster #submit {
+	background-color: #BE0F34;
+	border: 1px solid #BE0F34;
+}
+
+.it-wooster div.gform_footer input.button:hover,
+.it-wooster .enews #subbutton:hover,
+.it-wooster .searchsubmit:hover,
+.it-wooster #submit:hover {
+	background-color: #800000;
+	border: 1px solid #800000;
+}
+
+.it-wooster #footer a,
+.it-wooster #footer a:visited {
+	color: #fff;
+}
+
 .contact {
         width:350px;
         padding-bottom:20px;
