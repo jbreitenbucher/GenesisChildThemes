@@ -2177,7 +2177,7 @@ body.it-red {
 ------------------------------------------------------------ */
 
 body.it-wooster {
-	background: #ddd url(images/wooster/body.jpg) bottom repeat-x;
+	background: #000 url(images/wooster/body.jpg) bottom repeat-x;
 }
 
 .it-wooster #wrap {
@@ -2187,6 +2187,26 @@ body.it-wooster {
 .it-wooster a,
 .it-wooster a:visited {
 	color: #BE0F34;
+}
+
+.it-wooster #title-area {
+	float: right;
+	overflow: hidden;
+	padding: 25px 0 0;
+	width: 960px;
+}
+
+#title {
+	margin-top: -53px;
+}
+
+.it-wooster .logo, .it-wooster .logo, .it-wooster .logo a, .it-wooster .logo a:hover {
+	width:100px;
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, 'EB Garamond', arial, serif;
+	font-size: 42px;
+	line-height: 42px;
+    color: #EEB211;
+    text-decoration: none;
 }
 
 .it-wooster #header {
@@ -2380,4 +2400,16 @@ body.it-wooster {
 
 .liaison {
 	text-align:right;
+}
+
+.classroom {
+	padding: 20px 0 0 0;
+}
+
+.room {
+	width: 465px;
+}
+
+.classroom-square {
+	padding-top: 10px;
 }
