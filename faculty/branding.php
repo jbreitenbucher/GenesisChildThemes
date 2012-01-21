@@ -13,7 +13,7 @@ $wordmark_url = get_stylesheet_directory_uri() .'/images/wordmark.gif';
 <div id="branding">
 	<div class="wrap">
 		<div class="alignleft wordmark">
-			<h2><a href="http://wooster.edu">W<span style="font-stretch:condensed">oo</span>ster</a></h2>
+			<h2><a href="http://wooster.edu">W<span style="font-stretch:condensed">oo</span>ster</a><span style="vertical-align:top;">Discovery</span></h2>
 		</div>
 		<div class="alignright tagline">
 			<h1><?php bloginfo('name'); ?></h1>

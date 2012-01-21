@@ -28,8 +28,8 @@ function update($new_instance, $old_instance) {
 class Faculty_Featured_Post extends Genesis_Featured_Post {
  
     // Use the old widget settings. This is the constructor method.
-    function Faculty_Featured_Post() {
-        parent::Genesis_Featured_Post();
+    function __construct() {
+        parent::__construct();
     }
  
     // Paste the old widget() method here and make any changes here.
@@ -309,8 +309,8 @@ class Faculty_Featured_Post extends Genesis_Featured_Post {
 class Faculty_Featured_Page extends Genesis_Featured_Page {
  
     // Use the old widget settings. This is the constructor method.
-    function Faculty_Featured_Page() {
-        parent::Genesis_Featured_Page();
+    function __construct() {
+        parent::__construct();
     }
  
     // Paste the old widget() method here and make any changes here.

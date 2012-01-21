@@ -58,65 +58,6 @@ function cms_theme_headers() {
     return $list;
 }
 
-/**
- * Styling included at the top of the site page for a custom header.
- * 
- * @author StudioPress
- */
-function faculty_custom_header_style() { 
-    if ( get_header_image() ) {?>
-<!-- custom-header styling --><style type="text/css">
-#header{background:url(<?php header_image(); ?>) scroll no-repeat 0 0; max-width:100%;}
-<?php if ( get_theme_mod('header_textcolor') && get_theme_mod('header_textcolor') != 'blank' ){ ?>
-#title-area #title a, #title-area #title a:hover{color:#<?php header_textcolor(); ?>;}
-#title-area #description{color: #<?php header_textcolor(); ?>;}
-<?php } ?>
-</style>
-<?php
-    }
-}
-
-/**
- * Styling included at the top of the custom-header admin page.
- * 
- * @author StudioPress
- */
-function faculty_custom_header_admin_style() {
-    $background_color = ( 'hex' == faculty_get_design_option('header_background_color_select') ) ? faculty_get_design_option('header_background_color') : faculty_get_design_option('header_background_color_select');
-?>
-<style type="text/css">
-#headimg {
-    background-repeat:no-repeat;
-    background-color: <?php echo $background_color; ?>;
-    width: 940px;
-    height: <?php echo faculty_get_design_option('header_image_height'); ?>px;
-}
-#headimg h1 {
-    font-family: Georgia, serif;
-    font-size: 30px;
-    font-weight: normal;
-    line-height: 36px;
-    margin: 0; 
-    padding: <?php echo faculty_get_design_option('header_top_padding'); ?>px 0 0 <?php echo faculty_get_design_option('header_left_padding'); ?>px;
-}
-#headimg h1 a {
-    color:#333333;
-    text-decoration:none;
-}
-#headimg #desc {
-    color: #999999;
-    font-family: Georgia, serif;
-    font-size: 15px;
-    font-style: italic;
-    font-weight: normal;
-    margin: 0; 
-    padding: <?php echo faculty_get_design_option('header_tagline_top_padding'); ?>px 0 0 <?php echo faculty_get_design_option('header_tagline_left_padding'); ?>px;
-}
-</style>
-<?php
-}
-
-
 /** Add branding section */
 function wooster_include_branding() {
     require_once( get_stylesheet_directory() . '/branding.php');
@@ -199,3 +140,61 @@ genesis_register_sidebar( array(
 	'name'			=> __( 'Featured Bottom Right', FACULTY_DOMAIN ),
 	'description'	=> __( 'This is the featured bottom right section.', FACULTY_DOMAIN ),
 ) );
+
+/**
+ * Styling included at the top of the site page for a custom header.
+ * 
+ * @author StudioPress
+ */
+function faculty_custom_header_style() { 
+    if ( get_header_image() ) {?>
+<!-- custom-header styling --><style type="text/css">
+#header{background:url(<?php header_image(); ?>) scroll no-repeat 0 0; max-width:100%;}
+<?php if ( get_theme_mod('header_textcolor') && get_theme_mod('header_textcolor') != 'blank' ){ ?>
+#title-area #title a, #title-area #title a:hover{display:none;color:#<?php header_textcolor(); ?>;}
+#title-area #description{display:none;color: #<?php header_textcolor(); ?>;}
+<?php } ?>
+</style>
+<?php
+    }
+}
+
+/**
+ * Styling included at the top of the custom-header admin page.
+ * 
+ * @author StudioPress
+ */
+function faculty_custom_header_admin_style() {
+    $background_color = ( 'hex' == faculty_get_design_option('header_background_color_select') ) ? faculty_get_design_option('header_background_color') : faculty_get_design_option('header_background_color_select');
+?>
+<style type="text/css">
+#headimg {
+    background-repeat:no-repeat;
+    background-color: <?php echo $background_color; ?>;
+    width: 940px;
+    height: <?php echo faculty_get_design_option('header_image_height'); ?>px;
+}
+#headimg h1 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 36px;
+    margin: 0; 
+    padding: <?php echo faculty_get_design_option('header_top_padding'); ?>px 0 0 <?php echo faculty_get_design_option('header_left_padding'); ?>px;
+}
+#headimg h1 a {
+    color:#333333;
+    text-decoration:none;
+}
+#headimg #desc {
+    color: #999999;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: normal;
+    margin: 0; 
+    padding: <?php echo faculty_get_design_option('header_tagline_top_padding'); ?>px 0 0 <?php echo faculty_get_design_option('header_tagline_left_padding'); ?>px;
+}
+</style>
+<?php
+}

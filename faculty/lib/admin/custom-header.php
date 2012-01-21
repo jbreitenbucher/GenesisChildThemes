@@ -9,24 +9,21 @@
 /**
  * Defines a value used by WordPress, as empty.
  */
-//define('HEADER_TEXTCOLOR', '');
+define('HEADER_TEXTCOLOR', '');
 
 // No CSS, just IMG call. The %s is a placeholder for the theme template directory URI.
-//define( 'HEADER_IMAGE', get_stylesheet_directory_uri() . '/images/headers/kauke_towers_940x198.jpg' );
+define( 'HEADER_IMAGE', get_stylesheet_directory_uri() . '/images/headers/kauke_towers_940x198.jpg' );
 
 /**
  * Defines a value used by WordPress. 940 is the default width of the layout.
  */
-//define('HEADER_IMAGE_WIDTH', 940);
+define('HEADER_IMAGE_WIDTH', 940);
 
 /**
  * Defines a value used by WordPress. Set to the design setting value.
  */
-//define('HEADER_IMAGE_HEIGHT', faculty_get_design_option('header_image_height'));
-//add_custom_image_header('faculty_custom_header_style', 'faculty_custom_header_admin_style');
-
-/** Add support for custom header **/
-add_theme_support( 'genesis-custom-header', array( 'header_image' => get_stylesheet_directory_uri() . '/images/headers/kauke_towers_940x198.jpg', 'width' => 940, 'height' => faculty_get_design_option('header_image_height'), 'no_header_text' => true, 'header_callback' => 'faculty_custom_header_style', 'admin_header_callback' => 'faculty_custom_header_admin_style' ) );
+define('HEADER_IMAGE_HEIGHT', faculty_get_design_option('header_image_height'));
+add_custom_image_header('faculty_custom_header_style', 'faculty_custom_header_admin_style');
 
 register_default_headers( cms_theme_headers() );
 
