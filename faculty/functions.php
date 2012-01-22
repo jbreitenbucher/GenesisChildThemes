@@ -15,6 +15,21 @@ require_once( get_stylesheet_directory() . '/lib/init.php');
 define('CHILD_THEME_NAME', 'Faculty Theme');
 define('CHILD_THEME_URL', 'http://voices.wooster.edu/themes/faculty');
 
+/** Add Heads Up Grid for development */
+function hugrid_scripts_method() {
+	wp_register_script( 'hugrid', get_stylesheet_directory_uri(). '/lib/headsupgrid/hugrid.js', array('jquery'), '1.5');
+	wp_enqueue_script( 'hugrid' );
+	wp_register_script( 'hugrid-custom', get_stylesheet_directory_uri() . '/lib/headsupgrid/hugrid-custom.js', array('jquery'), '1.0');
+	wp_enqueue_script( 'hugrid-custom' );
+}     
+add_action('wp_enqueue_scripts', 'hugrid_scripts_method');
+
+function add_hugrid_stylesheet() {
+	wp_register_style('hugrid', get_stylesheet_directory_uri() . '/lib/headsupgrid/hugrid.css');
+	wp_enqueue_style( 'hugrid');
+}
+add_action('wp_enqueue_scripts', 'add_hugrid_stylesheet');
+
 /** Add new image sizes */
 add_image_size( 'square', 100, 100, TRUE );
 add_image_size( 'featured-top-bottom', 460, 288, TRUE );
