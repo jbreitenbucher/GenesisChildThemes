@@ -36,7 +36,7 @@ function faculty_get_design_option( $opt ) {
 }
 
 /**
- * Get the current version of Prose from the style.css file.
+ * Get the current version of Faculty from the style.css file.
  * 
  * @author Gary Jones
  * @return string
