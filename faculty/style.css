@@ -530,6 +530,10 @@ ul.menu li.sfHover ul,
 	
 /* Featured
 ------------------------------------------------------------ */
+.featured {
+	width: 100%;
+}
+
 
 .featured-top {
 	-moz-box-shadow: 0 1px 3px #666; 
@@ -602,19 +606,19 @@ ul.menu li.sfHover ul,
 
 .featured-middle-left {
 	float: left;
-	width: 32%;
-	padding-right: 20px;
+	width: 31.5%;
+	padding-right: 24px;
 }
 
 .featured-middle-center {
 	float: left;
-	width: 32%;
-	padding-right: 20px;
+	width: 31.5%;
+	padding-right: 24px;
 }
 
 .featured-middle-right {
 	float: right;
-	width: 32%;
+	width: 31.5%;
 }
 
 
@@ -641,6 +645,27 @@ ul.menu li.sfHover ul,
 .featured-bottom-right {
 	float: right;
 	width: 49%;
+}
+
+/* Float clearing for IE6: */
+* html .clearfix
+{
+      height: 1%;
+      overflow: visible;
+}
+/* Float clearing for IE7: */
+*+html .clearfix
+{
+      min-height: 1%;
+}
+/* Float clearing for everyone else: */
+.clearfix:after
+{
+      clear: both;
+      content: ".";
+      display: block;
+      height: 0;
+      visibility: hidden;
 }
 
 

@@ -24,7 +24,7 @@ function wooster_home_loop_helper() {
 
 		if ( is_active_sidebar( 'featured-top' ) ) {
 		
-		echo '<div class="featured">';
+		echo '<div class="featured clearfix">';
 		
 				echo '<div class="featured-top">';
 				dynamic_sidebar( 'featured-top' );
@@ -36,7 +36,7 @@ function wooster_home_loop_helper() {
 		
 		if ( is_active_sidebar( 'featured-top-left' ) || is_active_sidebar( 'featured-top-right' ) ) {
 			
-			echo '<div class="featured">';
+			echo '<div class="featured clearfix">';
 			
 				echo '<div class="featured-top-left">';
 				dynamic_sidebar( 'featured-top-left' );
@@ -52,23 +52,19 @@ function wooster_home_loop_helper() {
 		
 		if ( is_active_sidebar( 'featured-middle-left' ) || is_active_sidebar( 'featured-middle-center' ) || is_active_sidebar( 'featured-middle-right' ) ) {
 			
-		echo '<div class="featured">';
+		echo '<div class="featured clearfix">';
 			
-			echo '<div class="featured-middle">';
-			
-				echo '<div class="featured-middle-left">';
-				dynamic_sidebar( 'featured-middle-left' );
-				echo '</div><!-- end .featured-middle-left -->';
-			
-				echo '<div class="featured-middle-center">';
-				dynamic_sidebar( 'featured-middle-center' );
-				echo '</div><!-- end .featured-middle-center -->';
-			
-				echo '<div class="featured-middle-right">';
-				dynamic_sidebar( 'featured-middle-right' );
-				echo '</div><!-- end .featured-middle-right -->';
-			
-			echo '</div><!-- end .featured-middle -->';
+			echo '<div class="featured-middle-left">';
+			dynamic_sidebar( 'featured-middle-left' );
+			echo '</div><!-- end .featured-middle-left -->';
+		
+			echo '<div class="featured-middle-center">';
+			dynamic_sidebar( 'featured-middle-center' );
+			echo '</div><!-- end .featured-middle-center -->';
+		
+			echo '<div class="featured-middle-right">';
+			dynamic_sidebar( 'featured-middle-right' );
+			echo '</div><!-- end .featured-middle-right -->';
 			
 		echo '</div><!-- end .featured -->';
 			
@@ -76,19 +72,15 @@ function wooster_home_loop_helper() {
 		
 		if ( is_active_sidebar( 'featured-bottom-left' ) || is_active_sidebar( 'featured-bottom-right' ) ) {
 		
-		echo '<div class="featured">';
+		echo '<div class="featured clearfix">';
 		
-			echo '<div class="featured-bottom">';
-		
-				echo '<div class="featured-bottom-left">';
-				dynamic_sidebar( 'featured-bottom-left' );
-				echo '</div><!-- end .featured-bottom-left -->';
+			echo '<div class="featured-bottom-left">';
+			dynamic_sidebar( 'featured-bottom-left' );
+			echo '</div><!-- end .featured-bottom-left -->';
 
-				echo '<div class="featured-bottom-right">';
-				dynamic_sidebar( 'featured-bottom-right' );
-				echo '</div><!-- end .featured-bottom-right -->';
-
-			echo '</div><!-- end .featured-bottom -->';
+			echo '<div class="featured-bottom-right">';
+			dynamic_sidebar( 'featured-bottom-right' );
+			echo '</div><!-- end .featured-bottom-right -->';
 			
 		echo '</div><!-- end .featured -->';
 		
