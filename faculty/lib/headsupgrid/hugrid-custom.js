@@ -2,12 +2,12 @@
         var browserWidth = jQuery(window).width(); 
         if (browserWidth >= 1001) 
         {
-            pageUnits = 'px';
-            colUnits = 'px';
-            pagewidth = 940;
-            columns = 12;
-            columnwidth = 60;
-            gutterwidth = 20;
+            pageUnits = '%';
+            colUnits = '%';
+            pagewidth = 1000;
+            columns = 6;
+            columnwidth = 15;
+            gutterwidth = .02;
             pagetopmargin = 30;
             rowheight = 16*1.5625;
             makehugrid();
