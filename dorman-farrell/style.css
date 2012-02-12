@@ -353,7 +353,7 @@ body {
 	padding: 9px 10px 8px;
 	position: relative;
 	text-transform: none;
-	width: 138px;
+	/*width: 138px;*/
 }
 
 .menu-primary li li a:active,
@@ -462,6 +462,11 @@ ul.menu li.sfHover ul,
 	width: 33.463796477495%;
 }
 
+#nav .menu-primary li ul li {
+	/*width: 171px;*/
+	width: 100%;
+}
+
 #nav .menu-primary li:last-child {
 	/*width: 169px;*/
 	width: 33.07240704501%;
@@ -470,6 +475,11 @@ ul.menu li.sfHover ul,
 #subnav .menu-secondary li {
 	/*width: 150px;*/
 	width: 33.407572383073%;
+}
+
+#subnav .menu-secondary li ul li {
+	/*width: 150px;*/
+	width: 100%;
 }
 
 #subnav .menu-secondary li:last-child {
@@ -1602,8 +1612,249 @@ div.gform_wrapper .gform_footer {
 /* Responsive Design
 ------------------------------------------------------------ */
 
-@media only screen and (max-width: 600px) {
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+	#nav,
+	#subnav,
+	.post-image,
+	.post-inner-image,
+	.name,
+	.phone,
+	.email,
+	.page-template-page-staff-php h2.name,
+	.menu-primary li,
+	.menu-primary li ul,
+	.menu-primary li ul a,
+	.menu-secondary li,
+	.menu-secondary li ul,
+	.menu-secondary li ul a,
+	#nav .menu-primary li,
+	#nav .menu-primary li ul,
+	#nav .menu-primary li ul a,
+	#nav .menu-primary li:last-child,
+	#subnav .menu-secondary li,
+	#subnav .menu-secondary li ul,
+	#subnav .menu-secondary li ul a,
+	#subnav .menu-secondary li:last-child,
+	#header .menu li,
+	#header .menu li ul,
+	#header .menu li ul a {
+		width: 100%;
+	}
 	
+	.contact,
+	.info {
+		width: 50%;
+	}
+	
+	.phone,
+	.page-template-page-staff-php h2.name,
+	.email {
+		text-align: left;
+	}
+	
+	.phone {
+		padding: 0;
+	}
+	
+	.title {
+		top: -60px;
+		left: 200px;
+	}
+	
+	.five-sixths,
+	.four-fifths,
+	.four-sixths,
+	.one-fifth,
+	.one-fourth,
+	.one-half,
+	.one-sixth,
+	.one-third,
+	.three-fifths,
+	.three-fourths,
+	.three-sixths,
+	.two-fifths,
+	.two-fourths,
+	.two-sixths,
+	.two-thirds {
+		padding: 0;
+		width: 100%;
+	}
+
+	.menu-primary li a,
+	.menu-secondary li a,
+	#header .menu li a {
+		margin: 0;
+		padding: 7px 3%;
+	}
+
+	.menu li li a .sf-sub-indicator,
+	.menu li li li a .sf-sub-indicator {
+		background: url(images/icon-plus-white.png) right no-repeat;
+	}
+
+	.menu-primary li li a,
+	.menu-primary li li a:link,
+	.menu-primary li li a:visited,
+	.menu-secondary li li a,
+	.menu-secondary li li a:link,
+	.menu-secondary li li a:visited,
+	#header .menu li li a,
+	#header .menu li li a:link,
+	#header .menu li li a:visited {
+		color: #fff;
+		padding: 7px 3%;
+		width: 94%;
+	}
+
+	.menu-primary li ul,
+	.menu-secondary li ul,
+	#header .menu li ul {
+		clear: both;
+		margin: 0;
+		padding: 0;
+		position: inherit;
+	}
+
+	.menu-primary li ul ul,
+	.menu-secondary li ul ul,
+	#header .menu li ul ul {
+	}
+
+	.menu-primary li ul ul ul,
+	.menu-secondary li ul ul ul,
+	#header .menu li ul ul ul {
+	}
+
+	.menu-primary li ul ul,
+	.menu-secondary li ul ul,
+	#header .menu li ul ul {
+		margin: 0;
+	}
+
+}
+
+@media only screen and (max-device-width: 480px) {
+	#nav,
+	#subnav,
+	.post-image,
+	.post-inner-image,
+	.name,
+	.phone,
+	.email,
+	.page-template-page-staff-php h2.name,
+	.menu-primary li,
+	.menu-primary li ul,
+	.menu-primary li ul a,
+	.menu-secondary li,
+	.menu-secondary li ul,
+	.menu-secondary li ul a,
+	#nav .menu-primary li,
+	#nav .menu-primary li ul,
+	#nav .menu-primary li ul a,
+	#nav .menu-primary li:last-child,
+	#subnav .menu-secondary li,
+	#subnav .menu-secondary li ul,
+	#subnav .menu-secondary li ul a,
+	#subnav .menu-secondary li:last-child,
+	#header .menu li,
+	#header .menu li ul,
+	#header .menu li ul a {
+		width: 100%;
+	}
+	
+	.contact,
+	.info {
+		width: 50%;
+	}
+	
+	.phone,
+	.page-template-page-staff-php h2.name,
+	.email {
+		text-align: left;
+	}
+	
+	.phone {
+		padding: 0;
+	}
+	
+	.title {
+		top: -60px;
+		left: 200px;
+	}
+	
+	.five-sixths,
+	.four-fifths,
+	.four-sixths,
+	.one-fifth,
+	.one-fourth,
+	.one-half,
+	.one-sixth,
+	.one-third,
+	.three-fifths,
+	.three-fourths,
+	.three-sixths,
+	.two-fifths,
+	.two-fourths,
+	.two-sixths,
+	.two-thirds {
+		padding: 0;
+		width: 100%;
+	}
+
+	.menu-primary li a,
+	.menu-secondary li a,
+	#header .menu li a {
+		margin: 0;
+		padding: 7px 3%;
+	}
+
+	.menu li li a .sf-sub-indicator,
+	.menu li li li a .sf-sub-indicator {
+		background: url(images/icon-plus-white.png) right no-repeat;
+	}
+
+	.menu-primary li li a,
+	.menu-primary li li a:link,
+	.menu-primary li li a:visited,
+	.menu-secondary li li a,
+	.menu-secondary li li a:link,
+	.menu-secondary li li a:visited,
+	#header .menu li li a,
+	#header .menu li li a:link,
+	#header .menu li li a:visited {
+		color: #fff;
+		padding: 7px 3%;
+		width: 94%;
+	}
+
+	.menu-primary li ul,
+	.menu-secondary li ul,
+	#header .menu li ul {
+		clear: both;
+		margin: 0;
+		padding: 0;
+		position: inherit;
+	}
+
+	.menu-primary li ul ul,
+	.menu-secondary li ul ul,
+	#header .menu li ul ul {
+	}
+
+	.menu-primary li ul ul ul,
+	.menu-secondary li ul ul ul,
+	#header .menu li ul ul ul {
+	}
+
+	.menu-primary li ul ul,
+	.menu-secondary li ul ul,
+	#header .menu li ul ul {
+		margin: 0;
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
 	#nav,
 	#subnav,
 	.post-image,
