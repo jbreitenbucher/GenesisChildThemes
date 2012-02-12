@@ -47,9 +47,9 @@ function tpg_create_metaboxes( $meta_boxes ) {
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Office',
-				'desc' => 'Office number.',
-				'id' => $prefix . 'office_text',
+				'name' => 'Certifications',
+				'desc' => 'Comma separated list of certifications.',
+				'id' => $prefix . 'cert_text',
 				'type' => 'text'
 			),
 			array(
@@ -65,14 +65,8 @@ function tpg_create_metaboxes( $meta_boxes ) {
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Address',
-				'desc' => 'Business mailing address.',
-				'id' => $prefix . 'address_textarea',
-				'type' => 'textarea'
-			),
-			array(
 				'name' => 'About Me',
-				'desc' => 'A short description about your experience.',
+				'desc' => 'A short description about the employee.',
 				'id' => $prefix . 'about_me_wysiwyg',
 				'type' => 'wysiwyg',
 				'options' => array(
@@ -87,6 +81,12 @@ function tpg_create_metaboxes( $meta_boxes ) {
 				'id' => $prefix . 'role_taxonomy_select',
 				'taxonomy' => 'role', //Enter Taxonomy Slug
 				'type' => 'taxonomy_select',	
+			),
+			array(
+				'name' => 'Order',
+				'desc' => 'Used to order the list of staff.',
+				'id' => $prefix . 'order_text',
+				'type' => 'text'
 			),
 		),
 	);

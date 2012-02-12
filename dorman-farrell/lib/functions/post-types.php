@@ -39,7 +39,7 @@ function tpg_create_staff_post_type() {
 		'description' => 'A post type for entering staff information.',
 		'public' => true,
 		'hierarchical' => false,
-		'supports' => array('thumbnail','excerpt'),
+		'supports' => array('thumbnail'),
 		'rewrite' => array('slug' => 'staff'),
 		'has_archive' => 'staff',
 	);

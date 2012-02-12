@@ -4,10 +4,10 @@
         {
             pageUnits = '%';
             colUnits = '%';
-            pagewidth = 1000;
+            pagewidth = 96;
             columns = 6;
             columnwidth = 15;
-            gutterwidth = .02;
+            gutterwidth = 2;
             pagetopmargin = 30;
             rowheight = 16*1.5625;
             makehugrid();
@@ -18,10 +18,10 @@
             colUnits = '%';
             pagewidth = 96;
             columns = 6;
-            columnwidth = 14.5183175;
-            gutterwidth = 2.5780189;
-            pagetopmargin = 15;
-            rowheight = 25;
+            columnwidth = 15;
+            gutterwidth = 2;
+            pagetopmargin = 30;
+            rowheight = 16*1.5625;
             makehugrid();
         }
         if (browserWidth <= 768) 
@@ -31,9 +31,9 @@
             pagewidth = 96;
             columns = 1;
             columnwidth = 100;
-            gutterwidth = 1.2;
-            pagetopmargin = 15;
-            rowheight = 25;
+            gutterwidth = 2;
+            pagetopmargin = 30;
+            rowheight = 16*1.5625;
             makehugrid();
         }
     }

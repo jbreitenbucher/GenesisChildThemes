@@ -47,7 +47,7 @@ function tpg_role_loop_setup() {
 
 function tpg_role_before_loop() {
 	$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-	echo '<h1>' . $term->name . '</h1>';
+	echo '<h1>' . $term->name . 's</h1>';
 	if( !is_paged() ) { 
 		echo '<div>' . $term->description . '</div>';
 	}
@@ -74,7 +74,7 @@ function tpg_role_post_content () {
 	printf( '<div id="post-%s" class="person clear">', get_the_ID() );
 		//use the genesis_get_custom_field template tag to display each custom field value
 		if (genesis_get_custom_field('tpg_title_text') != '') {
-			printf( '<h1 class="name"><a href="%s" title="%s">%s</a>, <span class="title">%s</span></h1>', get_permalink(), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('tpg_title_text') );
+			printf( '<h2 class="name"><a href="%s" title="%s">%s</a>, <span class="title">%s</span></h2>', get_permalink(), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('tpg_title_text') );
 		} else {
 			printf( '<h1 class="name"><a href="%s" title="%s">%s</a></h1>', get_permalink(), the_title_attribute('echo=0'), get_the_title() );
 		}

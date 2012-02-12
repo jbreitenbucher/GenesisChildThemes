@@ -103,7 +103,7 @@ label,
 select,
 textarea {
 	color: #333;
-	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-family: verdana, arial, tahoma, sans-serif;
 	font-size: 14px;
 	font-weight: 300;
 }
@@ -133,11 +133,11 @@ strong {
 a,
 a:visited {
 	color: #00529A;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 a:hover {
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 a img {
@@ -189,11 +189,23 @@ body {
 
 #title-area {
 	background: url(images/DormanFarrell.png) no-repeat left top;
+	position: relative;
 	float: left;
 	overflow: hidden;
 	padding: 0;
 	width: 451px;
 	height: 115px;
+}
+
+#box-link { 
+	position: absolute; 
+	display: block;
+	top: 8px; 
+	left: 20px; 
+	width: 420px; 
+	height: 0;
+	padding-top: 100px;
+	background-color: transparent;
 }
 
 #title {
@@ -417,12 +429,14 @@ ul.menu li.sfHover ul,
 }
 
 #nav {
-	width: 511px;
+	/*width: 511px;*/
+	width: 53.229166666667%;
 	float: left;
 }
 
 #subnav {
-	width: 449px;
+	/*width: 449px;*/
+	width: 46.770833333333%;
 	float: right;
 	color: #fff;
 }
@@ -444,19 +458,23 @@ ul.menu li.sfHover ul,
 }
 
 #nav .menu-primary li {
-	width: 171px;
+	/*width: 171px;*/
+	width: 33.463796477495%;
 }
 
 #nav .menu-primary li:last-child {
-	width: 169px;
+	/*width: 169px;*/
+	width: 33.07240704501%;
 }
 
 #subnav .menu-secondary li {
-	width: 150px;
+	/*width: 150px;*/
+	width: 33.407572383073%;
 }
 
 #subnav .menu-secondary li:last-child {
-	width: 149px;	
+	/*width: 149px;*/
+	width: 33.184855233853%;	
 }
 
 #subnav .menu-secondary li:last-child a {
@@ -594,20 +612,126 @@ ul.menu li.sfHover ul,
 	margin-top: 50px;
 }
 
+.profile-image {
+	width: 19%;
+	float: left;
+	margin: 5px 0 0 5px;
+}
+
+.page-template-page-staff-php h2 {
+	width: 97%;
+	margin: 0 auto 0;
+}
+
+.page-template-page-staff-php h2.name {
+	width: 40%;
+}
+
+.page-template-page-staff-php img.alignleft {
+	float: left;
+	margin: 10px 5px 0 15px;
+}
+
 .post-inner-image {
 	width: 58%;
 	float: right;
 }
 
 .post-inner {
-	width: 100%;
-	float: right;
+	background: #fff;
+	overflow: auto;
+	padding: 10px;
+}
+
+.about {
+	float: left;
+	margin-left: -90px;
+	padding-bottom: 10px;
 }
 
 .post-content {
 	background: #fff;
 	padding: 5px 10px;
-	border: 1px solid gray;
+}
+
+.person-content {
+	float: right;
+	width: 80%;
+}
+
+.page-template-page-staff-php #content {
+	background: #fff;
+	width: 100%;
+}
+
+.role-consulting, .role-service, .role-admin  {
+	font-size: 30px;
+	border-bottom: 1px solid #0d72c7;
+}
+
+.role-service, .role-admin {
+	padding-top: 20px;
+	clear: both;
+}
+
+.contact {
+	float: left;
+	width: 19%;
+}
+
+.email, .phone, .title {
+	font-size: 13px;
+}
+
+.title {
+	position: relative;
+	top: -125px;
+	left: 176px;
+	float: left;
+	color: #88888a;
+	font-style: italic;
+}
+
+.person {
+	width: 100%;
+}
+
+.info {
+	float: left;
+	width: 80%;
+	margin-top: 5px;
+}
+
+.person-single {
+	width: 100%;
+}
+
+.email {
+	width: 38%;
+	float: right;
+	text-align: left;
+}
+
+.phone {
+	width: 17%;
+	float: right;
+	text-align: right;
+	padding-right: 10px;
+}
+
+.name {
+	float: left;
+}
+
+.page-template-page-staff-php h2.name,
+.page-template-page-staff-php h2.name a,
+.page-template-page-staff-php h2.name a:visited {
+	font-size: 18px;
+}
+
+.staff .name {
+	width: 100%;
+	float: left;
 }
 
 .entry-content {
@@ -753,7 +877,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Oswald', arial, serif;
+	font-family: verdana, arial, tahoma, sans-serif;
 	line-height: 1.25;
 	margin: 0 0 10px;
 }
@@ -774,13 +898,14 @@ h1.entry-title {
 h2,
 h2 a,
 h2 a:visited {
-	font-size: 28px;
+	font-size: 22px;
 }
 
 h2 a,
 h2 a:visited {
-	color: #333;
-	font-family: 'Oswald', arial, serif;
+	color: #00539B;
+	text-decoration: underline;
+	font-family: verdana, arial, tahoma, sans-serif;
 }
 
 h2 a:hover {
@@ -792,6 +917,13 @@ h2 a:hover {
 .widget-area h2 a {
 	font-size: 14px;
 	margin: 0 0 5px;
+}
+
+.home h2,
+.home h2 a {
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 0 auto 0;
 }
 
 h3 {
@@ -1471,17 +1603,53 @@ div.gform_wrapper .gform_footer {
 ------------------------------------------------------------ */
 
 @media only screen and (max-width: 600px) {
-
+	
+	#nav,
+	#subnav,
+	.post-image,
+	.post-inner-image,
+	.name,
+	.phone,
+	.email,
+	.page-template-page-staff-php h2.name,
 	.menu-primary li,
 	.menu-primary li ul,
 	.menu-primary li ul a,
 	.menu-secondary li,
 	.menu-secondary li ul,
 	.menu-secondary li ul a,
+	#nav .menu-primary li,
+	#nav .menu-primary li ul,
+	#nav .menu-primary li ul a,
+	#nav .menu-primary li:last-child,
+	#subnav .menu-secondary li,
+	#subnav .menu-secondary li ul,
+	#subnav .menu-secondary li ul a,
+	#subnav .menu-secondary li:last-child,
 	#header .menu li,
 	#header .menu li ul,
 	#header .menu li ul a {
 		width: 100%;
+	}
+	
+	.contact,
+	.info {
+		width: 50%;
+	}
+	
+	.phone,
+	.page-template-page-staff-php h2.name,
+	.email {
+		text-align: left;
+	}
+	
+	.phone {
+		padding: 0;
+	}
+	
+	.title {
+		top: -60px;
+		left: 200px;
 	}
 	
 	.five-sixths,
@@ -1524,7 +1692,6 @@ div.gform_wrapper .gform_footer {
 	#header .menu li li a,
 	#header .menu li li a:link,
 	#header .menu li li a:visited {
-		background: none;
 		color: #fff;
 		padding: 7px 3%;
 		width: 94%;
@@ -1533,7 +1700,6 @@ div.gform_wrapper .gform_footer {
 	.menu-primary li ul,
 	.menu-secondary li ul,
 	#header .menu li ul {
-		background: #333;
 		clear: both;
 		margin: 0;
 		padding: 0;
@@ -1543,13 +1709,11 @@ div.gform_wrapper .gform_footer {
 	.menu-primary li ul ul,
 	.menu-secondary li ul ul,
 	#header .menu li ul ul {
-		background: #666;
 	}
 
 	.menu-primary li ul ul ul,
 	.menu-secondary li ul ul ul,
 	#header .menu li ul ul ul {
-		background: #999;
 	}
 
 	.menu-primary li ul ul,
@@ -1605,9 +1769,9 @@ div.gform_wrapper .gform_footer {
 		text-align: center;
 	}
 
-	#title-area {
+	/*#title-area {
 		padding: 10px 0;
-	}
+	}*/
 
 	#description,
 	#title a,
@@ -1635,6 +1799,7 @@ div.gform_wrapper .gform_footer {
 
 	#inner {
 		padding: 20px 0 0;
+		width: 100%;
 	}
 
 	.breadcrumb,

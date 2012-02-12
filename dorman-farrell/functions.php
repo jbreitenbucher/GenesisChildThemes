@@ -47,8 +47,8 @@ function df_theme_setup() {
 	add_action( 'widgets_init', 'tpg_remove_sidebars' );
 	
 	// Customize Header
-	//remove_action( 'genesis_header', 'genesis_do_header' );
-	//add_action( 'genesis_header', 'tpg_header' );
+	remove_action( 'genesis_header', 'genesis_do_header' );
+	add_action( 'genesis_header', 'tpg_header' );
 	
 	// Add new featured image sizes
 	add_image_size('post_thumb', 390, 426, TRUE);

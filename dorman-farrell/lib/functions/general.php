@@ -123,8 +123,8 @@ function set_staff_icon() {
 	#icon-edit { background:transparent url('<?php echo get_bloginfo('url');?>/wp-admin/images/icons32.png') no-repeat -600px -5px; }
 	<?php endif; ?>
  
-	#adminmenu #menu-posts-itpeople div.wp-menu-image{background:transparent url('<?php echo get_bloginfo('url');?>/wp-admin/images/menu.png') no-repeat scroll -300px -33px;}
-	#adminmenu #menu-posts-itpeople:hover div.wp-menu-image,#adminmenu #menu-posts-itpeople.wp-has-current-submenu div.wp-menu-image{background:transparent url('<?php echo get_bloginfo('url');?>/wp-admin/images/menu.png') no-repeat scroll -300px -1px;}		
+	#adminmenu #menu-posts-staff div.wp-menu-image{background:transparent url('<?php echo get_bloginfo('url');?>/wp-admin/images/menu.png') no-repeat scroll -300px -33px;}
+	#adminmenu #menu-posts-staff:hover div.wp-menu-image,#adminmenu #menu-posts-staff.wp-has-current-submenu div.wp-menu-image{background:transparent url('<?php echo get_bloginfo('url');?>/wp-admin/images/menu.png') no-repeat scroll -300px -1px;}		
         </style>
         <?php
 }
@@ -277,6 +277,7 @@ add_filter('genesis_prev_link_text','tpg_previous_post_link_text');
 function tpg_remove_sidebars() {
 	unregister_sidebar( 'header-right' );
 	unregister_sidebar( 'sidebar-alt' );
+	unregister_sidebar( 'sidebar' );
 }
 
 /**
@@ -287,9 +288,7 @@ function tpg_remove_sidebars() {
 
 function tpg_header() {
 	echo '<div id="title-area">';
-	echo '<h1 class="logo"><a href="http://wooster.edu">WOOSTER</a></h1>';
-	do_action( 'genesis_site_title' );
-	do_action( 'genesis_site_description' );
+	printf('<a id="box-link" href="%s"></a>', get_bloginfo('url'));
 	echo '</div><!-- end #title-area -->';
 }
 
@@ -341,7 +340,7 @@ function tech_breadcrumb_args( $args ) {
 // Customize the credits
 add_filter('genesis_footer_creds_text', 'custom_footer_creds_text');
 function custom_footer_creds_text($creds) {
-    $creds = '&copy; ' . date("Y") . '. All Rights Reserved. Dorman Farrell, LLC | <a href="about/licenses/">Licenses</a>';
+    $creds = '&copy; ' . date("Y") . '. All Rights Reserved. Dorman Farrell, LLC | <a href="' . get_bloginfo( 'url' ) . '/about/licenses/">Licenses</a>';
     return $creds;
 }
 

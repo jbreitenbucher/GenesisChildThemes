@@ -22,21 +22,15 @@ add_action('genesis_before','tpg_staff_loop_setup');
 function tpg_staff_loop_setup() {
 	
 	// Customize Before Loop
-	remove_action('genesis_before_loop','genesis_do_before_loop' );
+	//remove_action('genesis_before_loop','genesis_do_before_loop' );
 	//add_action('genesis_before_loop','tpg_page_before_loop');
 	
 	// Customize Loop
 	remove_action('genesis_loop', 'genesis_do_loop');
-	add_action('genesis_loop', 'tpg_grid_loop_helper');
+	add_action('genesis_loop', 'tpg_staff_page_loop');
 	
-	add_action('genesis_before_post', 'tpg_custom_grid');
-	function tpg_custom_grid() {
-		// Customize Post Content
-		remove_action('genesis_post_content', 'genesis_grid_loop_content');
-		add_action('genesis_post_content', 'tpg_grid_loop_content');
-		// Remove Post Info
-		remove_action('genesis_before_post_content', 'genesis_post_info');
-	}
+	// Remove Post Info
+	remove_action('genesis_before_post_content', 'genesis_post_info');
 	
 	// Remove Title, After Title, and Post Image
 	remove_action('genesis_post_title', 'genesis_do_post_title');
@@ -47,107 +41,69 @@ function tpg_staff_loop_setup() {
 	remove_action('genesis_after_post_content', 'genesis_post_meta');
 }
 
-/**
- * Customize Before Loop
- *
- * @author The Pedestal Group
- */
-
-function tpg_page_before_loop() {
-	$c = 0; // set up a counter so we know which post we're currently showing
-	$image_align = 'alignright'; // set up a variable to hold an extra CSS class
-}
-
-function tpg_grid_loop_helper() {
-    global $grid_args, $post;
-    $taxonomy = 'role'; //change me
-    $term = get_query_var( 'term' );
-    $term_obj = get_term_by( 'slug' , $term , $taxonomy );
-    $cpt = 'staff'; //change me
- 
-    if ( function_exists( 'genesis_grid_loop' ) ) {
-        $grid_args_tax = array(
-            'features' => 0,
-            'feature_image_size' => 0,
-            'feature_image_class' => 'alignleft profile-picture-single',
-            'feature_content_limit' => 0,
-            'grid_image_size' => 0,
-            'grid_image_class' => 0,
-            'grid_content_limit' => 0,
-            'more' => '',
-            'posts_per_page' => genesis_get_option('tpg_staff_posts_per_page', TPG_SETTINGS_FIELD ),
-            'post_type' => $cpt,
-            'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
-            'tax_query' => array(
-                array(
-                    'taxonomy' => $taxonomy,
-                    'field' => 'slug',
-                    'terms' => array( $term_obj->slug ),
-                )
-            )
-        );
- 
-            printf('<h2 class="role-type">%s</h2>' , $term_obj->name );
-            genesis_grid_loop($grid_args_tax);
-    } else {
-        genesis_standard_loop();
-    }
-}
-
-/**
- * Customize Loop
- *
- * @author The Pedestal Group
- */
-
-function tpg_consulting_professionals_loop() {
-	global $paged;
-		$args = array(
-			'post_type' => 'staff',
-			'paged' => $paged,
-			'posts_per_page' => genesis_get_option('tpg_staff_posts_per_page', TPG_SETTINGS_FIELD )
-		);
-
-	    //genesis_custom_loop( $args );
-}
-
-/**
- * Customize Post Content
- *
- * @author The Pedestal Group
- */
-
-function tpg_grid_loop_content () {
-	global $_genesis_loop_args, $wp_query;
-
-	printf( '<div id="post-%s" class="person clear">', get_the_ID() );
-		//use the genesis_get_custom_field template tag to display each custom field value
-		if (genesis_get_custom_field('tpg_title_text') != '') {
-			printf( '<h1 class="name"><a href="%s" title="%s">%s</a>, <span class="title">%s</span></h1>', get_permalink(), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('tpg_title_text') );
-		} else {
-			printf( '<h1 class="name"><a href="%s" title="%s">%s</a></h1>', get_permalink(), the_title_attribute('echo=0'), get_the_title() );
-		}
-				echo '<div class="contact clear">';
-					if( genesis_get_custom_field('tpg_phone_number_text') != '') { 
-						printf( '<span class="phone">phone:%s</span>', genesis_get_custom_field('tpg_phone_number_text') );
-					}
-					if( genesis_get_custom_field('tpg_email_address_text') != '') {
-						printf('<span class="email"> | e-mail: <a href="mailto:%s">%s</a></span>', antispambot(genesis_get_custom_field('tpg_email_address_text')), antispambot(genesis_get_custom_field('tpg_email_address_text')) );
-				}
-				echo '</div><!--#end contact-->';
-
-				echo '<div ';
-					post_class('about');
-				echo '>';
-			    $default_attr = array(
-			               'class' => "$image_align profile-image",
-			               'alt'   => $post->post_title,
-			               'title' => $post->post_title
-			           );
-					echo genesis_get_image( array( 'size' => 'profile-picture-listing', 'attr' => $default_attr ) );
-					the_excerpt();
-				echo '</div><!--end #about -->';
-			echo '</div><!--end #person -->';
+function tpg_staff_page_loop() {
+	$consulting_professionals_args = array(
+		'post_type' => 'staff',
+		'meta_key' => 'tpg_order_text',
+		'orderby' => 'meta_value_num',
+		'order' => 'ASC',
+		'posts_per_page' => -1,
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'role',
+				'field' => 'slug',
+				'terms' => array('consulting-professionals'),
+			),
+		)
+	);
+	
+	query_posts( $consulting_professionals_args );
+	echo '<h2 class="role-consulting">Consulting Professionals</h2>';
+	while (have_posts()) : the_post();
+		tpg_consulting_page_loop_content();
+	endwhile;
+	
+	$service_professionals_args = array(
+		'post_type' => 'staff',
+		'meta_key' => 'tpg_last_name_text',
+		'orderby' => 'meta_value',
+		'order' => 'ASC',
+		'posts_per_page' => -1,
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'role',
+				'field' => 'slug',
+				'terms' => array('service-professionals'),
+			),
+		)
+	);
+	
+	query_posts( $service_professionals_args );
+	echo '<h2 class="role-service">Service Professionals</h2>';
+	while (have_posts()) : the_post();
+		tpg_nonconsulting_page_loop_content();
+	endwhile;
+	
+	$administrative_staff_args = array(
+		'post_type' => 'staff',
+		'meta_key' => 'tpg_last_name_text',
+		'orderby' => 'meta_value',
+		'order' => 'ASC',
+		'posts_per_page' => -1,
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'role',
+				'field' => 'slug',
+				'terms' => array('administrative-staff'),
+			),
+		)
+	);
+	
+	query_posts( $administrative_staff_args );
+	echo '<h2 class="role-admin">Administrative Staff</h2>';
+		while (have_posts()) : the_post();
+			tpg_nonconsulting_page_loop_content();
+		endwhile;
 }
 
 /**
@@ -156,41 +112,81 @@ function tpg_grid_loop_content () {
  * @author The Pedestal Group
  */
 
-function tpg_page_post_content () {
-	global $post, $c;
-	$c++; // increment the counter
-	if( $c % 2 != 0) {
-		// we're on an odd post
-		$image_align = 'alignleft';
-	} else {
-		$image_align = 'alignright';
-	}
+function tpg_consulting_page_loop_content() {
+	global $post;
 	printf( '<div id="post-%s" class="person clear">', get_the_ID() );
 		//use the genesis_get_custom_field template tag to display each custom field value
-		if (genesis_get_custom_field('tpg_title_text') != '') {
-			printf( '<h1 class="name"><a href="%s" title="%s">%s</a>, <span class="title">%s</span></h1>', get_permalink(), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('tpg_title_text') );
-		} else {
-			printf( '<h1 class="name"><a href="%s" title="%s">%s</a></h1>', get_permalink(), the_title_attribute('echo=0'), get_the_title() );
-		}
-				echo '<div class="contact clear">';
-					if( genesis_get_custom_field('tpg_phone_number_text') != '') { 
-						printf( '<span class="phone">phone:%s</span>', genesis_get_custom_field('tpg_phone_number_text') );
-					}
-					if( genesis_get_custom_field('tpg_email_address_text') != '') {
-						printf('<span class="email"> | e-mail: <a href="mailto:%s">%s</a></span>', antispambot(genesis_get_custom_field('tpg_email_address_text')), antispambot(genesis_get_custom_field('tpg_email_address_text')) );
+		echo '<div class="contact">';
+		$default_attr = array(
+               'class' => "alignleft profile-image-listing",
+               'alt'   => $post->post_title,
+               'title' => $post->post_title
+           );
+		echo genesis_get_image( array( 'size' => 'profile-picture-listing', 'attr' => $default_attr ) );
+			if( genesis_get_custom_field('tpg_title_text') != '') { 
+				printf( '<span class="title">%s</span>', genesis_get_custom_field('tpg_title_text') );
+			}
+		echo '</div><!--#end contact-->';
+		if ( genesis_get_custom_field('tpg_cert_text') != '' ) {
+			if( genesis_get_custom_field('tpg_phone_number_text') != '') {
+				if( genesis_get_custom_field('tpg_email_address_text') != '') {
+					printf( '<div class="info"><h2 class="name"><a href="%s" title="%s">%s</a>, <span class="cert">%s</span></h2><span class="phone">%s</span><span class="email"><a href="mailto:%s">%s</a></span></div>', get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('tpg_cert_text'), genesis_get_custom_field('tpg_phone_number_text'), antispambot(genesis_get_custom_field('tpg_email_address_text')), antispambot(genesis_get_custom_field('tpg_email_address_text')) );
+				} else {
+					printf( '<div class="info"><h2 class="name"><a href="%s" title="%s">%s</a>, <span class="cert">%s</span></h2><span class="phone">%s</span></div>', get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('tpg_cert_text'), genesis_get_custom_field('tpg_phone_number_text') );
 				}
-				echo '</div><!--#end contact-->';
-
-				echo '<div ';
-					post_class('about');
-				echo '>';
-			    $default_attr = array(
-			               'class' => "$image_align profile-image",
-			               'alt'   => $post->post_title,
-			               'title' => $post->post_title
-			           );
-					echo genesis_get_image( array( 'size' => 'profile-picture-listing', 'attr' => $default_attr ) );
-					the_excerpt();
-				echo '</div><!--end #about -->';
-			echo '</div><!--end #person -->';
+			} else {
+					printf( '<div class="info"><h2 class="name"><a href="%s" title="%s">%s</a>, <span class="cert">%s</span></h2></div>', get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('tpg_cert_text') );
+			}
+		} else {
+			if( genesis_get_custom_field('tpg_phone_number_text') != '') {
+				if( genesis_get_custom_field('tpg_email_address_text') != '') {
+					printf( '<div class="info"><h2 class="name"><a href="%s" title="%s">%s</a></h2><span class="phone">%s</span><span class="email"><a href="mailto:%s">%s</a></span></div>', get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('tpg_phone_number_text'), antispambot(genesis_get_custom_field('tpg_email_address_text')), antispambot(genesis_get_custom_field('tpg_email_address_text')) );
+				} else {
+					printf( '<div class="info"><h2 class="name"><a href="%s" title="%s">%s</a></h2><span class="phone">%s</span></div>', get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('tpg_phone_number_text') );
+				}
+			}
+		}
+	echo '</div><!--end #person -->';
 }
+
+function tpg_nonconsulting_page_loop_content() {
+	global $post;
+	printf( '<div id="post-%s" class="person clear">', get_the_ID() );
+		//use the genesis_get_custom_field template tag to display each custom field value
+		echo '<div class="contact">';
+		$default_attr = array(
+               'class' => "alignleft profile-image-listing",
+               'alt'   => $post->post_title,
+               'title' => $post->post_title
+           );
+		echo genesis_get_image( array( 'size' => 'profile-picture-listing', 'attr' => $default_attr ) );
+			if( genesis_get_custom_field('tpg_title_text') != '') { 
+				printf( '<span class="title">%s</span>', genesis_get_custom_field('tpg_title_text') );
+			}
+		echo '</div><!--#end contact-->';
+		if ( genesis_get_custom_field('tpg_cert_text') != '' ) {
+			if( genesis_get_custom_field('tpg_phone_number_text') != '') {
+				if( genesis_get_custom_field('tpg_email_address_text') != '') {
+					printf( '<div class="info"><h2 class="name">%s, <span class="cert">%s</span></h2><span class="phone">%s</span><span class="email"><a href="mailto:%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('tpg_cert_text'), genesis_get_custom_field('tpg_phone_number_text'), antispambot(genesis_get_custom_field('tpg_email_address_text')), antispambot(genesis_get_custom_field('tpg_email_address_text')) );
+				} else {
+					printf( '<div class="info"><h2 class="name">%s, <span class="cert">%s</span></h2><span class="phone">%s</span></div>', get_the_title(), genesis_get_custom_field('tpg_cert_text'), genesis_get_custom_field('tpg_phone_number_text') );
+				}
+			} else {
+					printf( '<div class="info"><h2 class="name">%s, <span class="cert">%s</span></h2></div>', get_the_title(), genesis_get_custom_field('tpg_cert_text') );
+			}
+		} else {
+			if( genesis_get_custom_field('tpg_phone_number_text') != '') {
+				if( genesis_get_custom_field('tpg_email_address_text') != '') {
+					printf( '<div class="info"><h2 class="name">%s</h2><span class="phone">%s</span><span class="email"><a href="mailto:%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('tpg_phone_number_text'), antispambot(genesis_get_custom_field('tpg_email_address_text')), antispambot(genesis_get_custom_field('tpg_email_address_text')) );
+				} else {
+					printf( '<div class="info"><h2 class="name">%s</h2><span class="phone">%s</span></div>', get_the_title(), genesis_get_custom_field('tpg_phone_number_text') );
+				}
+			}
+		}
+	echo '</div><!--end #person -->';
+}
+
+function tpg_page_after_loop(){
+}
+
+genesis();
