@@ -55,7 +55,7 @@ class cmb_Meta_Box_Validate {
 /**
  * Defines the url to which is used to load local resources.
  * This may need to be filtered for local Window installations.
- * If resources to not load, please check the wiki for details.
+ * If resources do not load, please check the wiki for details.
  */
 define( 'CMB_META_BOX_URL', apply_filters( 'cmb_meta_box_url', trailingslashit( str_replace( WP_CONTENT_DIR, WP_CONTENT_URL, dirname( __FILE__ ) ) ) ) );
 
@@ -409,7 +409,10 @@ class cmb_Meta_Box {
 
 		foreach ( $this->_meta_box['fields'] as $field ) {
 			$name = $field['id'];			
-			if ( 'multicheck' == $field['type'] ? $field['multiple'] = true : $field['multiple'] = false );      
+
+			if ( ! isset( $field['multiple'] ) )
+				$field['multiple'] = ( 'multicheck' == $field['type'] ) ? true : false;    
+				  
 			$old = get_post_meta( $post_id, $name, !$field['multiple'] /* If multicheck this can be multiple values */ );
 			$new = isset( $_POST[$field['id']] ) ? $_POST[$field['id']] : null;
 			
