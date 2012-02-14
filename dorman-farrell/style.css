@@ -77,7 +77,7 @@ select,
 textarea {
 	color: #00529A;
 	font-family: verdana, arial, tahoma, sans-serif;
-	font-size: 16px;
+	font-size: 100%;
 	font-weight: 300;
 	line-height: 1.5625;
 	margin: 0;
@@ -104,7 +104,7 @@ select,
 textarea {
 	color: #333;
 	font-family: verdana, arial, tahoma, sans-serif;
-	font-size: 14px;
+	font-size: .875em;
 	font-weight: 300;
 }
 
@@ -270,7 +270,7 @@ body {
 	background-color: #5c98ce;
 	clear: both;
 	color: #fff;
-	font-size: 14px;
+	font-size: .875em;
 	margin: 0 auto;
 	overflow: hidden;
 	width: 100%;
@@ -349,7 +349,7 @@ body {
 	border: 1px solid #ddd;
 	border-top: none;
 	color: #fff;
-	font-size: 12px;
+	font-size: .75em;
 	padding: 9px 10px 8px;
 	position: relative;
 	text-transform: none;
@@ -544,7 +544,7 @@ ul.menu li.sfHover ul,
 ------------------------------------------------------------ */
 
 .breadcrumb {
-	font-size: 14px;
+	font-size: .875em;
 	margin: -10px 0 30px;
 	padding: 5px 10px;
 }
@@ -560,7 +560,7 @@ ul.menu li.sfHover ul,
 }
 
 .taxonomy-description p {
-	font-size: 14px;
+	font-size: .875em;
 	padding: 15px 15px 0;
 }
 
@@ -675,7 +675,7 @@ ul.menu li.sfHover ul,
 }
 
 .role-consulting, .role-service, .role-admin  {
-	font-size: 30px;
+	font-size: 1.875em;
 	border-bottom: 1px solid #0d72c7;
 }
 
@@ -690,7 +690,7 @@ ul.menu li.sfHover ul,
 }
 
 .email, .phone, .title {
-	font-size: 13px;
+	font-size: .8125em;
 }
 
 .title {
@@ -736,7 +736,7 @@ ul.menu li.sfHover ul,
 .page-template-page-staff-php h2.name,
 .page-template-page-staff-php h2.name a,
 .page-template-page-staff-php h2.name a:visited {
-	font-size: 18px;
+	font-size: 1.125em;
 }
 
 .staff .name {
@@ -893,11 +893,11 @@ h6 {
 }
 
 h1 {
-	font-size: 30px;
+	font-size: 1.875em;
 }
 
 h1.entry-title {
-	font-size: 24px;
+	font-size: 1.5em;
 	font-weight: bold;
 }
 
@@ -908,7 +908,7 @@ h1.entry-title {
 h2,
 h2 a,
 h2 a:visited {
-	font-size: 22px;
+	font-size: 1.375em;
 }
 
 h2 a,
@@ -925,30 +925,30 @@ h2 a:hover {
 
 .widget-area h2,
 .widget-area h2 a {
-	font-size: 14px;
+	font-size: .875em;
 	margin: 0 0 5px;
 }
 
 .home h2,
 .home h2 a {
-	font-size: 16px;
+	font-size: 1em;
 	font-weight: bold;
 	margin-left: 0 auto 0;
 }
 
 h3 {
-	font-size: 24px;
+	font-size: 1.5em;
 }
 
 h4 {
-	font-size: 20px;
+	font-size: 1.25em;
 }
 
 .taxonomy-description h1,
 .widget-area h4 {
 	background-color: #f5f5f5;
 	border-bottom: 1px solid #ddd;
-	font-size: 14px;
+	font-size: .875em;
 	padding: 9px 10px 8px;
 }
 
@@ -964,7 +964,7 @@ h4 {
 }
 
 h5 {
-	font-size: 18px;
+	font-size: 1.125em;
 }
 
 
@@ -999,7 +999,7 @@ h5 {
 ------------------------------------------------------------ */
 
 .post-info {
-	font-size: 14px;
+	font-size: .875em;
 	margin: -5px 0 15px;
 }
 
@@ -1010,7 +1010,7 @@ h5 {
 .post-meta {
 	border-top: 1px solid #ddd;
 	clear: both;
-	font-size: 14px;
+	font-size: .875em;
 	padding: 5px 0 0;
 }
 
@@ -1026,7 +1026,7 @@ h5 {
 }
 
 .author-box p {
-	font-size: 14px;
+	font-size: .875em;
 }
 
 
@@ -1149,7 +1149,7 @@ p.wp-caption-text {
 ------------------------------------------------------------ */
 
 .navigation {
-	font-size: 14px;
+	font-size: .875em;
 	overflow: hidden;
 	padding: 20px 0;
 	width: 100%;
@@ -1179,7 +1179,7 @@ p.wp-caption-text {
 .sidebar {
 	display: inline;
 	float: right;
-	font-size: 14px;
+	font-size: .875em;
 	width: 280px;
 }
 
@@ -1357,7 +1357,7 @@ input:hover[type="submit"] {
 }
 
 #wp-calendar caption {
-	font-size: 12px;
+	font-size: .75em;
 	font-style: italic;
 	padding: 2px 5px 0 0;
 	text-align: right;
@@ -1383,7 +1383,7 @@ input:hover[type="submit"] {
 	background-color: #f5f5f5;
 	border-top: 1px solid #ddd;
 	clear: both;
-	font-size: 14px;
+	font-size: .875em;
 	margin: 0 auto;
 	overflow: hidden;
 	width: 100%;
@@ -1429,18 +1429,18 @@ input:hover[type="submit"] {
 
 .footer-widgets-1 {
 	float: left;
-	margin: 0 30px 0 0;
-	width: 280px;
+	margin: 0 3.125% 0 0;
+	width: 29.166666666667%;
 }
 
 .footer-widgets-2 {
 	float: left;
-	width: 280px;
+	width: 29.166666666667%;
 }
 
 .footer-widgets-3 {
 	float: right;
-	width: 280px;
+	width: 29.166666666667%;
 }
 
 
@@ -1451,7 +1451,7 @@ input:hover[type="submit"] {
 	background-color: #fff;
 	border-top: 1px solid #ddd;
 	clear: both;
-	font-size: 14px;
+	font-size: .875em;
 	margin: 0 auto;
 	overflow: hidden;
 	width: 100%;
@@ -1479,13 +1479,13 @@ input:hover[type="submit"] {
 
 #footer .gototop {
 	float: left;
-	width: 200px;
+	width: 20.833333333333%;
 }
 
 #footer .creds {
 	float: right;
 	text-align: right;
-	width: 650px;
+	width: 67.708333333333%;
 }
 
 
@@ -1536,7 +1536,7 @@ input:hover[type="submit"] {
 }
 
 .comment-content p {
-	font-size: 14px;
+	font-size: .875em;
 	margin: 0 0 20px;
 }
 
@@ -1546,12 +1546,12 @@ input:hover[type="submit"] {
 }
 
 .commentmetadata {
-	font-size: 12px;
+	font-size: .75em;
 	margin: 0 0 5px;
 }
 
 .reply {
-	font-size: 14px;
+	font-size: .875em;
 	font-weight: 300;
 }
 
@@ -1585,7 +1585,7 @@ div.gform_wrapper input,
 div.gform_wrapper select,
 div.gform_wrapper textarea {
 	box-sizing: border-box;
-	font-size: 14px !important;
+	font-size: .875em !important;
 	padding: 4px 5px !important;
 }
 
@@ -1594,7 +1594,7 @@ div.gform_footer input.button {
 }
 
 div.gform_wrapper .ginput_complex label {
-	font-size: 14px;
+	font-size: .875em;
 }
 
 div.gform_wrapper li,
@@ -1612,40 +1612,17 @@ div.gform_wrapper .gform_footer {
 /* Responsive Design
 ------------------------------------------------------------ */
 
-@media screen and (-webkit-min-device-pixel-ratio: 2) {
-	#nav,
-	#subnav,
-	.post-image,
-	.post-inner-image,
-	.name,
-	.phone,
-	.email,
-	.page-template-page-staff-php h2.name,
-	.menu-primary li,
-	.menu-primary li ul,
-	.menu-primary li ul a,
-	.menu-secondary li,
-	.menu-secondary li ul,
-	.menu-secondary li ul a,
-	#nav .menu-primary li,
-	#nav .menu-primary li ul,
-	#nav .menu-primary li ul a,
-	#nav .menu-primary li:last-child,
-	#subnav .menu-secondary li,
-	#subnav .menu-secondary li ul,
-	#subnav .menu-secondary li ul a,
-	#subnav .menu-secondary li:last-child,
-	#header .menu li,
-	#header .menu li ul,
-	#header .menu li ul a {
-		width: 100%;
-	}
+@media only screen and (max-width:1024px), only screen and (max-device-width:1024px) {
 	
-	.contact,
 	.info {
-		width: 50%;
+		width: 79%;
+		float: right;
+		padding-right: 1%;
 	}
-	
+	.contact {
+		width: 17%;
+	}
+
 	.phone,
 	.page-template-page-staff-php h2.name,
 	.email {
@@ -1655,85 +1632,22 @@ div.gform_wrapper .gform_footer {
 	.phone {
 		padding: 0;
 	}
-	
+
+	.page-template-page-staff-php img.alignleft {
+		height: auto;
+		max-width: 100%;
+	}
+
 	.title {
-		top: -60px;
-		left: 200px;
+		top: -100px;
+		left: 160px;
+		width: 200px;
+		margin: 5px 0 5px 0;
 	}
-	
-	.five-sixths,
-	.four-fifths,
-	.four-sixths,
-	.one-fifth,
-	.one-fourth,
-	.one-half,
-	.one-sixth,
-	.one-third,
-	.three-fifths,
-	.three-fourths,
-	.three-sixths,
-	.two-fifths,
-	.two-fourths,
-	.two-sixths,
-	.two-thirds {
-		padding: 0;
-		width: 100%;
-	}
-
-	.menu-primary li a,
-	.menu-secondary li a,
-	#header .menu li a {
-		margin: 0;
-		padding: 7px 3%;
-	}
-
-	.menu li li a .sf-sub-indicator,
-	.menu li li li a .sf-sub-indicator {
-		background: url(images/icon-plus-white.png) right no-repeat;
-	}
-
-	.menu-primary li li a,
-	.menu-primary li li a:link,
-	.menu-primary li li a:visited,
-	.menu-secondary li li a,
-	.menu-secondary li li a:link,
-	.menu-secondary li li a:visited,
-	#header .menu li li a,
-	#header .menu li li a:link,
-	#header .menu li li a:visited {
-		color: #fff;
-		padding: 7px 3%;
-		width: 94%;
-	}
-
-	.menu-primary li ul,
-	.menu-secondary li ul,
-	#header .menu li ul {
-		clear: both;
-		margin: 0;
-		padding: 0;
-		position: inherit;
-	}
-
-	.menu-primary li ul ul,
-	.menu-secondary li ul ul,
-	#header .menu li ul ul {
-	}
-
-	.menu-primary li ul ul ul,
-	.menu-secondary li ul ul ul,
-	#header .menu li ul ul ul {
-	}
-
-	.menu-primary li ul ul,
-	.menu-secondary li ul ul,
-	#header .menu li ul ul {
-		margin: 0;
-	}
-
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
+
 	#nav,
 	#subnav,
 	.post-image,
@@ -1761,27 +1675,7 @@ div.gform_wrapper .gform_footer {
 	#header .menu li ul a {
 		width: 100%;
 	}
-	
-	.contact,
-	.info {
-		width: 50%;
-	}
-	
-	.phone,
-	.page-template-page-staff-php h2.name,
-	.email {
-		text-align: left;
-	}
-	
-	.phone {
-		padding: 0;
-	}
-	
-	.title {
-		top: -60px;
-		left: 200px;
-	}
-	
+
 	.five-sixths,
 	.four-fifths,
 	.four-sixths,
@@ -1851,41 +1745,49 @@ div.gform_wrapper .gform_footer {
 	#header .menu li ul ul {
 		margin: 0;
 	}
+	
+	.contact {
+		width: 14%;
+	}
 
+	.info {
+		width: 80%;
+	}
+
+	.person-content {
+		width: 72%;
+	}
+	
+	.title {
+		top: 0px;
+		left: 15px;
+		width: 200px;
+		margin: 5px 0 5px 0;
+	}
 }
 
-@media only screen and (max-width: 600px) {
-	#nav,
-	#subnav,
-	.post-image,
-	.post-inner-image,
-	.name,
-	.phone,
-	.email,
-	.page-template-page-staff-php h2.name,
-	.menu-primary li,
-	.menu-primary li ul,
-	.menu-primary li ul a,
-	.menu-secondary li,
-	.menu-secondary li ul,
-	.menu-secondary li ul a,
-	#nav .menu-primary li,
-	#nav .menu-primary li ul,
-	#nav .menu-primary li ul a,
-	#nav .menu-primary li:last-child,
-	#subnav .menu-secondary li,
-	#subnav .menu-secondary li ul,
-	#subnav .menu-secondary li ul a,
-	#subnav .menu-secondary li:last-child,
-	#header .menu li,
-	#header .menu li ul,
-	#header .menu li ul a {
-		width: 100%;
+@media only screen and (max-width:480px), only screen and (max-device-width:480px) {
+
+	.page-template-page-staff-php {
+		font-size: .9em;
 	}
 	
-	.contact,
+	#title-area {
+		background: url(images/DormanFarrellMobile-300.png) no-repeat 8px 10px;
+	}
+	
+	.contact {
+		width: 14%;
+		float: left;
+	}
+
 	.info {
-		width: 50%;
+		width: 80%;
+		float: right;
+	}
+
+	.person-content {
+		width: 72%;
 	}
 	
 	.phone,
@@ -1899,80 +1801,53 @@ div.gform_wrapper .gform_footer {
 	}
 	
 	.title {
-		top: -60px;
-		left: 200px;
-	}
-	
-	.five-sixths,
-	.four-fifths,
-	.four-sixths,
-	.one-fifth,
-	.one-fourth,
-	.one-half,
-	.one-sixth,
-	.one-third,
-	.three-fifths,
-	.three-fourths,
-	.three-sixths,
-	.two-fifths,
-	.two-fourths,
-	.two-sixths,
-	.two-thirds {
-		padding: 0;
-		width: 100%;
+		top: 5px;
+		left: 15px;
+		width: 200px;
+		margin: 5px 0 5px 0;
 	}
 
-	.menu-primary li a,
-	.menu-secondary li a,
-	#header .menu li a {
-		margin: 0;
-		padding: 7px 3%;
+	.page-template-page-staff-php img.alignleft {
+		height: auto;
+		max-width: 100%;
+	}
+}
+
+@media only screen and (max-width:320px), only screen and (max-device-width:320px) {
+
+	.page-template-page-staff-php #content {
+		font-size: .8em;
 	}
 
-	.menu li li a .sf-sub-indicator,
-	.menu li li li a .sf-sub-indicator {
-		background: url(images/icon-plus-white.png) right no-repeat;
+	#title-area {
+		background: url(images/DormanFarrellMobile-235.png) no-repeat 6px 14px;
 	}
 
-	.menu-primary li li a,
-	.menu-primary li li a:link,
-	.menu-primary li li a:visited,
-	.menu-secondary li li a,
-	.menu-secondary li li a:link,
-	.menu-secondary li li a:visited,
-	#header .menu li li a,
-	#header .menu li li a:link,
-	#header .menu li li a:visited {
-		color: #fff;
-		padding: 7px 3%;
-		width: 94%;
+	.title {
+		top: 0px;
 	}
 
-	.menu-primary li ul,
-	.menu-secondary li ul,
-	#header .menu li ul {
-		clear: both;
-		margin: 0;
-		padding: 0;
-		position: inherit;
+	.contact {
+		width: 17%;
+		float: left;
 	}
 
-	.menu-primary li ul ul,
-	.menu-secondary li ul ul,
-	#header .menu li ul ul {
+	.info {
+		width: 64%;
+		float: right;
 	}
 
-	.menu-primary li ul ul ul,
-	.menu-secondary li ul ul ul,
-	#header .menu li ul ul ul {
+	/*.page-template-page-staff-php img.alignleft {
+		margin: 20px 5px 0 15px;
 	}
 
-	.menu-primary li ul ul,
-	.menu-secondary li ul ul,
-	#header .menu li ul ul {
-		margin: 0;
+	.page-template-page-staff-php .info {
+		margin-top: 15px;
 	}
 
+	.page-template-page-staff-php {
+		line-height: 1.1;
+	}*/
 }
 
 @media only screen and (max-width: 960px) {

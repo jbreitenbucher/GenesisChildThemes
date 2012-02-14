@@ -94,7 +94,7 @@ function tpg_reset() {
  * @author The Pedestal Group
  */
 
-function tech_notices() {
+function tpg_notices() {
 	if ( ! isset( $_REQUEST['page'] ) || 'dorman-farrell-settings' != $_REQUEST['page'] )
 		return;
 
