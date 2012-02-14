@@ -1756,8 +1756,18 @@ img.wp-smiley, img.wp-wink {
 @media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
 
 	.featured,
+	.featured-top-left,
+	.featured-top-right,
+	.featured-middle-left,
+	.featured-middle-center,
+	.featured-middle-right,
+	.featured-bottom-left,
+	.featured-bottom-right,
 	#nav,
 	#subnav,
+	#title-area,
+	#wrap,
+	#branding,
 	.menu-primary li,
 	.menu-primary li ul,
 	.menu-primary li ul a,
@@ -1774,6 +1784,13 @@ img.wp-smiley, img.wp-wink {
 	#subnav .menu-secondary li ul,
 	#subnav .menu-secondary li ul a {
 		width: 100%;
+	}
+	
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3,
+	.footer-widgets-4 {
+		width: 48%;
 	}
 	
 	.five-sixths,
@@ -1866,7 +1883,7 @@ img.wp-smiley, img.wp-wink {
 
 @media only screen and (max-width: 960px) {
 
-	body {
+	/*body {
 		width: 100%;
 		margin: 0 auto;
 	}
@@ -1990,6 +2007,6 @@ img.wp-smiley, img.wp-wink {
 	.footer-widgets-3,
 	.footer-widgets-4 {
 		margin: 0;
-	}
+	}*/
 
 }
