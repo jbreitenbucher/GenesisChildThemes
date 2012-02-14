@@ -132,7 +132,7 @@ body {
 	background: #F3F3F3;
 	color: #222222;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	font-size: 16px;
+	font-size: 1em;
 	margin: 0 auto 0;
 	line-height: 1.5625;
 }
@@ -209,7 +209,7 @@ a:focus, a:hover, a:active {
 	
 .tagline {
 	color: #666666;
-	font-size: 13px;
+	font-size: .8125em;
 	padding-top: 17px;
 	padding-right: 10px;
 	}
@@ -222,14 +222,14 @@ a:focus, a:hover, a:active {
 	}
 
 #title-area {
-	width: 450px;
+	width: 47.872340425532%; /* 450px */
 	float: left;
 	padding: 0;
 	overflow: hidden;
 	}
 	
 #title-area #title {
-	font-size: 36px;
+	font-size: 2.25em;
 	font-weight: normal;
 	line-height: 42px;
 	margin: 0; 
@@ -253,7 +253,7 @@ a:focus, a:hover, a:active {
 
 #header .widget-area {
 	display: none;
-	width: 478px;
+	width: 50.851063829787%; /* 478px */
 	float: right;
 	padding-right: 10px;
 	padding-top: 20px;
@@ -271,7 +271,7 @@ a:focus, a:hover, a:active {
 .header-image #title-area #title a {
 	display: block; 
 	float: left;
-	width: 450px;
+	width: 47.872340425532%; /* 450px */
 	height: 150px;
 	padding: 0;
 	text-indent: -9999px;
@@ -300,7 +300,7 @@ a:focus, a:hover, a:active {
 	width: 100%;
 	color: #666666;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	font-size: 13px;
+	font-size: .8125em;
 	margin: 0 auto 0;
 	text-transform: uppercase;
 	border: 1px solid #DDDDDD;
@@ -572,7 +572,7 @@ ul.menu li.sfHover ul,
 }
 
 .featured-top p {
-	font-size: 14px;
+	font-size: .875em;
 	line-height: 20px;
 }
 
@@ -600,7 +600,7 @@ ul.menu li.sfHover ul,
 }
 
 .featured-middle p {
-	font-size: 14px;
+	font-size: .875em;
 	line-height: 20px;
 }
 
@@ -633,7 +633,7 @@ ul.menu li.sfHover ul,
 }
 
 .featured-bottom p {
-	font-size: 14px;
+	font-size: .875em;
 	line-height: 20px;
 }
 
@@ -672,7 +672,7 @@ ul.menu li.sfHover ul,
 /***** Breadcrumb ********************/
 
 .breadcrumb {
-	font-size: 14px;
+	font-size: .875em;
 	margin: 0 0 20px 0;
 	padding: 0 0 3px 0;
 	border-bottom: 1px dotted #AAAAAA;
@@ -695,7 +695,7 @@ ul.menu li.sfHover ul,
 /***** Content-Sidebar Wrap ********************/
 
 #content-sidebar-wrap {
-	width: 760px;
+	width: 80.851063829787%; /* 760px */
 	float: left;
 	}
 	
@@ -705,13 +705,13 @@ ul.menu li.sfHover ul,
 	}
 
 .page-template-landing-php #content-sidebar-wrap {
-	width: 700px;
+	width: 74.468085106383%; /* 700px */
 	margin: 0 auto 0;
 	float: none;
 	}
 
 .sidebar-content #content-sidebar-wrap, .content-sidebar #content-sidebar-wrap {
-	width: 920px;
+	width: 97.872340425532%; /* 920px */
 	}
 
 .sidebar-sidebar-content #content-sidebar-wrap, .sidebar-content-sidebar #content-sidebar-wrap {
@@ -722,7 +722,7 @@ ul.menu li.sfHover ul,
 
 #content {
 	float: left;
-	width: 470px;
+	width: 61.842105263158%; /* 470px */
 	margin: 0;
 	padding: 0;
 	}
@@ -732,7 +732,7 @@ ul.menu li.sfHover ul,
 	}
 
 .sidebar-content #content, .content-sidebar #content {
-	width: 630px;
+	width: 68.478260869565%; /* 630px */
 	margin: 0;
 	padding: 0;
 	}
@@ -745,7 +745,7 @@ ul.menu li.sfHover ul,
 	}
 	
 .page-template-landing-php #content {
-	width: 700px;
+	width: 100%; /* 700px */
 	margin: 0 auto 0;
 	}
 
@@ -897,15 +897,15 @@ ul.menu li.sfHover ul,
 	}
 
 #content h1 {
-	font-size: 26px;
+	font-size: 1.625em;
 	margin: 0 0 10px 0;
-	line-height: 30px;
+	line-height: 1.15384615384615; /* 30px */
 	}
 	
 #content h2 {
-	font-size: 26px;
+	font-size: 1.625em;
 	margin: 0 0 10px 0;
-	line-height: 30px;
+	line-height: 1.15384615384615; /* 30px */
 	}
 	
 #content h2 a, #content h2 a:visited {
@@ -919,19 +919,19 @@ ul.menu li.sfHover ul,
 	}
 
 #content h3 {
-	font-size: 20px;
+	font-size: 1.25em;
 	}
 	
 #content h4, #header .widget-area h4 {
-	font-size: 18px;
+	font-size: 1.125em;
 	}
 
 #content h5 {
-	font-size: 16px;
+	font-size: 1em;
 	}
 	
 #content h6 {
-	font-size: 14px;
+	font-size:.875em;
 	}
 	
 /***** Unordered/Ordered Lists ********************/
@@ -977,7 +977,7 @@ list-style:none;
 .post-info {
 	background: #F9F9F9;
 	color: #666666;
-	font-size: 13px;
+	font-size: .8125em;
 	margin: 0 0 15px 0;
 	padding: 2px 5px 2px 5px;
 	}
@@ -992,7 +992,7 @@ list-style:none;
 .post-meta {
 	background: #F9F9F9;
 	color: #666666;
-	font-size: 13px;
+	font-size: .8125em;
 	margin: 0 0 15px 0;
 	padding: 2px 5px 2px 5px;
 	clear: both;
@@ -1115,9 +1115,9 @@ img.alignright {
 	}
 
 .wp-caption p.wp-caption-text {
-	font-size: 12px;
+	font-size: .75em;
 	font-weight: normal;
-	line-height: 14px;
+	line-height: 1.16666666666667; /* 14px */
 	padding: 5px 0 5px 0 !important;
 	}
 	
@@ -1130,7 +1130,7 @@ img.wp-smiley, img.wp-wink {
 
 .navigation {
 	width: 100%;
-	font-size: 14px;
+	font-size: .875em;
 	margin: 0;
 	padding: 0 0 15px 0;
 	overflow: hidden;
@@ -1166,16 +1166,16 @@ img.wp-smiley, img.wp-wink {
 /***** Primary & Secondary Sidebars ********************/
 
 #sidebar {
-	width: 270px;
+	width: 35.526315789474%; /* 270px */
 	float: right;
-	font-size: 13px;
+	font-size: .8125em;
 	display: inline;
 	}
 	
 #sidebar-alt {
-	width: 140px;
+	width: 15.217391304348%; /* 140px */
 	float: left;
-	font-size: 13px;
+	font-size: .8125em;
 	display: inline;
 	}
 
@@ -1199,7 +1199,7 @@ img.wp-smiley, img.wp-wink {
 	
 #sidebar h2, #sidebar h2 a, #sidebar-alt h2, #sidebar-alt h2 a {
 	color: #222222;
-	font-size: 18px;
+	font-size: 1.125em;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	font-weight: normal;
 	margin: 0;
@@ -1214,7 +1214,7 @@ img.wp-smiley, img.wp-wink {
 
 #sidebar h4, #sidebar-alt h4 {
 	color: #222222;
-	font-size: 16px;
+	font-size: 1em;
 	font-family: Georgia, "Times New Roman", "Trebuchet MS", sans-serif;
 	font-weight: normal;
 	margin: 0 0 5px 0;
@@ -1271,7 +1271,7 @@ img.wp-smiley, img.wp-wink {
 #cat {
 	background: #F3F3F3;
 	color: #333333;
-	font-size: 12px;
+	font-size: .75em;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	margin: 10px 0 0 0;
 	padding: 3px;
@@ -1280,11 +1280,11 @@ img.wp-smiley, img.wp-wink {
 	}
 	
 #sidebar #cat {
-	width: 248px;
+	width: 91.851851851852%; /* 248px */
 	}
 	
 #sidebar-alt #cat {
-	width: 128px;
+	width: 91.428571428571%; /* 128px */
 	}
 
 /***** Sidebar(s) Featured Post/Page ********************/
@@ -1372,7 +1372,7 @@ img.wp-smiley, img.wp-wink {
 	
 .enews #subbox {
 	background: #F3F3F3;
-	width: 200px;
+	width: 74.074074074074%; /* 200px */
 	color: #666666;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	font-size: 11px;
@@ -1413,7 +1413,7 @@ img.wp-smiley, img.wp-wink {
 
 #wp-calendar caption {
 	color: #333333;
-	font-size: 13px;
+	font-size: .8125em;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	font-style: italic;
 	font-weight: normal;
@@ -1445,7 +1445,7 @@ img.wp-smiley, img.wp-wink {
 	background: #444444;
 	color: #FFFFFF;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	font-size: 13px;
+	font-size: .8125em;
 	font-weight: normal !important;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -1476,7 +1476,7 @@ img.wp-smiley, img.wp-wink {
 	background: #F3F3F3;
 	color: #222222 !important;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif !important;
-	font-size: 12px !important;
+	font-size: .75em !important;
 	padding: 4px 0 4px 5px !important;
 	border: 1px solid #DDDDDD;
 	}
@@ -1486,7 +1486,7 @@ img.wp-smiley, img.wp-wink {
 	}
 	
 .gform_wrapper .ginput_complex label {
-	font-size: 12px !important;
+	font-size: .75em !important;
 	}
 	
 .gform_wrapper li, .gform_wrapper form li {
@@ -1510,8 +1510,8 @@ img.wp-smiley, img.wp-wink {
 
 #footer-widgets .wrap {
 	color: #fff;
-	font-size: 12px;
-	line-height: 20px;
+	font-size: .75em;
+	line-height: 1.66666666666667; /* 20px */
 	padding: 20px 10px 0;
 }
  
@@ -1530,8 +1530,8 @@ img.wp-smiley, img.wp-wink {
 
 #footer-widgets p {
 	color: #fff;
-	font-size: 12px;
-	line-height: 20px;
+	font-size: .75em;
+	line-height: 1.66666666666667; /* 20px */
 	padding: 0 0 5px;
 }
 
@@ -1590,7 +1590,7 @@ img.wp-smiley, img.wp-wink {
 	width: 100%;
 	color: #666666;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	font-size: 13px;
+	font-size: .8125em;
 	margin: 0 auto 0;
 	padding: 10px 0 10px 0;
 	text-transform: uppercase;
@@ -1619,14 +1619,14 @@ img.wp-smiley, img.wp-wink {
 	}
 
 #footer .gototop {
-	width: 200px;
+	width: 21.739130434783%; /* 200px */
 	float: left;
 	margin: 0 0 0 30px;
 	padding: 0;
 	}
 
 #footer .creds {
-	width: 695px;
+	width: 75.54347826087%; /* 695px */
 	float: right;
 	margin: 0 10px 0 0;
 	padding: 0;
@@ -1643,10 +1643,10 @@ img.wp-smiley, img.wp-wink {
 
 #author, #email, #url {
 	background: #F3F3F3;
-	width: 250px;
+	width: 32.894736842105%; /* 250px */
 	color: #666666;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	font-size: 13px;
+	font-size: .8125em;
 	padding: 3px 0 3px 3px;
 	margin: 5px 5px 0 0;
 	border: 1px solid #DDDDDD;
@@ -1658,7 +1658,7 @@ img.wp-smiley, img.wp-wink {
 	height: 150px;
 	color: #666666;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	font-size: 13px;
+	font-size: .8125em;
 	padding: 3px 0 3px 3px;
 	margin: 5px 0 5px 0;
 	border: 1px solid #DDDDDD;
@@ -1713,7 +1713,7 @@ img.wp-smiley, img.wp-wink {
 
 .commentmetadata {
 	font-weight: normal;
-	font-size: 13px;
+	font-size: .8125em;
 	}
 
 #respond:after {
@@ -1742,223 +1742,22 @@ img.wp-smiley, img.wp-wink {
 	margin: 0;
 	padding: 0;
 	}
-	
-/* Responsive Design - Menu and Logo
------------------------------------------------------------- */
-
-@media only screen and (max-width: 600px) {
-	
-	#wrap {
-		width: 100%;
-	}
-	
-	#title-area,
-	#title,
-	#description {
-		text-align: center; 
-		margin: 0 auto;
-		width: 100%;
-	}
-	
-	/* This allows the header to be centered at lower resolutions when no header right widget */
-	.header-full-width #title-area {
-		width: 28.7234042%;
-		margin: 0 auto;
-		float: none;
-	}
-	
-	/* This allows the header to be centered at lower resolutions */
-	.header-image #title-area {
-			float: none;
-	}
-	
-	/* When title is text, header is 120px tall */
-	.header-widget #header .wrap {
-		overflow: visible;
-		height: 150px;
-	}
-	
-	/* When using an image, bump it up to 170px */
-	.header-image.header-widget #header .wrap {
-		height: 150px;
-	}
-	
-	#header .widget-area,
-	#header .nav {
-		border-top: 1px solid #ddd;
-		margin-top: 20px;
-		padding-top: 2px;
-		float: left;
-		position: relative;
-		width: 100%;
-	}
-	
-	#header .widget-area .widget_nav_menu {
-		border-top: 1px solid #eee;
-	}
-	
-	#header .widget-area ul,
-	#nav ul,
-	#subnav ul {
-		clear:left;
-		float:left;
-		list-style:none;
-		margin-left: 0;
-		position:relative;
-		left:50%;
-		text-align:center;
-	}
-	
-	#header .widget-area ul li,
-	#nav ul li,
-	#subnav ul li {
-		position:relative;
-		right:50%;
-	}
-		
-}
-
-@media only screen and (max-device-width: 600px) {
-	
-	#branding, #nav {
-		margin: 0 auto;
-		width: 100%;
-	}
-	
-	.wordmark, .tagline {
-		float: none;
-		width: 100%;
-	}
-	
-	.tagline {
-		padding:0 0 0 15px;
-		margin: -25px 0 0 15px;
-	}
-	
-	#header {
-		background-position: center top;
-		float: none;
-		margin: 0 auto;
-		width: 100%;
-	}
-
-	.header-image #title-area,
-	.header-image #title,
-	.header-image #title a {
-		background-position: center top;
-		float: none;
-		margin: 0 auto;
-		width: 100%;
-	}
-	
-	#header .widget-area {
-		border-top: 1px solid #ddd;
-		margin-top: 20px;
-		padding-top: 2px;
-		width: 100%;
-	}
-	
-	#header .widget-area .widget_nav_menu {
-		border-top: 1px solid #eee;
-		padding-top: 10px;
-	}
-
-	#header ul.nav li ul,
-	#header ul.menu li ul,
-	#header .widget-area ul,
-	#header .widget-area li,
-	#nav ul,
-	#nav ul li,
-	#nav li ul,
-	#subnav ul,
-	#subnav ul li,
-	#subnav li ul {
-		float:none;
-		clear:both;
-		margin:0;
-		display:block;
-		padding:0;
-		width:100%;
-	}
-	
-	#header .widget-area li,
-	#nav li,
-	#subnav li {
-		margin:0!important;
-	}
-
-	#header .widget-area li a,
-	#nav li a,
-	#subnav li a {
-		display:block;
-	}
-	
-	#header ul.nav li li a,
-	#header ul.menu li li a,
-	#nav li li a,
-	#subnav li li a {
-		background-color: transparent;
-		color: #333;
-		font-size: 11px;
-		padding: 5px 10px;
-		position: relative;
-		width: auto;
-}
-
-	#header ul.nav li li a:hover,
-	#header ul.nav li li a:active,
-	#header ul.menu li li a:hover,
-	#header ul.menu li li a:active,
-	#nav li li a:hover,
-	#subnav li li a:hover {
-		background-color: #ddd;
-	}
-
-	#header ul.nav li li a .sf-sub-indicator,
-	#header ul.menu li li a .sf-sub-indicator,
-	#nav li li a .sf-sub-indicator,
-	#subnav li li a .sf-sub-indicator {
-		background: none;
-		top: 0;
-	}
-
-	#header ul.nav li ul,
-	#header ul.menu li ul,
-	#nav li ul,
-	#subnav li ul {
-		display: block;
-		visibility: visible;
-		height: 100%;
-		left: 0;
-		position: relative;
-		width: auto;
-	}
-
-	#header ul.nav li ul a,
-	#header ul.menu li ul a,
-	#nav li ul a,
-	#subnav li ul a {
-		width: auto;
-	}
-
-	#header ul.nav li ul ul,
-	#header ul.menu li ul ul,
-	#nav li ul ul,
-	#subnav li ul ul {
-		margin: 0;
-	}
-	
-	.wordmark, .tagline {
-		float: none;
-	}
-	
-}
 
 /* Responsive Design
 ------------------------------------------------------------ */
 
-@media only screen and (max-width: 600px) {
+/* For iPad */
+@media only screen and (max-width:1024px), only screen and (max-device-width:1024px) {
+	
+	
+}
 
+/* For Kindle Fire and smaller tablets */
+@media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
+
+	.featured,
+	#nav,
+	#subnav,
 	.menu-primary li,
 	.menu-primary li ul,
 	.menu-primary li ul a,
@@ -1967,7 +1766,13 @@ img.wp-smiley, img.wp-wink {
 	.menu-secondary li ul a,
 	#header .menu li,
 	#header .menu li ul,
-	#header .menu li ul a {
+	#header .menu li ul a,
+	#nav .menu-primary li,
+	#nav .menu-primary li ul,
+	#nav .menu-primary li ul a,
+	#subnav .menu-secondary li,
+	#subnav .menu-secondary li ul,
+	#subnav .menu-secondary li ul a {
 		width: 100%;
 	}
 	
@@ -2044,11 +1849,19 @@ img.wp-smiley, img.wp-wink {
 	#header .menu li ul ul {
 		margin: 0;
 	}
-	
-	.featured {
-		width: 100%;
-	}
 
+}
+
+/* For iPhone */
+@media only screen and (max-width:480px), only screen and (max-device-width:480px) {
+	
+	
+}
+
+/* For smaller smart phones */
+@media only screen and (max-width:320px), only screen and (max-device-width:320px) {
+
+	
 }
 
 @media only screen and (max-width: 960px) {
