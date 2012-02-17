@@ -179,7 +179,7 @@ a:focus, a:hover, a:active {
 	width: 99.787234%;
 	color: #666666;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	font-size: 13px;
+	font-size: .8125em;
 	margin: 0 auto 0;
 	text-transform: uppercase;
 	border: 1px solid #DDDDDD;
@@ -203,7 +203,7 @@ a:focus, a:hover, a:active {
 .wordmark a, .wordmark a:hover {
 	color: #666666;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	font-size: 36px;
+	font-size: 2.25em;
 	text-decoration: none;
 }
 	
@@ -217,8 +217,8 @@ a:focus, a:hover, a:active {
 /***** Header  ********************/
 
 #header {
-	width: 100%; 
-	min-height: 150px;
+	width: 100%;
+	height: auto;
 	}
 
 #title-area {
@@ -231,7 +231,7 @@ a:focus, a:hover, a:active {
 #title-area #title {
 	font-size: 2.25em;
 	font-weight: normal;
-	line-height: 42px;
+	line-height: 1.16666666666667; /* 42px */
 	margin: 0; 
 	padding: 40px 0 0 20px;
 	}
@@ -244,7 +244,7 @@ a:focus, a:hover, a:active {
 #title-area #description {
 	float: right;
 	color: #999999;
-	font-size: 15px;
+	font-size: .9375em;
 	font-style: italic;
 	font-weight: normal;
 	margin: 0; 
@@ -528,6 +528,12 @@ ul.menu li.sfHover ul,
 	clear: both;
 	}
 	
+/***** Inner ********************/
+img {
+	height: auto;
+	width: 100%;
+}
+	
 /* Featured
 ------------------------------------------------------------ */
 .featured {
@@ -607,13 +613,13 @@ ul.menu li.sfHover ul,
 .featured-middle-left {
 	float: left;
 	width: 31.5%;
-	padding-right: 24px;
+	padding-right: 2.553191489362%; /* 24px */
 }
 
 .featured-middle-center {
 	float: left;
 	width: 31.5%;
-	padding-right: 24px;
+	padding-right: 2.553191489362%; /* 24px */
 }
 
 .featured-middle-right {
@@ -732,7 +738,7 @@ ul.menu li.sfHover ul,
 	}
 
 .sidebar-content #content, .content-sidebar #content {
-	width: 68.478260869565%; /* 630px */
+	width: 62.478260869565%; /* 630px */
 	margin: 0;
 	padding: 0;
 	}
@@ -1512,7 +1518,7 @@ img.wp-smiley, img.wp-wink {
 	color: #fff;
 	font-size: .75em;
 	line-height: 1.66666666666667; /* 20px */
-	padding: 20px 10px 0;
+	padding: 2.127659574468% 1.063829787234% 0;
 }
  
 #footer-widgets .widget {
@@ -1524,8 +1530,8 @@ img.wp-smiley, img.wp-wink {
 	-moz-box-shadow: 0 1px 3px #F3F3F3; 
 	-webkit-box-shadow: 0 1px 3px #F3F3F3;
 	border: none;
-	padding: 0 10px 10px;
-	margin: 0 0 10px;
+	padding: 0 1.063829787234% 1.063829787234%;
+	margin: 0 0 1.063829787234%;
 }
 
 #footer-widgets p {
@@ -1563,13 +1569,13 @@ img.wp-smiley, img.wp-wink {
 
 .footer-widgets-1 {
 	float: left;
-	padding: 0 20px 0 0;
+	padding: 0 2.127659574468% 0 0;
 	width: 22.9%;
 }
 
 .footer-widgets-2 {
 	float: left;
-	padding: 0 20px 0 0;
+	padding: 0 2.127659574468% 0 0;
 	width: 24%;
 }
  
@@ -1592,7 +1598,7 @@ img.wp-smiley, img.wp-wink {
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	font-size: .8125em;
 	margin: 0 auto 0;
-	padding: 10px 0 10px 0;
+	padding: 1.063829787234% 0 1.063829787234% 0;
 	text-transform: uppercase;
 	border: 1px solid #DDDDDD;
 	-moz-border-radius: 0em 0em 1em 3em;
@@ -1621,14 +1627,14 @@ img.wp-smiley, img.wp-wink {
 #footer .gototop {
 	width: 21.739130434783%; /* 200px */
 	float: left;
-	margin: 0 0 0 30px;
+	margin: 0 0 0 3.191489361702%;
 	padding: 0;
 	}
 
 #footer .creds {
-	width: 75.54347826087%; /* 695px */
+	width: 73.54347826087%; /* 695px */
 	float: right;
-	margin: 0 10px 0 0;
+	margin: 0 1.063829787234% 0 0;
 	padding: 0;
 	text-align: right;
 	}
@@ -1791,6 +1797,7 @@ img.wp-smiley, img.wp-wink {
 	.footer-widgets-3,
 	.footer-widgets-4 {
 		width: 48%;
+		padding: 0 1.5% 0 0;
 	}
 	
 	.five-sixths,
@@ -1872,13 +1879,37 @@ img.wp-smiley, img.wp-wink {
 /* For iPhone */
 @media only screen and (max-width:480px), only screen and (max-device-width:480px) {
 	
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3,
+	.footer-widgets-4,
+	.wordmark,
+	.tagline {
+		width: 100%;
+	}
 	
+	.wordmark,
+	.tagline {
+		padding: 0;
+		margin: 1% auto 1%;
+		text-align: center;
+	}
+	
+	.sidebar-content #content,
+	.content-sidebar #content,
+	#sidebar {
+		width: 100%;
+	}
 }
 
 /* For smaller smart phones */
 @media only screen and (max-width:320px), only screen and (max-device-width:320px) {
 
-	
+	.sidebar-content #content,
+	.content-sidebar #content,
+	#sidebar {
+		width: 100%;
+	}
 }
 
 @media only screen and (max-width: 960px) {
