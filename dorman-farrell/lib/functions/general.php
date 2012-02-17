@@ -70,12 +70,12 @@ function tpg_add_roles_column_to_staff_list( $posts_columns ) {
 		$index = 0;
 		foreach($posts_columns as $key => $posts_column) {
 			if ($key=='author') {
-			$new_posts_columns['roles'] = null;
+			$new_posts_columns['role'] = null;
 			}
 			$new_posts_columns[$key] = $posts_column;
 		}
 	}
-	$new_posts_columns['roles'] = 'Roles';
+	$new_posts_columns['role'] = 'Roles';
 	$new_posts_columns['author'] = __('Author');
 	return $new_posts_columns;
 }
@@ -95,7 +95,7 @@ function tpg_show_role_column_for_staff_list( $column_id,$post_id ) {
 	if ($typenow=='staff') {
 		$taxonomy = 'role';
 		switch ($column_id) {
-		case 'roles':
+		case 'role':
 			$roles = get_the_terms($post_id,$taxonomy);
 			if (is_array($roles)) {
 				foreach($roles as $key => $role) {
@@ -170,6 +170,41 @@ global $pagenow;
 		}
 }
 add_filter('parse_query','tpg_convert_role_id_to_taxonomy_term_in_query');
+
+/**
+ * Register the Role column as sortable
+ *
+ * @param array $columns
+ * @return array $columns
+ * @author The Pedestal Group
+ *
+ */
+function tpg_role_column_register_sortable( $columns ) {
+	$columns['role'] = 'role';
+ 
+	return $columns;
+}
+add_filter( 'manage_edit-staff_sortable_columns', 'tpg_role_column_register_sortable' );
+
+/**
+ * Set up orderby role
+ *
+ * @param array $vars
+ * @return array $vars
+ * @author The Pedestal Group
+ *
+ */
+function tpg_role_column_orderby( $vars ) {
+	if ( isset( $vars['orderby'] ) && 'role' == $vars['orderby'] ) {
+		$vars = array_merge( $vars, array(
+			'meta_key' => 'tpg_role_taxonomy_select',
+			'orderby' => 'meta_value'
+		) );
+	}
+ 
+	return $vars;
+}
+add_filter( 'request', 'tpg_role_column_orderby' );
 
 /**
  * Customize posts_per_page on staff archive pages
