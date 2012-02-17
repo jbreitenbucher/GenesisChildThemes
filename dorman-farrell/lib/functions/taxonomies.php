@@ -39,14 +39,16 @@ function tpg_create_role_taxonomy(){
 	);
 
 	register_taxonomy(  
-		'role',  
-		'staff',  
-		array(  
-			'hierarchical' => false,  
-			'labels' => $labels,  
-			'query_var' => true,  
+		'role',
+		'staff',
+		array(
+			'hierarchical' => false,
+			'labels' => $labels,
+			'public'=>true,
+			'show_ui'=>true,
+			'query_var' => true,
 			'rewrite' => array( 'slug' => 'role', 'with_front' => false ),
-		)  
+		)
 	);
 }
 add_action( 'init', 'tpg_create_role_taxonomy', 0 );

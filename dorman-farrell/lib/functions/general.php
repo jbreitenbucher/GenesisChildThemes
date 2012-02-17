@@ -47,41 +47,137 @@ function tpg_custom_menu_order( $menu_ord ) {
 		'edit.php', //the posts tab
 		'edit-comments.php', // the comments tab
 		'upload.php', // the media manager
-    );
+	);
 }
 add_filter( 'custom_menu_order', 'tpg_custom_menu_order' );
 add_filter( 'menu_order', 'tpg_custom_menu_order' );
 
 /**
- * Customize columns on staff post type
+ * Add a Role column on the Staff admin page
  *
- * @author Jon Breitenbuhcer
+ * @param array $posts_columns
+ * @return array $new_posts_columns
+ *
+ * @author The Pedestal Group
  *
  */
 
-function tpg_staff_columns($defaults) {
-    $defaults['role'] = 'Role';
-    return $defaults;
+function tpg_add_roles_column_to_staff_list( $posts_columns ) {
+	if (!isset($posts_columns['author'])) {
+		$new_posts_columns = $posts_columns;
+	} else {
+		$new_posts_columns = array();
+		$index = 0;
+		foreach($posts_columns as $key => $posts_column) {
+			if ($key=='author') {
+			$new_posts_columns['roles'] = null;
+			}
+			$new_posts_columns[$key] = $posts_column;
+		}
+	}
+	$new_posts_columns['roles'] = 'Roles';
+	$new_posts_columns['author'] = __('Author');
+	return $new_posts_columns;
 }
-function tpg_staff_custom_column($column_name, $post_id) {
-    $taxonomy = $column_name;
-    $post_type = get_post_type($post_id);
-    $terms = get_the_terms($post_id, $taxonomy);
- 
-    if ( !empty($terms) ) {
-        foreach ( $terms as $term )
-            $post_terms[] = "<a href='edit.php?post_type={$post_type}&{$taxonomy}={$term->slug}'> " . esc_html(sanitize_term_field('name', $term->name, $term->term_id, $taxonomy, 'edit')) . "</a>";
-        echo join( ', ', $post_terms );
-    }
-    else echo '<i>No terms.</i>';
+
+/**
+ * Display roles for a staff member in the Roles column
+ *
+ * @param $column_id, $post_id
+ * @return $roles
+ *
+ * @author The Pedestal Group
+ *
+ */
+
+function tpg_show_role_column_for_staff_list( $column_id,$post_id ) {
+	global $typenow;
+	if ($typenow=='staff') {
+		$taxonomy = 'role';
+		switch ($column_id) {
+		case 'roles':
+			$roles = get_the_terms($post_id,$taxonomy);
+			if (is_array($roles)) {
+				foreach($roles as $key => $role) {
+					$edit_link = get_term_link($role,$taxonomy);
+					$roles[$key] = '<a href="'.$edit_link.'">' . $role->name . '</a>';
+				}
+				echo implode(' | ',$roles);
+			}
+			break;
+		}
+	}
 }
-add_filter( 'manage_staff_posts_columns', 'tpg_staff_columns' );
-add_action('manage_staff_posts_custom_column', 'tpg_staff_custom_column', 10, 2);
+add_filter( 'manage_staff_posts_columns', 'tpg_add_roles_column_to_staff_list' );
+add_filter('manage_staff_posts_custom_column', 'tpg_show_role_column_for_staff_list', 10, 2);
+
+/*
+Description: Adds a taxonomy filter in the admin list page for a custom post type.
+Written for: http://wordpress.stackexchange.com/posts/582/
+By: Mike Schinkel - http://mikeschinkel.com/custom-workpress-plugins
+*/
+
+/**
+ * Setup drop down for filtering according to role.
+ *
+ * @author chodorowicz
+ *
+ */
+function tpg_restrict_staff_by_role() {
+global $typenow;
+	$args=array( 'public' => true, '_builtin' => false ); 
+	$post_types = get_post_types($args);
+	if ( in_array($typenow, $post_types) ) {
+		$filters = get_object_taxonomies($typenow);
+		foreach ($filters as $tax_slug) {
+			$tax_obj = get_taxonomy($tax_slug);
+			wp_dropdown_categories(array(
+				'show_option_all' => __('Show All '.$tax_obj->label ),
+				'taxonomy' => $tax_slug,
+				'name' => $tax_obj->name,
+				'orderby' => 'term_order',
+				'selected' => $_GET[$tax_obj->query_var],
+				'hierarchical' => $tax_obj->hierarchical,
+				'show_count' => false,
+				'hide_empty' => true
+				)
+			);
+		}
+	}
+}
+add_action('restrict_manage_posts','tpg_restrict_staff_by_role');
+
+/**
+ * Convert taxonomy ID to slug
+ *
+ * @param array $query
+ * @return array $var
+ * @author chodorowicz
+ *
+ */
+function tpg_convert_role_id_to_taxonomy_term_in_query($query) {
+global $pagenow;
+	global $typenow;
+		if ($pagenow=='edit.php') {
+			$filters = get_object_taxonomies($typenow);
+				foreach ($filters as $tax_slug) {
+					$var = &$query->query_vars[$tax_slug];
+						if ( isset($var) ) {
+							$term = get_term_by('id',$var,$tax_slug);
+							$var = $term->slug;
+						}
+				}
+		}
+}
+add_filter('parse_query','tpg_convert_role_id_to_taxonomy_term_in_query');
 
 /**
  * Customize posts_per_page on staff archive pages
  *
- * @author Jon Breitenbuhcer
+ * @param array $query
+ * @return array $query
+ *
+ * @author The Pedestal Group
  *
  */
 
@@ -97,7 +193,9 @@ add_filter('pre_get_posts', 'tpg_change_staff_size'); // Hook our custom functio
 /**
  * Customize posts_per_page on role taxonomy pages
  *
- * @author Jon Breitenbuhcer
+ * @param $value
+ *
+ * @author The Pedestal Group
  *
  */
 
@@ -111,7 +209,7 @@ add_filter( 'option_posts_per_page', 'tpg_tax_filter_posts_per_page' );
 /**
  * Customize staff post type icon
  *
- * @author Jon Breitenbuhcer
+ * @author The Pedestal Group
  *
  */
 
@@ -158,6 +256,9 @@ add_action( 'admin_menu', 'tpg_remove_custom_taxonomy' );
 /**
  * Set the title from the first and last name for staff post type
  *
+ * @param $people_title
+ * @return $people_title
+ *
  * @author The Pedestal Group
  *
  */
@@ -176,6 +277,9 @@ add_filter('title_save_pre', 'tpg_save_new_title');
 /**
  * Add filter to ensure the text Staff Member, or staff member, is displayed
  * when user updates a staff member
+ *
+ * @param array $messages
+ * @return array $messages
  *
  * @author The Pedestal Group
  *
@@ -210,6 +314,9 @@ add_filter('post_updated_messages', 'tpg_staff_updated_messages');
  * and order by title in ascending order unless on the home screen or designated
  * blog page
  *
+ * @param array $query
+ * @return modified $query
+ *
  * @author The Pedestal Group
  *
  */
@@ -230,6 +337,9 @@ add_action('pre_get_posts', 'tpg_no_child_posts');
 
 /**
  * Customize the post info function
+ *
+ * @param $post_info
+ * @return modified $post_info
  *
  * @author The Pedestal Group
  *
