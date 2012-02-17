@@ -1614,6 +1614,10 @@ div.gform_wrapper .gform_footer {
 
 @media only screen and (max-width:1024px), only screen and (max-device-width:1024px) {
 	
+	#title-area {
+		background: url(images/DormanFarrell.png) no-repeat left top;
+}
+	
 	.info {
 		width: 79%;
 		float: right;
@@ -1746,6 +1750,10 @@ div.gform_wrapper .gform_footer {
 		margin: 0;
 	}
 	
+	#title-area {
+		background: url(images/DormanFarrell.png) no-repeat left top;
+}
+	
 	.contact {
 		width: 14%;
 	}
@@ -1836,18 +1844,6 @@ div.gform_wrapper .gform_footer {
 		width: 64%;
 		float: right;
 	}
-
-	/*.page-template-page-staff-php img.alignleft {
-		margin: 20px 5px 0 15px;
-	}
-
-	.page-template-page-staff-php .info {
-		margin-top: 15px;
-	}
-
-	.page-template-page-staff-php {
-		line-height: 1.1;
-	}*/
 }
 
 @media only screen and (max-width: 960px) {
