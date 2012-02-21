@@ -534,14 +534,21 @@ img {
 	width: 100%;
 }
 	
-/* Featured
+/* Home
 ------------------------------------------------------------ */
-.featured {
+.widget-row {
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0 0 15px;
 	width: 100%;
 }
 
+.widget-row p {
+	font-size: .875em;
+	line-height: 20px;
+}
 
-.featured-top {
+.home-top-full-width {
 	-moz-box-shadow: 0 1px 3px #666; 
 	-webkit-box-shadow: 0 1px 3px #666;
 	background-color: #ddd;
@@ -558,7 +565,7 @@ img {
 	width: 69.318181%;
 }
 
-.featured-top .slider {
+.home-top-full-width .slider {
 	width: 97.777777%;
 }
 
@@ -567,91 +574,47 @@ img {
 	padding: 0 !important;
 }
 
-/* Featured Top
+/* Home Top/Bottom
 ------------------------------------------------------------ */
 
-.featured-top {
-	margin: 0 auto;
-	overflow: hidden;
-	padding: 0 0 15px;
-	width: 100%;
-}
-
-.featured-top p {
-	font-size: .875em;
-	line-height: 20px;
-}
-
-.featured-top-left {
-	margin:0;
-	padding:0;
+.home-top-left, .home-bottom-left {
 	float: left;
 	width:49%;
 }
 
-.featured-top-right {
+.home-top-right, .home-bottom-right {
 	float: right;
 	width: 49%;
 }
 
-
-/* Featured Middle
+/* Home Top
 ------------------------------------------------------------ */
 
-.featured-middle {
-	margin: 0 auto;
-	overflow: hidden;
-	padding: 0 0 15px;
-	width: 100%;
-}
 
-.featured-middle p {
-	font-size: .875em;
-	line-height: 20px;
-}
+/* Home Middle
+------------------------------------------------------------ */
 
-.featured-middle-left {
+.home-middle-left {
 	float: left;
 	width: 31.5%;
 	padding-right: 2.553191489362%; /* 24px */
 }
 
-.featured-middle-center {
+.home-middle-center {
 	float: left;
 	width: 31.5%;
 	padding-right: 2.553191489362%; /* 24px */
 }
 
-.featured-middle-right {
+.home-middle-right {
 	float: right;
 	width: 31.5%;
 }
 
 
-/* Featured Bottom
+/* Home Bottom
 ------------------------------------------------------------ */
 
-.featured-bottom {
-	margin: 0 auto;
-	overflow: hidden;
-	padding: 0 0 15px;
-	width: 100%;
-}
-
-.featured-bottom p {
-	font-size: .875em;
-	line-height: 20px;
-}
-
-.featured-bottom-left {
-	float: left;
-	width: 49%;
-}
-
-.featured-bottom-right {
-	float: right;
-	width: 49%;
-}
 
 /* Float clearing for IE6: */
 * html .clearfix
@@ -1761,14 +1724,14 @@ img.wp-smiley, img.wp-wink {
 /* For Kindle Fire and smaller tablets */
 @media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
 
-	.featured,
-	.featured-top-left,
-	.featured-top-right,
-	.featured-middle-left,
-	.featured-middle-center,
-	.featured-middle-right,
-	.featured-bottom-left,
-	.featured-bottom-right,
+	.widget-row,
+	.home-top-left,
+	.home-top-right,
+	.home-middle-left,
+	.home-middle-center,
+	.home-middle-right,
+	.home-bottom-left,
+	.home-bottom-right,
 	#nav,
 	#subnav,
 	#title-area,

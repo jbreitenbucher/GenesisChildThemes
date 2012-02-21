@@ -1,16 +1,16 @@
 <?php
 
-add_action( 'genesis_meta', 'wooster_home_genesis_meta' );
+add_action( 'genesis_meta', 'faculty_home_genesis_meta' );
 /**
  * Add widget support for homepage. If no widgets active, display the default loop.
  *
  */
-function wooster_home_genesis_meta() {
+function faculty_home_genesis_meta() {
 
-	if ( is_active_sidebar( 'featured-top' ) || is_active_sidebar( 'featured-top-left' ) || is_active_sidebar( 'featured-top-right' ) || is_active_sidebar( 'featured-middle-left' ) || is_active_sidebar( 'featured-middle-center' ) || is_active_sidebar( 'featured-middle-right' ) || is_active_sidebar( 'featured-bottom-left' ) || is_active_sidebar( 'featured-bottom-right' ) ) {
+	if ( is_active_sidebar( 'home-top-full-width' ) || is_active_sidebar( 'home-top-left' ) || is_active_sidebar( 'home-top-right' ) || is_active_sidebar( 'home-middle-left' ) || is_active_sidebar( 'home-middle-center' ) || is_active_sidebar( 'home-middle-right' ) || is_active_sidebar( 'home-bottom-left' ) || is_active_sidebar( 'home-bottom-right' ) ) {
 	
 		remove_action( 'genesis_loop', 'genesis_do_loop' );
-		add_action( 'genesis_loop', 'wooster_home_loop_helper' );
+		add_action( 'genesis_loop', 'faculty_home_loop_helper' );
 		add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
 	}
@@ -20,69 +20,69 @@ function wooster_home_genesis_meta() {
  * Display widget content for homepage sections.
  *
  */
-function wooster_home_loop_helper() {
+function faculty_home_loop_helper() {
 
-		if ( is_active_sidebar( 'featured-top' ) ) {
+		if ( is_active_sidebar( 'home-top-full-width' ) ) {
 		
-		echo '<div class="featured clearfix">';
+		echo '<div class="widget-row clearfix">';
 		
-				echo '<div class="featured-top">';
-				dynamic_sidebar( 'featured-top' );
-				echo '</div><!-- end .featured-top -->';
+				echo '<div class="home-top-full-width">';
+				dynamic_sidebar( 'home-top-full-width' );
+				echo '</div><!-- end .home-top-full-width -->';
 				
-		echo '</div><!-- end .featured -->';
+		echo '</div><!-- end .widget-row -->';
 		
 		}
 		
-		if ( is_active_sidebar( 'featured-top-left' ) || is_active_sidebar( 'featured-top-right' ) ) {
+		if ( is_active_sidebar( 'home-top-left' ) || is_active_sidebar( 'home-top-right' ) ) {
 			
-			echo '<div class="featured clearfix">';
+			echo '<div class="widget-row clearfix">';
 			
-				echo '<div class="featured-top-left">';
-				dynamic_sidebar( 'featured-top-left' );
-				echo '</div><!-- end .featured-top-left -->';
+				echo '<div class="home-top-left">';
+				dynamic_sidebar( 'home-top-left' );
+				echo '</div><!-- end .home-top-left -->';
 			
-				echo '<div class="featured-top-right">';
-				dynamic_sidebar( 'featured-top-right' );
-				echo '</div><!-- end .featured-top-right -->';
+				echo '<div class="home-top-right">';
+				dynamic_sidebar( 'home-top-right' );
+				echo '</div><!-- end .home-top-right -->';
 				
-			echo '</div><!-- end .featured -->';
+			echo '</div><!-- end .widget-row -->';
 			
 		}
 		
-		if ( is_active_sidebar( 'featured-middle-left' ) || is_active_sidebar( 'featured-middle-center' ) || is_active_sidebar( 'featured-middle-right' ) ) {
+		if ( is_active_sidebar( 'home-middle-left' ) || is_active_sidebar( 'home-middle-center' ) || is_active_sidebar( 'home-middle-right' ) ) {
 			
-		echo '<div class="featured clearfix">';
+		echo '<div class="widget-row clearfix">';
 			
-			echo '<div class="featured-middle-left">';
-			dynamic_sidebar( 'featured-middle-left' );
-			echo '</div><!-- end .featured-middle-left -->';
+			echo '<div class="home-middle-left">';
+			dynamic_sidebar( 'home-middle-left' );
+			echo '</div><!-- end .home-middle-left -->';
 		
-			echo '<div class="featured-middle-center">';
-			dynamic_sidebar( 'featured-middle-center' );
-			echo '</div><!-- end .featured-middle-center -->';
+			echo '<div class="home-middle-center">';
+			dynamic_sidebar( 'home-middle-center' );
+			echo '</div><!-- end .home-middle-center -->';
 		
-			echo '<div class="featured-middle-right">';
-			dynamic_sidebar( 'featured-middle-right' );
-			echo '</div><!-- end .featured-middle-right -->';
+			echo '<div class="home-middle-right">';
+			dynamic_sidebar( 'home-middle-right' );
+			echo '</div><!-- end .home-middle-right -->';
 			
-		echo '</div><!-- end .featured -->';
+		echo '</div><!-- end .widget-row -->';
 			
 		}
 		
-		if ( is_active_sidebar( 'featured-bottom-left' ) || is_active_sidebar( 'featured-bottom-right' ) ) {
+		if ( is_active_sidebar( 'home-bottom-left' ) || is_active_sidebar( 'home-bottom-right' ) ) {
 		
-		echo '<div class="featured clearfix">';
+		echo '<div class="widget-row clearfix">';
 		
-			echo '<div class="featured-bottom-left">';
-			dynamic_sidebar( 'featured-bottom-left' );
-			echo '</div><!-- end .featured-bottom-left -->';
+			echo '<div class="home-bottom-left">';
+			dynamic_sidebar( 'home-bottom-left' );
+			echo '</div><!-- end .home-bottom-left -->';
 
-			echo '<div class="featured-bottom-right">';
-			dynamic_sidebar( 'featured-bottom-right' );
-			echo '</div><!-- end .featured-bottom-right -->';
+			echo '<div class="home-bottom-right">';
+			dynamic_sidebar( 'home-bottom-right' );
+			echo '</div><!-- end .home-bottom-right -->';
 			
-		echo '</div><!-- end .featured -->';
+		echo '</div><!-- end .widget-row -->';
 		
 		}
 		
