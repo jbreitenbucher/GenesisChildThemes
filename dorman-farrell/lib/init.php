@@ -2,10 +2,10 @@
 /**
  * This file controls the initialization of the theme
  *
- * @package      dorman-farrell
- * @author       The Pedestal Group <kathy@thepedestalgroup.com>
- * @copyright    Copyright (c) 2012, Dorman Farrell
- * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @package       dorman-farrell
+ * @author          The Pedestal Group <kathy@thepedestalgroup.com>
+ * @copyright      Copyright (c) 2012, Dorman Farrell
+ * @license          http://opensource.org/licenses/gpl-2.0.php GNU Public License
  *
  */
 
