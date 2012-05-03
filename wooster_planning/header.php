@@ -59,12 +59,9 @@
 			<div id="branding" role="banner">
 				<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
 				<<?php echo $heading_tag; ?> id="site-title">
-					<span>
-						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-					</span>
-					<div id="student-name"><?php bloginfo( 'description' ); ?></div>
+						<a href="<?php echo network_home_url(); ?>" title="Educational Planning" class="network-home">Educational Planning:</a><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="student-name"><?php bloginfo( 'name' ); ?></a>
 				</<?php echo $heading_tag; ?>>
-				<div id="site-description">Independent minds, working together.</div>
+				<div id="site-description">Independent Minds, Working Together.</div>
 
 				<?php
 					// Check if this is a post or page, if it has a thumbnail, and if it's a big one
