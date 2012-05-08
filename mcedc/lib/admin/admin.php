@@ -25,7 +25,7 @@ function mcedc_register_settings() {
     add_settings_section('mcedc_general','General Settings', 'mcedc_general_section_text', MCEDC_SETTINGS_FIELD );
     add_settings_field('mcedc_linkedin', 'LinkedIn Username', 'mcedc_linkedin_setting', MCEDC_SETTINGS_FIELD , 'mcedc_general');
     add_settings_field('mcedc_twitter', 'Twitter Username', 'mcedc_twitter_setting', MCEDC_SETTINGS_FIELD , 'mcedc_general');
-    add_settings_field('mcedc_blog_cat', 'News Category', 'mcedc_blog_cat_setting', MCEDC_SETTINGS_FIELD , 'mcedc_general');
+    add_settings_field('mcedc_blog_cat', 'News/Blog Category', 'mcedc_blog_cat_setting', MCEDC_SETTINGS_FIELD , 'mcedc_general');
 }
 
 /**
@@ -36,7 +36,7 @@ function mcedc_register_settings() {
 
 function mcedc_option_defaults() {
         $arr = array(
-        'mcedc_staff_posts_per_page' => 15,
+        //'mcedc_staff_posts_per_page' => 15,
         'mcedc_blog_cat' => 'articles'
     );
     return $arr;
@@ -64,13 +64,23 @@ function mcedc_num_posts_setting() {
 }
 
 /**
+ * General Options Description
+ *
+ * @author The Pedestal Group
+ */
+
+function mcedc_general_section_text() {
+    echo '<p>These options control various aspects of the display of social networking and news links.</p>';
+}
+
+/**
  * Blog Category
  *
  * @author The Pedestal Group
  */
 
 function mcedc_blog_cat_setting() {
-    echo '<p>' . _e( 'Enter the name or slug used for the blog category.', 'tpg' ) . '</p>';
+    echo '<p>' . _e( 'Enter the name or slug used for the news/blog category.', 'mcedc' ) . '</p>';
     echo "<input type='text' name='" . MCEDC_SETTINGS_FIELD . "[mcedc_blog_cat]' size='20' value='" . genesis_get_option( 'mcedc_blog_cat', MCEDC_SETTINGS_FIELD ) . "' />";
 }
 
@@ -81,7 +91,7 @@ function mcedc_blog_cat_setting() {
  */
 
 function mcedc_linkedin_setting() {
-    echo '<p>' . _e( 'Enter your LinkedIn username.', 'tpg' ) . '</p>';
+    echo '<p>' . _e( 'Enter your LinkedIn username.', 'mcedc' ) . '</p>';
     echo "<input type='text' name='" . MCEDC_SETTINGS_FIELD . "[mcedc_linkedin]' size='20' value='" . genesis_get_option( 'mcedc_linkedin', MCEDC_SETTINGS_FIELD ) . "' />";
 }
 
@@ -92,7 +102,7 @@ function mcedc_linkedin_setting() {
  */
 
 function mcedc_twitter_setting() {
-    echo '<p>' . _e( 'Enter your Twitter username.', 'tpg' ) . '</p>';
+    echo '<p>' . _e( 'Enter your Twitter username.', 'mcedc' ) . '</p>';
     echo "<input type='text' name='" . MCEDC_SETTINGS_FIELD . "[mcedc_twitter]' size='20' value='" . genesis_get_option( 'mcedc_twitter', MCEDC_SETTINGS_FIELD ) . "' />";
 }
 
