@@ -264,10 +264,11 @@ body {
 
 #header #news {
 	position: relative;
-	width: 35px;
-	height: 60px;
+	width: 40px;
+	height:58px;
 	float: right;
 	top: -10px;
+	right: 5px;
 }
 
 #header #social {
@@ -843,7 +844,7 @@ ul.menu li.sfHover ul,
 }
 
 .entry-content {
-	margin: 20px 40px;
+	margin: 20px 20px 20px 50px;
 	overflow: hidden;
 }
 
@@ -864,6 +865,10 @@ ul.menu li.sfHover ul,
 	color: #fff;
 	padding: 10px 3px 10px 50px;
 	background-color: #150352;
+}
+
+h2.entry-title a, h2.entry-title a:visited {
+	color: #fff;
 }
 
 .search .post-info, .search .post-meta {
@@ -1118,7 +1123,7 @@ h5 {
 
 .post-info {
 	font-size: 14px;
-	margin: -5px 0 15px;
+	margin: -5px 0 15px 50px;
 }
 
 
@@ -1129,7 +1134,7 @@ h5 {
 	border-top: 1px solid #ddd;
 	clear: both;
 	font-size: 14px;
-	padding: 5px 0 0;
+	padding: 5px 0 0 50px;
 }
 
 
