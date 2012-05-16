@@ -354,7 +354,7 @@ body {
 	overflow: hidden;
 	width: 100%;
 	text-transform: uppercase;
-	font-size: 13px;
+	font-size: 12px;
 	line-height: 15px;
 }
 
@@ -367,12 +367,12 @@ body {
 	/*width: 878px;*/
 	width: 98.421052631579%;
 	margin: 0 auto;
-	padding-left: 4%;
+	padding-left: 3%;
 	overflow: hidden;
 	height: auto;
 }
 
-.menu-primary #menu-item-55 a {
+.menu-primary li:last-child > a {
 	border-right: 0px solid #DDD;
 }
 
@@ -398,7 +398,6 @@ body {
 	);*/
 	margin: 0 auto;
 	z-index: 1;
-	overflow: hidden;
 	background: #323232 url(images/nav-background.png) repeat-x;
 }
 
@@ -545,7 +544,7 @@ ul.menu li.sfHover ul,
 .menu li a .sf-sub-indicator,
 .menu li li a .sf-sub-indicator,
 .menu li li li a .sf-sub-indicator {
-	background: url(images/icon-plus.png) no-repeat;
+	background: url(images/icon-plus-white.png) no-repeat;
 	height: 16px;
 	position: absolute;
 	right: 8px;

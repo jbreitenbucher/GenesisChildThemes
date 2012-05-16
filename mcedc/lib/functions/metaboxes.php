@@ -43,14 +43,8 @@ function mcedc_create_metaboxes( $meta_boxes ) {
             ),
             array(
                 'name' => 'Title',
-                'desc' => 'Position title.',
+                'desc' => 'MCEDC Position title.',
                 'id' => $prefix . 'title_text',
-                'type' => 'text'
-            ),
-            array(
-                'name' => 'Certifications',
-                'desc' => 'Comma separated list of certifications.',
-                'id' => $prefix . 'cert_text',
                 'type' => 'text'
             ),
             array(
@@ -66,11 +60,11 @@ function mcedc_create_metaboxes( $meta_boxes ) {
                 'type' => 'text'
             ),
             array(
-                'name' => 'About Me',
-                'desc' => 'A short description about the employee.',
-                'id' => $prefix . 'about_me_wysiwyg',
+                'name' => 'Business Information',
+                'desc' => 'Enter business information for Executive Officers and members of the Executive Committee.',
+                'id' => $prefix . 'business_info_wysiwig',
                 'type' => 'wysiwyg',
-                'options' => array(
+				'options' => array(
                     'wpautop' => true, // use wpautop?
                     'media_buttons' => false, // show insert/upload button(s)
                     'textarea_rows' => get_option('default_post_edit_rows', 10), // rows="..."
@@ -109,4 +103,4 @@ function mcedc_initialize_cmb_meta_boxes() {
     }
 }
 
-add_action( 'init', 'tpg_initialize_cmb_meta_boxes', 9999 );
+add_action( 'init', 'mcedc_initialize_cmb_meta_boxes', 9999 );

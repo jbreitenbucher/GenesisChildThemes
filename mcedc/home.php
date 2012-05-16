@@ -68,29 +68,29 @@ add_action( 'genesis_before_footer', 'mcedc_before_footer' );
 function mcedc_before_footer() {
     echo '<div class="logos">';
         echo '<div class="logo-one">';
-            echo  '<a href="http://www.clevelandplusbusiness.com/"><img src="' . get_stylesheet_directory_uri() .'/images/cleveland-plus.png" alt="Cleveland Plus" /></a>';
+            echo  '<a href="http://jobs-ohio.com/"><img src="' . get_stylesheet_directory_uri() .'/images/jobsohio.jpg" alt="Jobs Ohio" /></a>';
         echo '</div><!-- end .logo-one -->';
 
-        echo '<div class="logo-two">';
-            echo  '<a href="http://www.neotec.org/"><img src="' . get_stylesheet_directory_uri() .'/images/neotec.png" alt="Medina County Map pull out" /></a>';
+		echo '<div class="logo-two">';
+            echo  '<a href="http://www.neotec.org/"><img src="' . get_stylesheet_directory_uri() .'/images/neotec.png" alt="Northeast Ohio Trade & Economic Consortium" /></a>';
         echo '</div><!-- end .logo-two -->';
 
         echo '<div class="logo-three">';
-            echo  '<a href="http://www.noaca.org/"><img src="' . get_stylesheet_directory_uri() .'/images/noaca.png" alt="Medina County Map pull out" /></a>';
+            echo  '<a href="http://www.clevelandplusbusiness.com/About-Team-NEO.aspx"><img src="' . get_stylesheet_directory_uri() .'/images/teamneo.png" alt="Team NEO" /></a>';
         echo '</div><!-- end .logo-three -->';
 
         echo '<div class="logo-four">';
-            echo  '<a href=""><img src="' . get_stylesheet_directory_uri() .'/images/teamneo.png" alt="Medina County Map pull out" /></a>';
+			echo  '<a href="http://www.medinacountyportauthority.com/"><img src="' . get_stylesheet_directory_uri() .'/images/mcpa.png" alt="Medina County Port Authority" /></a>';
         echo '</div><!-- end .logo-four -->';
 
         echo '<div class="logo-five">';
-            echo  '<a href="http://www.ohioeda.com/"><img src="' . get_stylesheet_directory_uri() .'/images/oeda.png" alt="Medina County Map pull out" /></a>';
+			echo  '<a href="http://www.ohioeda.com/"><img src="' . get_stylesheet_directory_uri() .'/images/oeda.png" alt="Ohio Economic Development Association" /></a>';
         echo '</div><!-- end .logo-five -->';
 
         echo '<div class="logo-six">';
-            echo  '<a href="http://www.medinacountyportauthority.com/"><img src="' . get_stylesheet_directory_uri() .'/images/mcpa.png" alt="Medina County Map pull out" /></a>';
+            echo  '<a href=""><img src="' . get_stylesheet_directory_uri() .'/images/tools_for_business.png" alt="Tools for Business" /></a>';
         echo '</div><!-- end .logo-six -->';
-    echo '</div><!-- end .logos -->';
+	echo'</div><!-- end .logos -->';
 }
 
 

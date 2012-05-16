@@ -17,7 +17,7 @@ require_once( get_stylesheet_directory() . '/lib/admin/admin.php' );
 
 // Functions
 require_once( get_stylesheet_directory() . '/lib/functions/general.php' );
-// require_once( get_stylesheet_directory() . '/lib/functions/post-types.php' );
-// require_once( get_stylesheet_directory() . '/lib/functions/taxonomies.php' );
-// require_once( get_stylesheet_directory() . '/lib/functions/metaboxes.php' );
-// require_once( get_stylesheet_directory() . '/lib/functions/shortcodes.php' );
+require_once( get_stylesheet_directory() . '/lib/functions/post-types.php' );
+require_once( get_stylesheet_directory() . '/lib/functions/taxonomies.php' );
+require_once( get_stylesheet_directory() . '/lib/functions/metaboxes.php' );
+//require_once( get_stylesheet_directory() . '/lib/functions/shortcodes.php' );
