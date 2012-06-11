@@ -88,7 +88,7 @@ function mcedc_before_footer() {
         echo '</div><!-- end .logo-five -->';
 
         echo '<div class="logo-six">';
-            echo  '<a href=""><img src="' . get_stylesheet_directory_uri() .'/images/tools_for_business.png" alt="Tools for Business" /></a>';
+            echo  '<a href="http://www.toolsforbusiness.info/"><img src="' . get_stylesheet_directory_uri() .'/images/tools_for_business_logo.png" alt="Tools for Business" /></a>';
         echo '</div><!-- end .logo-six -->';
 	echo'</div><!-- end .logos -->';
 }

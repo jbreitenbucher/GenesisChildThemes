@@ -445,11 +445,11 @@ function mcedc_header() {
     
         echo '<div id="search" class="widget widget_search">';
             echo '<div class="widget-wrap">';
-                echo '<form method="get" class="searchform" action="http://wpbeta.dev/mcedc/" >';
+                echo '<form method="get" class="searchform" action="'. get_bloginfo('url') . '/" >';
                     echo '<input type="text" value="" name="s" class="s" onfocus="if (this.value == \'\') {this.value = \'\';}" onblur="if (this.value == \'\') {this.value = \'\';}" />';
                     echo '<input type="submit" class="searchsubmit" value="Search" />';
                 echo '</form>';
-                echo '<p class="contact"><a href="/contact" alt="contact">contact</a></p>';
+                //echo '<p class="contact"><a href="/contact" alt="contact">contact</a></p>';
             echo '</div>';
         echo '</div><!-- end #search -->';
     
@@ -520,4 +520,41 @@ function custom_footer_backtotop_text($backtotop) {
 
 function add_viewport_meta_tag() {
     echo '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>';
+}
+
+function mcedc_admin_head() {
+        echo '<link rel="stylesheet" type="text/css" href="' . get_stylesheet_directory_uri() . '/css/wp-admin.css">';
+}
+
+function mcedc_sidebar_bottom() {
+	echo '<div id="partners" class="widget widget_text">';
+		echo '<div class="widget-wrap">';
+			echo '<h4 class="widgettitle">Our Partners</h4>';
+				echo '<div class="logos">';
+        			echo '<div class="logo-one">';
+            			echo  '<a href="http://jobs-ohio.com/"><img src="' . get_stylesheet_directory_uri() .'/images/jobs_ohio.png" alt="Jobs Ohio" /></a>';
+        			echo '</div><!-- end .logo-one -->';
+
+					echo '<div class="logo-two">';
+            			echo  '<a href="http://www.neotec.org/"><img src="' . get_stylesheet_directory_uri() .'/images/neotec.png" alt="Northeast Ohio Trade & Economic Consortium" /></a>';
+        			echo '</div><!-- end .logo-two -->';
+
+        			echo '<div class="logo-three">';
+            			echo  '<a href="http://www.clevelandplusbusiness.com/About-Team-NEO.aspx"><img src="' . get_stylesheet_directory_uri() .'/images/teamneo.png" alt="Team NEO" /></a>';
+        			echo '</div><!-- end .logo-three -->';
+
+        			echo '<div class="logo-four">';
+						echo  '<a href="http://www.medinacountyportauthority.com/"><img src="' . get_stylesheet_directory_uri() .'/images/mcpa.png" alt="Medina County Port Authority" /></a>';
+        			echo '</div><!-- end .logo-four -->';
+
+        			echo '<div class="logo-five">';
+						echo  '<a href="http://www.ohioeda.com/"><img src="' . get_stylesheet_directory_uri() .'/images/oeda.png" alt="Ohio Economic Development Association" /></a>';
+        			echo '</div><!-- end .logo-five -->';
+
+        			echo '<div class="logo-six">';
+            			echo  '<a href="http://www.toolsforbusiness.info/"><img src="' . get_stylesheet_directory_uri() .'/images/tools_for_business_logo.png" alt="Tools for Business" /></a>';
+        			echo '</div><!-- end .logo-six -->';
+				echo'</div><!-- end .logos -->';
+		echo '</div><!-- end .widget-wrap -->';
+	echo '</div><!-- end .widget -->';
 }

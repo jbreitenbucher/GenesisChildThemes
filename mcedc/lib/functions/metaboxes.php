@@ -29,6 +29,12 @@ function mcedc_create_metaboxes( $meta_boxes ) {
         'priority' => 'low',
         'show_names' => true, // Show field names on the left
         'fields' => array(
+			array(
+				'name' => 'Personal Information',
+				'desc' => '',
+				'type' => 'title',
+				'id' => $prefix . 'personal_information_title'
+			),
             array(
                 'name' => 'First Name',
                 'desc' => '',
@@ -41,45 +47,96 @@ function mcedc_create_metaboxes( $meta_boxes ) {
                 'id' => $prefix . 'last_name_text',
                 'type' => 'text'
             ),
+			array(
+				'name' => 'MCEDC Information',
+				'desc' => '',
+				'type' => 'title',
+				'id' => $prefix . 'mcedc_information_title'
+			),
             array(
                 'name' => 'Title',
                 'desc' => 'MCEDC Position title.',
                 'id' => $prefix . 'title_text',
                 'type' => 'text'
             ),
-            array(
-                'name' => 'Phone Number',
-                'desc' => 'Direct dial number.',
-                'id' => $prefix . 'phone_number_text',
-                'type' => 'text'
-            ),
-            array(
-                'name' => 'e-mail Address',
-                'desc' => 'Corporate e-mail address.',
-                'id' => $prefix . 'email_address_text',
-                'type' => 'text'
-            ),
-            array(
-                'name' => 'Business Information',
-                'desc' => 'Enter business information for Executive Officers and members of the Executive Committee.',
-                'id' => $prefix . 'business_info_wysiwig',
-                'type' => 'wysiwyg',
-				'options' => array(
-                    'wpautop' => true, // use wpautop?
-                    'media_buttons' => false, // show insert/upload button(s)
-                    'textarea_rows' => get_option('default_post_edit_rows', 10), // rows="..."
-                ),
-            ),
-            array(
-                'name' => 'Role',
+			array(
+                'name' => 'Role at MCEDC',
                 'desc' => '',
                 'id' => $prefix . 'role_taxonomy_select',
                 'taxonomy' => 'role', //Enter Taxonomy Slug
                 'type' => 'taxonomy_select',    
             ),
+			array(
+				'name' => 'Contact Information',
+				'desc' => '',
+				'type' => 'title',
+				'id' => $prefix . 'contact_information_title'
+			),
             array(
-                'name' => 'Order',
-                'desc' => 'Used to order the list of staff.',
+                'name' => 'Phone Number',
+                'desc' => 'Preferred phone number.',
+                'id' => $prefix . 'phone_number_text',
+                'type' => 'text'
+            ),
+            array(
+                'name' => 'e-mail Address',
+                'desc' => 'Preferred e-mail address.',
+                'id' => $prefix . 'email_address_text',
+                'type' => 'text'
+            ),
+			array(
+				'name' => 'Business Information',
+				'desc' => '',
+				'type' => 'title',
+				'id' => $prefix . 'business_information_title'
+			),
+			array(
+                'name' => 'Business Name',
+                'desc' => '',
+                'id' => $prefix . 'business_name_text',
+                'type' => 'text'
+            ),
+			array(
+                'name' => 'Business Title',
+                'desc' => '',
+                'id' => $prefix . 'business_title_text',
+                'type' => 'text'
+            ),
+            array(
+                'name' => 'Business Address',
+                'desc' => '',
+                'id' => $prefix . 'business_address_wysiwig',
+                'type' => 'wysiwyg',
+				'options' => array(
+                    'wpautop' => false, // use wpautop?
+                    'media_buttons' => false, // show insert/upload button(s)
+					'tinymce' => true,
+                    'textarea_rows' => get_option('default_post_edit_rows', 10), // rows="..."
+                ),
+            ),
+			array(
+                'name' => 'Business Phone',
+                'desc' => '',
+                'id' => $prefix . 'business_phone_text',
+                'type' => 'text'
+            ),
+			array(
+                'name' => 'Business Homepage',
+                'desc' => 'Please enter the address as http://company.com',
+                'id' => $prefix . 'business_url_text',
+                'type' => 'file',
+				'save_id' => false, // save ID using true
+				'allow' => array( 'url' )
+            ),
+			array(
+                'name' => 'Internal Use',
+                'desc' => '',
+                'id' => $prefix . 'internal_use_text',
+                'type' => 'title'
+            ),
+            array(
+                'name' => 'Display Order',
+                'desc' => 'Used to order the list of officers, committee members, and staff.',
                 'id' => $prefix . 'order_text',
                 'type' => 'text'
             ),

@@ -135,7 +135,6 @@ ol li {
 	list-style-type: decimal;
 }
 
-
 /* Hyperlinks
 ------------------------------------------------------------ */
 
@@ -151,6 +150,11 @@ a:hover {
 
 a img {
 	border: none;
+}
+
+.home-bottom a, .home-bottom a:visited {
+	color: #150352;
+	text-decoration: none;
 }
 
 
@@ -397,7 +401,7 @@ body {
 		color-stop(0.96, rgb(217,217,217))
 	);*/
 	margin: 0 auto;
-	z-index: 1;
+	z-index: 50;
 	background: #323232 url(images/nav-background.png) repeat-x;
 }
 
@@ -705,6 +709,15 @@ ul.menu li.sfHover ul,
 	overflow: hidden;
 }
 
+#partners .logos {
+	width: 100%;
+	margin: 0;
+	min-height: 71px;
+	float: left;
+	background:#fff;
+	overflow: hidden;
+}
+
 .logo-one,
 .logo-two,
 .logo-three,
@@ -713,6 +726,16 @@ ul.menu li.sfHover ul,
 .logo-six {
 	float: left;
 	width: 16.666666666667%;
+}
+
+#partners .logo-one,
+#partners .logo-two,
+#partners .logo-three,
+#partners .logo-four,
+#partners .logo-five,
+#partners .logo-six {
+	float: left;
+	width: 48%;
 }
 
 .logo-one {
@@ -749,6 +772,17 @@ ul.menu li.sfHover ul,
 	position: relative;
 	top: 10px;
 	left: -5px;
+}
+
+#partners .logo-one,
+#partners .logo-two,
+#partners .logo-three,
+#partners .logo-four,
+#partners .logo-five,
+#partners .logo-six {
+	position: relative;
+	top: 0;
+	left: 0;
 }
 
 /* Breadcrumb
@@ -788,7 +822,8 @@ ul.menu li.sfHover ul,
 .full-width-content #content-sidebar-wrap,
 .sidebar-content #content-sidebar-wrap {
 	width: 100%;
-	background-color: #f0f0f1;
+	background-color: #fff;
+	overflow: hidden; 
 }
 
 .sidebar-content-sidebar #content-sidebar-wrap,
@@ -810,8 +845,8 @@ ul.menu li.sfHover ul,
 .sidebar-content #content {
 	width: 661px;
 	background: #fff;
-	border-right-style: double;
-	border-right-color: #c3c3c3;
+	margin-bottom: -99999px;
+	padding-bottom: 99999px;
 }
 
 .sidebar-content #content,
@@ -860,7 +895,12 @@ ul.menu li.sfHover ul,
 	background-color:;
 }
 
-.entry-title, .search .entry-title {
+.entry-title,
+.search .entry-title,
+.role-executive-officers,
+.role-executive-committee,
+.role-mcedc-staff,
+.role-members {
 	color: #fff;
 	padding: 10px 3px 10px 50px;
 	background-color: #150352;
@@ -1300,10 +1340,15 @@ p.wp-caption-text {
 
 .sidebar {
 	display: inline;
+	background-color: #f0f0f1;
 	float: right;
 	font-size: 14px;
 	padding-top: 20px;
 	width: 286px;
+	border-left-style: double;
+	border-left-color: #c3c3c3;
+	margin-bottom: -99999px;
+	padding-bottom: 99999px;
 }
 
 #sidebar-alt {
@@ -1744,6 +1789,56 @@ div.gform_wrapper .gform_footer {
 	border: none;
 	margin: 0;
 	padding: 0;
+}
+
+.page-template-page-staff-php .person,
+.page-template-page-officers-php .person,
+.page-template-page-committee-php .person,
+.page-template-page-leadership-php .person,
+.page-template-page-members-php .person {
+	margin: 20px 20px 20px 50px;
+}
+
+.page-template-page-staff-php .name,
+.page-template-page-officers-php .name,
+.page-template-page-committee-php .name,
+.page-template-page-leadership-php .name
+.page-template-page-members-php .name {
+	font-size: 18px;
+}
+
+.page-template-page-staff-php #content,
+.page-template-page-officers-php #content,
+.page-template-page-committee-php #content {
+	/*padding-left: 10px;
+	width: 651px;*/
+}
+
+.page-template-page-staff-php .phone,
+.page-template-page-officers-php .phone,
+.page-template-page-committee-php .phone,
+.page-template-page-leadership-php .phone {
+	width: 100%;
+}
+
+.page-template-page-staff-php .business,
+.page-template-page-officers-php .business,
+.page-template-page-committee-php .business,
+.page-template-page-leadership-php .business {
+	margin-top: 20px;
+}
+
+.page-template-page-members-php .business {
+	margin: 10px 0 0 10px;
+}
+
+.page-template-page-staff-php .business .name,
+.page-template-page-officers-php .business .name,
+.page-template-page-committee-php .business .name,
+.page-template-page-leadership-php .business .name,
+.page-template-page-members-php .business .name {
+	margin-bottom: 10px;
+	font-weight: 600;
 }
 
 /* Responsive Design

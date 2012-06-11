@@ -35,6 +35,10 @@ function mcedc_theme_setup() {
     add_action( 'admin_menu', 'mcedc_add_menu', 100);
     add_action( 'admin_notices', 'mcedc_notices' );
     add_action( 'genesis_settings_sanitizer_init', 'mcedc_staff_sanitization_filters' );
+	add_action('admin_head', 'mcedc_admin_head');
+	
+	// Customize the sidebar
+	add_action('genesis_after_sidebar_widget_area','mcedc_sidebar_bottom');
     
     // Unregister layout setting
     genesis_unregister_layout( 'sidebar-content' );

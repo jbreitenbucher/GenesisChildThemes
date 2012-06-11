@@ -21,23 +21,23 @@
 
 function mcedc_create_staff_post_type() {
     $labels = array(
-        'name' => _x('Staff', 'post type general name'),
-        'singular_name' => _x('Staff Member', 'post type singular name'),
+        'name' => _x('People', 'post type general name'),
+        'singular_name' => _x('Person', 'post type singular name'),
         'add_new' => _x('Add New', 'person'),
-        'add_new_item' => __('Add New Staff Member'),
-        'edit_item' => __('Edit Staff Member'),
-        'new_item' => __('New Staff Memeber'),
-        'all_items' => __('All Staff'),
-        'view_item' => __('View Staff Member'),
-        'search_items' => __('Search Staff'),
-        'not_found' =>  __('No staff found'),
-        'not_found_in_trash' => __('No staff found in Trash'), 
+        'add_new_item' => __('Add New Person'),
+        'edit_item' => __('Edit Person'),
+        'new_item' => __('New Person'),
+        'all_items' => __('All People'),
+        'view_item' => __('View Person'),
+        'search_items' => __('Search People'),
+        'not_found' =>  __('No people found'),
+        'not_found_in_trash' => __('No people found in Trash'), 
         'parent_item_colon' => '',
-        'menu_name' => 'Staff'
+        'menu_name' => 'People'
     );
     $args = array(
         'labels' => $labels,
-        'description' => 'A post type for entering staff information.',
+        'description' => 'A post type for entering information about MCEDC staff and members.',
         'public' => true,
         'publicly_queryable' => true,
         'show_ui' => true,

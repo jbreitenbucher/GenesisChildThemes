@@ -1,9 +1,9 @@
 <?php
 /**
- * @package       dorman-farrell
- * @author          The Pedestal Group <kathy@thepedestalgroup.com>
- * @copyright      Copyright (c) 2012, Dorman Farrell
- * @license          http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @package     mcedc
+ * @author      The Pedestal Group <kathy@thepedestalgroup.com>
+ * @copyright   Copyright (c) 2012, Medina County Economic Development Corporation
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  *
  */
 
