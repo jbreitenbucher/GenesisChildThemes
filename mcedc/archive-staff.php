@@ -61,15 +61,23 @@ global $paged;
 $args = (
     array(
         'post_type' => 'staff',
-        'meta_key' => 'mcedc_role_taxonomy_select',
-        'orderby' => 'meta_value',
-        'order' => 'asc',
+		'orderby' => 'post_title',
+        'order' => 'ASC',
         'paged' => $paged,
         'posts_per_page' => 15
         )
     );
 
-genesis_custom_loop( $args );
+$peopleloop = new WP_Query( $args );
+
+echo '<h1 class="people-archive">MCEDC Leadership, Members and Staff</h1>';
+if ( $peopleloop->have_posts() ) {
+	while (have_posts()) : the_post();
+    	mcedc_archive_post_content();
+		endwhile;
+} else {
+	echo '<p>No people were found.</p>';
+}
 }
 
 /**

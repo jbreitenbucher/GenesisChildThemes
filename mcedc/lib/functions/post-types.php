@@ -44,8 +44,8 @@ function mcedc_create_staff_post_type() {
         'query_var' => true,
         'hierarchical' => false,
         'supports' => array('thumbnail'),
-        'rewrite' => array('slug' => 'mcedc-staff'),
-        'has_archive' => 'mcedc-staff',
+        'rewrite' => array('slug' => 'people'),
+        'has_archive' => 'false',
     );
     register_post_type('staff',$args);
 }

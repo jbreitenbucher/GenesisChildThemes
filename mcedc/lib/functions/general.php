@@ -286,6 +286,7 @@ add_action('init', 'mcedc_staff_custom_init');
 
 function mcedc_remove_custom_taxonomy() {
     remove_meta_box( 'tagsdiv-role', 'staff', 'side' );
+	remove_meta_box( 'tagsdiv-industry', 'staff', 'side' );
 }
 add_action( 'admin_menu', 'mcedc_remove_custom_taxonomy' );
 
@@ -326,19 +327,19 @@ function mcedc_staff_updated_messages( $messages ) {
 
   $messages['staff'] = array(
     0 => '', // Unused. Messages start at index 1.
-    1 => sprintf( __('Staff Memeber updated. <a href="%s">View Staff Member</a>'), esc_url( get_permalink($post_ID) ) ),
+    1 => sprintf( __('Person updated. <a href="%s">View Person</a>'), esc_url( get_permalink($post_ID) ) ),
     2 => __('Custom field updated.'),
     3 => __('Custom field deleted.'),
-    4 => __('Staff Member updated.'),
+    4 => __('Person updated.'),
     /* translators: %s: date and time of the revision */
-    5 => isset($_GET['revision']) ? sprintf( __('Staff Member restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-    6 => sprintf( __('Staff Memeber published. <a href="%s">View staff member</a>'), esc_url( get_permalink($post_ID) ) ),
-    7 => __('Staff Member saved.'),
-    8 => sprintf( __('Staff Member submitted. <a target="_blank" href="%s">Preview staff member</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
-    9 => sprintf( __('Staff Member scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview staff member</a>'),
+    5 => isset($_GET['revision']) ? sprintf( __('Person restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+    6 => sprintf( __('Person published. <a href="%s">View person</a>'), esc_url( get_permalink($post_ID) ) ),
+    7 => __('Person saved.'),
+    8 => sprintf( __('Person submitted. <a target="_blank" href="%s">Preview person</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+    9 => sprintf( __('Person scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview person</a>'),
       // translators: Publish box date format, see http://php.net/date
       date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
-    10 => sprintf( __('Staff Member draft updated. <a target="_blank" href="%s">Preview staff member</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+    10 => sprintf( __('Person draft updated. <a target="_blank" href="%s">Preview person</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
   );
 
   return $messages;

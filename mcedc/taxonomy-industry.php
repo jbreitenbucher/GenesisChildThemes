@@ -1,7 +1,5 @@
 <?php
 /**
- * Template Name: Members
- *
  * @package     mcedc
  * @author      The Pedestal Group <kathy@thepedestalgroup.com>
  * @copyright   Copyright (c) 2012, Medina County Economic Development Corporation
@@ -18,19 +16,19 @@
  *
  */
 
-add_action('genesis_before','mcedc_members_loop_setup');
-function mcedc_members_loop_setup() {
+add_action('genesis_before','mcedc_industry_loop_setup');
+function mcedc_industry_loop_setup() {
     
     // Customize Before Loop
-    //remove_action('genesis_before_loop','genesis_do_before_loop' );
-    //add_action('genesis_before_loop','mcedc_page_before_loop');
-    
-    // Customize Loop
-    remove_action('genesis_loop', 'genesis_do_loop');
-    add_action('genesis_loop', 'mcedc_members_page_loop');
+    remove_action('genesis_before_loop','genesis_do_before_loop' );
+	add_action('genesis_before_loop', 'mcedc_industry_do_before_loop');
     
     // Remove Post Info
     remove_action('genesis_before_post_content', 'genesis_post_info');
+    
+    // Customize Post Content
+    remove_action('genesis_post_content','genesis_do_post_content');
+    add_action('genesis_post_content','mcedc_industry_post_content');
     
     // Remove Title, After Title, and Post Image
     remove_action('genesis_post_title', 'genesis_do_post_title');
@@ -39,37 +37,21 @@ function mcedc_members_loop_setup() {
     
     // Remove Post Meta
     remove_action('genesis_after_post_content', 'genesis_post_meta');
+    
+    // Customize After Endwhile
+    remove_action('genesis_after_endwhile','genesis_do_after_endwhile');
+    remove_action('genesis_after_endwhile', 'genesis_posts_nav');
+    add_action('genesis_after_endwhile', 'mcedc_industry_after_endwhile');
 }
 
-function mcedc_members_page_loop() {
-	$page = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    $mcedc_members_args = array(
-        'post_type' => 'staff',
-        'meta_key' => 'mcedc_business_name_text',
-        'orderby' => 'meta_value',
-        'order' => 'ASC',
-        'posts_per_page' => 8,
-		'paged' => $page,
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'role',
-                'field' => 'slug',
-                'terms' => array('member'),
-            ),
-        )
-    );
-    
-	//$wp_query = new WP_Query( $mcedc_members_args );
-    query_posts( $mcedc_members_args );
-
-    echo '<h1 class="role-members">Members</h1>';
-	if( have_posts() ): 
-    	while( have_posts() ): the_post();
-        	mcedc_members_page_loop_content();
-    	endwhile;
-		mcedc_page_after_loop();
-	endif;
-	wp_reset_query();
+/**
+ * Customize Before Content
+ *
+ * @author The Pedestal Group
+ */
+function mcedc_industry_do_before_loop() {
+	$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+	printf('<h1 class="industry-members">%s</h1>', $term->name );
 }
 
 /**
@@ -78,9 +60,8 @@ function mcedc_members_page_loop() {
  * @author The Pedestal Group
  */
 
-function mcedc_members_page_loop_content() {
+function mcedc_industry_post_content () {
     global $post;
-	$industry = get_the_term_list( $post->ID, 'industry', 'Industry: ', ', ', '' );
     printf( '<div id="post-%s" class="person clear">', get_the_ID() );
         //use the genesis_get_custom_field template tag to display each custom field value
         echo '<div class="contact">';
@@ -158,8 +139,14 @@ function mcedc_members_page_loop_content() {
     echo '</div><!--end #person -->';
 }
 
-function mcedc_page_after_loop(){
-	echo '<div class="navigation">';
+/**
+ * Customize After Endwhile
+ *
+ * @author The Pedestal Group
+ */
+
+function mcedc_industry_after_endwhile() {
+    echo '<div class="navigation">';
         echo '<div class="alignright">';
             next_posts_link('More &rarr;');
         echo '</div>';

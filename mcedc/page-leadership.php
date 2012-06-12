@@ -81,67 +81,259 @@ function mcedc_leadership_page_loop_content() {
                'title' => $post->post_title
            );
         echo genesis_get_image( array( 'size' => 'profile-picture-listing', 'attr' => $default_attr ) );
-            if( genesis_get_custom_field('mcedc_title_text') != '') {
-				if ( genesis_get_custom_field('mcedc_phone_number_text') != '' ) {
-					if ( genesis_get_custom_field('mcedc_email_address_text') != '' ) {
-						printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="email"><a href="mailto:%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_phone_number_text'), antispambot(genesis_get_custom_field('mcedc_email_address_text')), antispambot(genesis_get_custom_field('mcedc_email_address_text')) );
-					} else {
-						printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_phone_number_text') );
-					}
-				} else {
-					if ( genesis_get_custom_field('mcedc_email_address_text') != '' ) {
-						printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s</span><br /><span class="email"><a href="mailto:%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), antispambot(genesis_get_custom_field('mcedc_email_address_text')), antispambot(genesis_get_custom_field('mcedc_email_address_text')) );
-					} else {
-						printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title() );
-					}
-				}
-            } else {
+			if ( genesis_get_custom_field('mcedc_title_text') != '' ) {
+				if ( genesis_get_custom_field('mcedc_business_title_text') != '' ) {
 					if ( genesis_get_custom_field('mcedc_phone_number_text') != '' ) {
-						if ( genesis_get_custom_field('mcedc_email_address_text') != '' ) {
-							printf( '<div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="email"><a href="mailto:%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_phone_number_text'), antispambot(genesis_get_custom_field('mcedc_email_address_text')), antispambot(genesis_get_custom_field('mcedc_email_address_text')) );
+						if ( genesis_get_custom_field('mcedc_business_name_text') != '' ) {
+							if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="business-title">%s  &middot; </span><span class="phone">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="business-title">%s  &middot; </span><span class="phone">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							} else {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="business-title">%s  &middot; </span><span class="phone">%s</span><br /><span class="business-name">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="business-title">%s  &middot; </span><span class="phone">%s</span><br /><span class="business-name">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text') );
+								}
+							}
 						} else {
-							printf( '<div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_phone_number_text') );
+							if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="business-title">%s  &middot; </span><span class="phone">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="business-title">%s  &middot; </span><span class="phone">%s</span><br /><span class="address">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							} else {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="business-title">%s  &middot; </span><span class="phone">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="business-title">%s  &middot; </span><span class="phone">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text') );
+								}
+							}
 						}
 					} else {
-						if ( genesis_get_custom_field('mcedc_email_address_text') != '' ) {
-							printf( '<div class="info"><span class="name">%s</span><br /><span class="email"><a href="mailto:%s">%s</a></span></div>', get_the_title(), antispambot(genesis_get_custom_field('mcedc_email_address_text')), antispambot(genesis_get_custom_field('mcedc_email_address_text')) );
-						} else {
-							printf( '<div class="info"><span class="name">%s</span></div>', get_the_title() );
-						}
-					}
-				}
-				if ( genesis_get_custom_field('mcedc_business_name_text') != '' ) {
-					if ( genesis_get_custom_field('mcedc_business_title_text') != '' ) {
-						if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
-							if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
-								printf( '<div class="info business"><span class="name">%s</span><br /><span class="title">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+						if ( genesis_get_custom_field('mcedc_business_name_text') != '' ) {
+							if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="business-title">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="business-title">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
 							} else {
-								printf( '<div class="info business"><span class="name">%s</span><br /><span class="title">%s</span><br /><span class="address">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_address_wysiwyg') );
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="business-title">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="business-title">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
 							}
 						} else {
-							if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
-								printf( '<div class="info business"><span class="name">%s</span><br /><span class="title">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+							if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="business-title">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="business-title">%s</span><br /><span class="address">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
 							} else {
-								printf( '<div class="info business"><span class="name">%s</span><br /><span class="title">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_title_text') );
-							}
-						}
-					} else {
-						if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
-							if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
-								printf( '<div class="info business"><span class="name">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
-							} else {
-								printf( '<div class="info business"><span class="name">%s</span><br /><span class="address">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
-							}
-						} else {
-							if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
-								printf( '<div class="info business"><span class="name">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
-							} else {
-								printf( '<div class="info business"><span class="name">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text') );
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="business-title">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="business-title">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text') );
+								}
 							}
 						}
 					}
 				} else {
+					if ( genesis_get_custom_field('mcedc_phone_number_text') != '' ) {
+						if ( genesis_get_custom_field('mcedc_business_name_text') != '' ) {
+							if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							} else {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="business-name">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="business-name">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text') );
+								}
+							}
+						} else {
+							if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="address">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							} else {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_phone_number_text') );
+								}
+							}
+						}
+					} else {
+						if ( genesis_get_custom_field('mcedc_business_name_text') != '' ) {
+							if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							} else {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s</span><br /><span class="business-name">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s</span><br /><span class="business-name">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							}
+						} else {
+							if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s</span><br /><span class="address">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							} else {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							}
+						}
+					}
 				}
+			} else {
+				if ( genesis_get_custom_field('mcedc_business_title_text') != '' ) {
+					if ( genesis_get_custom_field('mcedc_phone_number_text') != '' ) {
+						if ( genesis_get_custom_field('mcedc_business_name_text') != '' ) {
+							if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="business-title">%s  &middot; </span><span class="phone">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="business-title">%s  &middot; </span><span class="phone">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							} else {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="business-title">%s  &middot; </span><span class="phone">%s</span><br /><span class="business-name">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="business-title">%s  &middot; </span><span class="phone">%s</span><br /><span class="business-name">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text') );
+								}
+							}
+						} else {
+							if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="business-title">%s  &middot; </span><span class="phone">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="business-title">%s  &middot; </span><span class="phone">%s</span><br /><span class="address">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							} else {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="business-title">%s  &middot; </span><span class="phone">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="business-title">%s  &middot; </span><span class="phone">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text') );
+								}
+							}
+						}
+					} else {
+						if ( genesis_get_custom_field('mcedc_business_name_text') != '' ) {
+							if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="business-title">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="business-title">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							} else {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="business-title">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="business-title">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							}
+						} else {
+							if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="business-title">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="business-title">%s</span><br /><span class="address">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							} else {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="business-title">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="business-title">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text') );
+								}
+							}
+						}
+					}
+				} else {
+					if ( genesis_get_custom_field('mcedc_phone_number_text') != '' ) {
+						if ( genesis_get_custom_field('mcedc_business_name_text') != '' ) {
+							if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							} else {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="business-name">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="business-name">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text') );
+								}
+							}
+						} else {
+							if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="address">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							} else {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_phone_number_text') );
+								}
+							}
+						}
+					} else {
+						if ( genesis_get_custom_field('mcedc_business_name_text') != '' ) {
+							if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<div class="info"><span class="name">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<div class="info"><span class="name">%s</span><br /><span class="business-name">%s</span><br /><span class="address">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							} else {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<div class="info"><span class="name">%s</span><br /><span class="business-name">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<div class="info"><span class="name">%s</span><br /><span class="business-name">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							}
+						} else {
+							if ( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<div class="info"><span class="name">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<div class="info"><span class="name">%s</span><br /><span class="address">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							} else {
+								if ( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+									printf( '<div class="info"><span class="name">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								} else {
+									printf( '<div class="info"><span class="name">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_phone_number_text'), genesis_get_custom_field('mcedc_business_name_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
+							}
+						}
+					}
+				}
+			}
         echo '</div><!--#end contact-->';
     echo '</div><!--end #person -->';
 }

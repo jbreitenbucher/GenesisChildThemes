@@ -129,6 +129,13 @@ function mcedc_create_metaboxes( $meta_boxes ) {
 				'allow' => array( 'url' )
             ),
 			array(
+                'name' => 'Industry',
+                'desc' => '',
+                'id' => $prefix . 'industry_taxonomy_select',
+                'taxonomy' => 'industry', //Enter Taxonomy Slug
+                'type' => 'taxonomy_select',    
+            ),
+			array(
                 'name' => 'Internal Use',
                 'desc' => '',
                 'id' => $prefix . 'internal_use_text',

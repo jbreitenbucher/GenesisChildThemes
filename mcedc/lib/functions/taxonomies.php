@@ -53,3 +53,45 @@ function mcedc_create_role_taxonomy(){
     );
 }
 add_action( 'init', 'mcedc_create_role_taxonomy', 0 );
+
+/**
+ * Create Industry Taxonomy
+ *
+ * @link http://codex.wordpress.org/Function_Reference/register_taxonomy
+ * @author The Pedestal Group
+ *
+ */
+
+function mcedc_create_industry_taxonomy(){
+    $labels = array(
+        'name' => _x( 'Industries', 'taxonomy general name' ),
+        'singular_name' => _x( 'Industry', 'taxonomy singular name' ),
+        'search_items' =>  __( 'Search Industries' ),
+        'popular_items' => __( 'Popular Industries' ),
+        'all_items' => __( 'All Industries' ),
+        'parent_item' => null,
+        'parent_item_colon' => null,
+        'edit_item' => __( 'Edit Industry' ), 
+        'update_item' => __( 'Update Industry' ),
+        'add_new_item' => __( 'Add New Industry' ),
+        'new_item_name' => __( 'New Industry Name' ),
+        'separate_items_with_commas' => __( 'Separate industries with commas' ),
+        'add_or_remove_items' => __( 'Add or remove industries' ),
+        'choose_from_most_used' => __( 'Choose from the most used industries' ),
+        'menu_name' => __( 'Industry' ),
+    );
+
+    register_taxonomy(  
+        'industry',
+        'staff',
+        array(
+            'hierarchical' => false,
+            'labels' => $labels,
+            'public'=>true,
+            'show_ui'=>true,
+            'query_var' => true,
+            'rewrite' => array( 'slug' => 'industry', 'with_front' => false ),
+        )
+    );
+}
+add_action( 'init', 'mcedc_create_industry_taxonomy', 0 );
