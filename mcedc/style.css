@@ -1912,6 +1912,7 @@ div.gform_wrapper .gform_footer {
 	
 	#header {
 		border-top: 10px solid #8B8B8B;
+		min-height: 288px;
 	}
 	
 	.five-sixths,
@@ -2053,8 +2054,8 @@ div.gform_wrapper .gform_footer {
 
 	.logo-one {
 		position: relative;
-		top: 10px;
-		left: 20px;
+		top: 5px;
+		left: 10px;
 	}
 
 	.logo-two {
@@ -2071,7 +2072,7 @@ div.gform_wrapper .gform_footer {
 
 	.logo-four {
 		position: relative;
-		top: 10px;
+		top: 15px;
 		left: 15px;
 	}
 
