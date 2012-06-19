@@ -57,7 +57,9 @@ function mcedc_theme_setup() {
     add_image_size('slider', 588, 264, TRUE);
     add_image_size('post_image', 330, 232, TRUE);
     add_image_size('post_thumb', 390, 426, TRUE);
-    add_image_size('profile-picture-single',150,146, TRUE);
+    add_image_size('profile-image',156,198, FALSE);
+	add_image_size('member-logo',100,56, FALSE);
+	add_image_size('large-logo',170,96, FALSE);
     
     // Add support for 3-column footer widgets
     //add_theme_support( 'genesis-footer-widgets', 3 );

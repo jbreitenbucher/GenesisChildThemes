@@ -440,9 +440,9 @@ function mcedc_header() {
     echo '</div><!-- end #header-left -->';
 
     echo '<div id="header-right">';
-        echo '<div id="news" class="ribbon">';
-            printf('<a href="%s/category/%s"><img src="%s/images/news.png" /></a>', get_bloginfo('url'), genesis_get_option('mcedc_blog_cat', MCEDC_SETTINGS_FIELD ), get_stylesheet_directory_uri());
-        echo '</div><!-- end #news -->';
+        //echo '<div id="news" class="ribbon">';
+            //printf('<a href="%s/category/%s"><img src="%s/images/news.png" /></a>', get_bloginfo('url'), genesis_get_option('mcedc_blog_cat', MCEDC_SETTINGS_FIELD ), get_stylesheet_directory_uri());
+        //echo '</div><!-- end #news -->';
     
         echo '<div id="search" class="widget widget_search">';
             echo '<div class="widget-wrap">';

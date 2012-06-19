@@ -76,37 +76,43 @@ function mcedc_committee_page_loop_content() {
         //use the genesis_get_custom_field template tag to display each custom field value
         echo '<div class="contact">';
         $default_attr = array(
-               'class' => "alignleft profile-image-listing",
+               'class' => "alignleft profile-image",
                'alt'   => $post->post_title,
                'title' => $post->post_title
            );
-        echo genesis_get_image( array( 'size' => 'profile-picture-listing', 'attr' => $default_attr ) );
+        if( has_post_thumbnail() ) {
+        	echo  the_post_thumbnail( 'profile-image', array('class' => 'alignleft') );
+		} elseif ( genesis_get_custom_field('mcedc_business_logo_image_id') != '' ) {
+			$imageUrl = wp_get_attachment_image_src( genesis_get_custom_field('mcedc_business_logo_image_id'), 'member-logo' );
+			echo '<img class="member-logo" src="'; echo $imageUrl[0]; echo '"/>';
+		} else {
+		}
             if( genesis_get_custom_field('mcedc_title_text') != '') {
 				if ( genesis_get_custom_field('mcedc_phone_number_text') != '' ) {
 					if ( genesis_get_custom_field('mcedc_email_address_text') != '' ) {
-						printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="email"><a href="mailto:%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_phone_number_text'), antispambot(genesis_get_custom_field('mcedc_email_address_text')), antispambot(genesis_get_custom_field('mcedc_email_address_text')) );
+						printf( '<h3 class="title">%s</h3><div class="info"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="phone">%s</span><br /><span class="email"><a href="mailto:%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_phone_number_text'), antispambot(genesis_get_custom_field('mcedc_email_address_text')), antispambot(genesis_get_custom_field('mcedc_email_address_text')) );
 					} else {
-						printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), genesis_get_custom_field('mcedc_phone_number_text') );
+						printf( '<h3 class="title">%s</h3><div class="info"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="phone">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_phone_number_text') );
 					}
 				} else {
 					if ( genesis_get_custom_field('mcedc_email_address_text') != '' ) {
-						printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s</span><br /><span class="email"><a href="mailto:%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title(), antispambot(genesis_get_custom_field('mcedc_email_address_text')), antispambot(genesis_get_custom_field('mcedc_email_address_text')) );
+						printf( '<h3 class="title">%s</h3><div class="info"><span class="name"><a href="%s" title="%s">%s</a></span><br /><span class="email"><a href="mailto:%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), antispambot(genesis_get_custom_field('mcedc_email_address_text')), antispambot(genesis_get_custom_field('mcedc_email_address_text')) );
 					} else {
-						printf( '<h3 class="title">%s</h3><div class="info"><span class="name">%s</span></div>', genesis_get_custom_field('mcedc_title_text'), get_the_title() );
+						printf( '<h3 class="title">%s</h3><div class="info"><span class="name"><a href="%s" title="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_title_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title() );
 					}
 				}
             } else {
 					if ( genesis_get_custom_field('mcedc_phone_number_text') != '' ) {
 						if ( genesis_get_custom_field('mcedc_email_address_text') != '' ) {
-							printf( '<div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span><br /><span class="email"><a href="mailto:%s">%s</a></span></div>', get_the_title(), genesis_get_custom_field('mcedc_phone_number_text'), antispambot(genesis_get_custom_field('mcedc_email_address_text')), antispambot(genesis_get_custom_field('mcedc_email_address_text')) );
+							printf( '<div class="info"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="phone">%s</span><br /><span class="email"><a href="mailto:%s">%s</a></span></div>', get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_phone_number_text'), antispambot(genesis_get_custom_field('mcedc_email_address_text')), antispambot(genesis_get_custom_field('mcedc_email_address_text')) );
 						} else {
-							printf( '<div class="info"><span class="name">%s &middot; </span><span class="phone">%s</span></div>', get_the_title(), genesis_get_custom_field('mcedc_phone_number_text') );
+							printf( '<div class="info"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="phone">%s</span></div>', get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_phone_number_text') );
 						}
 					} else {
 						if ( genesis_get_custom_field('mcedc_email_address_text') != '' ) {
-							printf( '<div class="info"><span class="name">%s</span><br /><span class="email"><a href="mailto:%s">%s</a></span></div>', get_the_title(), antispambot(genesis_get_custom_field('mcedc_email_address_text')), antispambot(genesis_get_custom_field('mcedc_email_address_text')) );
+							printf( '<div class="info"><span class="name"><a href="%s" title="%s">%s</a></span><br /><span class="email"><a href="mailto:%s">%s</a></span></div>', get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), antispambot(genesis_get_custom_field('mcedc_email_address_text')), antispambot(genesis_get_custom_field('mcedc_email_address_text')) );
 						} else {
-							printf( '<div class="info"><span class="name">%s</span></div>', get_the_title() );
+							printf( '<div class="info"><span class="name"><a href="%s" title="%s">%s</a></span></div>', get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title() );
 						}
 					}
 				}

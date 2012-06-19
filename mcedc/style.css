@@ -901,7 +901,8 @@ ul.menu li.sfHover ul,
 .role-executive-committee,
 .role-mcedc-staff,
 .role-members,
-.industry-members {
+.industry-members,
+.mcedc-role {
 	color: #fff;
 	padding: 10px 3px 10px 50px;
 	background-color: #150352;
@@ -1796,7 +1797,9 @@ div.gform_wrapper .gform_footer {
 .page-template-page-officers-php .person,
 .page-template-page-committee-php .person,
 .page-template-page-leadership-php .person,
-.page-template-page-members-php .person {
+.page-template-page-members-php .person,
+.tax-industry .person,
+.tax-role .person {
 	margin: 20px 20px 20px 50px;
 }
 
@@ -1805,7 +1808,8 @@ div.gform_wrapper .gform_footer {
 .page-template-page-committee-php .name,
 .page-template-page-leadership-php .name
 .page-template-page-members-php .name,
-.tax-industry .name {
+.tax-industry .name,
+.tax-role .name {
 	font-size: 18px;
 }
 
@@ -1827,7 +1831,8 @@ div.gform_wrapper .gform_footer {
 .page-template-page-staff-php .business,
 .page-template-page-officers-php .business,
 .page-template-page-committee-php .business,
-.page-template-page-leadership-php .business {
+.page-template-page-leadership-php .business,
+.tax-role .business {
 	margin-top: 20px;
 }
 
@@ -1841,7 +1846,10 @@ div.gform_wrapper .gform_footer {
 .page-template-page-committee-php .business-name,
 .page-template-page-leadership-php .business-name,
 .page-template-page-members-php .business-name,
-.tax-industry .business .name {
+.entry-content .business-name,
+.tax-industry .business .name,
+.tax-role .name,
+.tax-role .business-name {
 	font-weight: 600;
 }
 
@@ -1853,6 +1861,19 @@ div.gform_wrapper .gform_footer {
 .navigation {
 	margin: 10px auto;
 	width: 80%;
+}
+
+.entry-content .info p {
+	margin: 0;
+}
+
+.type-staff .name {
+	font-weight: 400;
+	line-height: 1.9;
+}
+
+.type-staff .bio {
+	padding-top: 20px;
 }
 
 /* Responsive Design

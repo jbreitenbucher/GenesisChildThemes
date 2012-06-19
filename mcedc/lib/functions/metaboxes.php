@@ -48,6 +48,18 @@ function mcedc_create_metaboxes( $meta_boxes ) {
                 'type' => 'text'
             ),
 			array(
+                'name' => 'Bio',
+                'desc' => 'Some information about the person.',
+                'id' => $prefix . 'bio_wysiwig',
+                'type' => 'wysiwyg',
+				'options' => array(
+                    'wpautop' => false, // use wpautop?
+                    'media_buttons' => false, // show insert/upload button(s)
+					'tinymce' => true,
+                    'textarea_rows' => get_option('default_post_edit_rows', 10), // rows="..."
+                ),
+            ),
+			array(
 				'name' => 'MCEDC Information',
 				'desc' => '',
 				'type' => 'title',
@@ -109,7 +121,7 @@ function mcedc_create_metaboxes( $meta_boxes ) {
                 'type' => 'wysiwyg',
 				'options' => array(
                     'wpautop' => false, // use wpautop?
-                    'media_buttons' => false, // show insert/upload button(s)
+                    'media_buttons' => true, // show insert/upload button(s)
 					'tinymce' => true,
                     'textarea_rows' => get_option('default_post_edit_rows', 10), // rows="..."
                 ),
@@ -124,10 +136,16 @@ function mcedc_create_metaboxes( $meta_boxes ) {
                 'name' => 'Business Homepage',
                 'desc' => 'Please enter the address as http://company.com',
                 'id' => $prefix . 'business_url_text',
-                'type' => 'file',
-				'save_id' => false, // save ID using true
-				'allow' => array( 'url' )
+                'type' => 'text'
             ),
+			//array(
+				//'name' => 'Business Logo',
+				//'desc' => 'Upload the business logo.',
+				//'id' => $prefix . 'business_logo_image',
+				//'type' => 'file',
+				//'save_id' => true, // save ID using true
+				//'allow' => array( 'attachment' )
+			//),
 			array(
                 'name' => 'Industry',
                 'desc' => '',

@@ -54,7 +54,7 @@ function mcedc_members_page_loop() {
             array(
                 'taxonomy' => 'role',
                 'field' => 'slug',
-                'terms' => array('member'),
+                'terms' => array('member', 'executive-officers', 'executive-committee'),
             ),
         )
     );
@@ -80,79 +80,146 @@ function mcedc_members_page_loop() {
 
 function mcedc_members_page_loop_content() {
     global $post;
-	$industry = get_the_term_list( $post->ID, 'industry', 'Industry: ', ', ', '' );
     printf( '<div id="post-%s" class="person clear">', get_the_ID() );
         //use the genesis_get_custom_field template tag to display each custom field value
         echo '<div class="contact">';
         $default_attr = array(
-               'class' => "alignleft profile-image-listing",
+               'class' => "alignleft member-logo",
                'alt'   => $post->post_title,
                'title' => $post->post_title
            );
-        echo genesis_get_image( array( 'size' => 'profile-picture-listing', 'attr' => $default_attr ) );
-            if( genesis_get_custom_field('mcedc_business_name_text') != '' ) {
-				if( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+        if ( genesis_get_custom_field('mcedc_business_logo_image_id') != '' ) {
+			$imageUrl = wp_get_attachment_image_src( genesis_get_custom_field('mcedc_business_logo_image_id'), 'member-logo' );
+			echo '<img class="member-logo" src="'; echo $imageUrl[0]; echo '"/>';
+		} else {
+		}
+			if( genesis_get_custom_field('mcedc_business_name_text') != '' ) {
+				if( genesis_get_custom_field('mcedc_business_title_text') != '' ) {
 					if( genesis_get_custom_field('mcedc_business_phone_text') != '' ) {
-						if( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
-							if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
-								printf( '<h3 class="title">%s</h3><div class="info business"><span class="name">%s</span><br /><span class="address">%s</span><span class="phone">%s</span><br /><span class="url"><a href="%s">%s</a></span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_the_title(), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+						if( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+							if( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+								if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="title">%s</span> &middot; <span class="phone">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="title">%s</span> &middot; <span class="phone">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								}
 							} else {
-								printf( '<h3 class="title">%s</h3><div class="info business"><span class="name">%s</span><br /><span class="address">%s</span><span class="phone">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_the_title(), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="title">%s</span> &middot; <span class="phone">%s</span><br /><span class="address">%s</span><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="title">%s</span> &middot; <span class="phone">%s</span><br /><span class="address">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
 							}
 						} else {
-							if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
-								printf( '<h3 class="title">%s</h3><div class="info business"><span class="name">%s</span><br /><span class="address">%s</span><span class="phone">%s</span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_the_title(), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_phone_text'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+							if( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+								if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="title">%s</span> &middot; <span class="phone">%s</span><br /><span class="url"><a href="%s">%s</a></span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="title">%s</span> &middot; <span class="phone">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								}
 							} else {
-								printf( '<h3 class="title">%s</h3><div class="info business"><span class="name">%s</span><br /><span class="address">%s</span><span class="phone">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_the_title(), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_phone_text') );
+								if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="title">%s</span> &middot; <span class="phone">%s</span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_phone_text'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="title">%s</span> &middot; <span class="phone">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_phone_text') );
+								}
 							}
 						}
 					} else {
-						if( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
-							if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
-								printf( '<h3 class="title">%s</h3><div class="info business"><span class="name">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_the_title(), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+						if( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+							if( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+								if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="title">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="title">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								}
 							} else {
-								printf( '<h3 class="title">%s</h3><div class="info business"><span class="name">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_the_title(), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="title">%s</span><br /><span class="address">%s</span><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="title">%s</span><br /><span class="address">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
 							}
 						} else {
-							if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
-								printf( '<h3 class="title">%s</h3><div class="info business"><span class="name">%s</span><br /><span class="address">%s</span><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_the_title(), genesis_get_custom_field('mcedc_business_address_wysiwig'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+							if( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+								if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="title">%s</span><br /><span class="url"><a href="%s">%s</a></span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="title">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								}
 							} else {
-								printf( '<h3 class="title">%s</h3><div class="info business"><span class="name">%s</span><br /><span class="address">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_the_title(), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="title">%s</span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="title">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text') );
+								}
 							}
 						}
 					}
 				} else {
 					if( genesis_get_custom_field('mcedc_business_phone_text') != '' ) {
-						if( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
-							if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
-								printf( '<h3 class="title">%s</h3><div class="info business"><span class="name">%s</span><br /><span class="phone">%s</span><br /><span class="url"><a href="%s">%s</a></span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_the_title(), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+						if( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+							if( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+								if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="phone">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="phone">%s</span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								}
 							} else {
-								printf( '<h3 class="title">%s</h3><div class="info business"><span class="name">%s</span><br /><span class="phone">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_the_title(), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="phone">%s</span><br /><span class="address">%s</span><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_address_wysiwig'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="phone">%s</span><br /><span class="address">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
 							}
 						} else {
-							if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
-								printf( '<h3 class="title">%s</h3><div class="info business"><span class="name">%s</span><br /><span class="phone">%s</span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_the_title(), genesis_get_custom_field('mcedc_business_phone_text'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+							if( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+								if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="phone">%s</span><br /><span class="url"><a href="%s">%s</a></span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="phone">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								}
 							} else {
-								printf( '<h3 class="title">%s</h3><div class="info business"><span class="name">%s</span><br /><span class="phone">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_the_title(), genesis_get_custom_field('mcedc_business_phone_text') );
+								if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="phone">%s</span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_phone_text'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span> &middot; <span class="phone">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_title_text') );
+								}
 							}
 						}
 					} else {
-						if( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
-							if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
-								printf( '<h3 class="title">%s</h3><div class="info business"><span class="name">%s</span><br /><span class="url"><a href="%s">%s</a></span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_the_title(), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+						if( genesis_get_custom_field('mcedc_business_address_wysiwig') != '' ) {
+							if( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+								if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span><br /><span class="address">%s</span><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_address_wysiwig'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								}
 							} else {
-								printf( '<h3 class="title">%s</h3><div class="info business"><span class="name">%s</span><br /><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_the_title(), genesis_get_custom_field('mcedc_business_phone_text'), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span><br /><span class="address">%s</span><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_address_wysiwig'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span><br /><span class="address">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_address_wysiwig') );
+								}
 							}
 						} else {
-							if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
-								printf( '<h3 class="title">%s</h3><div class="info business"><span class="name">%s</span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_the_title(), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+							if( genesis_get_custom_field('mcedc_business_url_text') != '' ) {
+								if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span><br /><span class="url"><a href="%s">%s</a></span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text'), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span><br /><span class="url"><a href="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('mcedc_business_url_text'), genesis_get_custom_field('mcedc_business_url_text') );
+								}
 							} else {
-								printf( '<h3 class="title">%s</h3><div class="info business"><span class="name">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_the_title() );
+								if ( get_the_terms( $post->ID, 'industry' ) != '' ) {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span><br /><span class="industry">%s</span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title(), get_the_term_list($post->ID, 'industry', 'Industry: ', ', ', '') );
+								} else {
+									printf( '<h3 class="title">%s</h3><div class="info business"><span class="name"><a href="%s" title="%s">%s</a></span></div>', genesis_get_custom_field('mcedc_business_name_text'), get_permalink( get_the_ID() ), the_title_attribute('echo=0'), get_the_title() );
+								}
 							}
 						}
 					}
 				}
-            } else {
+			} else {
 			}
         echo '</div><!--#end contact-->';
     echo '</div><!--end #person -->';

@@ -92,11 +92,11 @@ function mcedc_archive_post_content () {
         //use the genesis_get_custom_field template tag to display each custom field value
         echo '<div class="contact">';
         $default_attr = array(
-               'class' => "alignleft profile-image-listing",
+               'class' => "alignleft profile-image",
                'alt'   => $post->post_title,
                'title' => $post->post_title
            );
-        echo genesis_get_image( array( 'size' => 'profile-picture-listing', 'attr' => $default_attr ) );
+        echo genesis_get_image( array( 'size' => 'profile-image', 'attr' => $default_attr ) );
             if( genesis_get_custom_field('mcedc_title_text') != '') { 
                 printf( '<span class="title">%s</span>', genesis_get_custom_field('mcedc_title_text') );
             }
