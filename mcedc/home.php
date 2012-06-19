@@ -68,7 +68,7 @@ add_action( 'genesis_before_footer', 'mcedc_before_footer' );
 function mcedc_before_footer() {
     echo '<div class="logos">';
         echo '<div class="logo-one">';
-            echo  '<a href="http://jobs-ohio.com/"><img src="' . get_stylesheet_directory_uri() .'/images/jobsohio.jpg" alt="Jobs Ohio" /></a>';
+            echo  '<a href="http://jobs-ohio.com/"><img src="' . get_stylesheet_directory_uri() .'/images/jobs_ohio.png" alt="Jobs Ohio" /></a>';
         echo '</div><!-- end .logo-one -->';
 
 		echo '<div class="logo-two">';
