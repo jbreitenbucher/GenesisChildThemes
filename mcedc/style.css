@@ -1854,7 +1854,8 @@ div.gform_wrapper .gform_footer {
 }
 
 .page-template-page-leadership-php .name,
-.page-template-page-members-php .name {
+.page-template-page-members-php .name,
+.page-template-page-staff-php .name {
 	font-weight: 600;
 }
 
