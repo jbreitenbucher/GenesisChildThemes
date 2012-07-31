@@ -1879,35 +1879,10 @@ div.gform_wrapper .gform_footer {
 
 /* Responsive Design
 ------------------------------------------------------------ */
-
-@media only screen and (max-width: 600px) {
-	
-	.menu-primary {
-		padding-left: 0;
-	}
-
-	#wrap,
-	#header,
-	#nav,
-	.menu-primary,
-	.menu-primary li,
-	.menu-primary li ul,
-	.menu-primary li ul a,
-	.menu-secondary li,
-	.menu-secondary li ul,
-	.menu-secondary li ul a,
-	#header .menu li,
-	#header .menu li ul,
-	#header .menu li ul a {
-		width: 100%;
-	}
-	
-	#wrap,
-	#header,
-	.home #inner {
-		margin: 0;
-		padding: 0;
-		border: none;
+@media only screen and (max-width: 500px) {
+	#header-right {
+		float: left;
+		background: #fff;
 	}
 	
 	#header {
@@ -1915,91 +1890,9 @@ div.gform_wrapper .gform_footer {
 		min-height: 288px;
 	}
 	
-	.five-sixths,
-	.four-fifths,
-	.four-sixths,
-	.one-fifth,
-	.one-fourth,
-	.one-half,
-	.one-sixth,
-	.one-third,
-	.three-fifths,
-	.three-fourths,
-	.three-sixths,
-	.two-fifths,
-	.two-fourths,
-	.two-sixths,
-	.two-thirds {
-		padding: 0;
-		width: 100%;
-	}
-
-	.menu-primary li a,
-	.menu-secondary li a,
-	#header .menu li a {
-		margin: 0;
-		padding: 7px 3%;
-	}
-
-	.menu li li a .sf-sub-indicator,
-	.menu li li li a .sf-sub-indicator {
-		background: url(images/icon-plus-white.png) right no-repeat;
-	}
-
-	.menu-primary li li a,
-	.menu-primary li li a:link,
-	.menu-primary li li a:visited,
-	.menu-secondary li li a,
-	.menu-secondary li li a:link,
-	.menu-secondary li li a:visited,
-	#header .menu li li a,
-	#header .menu li li a:link,
-	#header .menu li li a:visited {
-		background: none;
-		color: #fff;
-		padding: 7px 3%;
-		width: 94%;
-	}
-
-	.menu-primary li ul,
-	.menu-secondary li ul,
-	#header .menu li ul {
-		background: #333;
-		clear: both;
-		margin: 0;
-		padding: 0;
-		position: inherit;
-	}
-
-	.menu-primary li ul ul,
-	.menu-secondary li ul ul,
-	#header .menu li ul ul {
-		background: #666;
-	}
-
-	.menu-primary li ul ul ul,
-	.menu-secondary li ul ul ul,
-	#header .menu li ul ul ul {
-		background: #999;
-	}
-
-	.menu-primary li ul ul,
-	.menu-secondary li ul ul,
-	#header .menu li ul ul {
-		margin: 0;
-	}
-	
-	.home-left,
-	.home-middle,
-	.home-right,
 	#header-right,
 	#header-left {
 		width: 100%;
-	}
-	
-	#header-right {
-		float: left;
-		background: #fff;
 	}
 	
 	#header #search {
@@ -2087,7 +1980,203 @@ div.gform_wrapper .gform_footer {
 		top: 10px;
 		left: -5px;
 	}
+}
 
+@media only screen and (max-width: 800px) {
+	
+	.menu-primary {
+		padding-left: 0;
+	}
+
+	#wrap,
+	#header,
+	#nav,
+	.menu-primary,
+	.menu-primary li,
+	.menu-primary li ul,
+	.menu-primary li ul a,
+	.menu-secondary li,
+	.menu-secondary li ul,
+	.menu-secondary li ul a,
+	#header .menu li,
+	#header .menu li ul,
+	#header .menu li ul a {
+		width: 100%;
+	}
+	
+	#wrap,
+	#header,
+	.home #inner {
+		margin: 0;
+		padding: 0;
+		border: none;
+	}
+	
+	.five-sixths,
+	.four-fifths,
+	.four-sixths,
+	.one-fifth,
+	.one-fourth,
+	.one-half,
+	.one-sixth,
+	.one-third,
+	.three-fifths,
+	.three-fourths,
+	.three-sixths,
+	.two-fifths,
+	.two-fourths,
+	.two-sixths,
+	.two-thirds {
+		padding: 0;
+		width: 100%;
+	}
+
+	.menu-primary li a,
+	.menu-secondary li a,
+	#header .menu li a {
+		margin: 0;
+		padding: 7px 3%;
+	}
+
+	.menu li li a .sf-sub-indicator,
+	.menu li li li a .sf-sub-indicator {
+		background: url(images/icon-plus-white.png) right no-repeat;
+	}
+
+	.menu-primary li li a,
+	.menu-primary li li a:link,
+	.menu-primary li li a:visited,
+	.menu-secondary li li a,
+	.menu-secondary li li a:link,
+	.menu-secondary li li a:visited,
+	#header .menu li li a,
+	#header .menu li li a:link,
+	#header .menu li li a:visited {
+		background: none;
+		color: #fff;
+		padding: 7px 3%;
+		width: 94%;
+	}
+
+	.menu-primary li ul,
+	.menu-secondary li ul,
+	#header .menu li ul {
+		background: #333;
+		clear: both;
+		margin: 0;
+		padding: 0;
+		position: inherit;
+	}
+
+	.menu-primary li ul ul,
+	.menu-secondary li ul ul,
+	#header .menu li ul ul {
+		background: #666;
+	}
+
+	.menu-primary li ul ul ul,
+	.menu-secondary li ul ul ul,
+	#header .menu li ul ul ul {
+		background: #999;
+	}
+
+	.menu-primary li ul ul,
+	.menu-secondary li ul ul,
+	#header .menu li ul ul {
+		margin: 0;
+	}
+	
+	#header {
+		border-top: 10px solid #8B8B8B;
+	}
+	
+	.s {
+		position: relative;
+		margin-top: 5px;
+		width: 160px;
+		height: 25px;
+		padding-left: 7px;
+		background: url(images/search-bar.png) no-repeat 0 1px;
+		z-index: 2;
+		font-size: .7em;
+	}
+	
+	input[type="button"], input[type="submit"] {
+		background: url(images/search-button.png) no-repeat;
+		margin-left: -22px;
+		margin-top: -20px;
+		width: 66px;
+		height: 20px;
+		cursor: pointer;
+		line-height: 19px;
+		padding: 0 0 0 8px;
+		text-decoration: none;
+		color: white;
+		position: relative;
+		z-index: 1;
+		font-size: .7em;
+	}
+	
+	.home-left,
+	.home-middle,
+	.home-right {
+		width: 100%;
+	}
+	
+	.logos {
+		width: 100%;
+		margin: 0;
+		padding-bottom: 10px;
+		float: left;
+		background:#fff;
+		overflow: hidden;
+	}
+
+	.logo-one,
+	.logo-two,
+	.logo-three,
+	.logo-four,
+	.logo-five,
+	.logo-six {
+		float: left;
+		width: 33.333333333333%;
+	}
+
+	.logo-one {
+		position: relative;
+		top: 5px;
+		left: 10px;
+	}
+
+	.logo-two {
+		position: relative;
+		top: 5px;
+		left: 5px;
+	}
+
+	.logo-three {
+		position: relative;
+		top: 10px;
+		left: 0px;
+	}
+
+	.logo-four {
+		position: relative;
+		top: 15px;
+		left: 15px;
+	}
+
+	.logo-five {
+		position: relative;
+		top: 10px;
+		left: 5px;
+	}
+
+	.logo-six {
+		position: relative;
+		top: 10px;
+		left: -5px;
+	}
 }
 
 @media only screen and (max-width: 960px) {
