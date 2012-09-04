@@ -30,4 +30,4 @@ profile-picture - 110px by 90px
 
 
 ## SUPPORT
-Please contact <a href="mailto:jbreitenbucher@wooster.edu">Jon Breitenbucher</a> for theme support.
+Please contact jbreitenbucher@wooster.edu for theme support.
