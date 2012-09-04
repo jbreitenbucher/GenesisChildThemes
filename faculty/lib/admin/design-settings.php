@@ -1010,7 +1010,7 @@ function faculty_settings_styles() {
 
 /**
  * Adds common WP functionality scripts, color picker script, and the
- * Faculty script, with some variables passed in from PHP.
+ * Prose script, with some variables passed in from PHP.
  *
  * @author StudioPress & Gary Jones
  * @global string $_faculty_settings_pagehook
@@ -1599,7 +1599,7 @@ function faculty_settings_general() {
     faculty_setting_line(faculty_add_note(__('Check this box for a live site, uncheck for testing.', FACULTY_DOMAIN)));
     faculty_setting_line(faculty_add_note(sprintf(__('Use the Editor to <a href="%s">add/edit custom CSS</a>.', FACULTY_DOMAIN), admin_url('theme-editor.php?' . faculty_get_custom_stylesheet_editor_querystring()))));
     echo '<hr />';
-    faculty_setting_line('<a class="button" href="' . wp_nonce_url(admin_url('admin.php?page=design-settings&amp;faculty=export'), 'faculty-export') . '">'.__('Export Faculty Settings', FACULTY_DOMAIN) . '</a>');
-    faculty_setting_line('</form><form method="post" enctype="multipart/form-data" action="">' . wp_nonce_field('faculty-import', '_wpnonce-faculty-import') . faculty_add_label('import-file', __('Import Faculty Settings File', FACULTY_DOMAIN)) . '<br /><input type="hidden" name="faculty" value="import" /><input type="file" class="text_input" name="file" id="import-file" /><input class="button" type="submit" value="' . esc_attr(__('Upload', FACULTY_DOMAIN)) . '" /></form>');
+    faculty_setting_line('<a class="button" href="' . wp_nonce_url(admin_url('admin.php?page=design-settings&amp;faculty=export'), 'faculty-export') . '">'.__('Export Prose Settings', FACULTY_DOMAIN) . '</a>');
+    faculty_setting_line('</form><form method="post" enctype="multipart/form-data" action="">' . wp_nonce_field('faculty-import', '_wpnonce-faculty-import') . faculty_add_label('import-file', __('Import Prose Settings File', FACULTY_DOMAIN)) . '<br /><input type="hidden" name="faculty" value="import" /><input type="file" class="text_input" name="file" id="import-file" /><input class="button" type="submit" value="' . esc_attr(__('Upload', FACULTY_DOMAIN)) . '" /></form>');
     do_action('faculty_settings_general');
 }
