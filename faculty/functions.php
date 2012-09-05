@@ -32,6 +32,12 @@ if ( function_exists( 'add_custom_background' ) ) {
 /** Add support for custom header **/
 add_theme_support( 'genesis-custom-header', array( 'header_image' => get_stylesheet_directory_uri() . '/images/headers/kauke_towers_940x198.jpg', 'width' => 940, 'height' => faculty_get_design_option('header_image_height'), 'no_header_text' => true, 'header_callback' => 'faculty_custom_header_style', 'admin_header_callback' => 'faculty_custom_header_admin_style' ) );
 
+// Add Viewport meta tag for mobile browsers
+add_action( 'genesis_meta', 'add_viewport_meta_tag' );
+function add_viewport_meta_tag() {
+    echo '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>';
+}
+
 register_default_headers( cms_theme_headers() );
 
 /* Automatically add header options that you put in the images/header folder to the options users have */

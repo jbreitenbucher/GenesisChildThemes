@@ -190,12 +190,16 @@ a:focus, a:hover, a:active {
 	overflow: hidden;
 	}
 
+.logotype {
+	padding: 0;
+}
+
 .wordmark {
 	padding-top: 25px;
 	padding-left: 25px;
 	padding-bottom: 25px;
 	}
-	
+
 .wordmark h1 {
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	}
@@ -212,6 +216,7 @@ a:focus, a:hover, a:active {
 	font-size: 13px;
 	padding-top: 25px;
 	padding-right: 10px;
+	width: 40%;
 	}
 
 /***** Header  ********************/
@@ -2011,6 +2016,75 @@ img.wp-smiley, img.wp-wink {
 }
 
 @media only screen and (max-device-width: 600px) {
+
+	#wrap {
+		width: 100%;
+	}
+
+	#content-sidebar-wrap,
+	.content-sidebar-sidebar #content,
+	.sidebar-content-sidebar #content,
+	.sidebar-sidebar-content #content,
+	.content-sidebar #content,
+	.sidebar-content #content,
+	.full-width-content #content,
+	.full-width-content #content-sidebar-wrap,
+	.content-sidebar-sidebar #sidebar,
+	.sidebar-content-sidebar #sidebar,
+	.sidebar-sidebar-content #sidebar,
+	.content-sidebar #sidebar,
+	.sidebar-content #sidebar,
+	.content-sidebar-sidebar #sidebar-alt,
+	.sidebar-content-sidebar #sidebar-alt,
+	.sidebar-sidebar-content #sidebar-alt,
+	.featured,
+	.featured-top,
+	.featured-top-left,
+	.featured-top-right,
+	.featured-middle,
+	.featured-middle-left,
+	.featured-middle-center,
+	.featured-middle-right,
+	.featured-bottom,
+	.featured-bottom-left,
+	.featured-bottom-right,
+	#footer,
+	#footer-widgets,
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3,
+	.footer-widgets-4 {
+		margin: 0 0 10px;
+		width: 100%;
+	}
+	
+	#footer .gototop,
+	#footer .creds {
+		width: 100%;
+		float: none;
+		text-align: left;
+		margin: 0 20px 0 20px;
+	}
+	
+	.sidebar-sidebar-content #content-sidebar-wrap {
+		float: none;
+		margin-left: 0;
+		width: 100%;
+	}
+
+	.footer-widgets-1 .widget,
+	.footer-widgets-2 .widget,
+	.footer-widgets-3 .widget,
+	.footer-widgets-4 .widget {
+		border-right-width: 1px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+	
+}
+
+@media only screen and (max-device-width: 480px) {
 
 	#wrap {
 		width: 100%;

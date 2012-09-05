@@ -7,13 +7,13 @@
  * @subpackage Customizations
  *
 **/
-$wordmark_url = get_stylesheet_directory_uri() .'/images/wordmark.gif';
+$logotype_url = get_stylesheet_directory_uri() .'/images/logotype_177x65.png';
 ?>
 
 <div id="branding">
 	<div class="wrap">
-		<div class="alignleft wordmark">
-			<h2><a href="http://wooster.edu">W<span style="font-stretch:condensed">oo</span>ster</a></h2>
+		<div class="alignleft logotype">
+			<a href="http://wooster.edu"><img src="<?php  echo $logotype_url; ?>" /></a>
 		</div>
 		<div class="alignright tagline">
 			<h1><?php bloginfo('name'); ?></h1>
