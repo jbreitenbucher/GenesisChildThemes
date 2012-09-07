@@ -22,7 +22,7 @@ body {
 	color: #636873;
 	background:#e9e4d5;
 	font-family: "museo-sans-1","museo-sans-2","calluna-1","calluna-2","liberation-sans-1","liberation-sans-2", helvetica,'trebuchet ms', verdana, arial, sans-serif;
-	font-size: 1em;
+	font-size: .9em;
 	margin: 0 auto 0;
 	line-height: 1.6em;
 	}
@@ -357,17 +357,17 @@ a:focus, a:hover, a:active {
 	}
 
 #content .post {
-	padding: 1em .5em 3em .5em;
+	padding: 1em 1.5em 3em 1.5em;
 	}
 	
 #content .page {
 	margin: 0;
-	padding: 0 0 15px 0;
+	padding: 0 0 1em 0;
 	}
 
 #content .post p {
 	margin: 0;
-	padding: 0 0 10px 0;
+	padding: 0 0 .625em 0;
 	}
 
 #content .related h3 {
@@ -1142,10 +1142,10 @@ input:focus #subbox {
 	}
 
 #footer .gototop {
-	width: 22%;
+	width: 20%;
 	float: left;
 	margin: 0;
-	padding: 0 0 0 5px;
+	padding: 0 0 0 1%;
 	}
 	
 #footer .gototop a {
@@ -1163,12 +1163,13 @@ input:focus #subbox {
 	width: 76%;
 	float: right;
 	margin: 0;
-	padding: 0 10px 0 0;
+	padding: 0 2% 0 0;
 	text-align: right;
 	}
 	
 #footer .diigo-tags {
 	text-align: right;
+	padding: 0 2% 0 2%;
 	}
 
 /***** Comments ********************/
@@ -1305,12 +1306,75 @@ iframe {
 	padding-left: 20px;
 	margin-right: 10px;
 	}
-	
-@media screen and (max-width: 768px) {
+
+@media only screen and (min-width: 320px) {
 	#wrap {
+	max-width: 100%;
+	min-width: 100%;
+	margin: 0 auto 0;
+	}
+	#header {
+		height: 11em;
+	}
+	.sidebar-content #content,
+	.content-sidebar #content,
+	.header-full-width #title-area,
+	.header-full-width #title-area #title,
+	.header-full-width #title-area #title a,
+	#content,
+	#sidebar {
 		width: 100%;
 	}
-	
+	#footer .diigo-tags {
+		clear: both;
+	}
+	#inner {
+		font-size: 1em;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	#wrap {
+	max-width: 100%;
+	min-width: 100%;
+	margin: 0 auto 0;
+	}
+	#header {
+		height: 8em;
+	}
+	.sidebar-content #content,
+	.content-sidebar #content,
+	.header-full-width #title-area,
+	.header-full-width #title-area #title,
+	.header-full-width #title-area #title a,
+	#content,
 	#sidebar {
-		width:100%;
-	}}
+		width: 100%;
+	}
+	#footer .diigo-tags {
+		clear: both;
+	}
+	#inner {
+		font-size: 1em;
+	}
+	#sidebar img.affilliate,
+	#sidebar a img.affilliate,
+	#sidebar-alt img.affilliate,
+	#sidebar-alt a img.affilliate  {
+		width: 100%;
+		margin: 0 2% 0 2%;
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	#wrap {
+		max-width: 80.5em;
+		min-width: 62.5em;
+	}
+	.sidebar-content #content, .content-sidebar #content  {
+		width: 62%;
+	}
+	#sidebar {
+		width: 38%;
+	}
+}
