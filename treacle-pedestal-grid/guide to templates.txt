@@ -1,0 +1,31 @@
+In summary, these are the theme files and what they do:
+
+* 404.php: the page that appears if an invalid url is entered
+* archives.php: this is the default archives format for search results and author archives, with dates, titles, and excerpts. It will also be used for date and category archives if 'date.php' and 'category.php' are deleted.
+* category.php: controls appearance of category archives
+* comments.php: controls the comments and comments form
+* comments-popup.php: comments and comments form if popup comments are in use
+* date.php: controls appearance of daily, monthly and yearly archives
+* errormessage.php: allows you to change the message generated when no posts are returned
+* footer.php: credits and footer.  'rightcolumn.php' is also called from this template.
+* header.php: contains the head section of the template (title, metatags, etc.) plus the blog title and description. 'leftcolumn.php' is also called from this template.
+* index.php: the standard layout for posts
+* leftcolumn.php: content for the left-hand sidebar
+* page.php: controls the appearance of Pages
+* rightcolumn.php: content for the right-hand sidebar
+* single.php: controls the appearance of individual Posts
+* style.css: the stylesheet
+
+/images/squaredot.gif: used for menu headers and unordered lists inside posts and archives
+/images/submit.gif: the comment submit button
+/images/openquote.gif: the background for individual comments and the comments textarea
+/images/squares.gif: the tile with the squares on.
+/images/favicon.ico: the favicon
+
+Some other things to note:
+
+The sidebar content is contained in the self-explanatory leftcolumn.php and rightcolumn.php. Since the initial arrangement was made with the theme competition in mind, you may want to move things around a bit. The behaviour of text and links is the same in both sidebars, so you don't have to worry about shifting sections from one to the other. Every page retains the three-column layout to make it easier for your readers to find their way around. (I am not a fan of disappearing sidebars.)
+
+You'll notice that archives are handled slightly differently from what you may be used to. If you select a monthly or category archive, you get links to all the posts made in that month or category, rather than a paged display of the entries themselves. I personally prefer this method; but if you disagree, you can delete date.php and category.php and revert to the more conventional template in archive.php.
+
+I haven't provided page templates because it seems to me that the archiving method makes another archive template somewhat redundant, and that anyone using a three-column template will wish to insert their links in a sidebar rather than a separate page. 

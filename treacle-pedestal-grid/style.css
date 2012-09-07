@@ -1,0 +1,581 @@
+/*  
+Theme Name: Treacle-Pedestal
+Theme URI: http://not-that-ugly.co.uk
+Description: A three-column fluid-width widgetized template in tasteful shades of beige, brown, orange and a touch of blue and modified by Jon Breitenbucher
+Version: 1.0
+Author: Jon Breitenbucher inspired by not (that) ugly
+Author URI: http://jon.breitenbucher.net/
+*/
+
+/* released under a CC Attribution licence; see licence.txt for further details */
+
+/*colors
+Colors:
+Gray: e7e7e7
+Bright Orange: fe9932
+Light Orange: febf7f
+Dark Brown: 3f260c
+Light Brown: 7e5f3f
+Blue: 0086b1
+*/
+
+/* reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {  
+	margin:0; 
+	padding:0; 
+} 
+table { 
+	border-collapse:collapse; 
+	border-spacing:0; 
+} 
+fieldset,img {  
+	border:0; 
+} 
+address,caption,cite,code,dfn,em,strong,th,var { 
+	font-style:normal; 
+	font-weight:normal; 
+} 
+ol,ul { 
+	list-style:none; 
+} 
+caption,th { 
+	text-align:left; 
+} 
+h1,h2,h3,h4,h5,h6 { 
+	font-size:100%; 
+	font-weight:normal; 
+} 
+q:before,q:after { 
+	content:''; 
+} 
+abbr,acronym {
+	border:0; 
+}
+/*end reset*/
+
+/* start off with the basic page layout */
+html{
+	font-size:100%;
+	min-height:101%;
+}
+body{
+	font-size:.85em;
+	font-family: helvetica,'trebuchet ms', verdana, arial, sans-serif;
+ 	color:#334;
+	border-top:0.625em;
+	background:#fff;
+ 	line-height:1.3em;
+ 	text-align:center;
+}
+
+#header{
+	background:url('images/squares.gif') bottom left repeat-x;
+	height:8em;
+    width:99.47%;
+	margin-bottom:0em;
+ 	text-align:right;
+}
+
+.page {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 80.5em;
+        text-align: left;
+ }
+ 
+#footer {
+	text-align:center;
+ 	margin-bottom:1.5em;
+	font-size:.75em;
+ 	}
+
+img#wpstats{ display:none; }
+
+/*grids*/
+/* Set styles common among all grids - all grid divs must be assigned this class */
+.generic{
+	float:left;
+	padding-top:1em;
+	margin-bottom:2em;
+}
+/* Sets styles for any 'start' grids - this class MUST be given to a grid that is the first in a horizontal series */
+}
+
+.alpha {
+	margin-left: 0 !important;
+	padding-left: 0 !important;
+}
+/* Sets styles for any 'end' grids - this class MUST be given to a grid that is the last in a horizontal series */
+.omega {
+	margin-right: 0 !important;
+	padding-right: 0 !important;
+}
+
+.end {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+/* sidebar */
+.sidebar{
+	width:37%;
+	float: right;
+}
+/* topbar */
+.topbar{
+	width:100%;
+	float:left;
+}
+/* leftbar */
+.leftbar{
+	width:54%;
+	float: left;
+}
+/* rightbar */
+.rightbar{
+	width:36%;
+	float: right;
+}
+/* content */
+.content{
+	width:61%;
+	float: left;
+}
+/* container */
+.container{
+	width:98%;
+}
+/* footer */
+.footer{
+	width:100%;
+}
+ 
+/*commonly-used xhtml tags */
+/* links */
+ a {
+ 	color:#0086b1;
+    text-decoration:none
+ }
+
+/* for quoting other sites or sources. Don't use it just for indenting stuff
+or the semantics police will come bashing down your door */ 
+ blockquote {
+	background:#febf7f;
+ 	line-height:1.2em;
+ 	padding:.3em;
+ 	border:1px #fe9932 solid;
+	}
+	
+/* for references to books, films, TV programmes, personal publishing software etc. */ 
+ cite {
+ 	font-style:italic
+ 	}
+ 	
+/* some people like to make lists in their entries*/
+#content ul {
+ 	list-style-image:url('images/squaredot.gif')
+ 	}
+
+.footnotes {
+    padding-left: 1.5em;
+    }
+
+/* blog title */
+ #header h1 {
+	background:url('images/pedestal-small.jpg') 65% 0% no-repeat;
+ 	font:2.8em 'helvetica','century gothic', futura, serif;
+ 	color:#fe9932;
+ 	margin:0.2em
+ 	}
+ 	
+#header h1 a {
+ 	color:#fe9932;
+ 	}
+  
+/* blog description */
+ #header h2 {
+ 	font-family:"helvetica","century gothic", futura, serif;
+	font-size:1.2em;
+	font-style:oblique;
+	font-weight:100;
+	color:#febf7f;
+ 	margin:0.2em
+ 	}
+ 
+/* padding and background footer for individual posts */
+ .post {
+ 	padding-top:1em;
+	padding-left: .5em;
+ 	padding-bottom: 1em;
+ 	padding-left: .5em;
+ 	}
+
+.postfooter {
+	font-size:.8em;
+	padding-bottom:2.5em;
+	margin-left:3%;
+	margin-right: 3%;
+	width:94%;
+	background:url('images/squares.gif') repeat-x bottom left
+}
+
+.post .storycontent {
+	font-size:1em;
+	font-family: 'myriad pro', myriad, helvetica, 'century gothic', futura, serif;
+	/*font-weight:100;*/
+	color:#636873;
+	line-height:1.6em;
+	}
+
+.post .storycontent p {
+       margin-top: 1.3em;
+       margin-bottom:1.3em;
+       }
+
+.post .storycontent ul {
+       padding-left: 2em;
+       }
+
+
+.post .storyvideo {
+       left: 4%;
+       right: 4%;
+       }
+ 
+/* date */
+#content h2 {
+ 	color:#7e5f3f;
+ 	font:2em 'helvetica','century gothic', 'futura',serif;
+ 	font-weight:100;
+ 	text-transform:lowercase;
+ 	margin-top:5px;
+ 	margin-bottom:5px
+ 	}
+ 
+/* post title */
+#content h3 {
+ 	font-size:1.4em;
+	font-weight:400;
+ 	color:#0086b1;
+ 	margin:0;
+ 	}
+ 	
+/* titles in category, month and author archives */
+#leftbar ul li h3 a, #rightbar ul li h3 a {
+	color:#636873;
+	}
+
+#leftbar ul li h3 a:hover, #righttbar ul li h3 a:hover {
+	color:#969ba6;
+	}
+
+/*ul.twitter: the main ul (if list is activated)*/
+li.twitter-item {margin-left:.5em; margin-bottom:.5em;}
+/*p.twitter-message: each one of the paragraphs (if msgs > 1)*/
+.twitter-timestamp {font-style:italic; font-size:x-small;}
+/*a.twitter-link: the tweet link class*/
+a.twitter-user {color:#b1bebc}
+
+/* links to previous and next pages */
+.page h4 {
+	text-align:center;
+ 	color:#969BA6;
+	}
+
+.edit {
+	font-size:0.7em;
+	font-weight:normal;
+	}
+	
+/*that bit at the end of each entry with category, time and comments info */
+.meta, .feedback {
+	color:#636873;
+	margin:0;
+	text-align:right;
+	}
+	
+/* comments */
+input, #comment {
+	background:#febf7f;
+	font:1em 'Helvetica','trebuchet ms', verdana, arial, sans-serif;
+	line-height:1.2em;
+	padding:3px;
+	border:1px #b8b8ac solid;
+	border-left-color:#fe9932;
+	border-bottom-color:#fe9932;
+	}
+ 
+input:focus {
+	background:#febf7f url('images/squaredot.gif') top right no-repeat;
+	}
+ 
+#comment,.commenttext {
+ 	background:#febf7f url('images/openquote.gif') top left no-repeat;
+ 	text-indent:5.5em;
+ 	}
+ 
+#submit {
+	background:#febf7f url('images/submit.gif');
+	height:25px;
+	width:50px;
+	border:0;
+	float:right;
+	}
+
+/* .menu styles apply to both sidebars  */
+.menu {
+	padding:.5em;
+ 	line-height:1.4em;
+ 	}
+ 
+.menu ul {
+	list-style-type: none;
+	color:#636873;
+	margin:0;
+	padding:0;
+	}
+	
+/* section headings */
+.menu h2, #wp-calendar caption {
+	background:url('images/squaredot.gif')no-repeat;
+	font-size:1.2em;
+	/*font-weight:bold;*/
+	font-weight:500;
+	margin:0;
+	margin-top:1.5em;
+	padding-bottom: .3em;
+	padding-left:1.5em;
+	text-transform:lowercase;
+	}
+
+/* link lists */
+.menu ul li ul {
+	font-weight:normal;
+ 	font-size:1em;
+ 	text-transform:none;
+ 	padding-left:.5em;
+ 	margin:0;
+ 	}
+ 	
+/* link lists */
+#rightbar ul ul li {
+ 	font-weight:normal;
+ 	font-size:1em;
+ 	text-transform:none;
+ 	padding-left:.5em;
+ 	margin:0;
+ 	}
+ 	
+/* link lists */
+ #rightbar ul li ul li {
+ 	font-weight:normal;
+ 	font-size:1em;
+ 	text-transform:none;
+ 	padding-left:.5em;
+ 	margin:0;
+ 	}
+ 	
+/* when you over over sidebar links */ 
+.menu a:hover {
+	border-bottom:1px #636873 dotted;
+	}
+ 
+#searchform {margin:0;}
+ 
+#search input {padding:1px;}
+
+/* the search box */  
+#s {
+	width:88%;
+}
+
+.subscribe form {
+	display: inline;
+	width: 100%;
+}
+
+.subscribe fieldset {
+	display: inline;
+}
+
+.subscribe input {
+	display: inline;
+	vertical-align: middle;
+}
+
+.feedinput {
+	background:#febf7f;
+	font:1em 'Helvetica','trebuchet ms', verdana, arial, sans-serif;
+	line-height:1.2em;
+	padding:3px;
+	border:1px #b8b8ac solid;
+	border-left-color:#fe9932;
+	border-bottom-color:#fe9932;
+	}
+
+.feedinput:	focus {
+		background:#febf7f url('images/squaredot.gif') top right no-repeat;
+		}
+
+.feedsubmit {
+	background: #febf7f;
+	height: 21px;
+}
+
+.feedhidden {
+	background: none;
+	border: none;
+}
+
+.feedlink {
+	background: url(images/feediconbrightorange.png) no-repeat left;
+    padding-bottom: 2px;
+	padding-left: 20px;
+	font-weight: bold;
+	font-size: 11px;
+	margin-right: 10px;
+}
+
+#pagenav {
+	float: left;
+	height: 40px;
+	width: 100%;
+	border-bottom: 1px #febf7f solid;
+}
+
+#pagenav ul {
+	float: left;
+	padding-top: 18px;
+	padding-left: 20px;
+	height: 30px;
+}
+
+#pagenav ul li {
+	float: left;
+	height: 30px;
+	text-align: center;
+	margin-right: 1px;
+	font-size: 1.2em;
+}
+
+#pagenav ul li a {
+	background: #febf7f;
+	color:#fff;
+	background-position: center 0px;
+	float: left;
+	display: block;
+	padding-left: 10px;
+	padding-right: 10px;
+	line-height: 22px;
+	height: 22px;
+}
+
+#pagenav ul li a:hover {
+       color: #fff;
+       background: #fe9932;
+}
+
+#pagenav ul li.current_page_item a {
+	background: #fff;
+	color: #0086b1;
+}
+
+.box h2 {
+	margin-top: 20px;
+	display: block;
+	color: #fff;
+	font-size: 1.1em;
+	font-weight: bold;
+	text-indent: 10px;
+	height: 22px;
+	line-height: 22px;
+}
+
+#crp_related {
+	padding-left: 2.1em;
+}
+
+/*#crp_related ul li {
+	display: inline;
+	padding-right:1em;
+	list-style-type: none;
+}*/
+
+#topbar {
+	margin-bottom:-1em;
+}
+
+/***** Images ********************/
+
+#content img, #content p img {
+	max-width: 100%;
+	}
+
+#content .post-image {
+	margin: 0 10px 10px 0;
+	padding: 4px;
+	border: 1px solid #b1bebc;
+	}
+
+img.centered, .aligncenter {
+	display: block;
+	margin: 0 auto 10px;
+	}
+	
+img.alignnone {
+	margin: 0 0 10px 0;
+	display: inline;
+	}
+	
+img.alignleft {
+	margin: 0 10px 10px 0;
+	display: inline;
+	}
+
+img.alignright {
+	margin: 0 0 10px 10px;
+	display: inline;
+	}
+
+.alignleft {
+	float: left;
+	margin: 0 10px 0 0;
+	}
+
+.alignright {
+	float: right;
+	margin: 0 0 0 10px;
+	}
+
+.wp-caption {
+	background: #F7F7F7;
+	padding: 5px 0 0 1px;
+	text-align: center;
+	border: 1px solid #b1bebc;
+	}
+
+.wp-caption p.wp-caption-text {
+	font-size: 1em;
+	font-weight: normal;
+	line-height: 1.1em;
+	}
+	
+img.wp-smiley, img.wp-wink {
+	float: none;
+	border: none;
+	}
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+.clearfix { display: inline-table; }
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* End hide from IE-mac */
