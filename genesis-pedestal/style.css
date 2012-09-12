@@ -133,10 +133,9 @@ a:focus, a:hover, a:active {
 
 #nav, #subnav {
 	width: 100%;
-	background: #969ba6;
 	color: #FFFFFF;
 	text-transform: uppercase;
-	border-bottom: 1px solid #666666;
+	border-bottom: 1px solid #fe9932;
 	overflow: hidden;
 	clear: both;
 	}
@@ -167,11 +166,20 @@ a:focus, a:hover, a:active {
 	text-decoration: none;
 	position: relative;
 	}
+	
+#nav li, #subnav li {
+	background: #febf7f;
+}
 
-#nav li a:hover, #nav li a:active, #nav .current_page_item a, #nav .current-cat a, #nav .current-menu-item, #subnav li a:hover, #subnav li a:active, #subnav .current_page_item a, #subnav .current-cat a, #subnav .current-menu-item, #header ul.nav li a:hover, #header ul.nav li a:active, #header ul.nav .current_page_item a, #header ul.nav .current-cat a, #header ul.nav .current-menu-item a, #header ul.menu li a:hover, #header ul.menu li a:active, #header ul.menu .current_page_item a, #header ul.menu .current-cat a, #header ul.menu .current-menu-item a {
-	background: #000000;
+#nav li a:hover, #nav li a:active,  #subnav li a:hover, #subnav li a:active, #header ul.nav li a:hover, #header ul.nav li a:active, #header ul.nav .current_page_item a, #header ul.nav .current-cat a, #header ul.nav .current-menu-item a, #header ul.menu li a:hover, #header ul.menu li a:active, #header ul.menu .current_page_item a, #header ul.menu .current-cat a, #header ul.menu .current-menu-item a {
+	background: #fe9932;
 	color: #FFFFFF;
 	}
+	
+#nav .current_page_item a, #nav .current-cat a, #nav .current-menu-item, #subnav .current_page_item a, #subnav .current-cat a, #subnav .current-menu-item {
+	background: #fff;
+	color: #0086b1;
+}
 	
 #nav li a.sf-with-ul, #subnav li a.sf-with-ul, #header ul.nav li a.sf-with-ul, #header ul.menu li a.sf-with-ul {
 	padding-right: 25px;
@@ -190,20 +198,20 @@ a:focus, a:hover, a:active {
 	}
 	
 #nav li li a, #nav li li a:link, #nav li li a:visited, #subnav li li a, #subnav li li a:link, #subnav li li a:visited, #header ul.nav li li a, #header ul.nav li li a:link, #header ul.nav li li a:visited, #header ul.menu li li a, #header ul.menu li li a:link, #header ul.menu li li a:visited {
-	background: #969ba6;
+	background: #febf7f;
 	color: #FFFFFF;
 	width: 158px; 
 	font-size: 11px;
 	margin: 0;
 	padding: 5px 10px 5px 10px;
-	border-left: 1px solid #666666;
-	border-right: 1px solid #666666;
-	border-bottom: 1px solid #666666;
+	border-left: 1px solid #fe9932;
+	border-right: 1px solid #fe9932;
+	border-bottom: 1px solid #fe9932;
 	position: relative;
 	}
 	
 #nav li li a:hover, #nav li li a:active, #subnav li li a:hover, #subnav li li a:active, #header ul.nav li li a:hover, #header ul.nav li li a:active, #header ul.menu li li a:hover, #header ul.menu li li a:active {
-	background: #000000;
+	background: #fe9932;
 	}
 
 #nav li li a .sf-sub-indicator, #subnav li li a .sf-sub-indicator, #header ul.nav li li a .sf-sub-indicator, #header ul.menu li li a .sf-sub-indicator {
@@ -975,13 +983,22 @@ fieldset {
 	text-transform: lowercase;
 	margin: 0;
 	padding: 3px 5px 3px 5px;
-	border: 1px solid #666666;
+	border: 1px solid #fe9932;
 	}
+	
+#respond #submit {
+	background: #FEBF7F url('images/submit.gif');
+	height: 25px;
+	width: 50px;
+	border: 0;
+	float: right;
+	color: transparent;
+}
 
 #submit:hover, .searchsubmit:hover, .gform_footer .button:hover, .reply a:hover, .enews #subbutton:hover, .searchblogsubmit:hover {
 	background:#fe9932 url('images/submit.gif'); !important;
 	text-decoration: none;
-	border: 1px solid #666666;
+	border: 1px solid #fe9932;
 	}
 	
 /***** Search Form(s) ********************/
@@ -1174,6 +1191,10 @@ input:focus #subbox {
 
 /***** Comments ********************/
 
+#comments {
+	width: 98%;
+}
+
 #respond {
 	margin: 0 0 15px 0;
 	padding: 0;
@@ -1191,21 +1212,32 @@ input:focus #subbox {
 	}
 	
 #comment {
-	background: #F7F7F7 !important;
+	background: #FEBF7F url('images/openquote.gif') top left no-repeat !important;
 	width: 98%;
+	text-indent: 5.5em;
 	height: 150px;
-	color: #333333;
+	color: #334;
 	font-family: Arial, Tahoma, Verdana;
 	font-size: 12px;
 	padding: 3px 0 3px 3px;
 	margin: 5px 0 5px 0;
-	border: 1px solid #E6E6E6;
+	border: 1px solid #fe9932;
 	}
 	
 .comment-list, .children {
 	margin: 0;
 	padding: 0;
 	}
+	
+.comment-list .reply a, .coment-list .reply a:visited {
+	background: #FEBF7F !important;
+	font-size: 1em;
+	font-weight: normal !important;
+	text-decoration: none;
+	text-transform: lowercase;
+	margin: 0;
+	padding:3px 12px 3px 5px;
+}
 	
 .ping-list {
 	margin: 0 0 40px 0;
