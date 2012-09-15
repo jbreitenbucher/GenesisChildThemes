@@ -1,15 +1,23 @@
 /*
 	Theme Name: Treacle Child Theme
 	Theme URL: http://orthogonalcreations.com/treacle
-	Description: Treacle is a 3-column (with a top,left, and right sidebar areas) Widget-ready child theme created for the Genesis Theme Framework. It is an evolution of my work in adapting the original Treacle theme to more modern frameworks. This marks my fourth variation of the original Treacle theme.
+	Description: Treacle is a 3-column (with a top,left, and right sidebar areas) Widget-ready child theme created for the Genesis Theme Framework. The theme currently has two color variations (brown-gray and plum-aquamarine). It is an evolution of my work in adapting the original Treacle theme to more modern frameworks. This marks my fifth variation of the original Treacle theme.
 	Author: Jon Breitenbucher
 	Author URI: http://jon.breitenbuhcer.net
-	Version: 1.0
+	Version: 2.0
 	
 	Template: genesis
 
 	The CSS, XHTML and design is released under GPL:
 	http://www.opensource.org/licenses/gpl-license.php
+*/
+
+/* colors
+light brown background #e9e4d5
+light brown #d3caac
+dark brown #9e9071
+light gray #dee4e0
+dark gray #969ba6
 */
 
 /* start off with the basic page layout */
@@ -137,10 +145,15 @@ a:focus, a:hover, a:active {
 	background: #969ba6;
 	color: #FFFFFF;
 	text-transform: uppercase;
-	border-bottom: 1px solid #666666;
+	border-bottom: 1px solid #9e9071;
 	overflow: hidden;
 	clear: both;
 	}
+	
+#subnav {
+	background: transparent;
+	border-bottom: transparent;
+}
 
 #nav ul, #subnav ul, #header ul.nav, #header ul.menu {
 	width: 100%;
@@ -155,7 +168,7 @@ a:focus, a:hover, a:active {
 	}
 	
 #header ul.nav li, #header ul.menu li {
-	background: #333333;
+	background: #9e9071;
 	text-transform: uppercase;
 	}
 	
@@ -170,7 +183,7 @@ a:focus, a:hover, a:active {
 	}
 
 #nav li a:hover, #nav li a:active, #nav .current_page_item a, #nav .current-cat a, #nav .current-menu-item, #subnav li a:hover, #subnav li a:active, #subnav .current_page_item a, #subnav .current-cat a, #subnav .current-menu-item, #header ul.nav li a:hover, #header ul.nav li a:active, #header ul.nav .current_page_item a, #header ul.nav .current-cat a, #header ul.nav .current-menu-item a, #header ul.menu li a:hover, #header ul.menu li a:active, #header ul.menu .current_page_item a, #header ul.menu .current-cat a, #header ul.menu .current-menu-item a {
-	background: #000000;
+	background: #9e9071;
 	color: #FFFFFF;
 	}
 	
@@ -204,7 +217,7 @@ a:focus, a:hover, a:active {
 	}
 	
 #nav li li a:hover, #nav li li a:active, #subnav li li a:hover, #subnav li li a:active, #header ul.nav li li a:hover, #header ul.nav li li a:active, #header ul.menu li li a:hover, #header ul.menu li li a:active {
-	background: #000000;
+	background: #9e9071;
 	}
 
 #nav li li a .sf-sub-indicator, #subnav li li a .sf-sub-indicator, #header ul.nav li li a .sf-sub-indicator, #header ul.menu li li a .sf-sub-indicator {
@@ -267,7 +280,7 @@ a:focus, a:hover, a:active {
 	}
 
 #nav li.rss a, #nav li.rss a:hover {
-	background: url(images/rss.png) no-repeat left center;
+	background: url(images/enews.png) no-repeat left center;
 	margin: 0 0 0 10px;
 	padding: 7px 0 5px 16px;
 	}
@@ -291,16 +304,14 @@ a:focus, a:hover, a:active {
 /***** Breadcrumb ********************/
 
 .breadcrumb {
-	background: #F7F7F7;
-	margin: 0 0 30px 0;
+	margin: 0;
 	padding: 5px 10px 5px 10px;
-	border: 1px solid #E6E6E6;
 	}
 	
 /***** Taxonomy Description ********************/
 
 .taxonomy-description {
-	background: #F7F7F7;
+	background: #dee4e0;
 	margin: 0 0 30px 0;
 	padding: 10px;
 	border: 1px solid #E6E6E6;
@@ -453,7 +464,7 @@ a:focus, a:hover, a:active {
 /***** Post Info ********************/
 	
 .post-info {
-	color:#636873;
+	color:#969ba6;
 	font-size: .7em;
 	margin: 0 0 5px 0;
 	padding: 0;
@@ -474,7 +485,7 @@ a:focus, a:hover, a:active {
  #content h1.entry-title {
  	font-size:1.2em;
 	font-weight:400;
- 	color:#969ba6;
+ 	color:#9e9071;
  	margin:0;
  	text-transform: none;
  	}
@@ -516,7 +527,7 @@ a:focus, a:hover, a:active {
 .post-meta {
 	font-size:.8em;
 	line-height: 1em;
-	color:#636873;
+	color:#969ba6;
 	text-align: right;
 	padding-bottom:2.5em;
 	margin-left:4%;
@@ -551,7 +562,7 @@ a:focus, a:hover, a:active {
 /***** Author Box ********************/
 	
 .author-box {
-	background: #F7F7F7;
+	background: #dee4e0;
 	margin: 0 0 40px 0;
 	padding: 1em;
 	border: 1px solid #b1bebc;
@@ -564,7 +575,7 @@ a:focus, a:hover, a:active {
 	}
 	
 .author-box img {
-	background: #FFFFFF;
+	background: #dee4e0;
 	float: left;
 	margin: 0 10px 0 0;
 	padding: 4px;
@@ -574,7 +585,7 @@ a:focus, a:hover, a:active {
 /***** Sticky Posts ********************/
 	
 #content .sticky {
-	background: #F7F7F7;
+	background: #dee4e0;
 	margin: 0 0 40px 0;
 	padding: 10px;
 	border: 1px solid #b1bebc;
@@ -643,7 +654,7 @@ img.alignright {
 	}
 
 .wp-caption {
-	background: #F7F7F7;
+	background: #dee4e0;
 	padding: 5px 0 0 1px;
 	text-align: center;
 	border: 1px solid #b1bebc;
@@ -686,7 +697,7 @@ img.wp-smiley, img.wp-wink {
 	}
 
 .navigation li a:hover, .navigation li.active a {
-	background: #F7F7F7;
+	background: #dee4e0;
 	}
 
 /***** Primary & Secondary Sidebars ********************/
@@ -700,7 +711,7 @@ img.wp-smiley, img.wp-wink {
 	
 #sidebar ul, #sidebar ul li {
 	list-style-type: none;
-	color:#636873;
+	color: #969BA6;
 	margin:0;
 	padding:0;
 	font-weight:normal;
@@ -717,7 +728,7 @@ img.wp-smiley, img.wp-wink {
 	
 #sidebar-top ul {
 	list-style-type: none;
-	color:#636873;
+	color: #969BA6;
 	margin:0;
 	padding:0;
 	font-weight:normal;
@@ -797,7 +808,7 @@ fieldset {
 	
 #sidebar-left ul {
 	list-style-type: none;
-	color:#636873;
+	color: #969BA6;
 	margin:0;
 	padding:0;
 	font-weight:normal;
@@ -822,7 +833,7 @@ fieldset {
 	
 #sidebar-right ul {
 	list-style-type: none;
-	color:#636873;
+	color: #969BA6;
 	margin:0;
 	padding:0;
 	font-weight:normal;
@@ -845,7 +856,7 @@ fieldset {
 	color: #9e9071;
 	font-family: "museo-sans-1","museo-sans-2","liberation-sans-1","liberation-sans-2", 'helvetica','century gothic', 'futura',serif;
 	font-size: 1.2em;
-	font-weight: 900;
+	font-weight: 400;
 	margin: 0;
 	padding: 0;
 	}
@@ -905,7 +916,7 @@ fieldset {
 /***** Sidebar(s) Category Dropdown ********************/
 	
 #cat {
-	background: #F7F7F7;
+	background: #dee4e0;
 	font-size: 1.2em;
 	font-family: "museo-sans-1","museo-sans-2","liberation-sans-1","liberation-sans-2", 'helvetica','century gothic', 'futura',serif;
 	margin: 10px 0 0 10px;
@@ -934,7 +945,7 @@ fieldset {
 	}
 	
 #sidebar .featuredpost .avatar, #sidebar .featuredpage .avatar, #sidebar-alt .featuredpost .avatar, #sidebar-alt .featuredpage .avatar, #sidebar .featuredpost img, #sidebar .featuredpage img, #sidebar-alt .featuredpost img, #sidebar-alt .featuredpage img {	
-	background: #F7F7F7;
+	background: #dee4e0;
 	margin: 0;
 	padding: 4px;
 	border: 1px solid #b1bebc;
@@ -979,7 +990,7 @@ fieldset {
 	}
 
 #submit:hover, .searchsubmit:hover, .gform_footer .button:hover, .reply a:hover, .enews #subbutton:hover, .searchblogsubmit:hover {
-	background: #000000 !important;
+	background: #dee4e0 !important;
 	text-decoration: none;
 	border: 1px solid #666666;
 	}
@@ -1005,7 +1016,7 @@ fieldset {
 	}
 	
 .s {
-	background: #F7F7F7 !important;
+	background: #dee4e0 !important;
 	color: #333333;
 	font-family: Arial, Tahoma, Verdana;	
 	font-size: 11px;
@@ -1081,12 +1092,12 @@ input:focus #subbox {
 #wp-calendar thead {
 	margin: 10px 0 0 0;
 	font-weight: bold;
-	background: #F7F7F7 !important;
-	color: #F7F7F7 !important;
+	background: #dee4e0 !important;
+	color: #dee4e0 !important;
 	}
 
 #wp-calendar td {
-	background: #F7F7F7;
+	background: #dee4e0;
 	font-weight: normal;
 	text-align: center;
 	padding: 2px;
@@ -1095,7 +1106,7 @@ input:focus #subbox {
 /***** Contact Form ********************/
 
 .gform_wrapper input, .gform_wrapper textarea, .gform_wrapper select {
-	background: #F7F7F7 !important;
+	background: #dee4e0 !important;
 	color: #333333 !important;
 	font-family: Arial, Tahoma, Verdana;
 	font-size: 12px !important;
@@ -1178,9 +1189,23 @@ input:focus #subbox {
 	margin: 0 0 15px 0;
 	padding: 0;
 	}
+	
+
+
+#respond #submit {
+	background: #F7F7F7 url(images/submit.gif) 3px 3px no-repeat !important;
+	width: 55px;
+	color: transparent;
+}
+	
+#respond #submit:hover {
+	background: #bebdbf url(images/submit.gif) no-repeat 3px 3px !important;
+	width: 55px;
+	color: transparent;
+}
 
 #author, #email, #url {
-	background: #F7F7F7 !important;
+	background: #dee4e0 !important;
 	width: 250px;
 	color: #333333;
 	font-family: Arial, Tahoma, Verdana;
@@ -1191,7 +1216,8 @@ input:focus #subbox {
 	}
 	
 #comment {
-	background: #F7F7F7 !important;
+	background: #f7f7f7 url(images/openquote.gif) top left no-repeat !important;
+	text-indent: 55px;
 	width: 98%;
 	height: 150px;
 	color: #333333;
@@ -1206,6 +1232,10 @@ input:focus #subbox {
 	margin: 0;
 	padding: 0;
 	}
+	
+.comment-list {
+	width: 98%;
+}
 	
 .ping-list {
 	margin: 0 0 40px 0;
@@ -1272,11 +1302,11 @@ input:focus #subbox {
 	}
 
 .thread-alt, .thread-even {
-	background: #F7F7F7;
+	background: #dee4e0;
 	}
 
 .even, .alt, .depth-1 {
-	border: 1px solid #E6E6E6;
+	border: 1px solid #969ba6;
 	}
 
 iframe {
@@ -1286,7 +1316,7 @@ iframe {
 	}
 
 .latest-tweests ul, .latest-tweests ul li {
-	color: #636873;
+	color: #969ba6;
 	font-size: 1em;
 	font-weight: normal;
 	list-style-type: none;
@@ -1306,6 +1336,201 @@ iframe {
 	padding-left: 20px;
 	margin-right: 10px;
 	}
+
+/* Plum */
+/* colors
+light brown background #e9e4d5
+sage #b1a697
+blue #4c5e61
+gray #b1b9b3
+plum #47424f
+*/
+.treacle-plum #header,
+.treacle-plum .post-meta {
+	background:url('images/office_color/squares.gif') bottom left repeat-x;
+}
+
+.treacle-plum #content .post ul,
+.treacle-plum #content .page ul,
+.treacle-plum #content .post ol,
+.treacle-plum #content .page ol,
+.treacle-plum #header .widget-area ul {
+	list-style-image:url('images/office_color/squaredot.gif');
+}
+
+.treacle-plum #sidebar h4,
+.treacle-plum #sidebar-alt h4,
+.treacle-plum input:focus #subbox {
+	background: url('images/office_color/squaredot.gif') no-repeat left;
+}
+
+.treacle-plum #title-area #description {
+	color: #4C5E61;
+}
+
+.treacle-plum a,
+.treacle-plum a:visited,
+.treacle-plum a:hover,
+.treacle-plum #subnav,
+.treacle-plum #subnav li a,
+.treacle-plum #title-area #title,
+.treacle-plum #title-area #title a,
+.treacle-plum #title-area #title a:hover,
+.treacle-plum #content h1,
+.treacle-plum #content h2,
+.treacle-plum #content h3,
+.treacle-plum #content h4,
+.treacle-plum #content h5,
+.treacle-plum #content h6,
+.treacle-plum #header,
+.treacle-plum .widget-area h4,
+.treacle-plum .navigation li a,
+.treacle-plum .navigation li.disabled,
+.treacle-plum .navigation li a:hover,
+.treacle-plum .navigation li.active a,
+.treacle-plum #content h2.entry-title a,
+.treacle-plum #content h2.entry-title a:visited,
+.treacle-plum #content h1.entry-title,
+.treacle-plum .odd  {
+	color: #47424F;
+}
+
+.treacle-plum #submit,
+.treacle-plum .searchsubmit,
+.treacle-plum .gform_footer .button,
+.treacle-plum .reply a,
+.treacle-plum .reply a:visited,
+.treacle-plum .enews #subbutton,
+.treacle-plum .searchblogsubmit,
+.treacle-plum #nav li a:hover,
+.treacle-plum #nav li a:active,
+.treacle-plum #nav .current_page_item a,
+.treacle-plum #nav .current-cat a,
+.treacle-plum #nav .current-menu-item,
+.treacle-plum #subnav li a:hover,
+.treacle-plum #subnav li a:active,
+.treacle-plum #subnav .current_page_item a,
+.treacle-plum #subnav .current-cat a,
+.treacle-plum #subnav .current-menu-item,
+.treacle-plum #header ul.nav li a:hover,
+.treacle-plum #header ul.nav li a:active,
+.treacle-plum #header ul.nav .current_page_item a,
+.treacle-plum #header ul.nav .current-cat a,
+.treacle-plum #header ul.nav .current-menu-item a,
+.treacle-plum #header ul.menu li a:hover,
+.treacle-plum #header ul.menu li a:active,
+.treacle-plum #header ul.menu .current_page_item a,
+.treacle-plum #header ul.menu .current-cat a,
+.treacle-plum #header ul.menu .current-menu-item a {
+	background: #47424f !important;
+}
+
+.treacle-plum #content h2 a,
+.treacle-plum #content h2 a:visited,
+.treacle-plum #content h2 a:hover,
+.treacle-plum #content .related h3,
+.treacle-plum .post-info,
+.treacle-plum .post-meta,
+.treacle-plum .post-nav h4,
+.treacle-plum .post-nav h4 a,
+.treacle-plum .post-date {
+	color: #B1B9B3;
+}
+
+.treacle-plum #sidebar ul,
+.treacle-plum #sidebar ul li,
+.treacle-plum #sidebar-top ul,
+.treacle-plum #sidebar h4,
+.treacle-plum #sidebar-alt h4,
+.treacle-plum #sidebar h2,
+.treacle-plum #sidebar h2 a,
+.treacle-plum #sidebar-alt h2,
+.treacle-plum #sidebar-alt h2 a {
+	color: #B1A697;
+}
+
+.treacle-plum #sidebar h2,
+.treacle-plum #sidebar h2 a,
+.treacle-plum #sidebar-alt h2,
+.treacle-plum #sidebar-alt h2 a {
+	font-size: 1.195em;
+	font-weight: 400;
+}
+
+.treacle-plum #nav,
+.treacle-plum #nav li li a,
+.treacle-plum #nav li li a:link,
+.treacle-plum #nav li li a:visited,
+.treacle-plum #subnav li li a,
+.treacle-plum #subnav li li a:link,
+.treacle-plum #subnav li li a:visited,
+.treacle-plum #header ul.nav li li a,
+.treacle-plum #header ul.nav li li a:link,
+.treacle-plum #header ul.nav li li a:visited,
+.treacle-plum #header ul.menu li li a,
+.treacle-plum #header ul.menu li li a:link,
+.treacle-plum #header ul.menu li li a:visited,
+.treacle-plum .background,
+.treacle-plum .taxonomy-description,
+.treacle-plum .author-box,
+.treacle-plum #content .sticky,
+.treacle-plum .wp-caption,
+.treacle-plum .navigation li a:hover,
+.treacle-plum .navigation li.active a,
+.treacle-plum .odd {
+	background: #B1B9B3;
+}
+
+.treacle-plum #nav {
+	border-bottom: 1px solid #47424f;
+}
+
+.treacle-plum .breadcrumb {
+	background: transparent;
+	margin: 0;
+	border: transparent;
+}
+
+.treacle-plum .comment-list {
+	width: 98%;
+}
+
+.treacle-plum #submit,
+.treacle-plum .searchsubmit,
+.treacle-plum .gform_footer .button,
+.treacle-plum .reply a,
+.treacle-plum .reply a:visited,
+.treacle-plum .enews #subbutton,
+.treacle-plum .searchblogsubmit,
+.treacle-plum #subnav li a:hover {
+	color: #fff;
+}
+
+.treacle-plum #comment {
+	background: #F7F7F7 url(images/office_color/openquote.gif) top left no-repeat !important;
+	text-indent: 55px;
+}
+
+.treacle-plum #respond #submit {
+	background: #F7F7F7 url(images/office_color/submit.gif) 3px 3px no-repeat !important;
+	width: 55px;
+	color: transparent;
+}
+
+.treacle-plum #respond #submit:hover {
+	background: #B1B9B3 url(images/office_color/submit.gif) 3px 3px no-repeat !important;
+	width: 55px;
+	color: transparent;
+}
+
+.treacle-plum #nav li.rss a,
+.treacle-plum #nav li.rss a:hover,
+.treacle-plum .feedlink {
+	background: url(images/enews.png) no-repeat left center;
+	padding: 5px 0 5px 25px;
+	margin-right: 15px;
+	height: 35px;
+}
 
 @media only screen and (min-width: 320px) {
 	#wrap {
