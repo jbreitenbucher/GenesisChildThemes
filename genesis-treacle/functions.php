@@ -14,12 +14,19 @@ remove_theme_support('genesis-purchase-menu');
 
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'chat', 'link', 'image', 'quote', 'status', 'video', 'audio' ) );
 add_theme_support( 'menus' );
+/** Create additional color style options */
+add_theme_support( 'genesis-style-selector', array( 'treacle-plum' => 'Plum' ) );
+
 
 // Add Viewport meta tag for mobile browsers
 //add_action( 'genesis_meta', 'add_viewport_meta_tag' );
 function add_viewport_meta_tag() {
     echo '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>';
 }
+
+// Moving secondary nav menu above header*/
+remove_action( 'genesis_after_header', 'genesis_do_subnav' );
+add_action( 'genesis_before_header', 'genesis_do_subnav' );
 
 // Replaces homepage sidebar with Sidebar Home in widget area
 add_action('genesis_after_content', 'treacle_include_sidebar', 5);
