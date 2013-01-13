@@ -1,13 +1,41 @@
 <?php
-// Start the engine
-require_once(TEMPLATEPATH.'/lib/init.php');
+/** Start the engine */
+require_once( get_template_directory() . '/lib/init.php' );
 
-// Add new image sizes
-add_image_size('Main Photo', 800, 533, TRUE);
-add_image_size('Mini Landscape', 120, 75, TRUE);
-add_image_size('Mini Portrait', 75, 120, TRUE);
-add_image_size('Tiny Landscape', 75, 46, TRUE);
-add_image_size('Tiny Portrait', 46, 75, TRUE);
+/** Child theme (do not remove) */
+define( 'CHILD_THEME_NAME', 'Landscape 2.0 Child Theme' );
+define( 'CHILD_THEME_URL', 'http://www.studiopress.com/themes/landscape' );
+
+function my_insert_custom_image_sizes( $sizes ) {
+    // get the custom image sizes
+    global $_wp_additional_image_sizes;
+    // if there are none, just return the built-in sizes
+    if ( empty( $_wp_additional_image_sizes ) )
+        return $sizes;
+
+    // add all the custom sizes to the built-in sizes
+    foreach ( $_wp_additional_image_sizes as $id => $data ) {
+        // take the size ID (e.g., 'my-name'), replace hyphens with spaces,
+        // and capitalise the first letter of each word
+        if ( !isset($sizes[$id]) )
+            $sizes[$id] = ucfirst( str_replace( '-', ' ', $id ) );
+    }
+
+    return $sizes;
+}
+
+
+function custom_image_setup () {
+    add_theme_support( 'post-thumbnails' );
+    add_image_size('Rotating Photo', 800, 533, true);
+	add_image_size('Mini Landscape', 120, 75, true);
+	add_image_size('Mini Portrait', 75, 120, true);
+	add_image_size('Tiny Landscape', 75, 46, true);
+	add_image_size('Tiny Portrait', 46, 75, true);
+    add_filter( 'image_size_names_choose', 'my_insert_custom_image_sizes' );
+}
+
+add_action( 'after_setup_theme', 'custom_image_setup' );
 
 /** Unregister layout setting */
 genesis_unregister_layout( 'content-sidebar' );
@@ -17,12 +45,12 @@ genesis_unregister_layout( 'sidebar-sidebar-content' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 
 /** Add support for custom header */
-add_theme_support( ‘genesis-custom-header’, array( ‘width’ => 850, ‘height’ => 80 ) );
+add_theme_support( 'genesis-custom-header', array( 'width' => 850, 'height' => 100 ) );
 
 /**
  * Remove Header Right Widget
  *
- * @author The Pedestal Group
+ * @author Jon Breitenbucher
  */
 
 function landscape_remove_sidebars() {

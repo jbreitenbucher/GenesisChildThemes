@@ -7,9 +7,10 @@
 	Version: 2.0
 	
 	Template: genesis
+    Template Version: 1.8
 
-	The CSS, XHTML and design is released under GPL:
-	http://www.opensource.org/licenses/gpl-license.php
+	License: GNU General Public License v2.0 (or later)
+    License URI: http://www.opensource.org/licenses/gpl-license.php
 */
 
 
@@ -47,7 +48,7 @@ a:focus, a:hover, a:active {
 
 #wrap {
 	width: 850px;
-	margin: 0 auto 0;
+	margin: 20px auto 0;
 	padding: 0;
 	}
 
@@ -55,7 +56,7 @@ a:focus, a:hover, a:active {
 
 #header {
 	width: 850px; 
-	height: 80px;
+	height: 100px;
 	margin: 0 auto 0;
 	padding: 0;
 	}

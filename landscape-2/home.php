@@ -15,16 +15,10 @@
 
 add_action( 'genesis_meta', 'landscape_home_genesis_meta' );
 function landscape_home_genesis_meta() {
-
-    // If any homepage widget area contains widgets use a custom loop
-    //if ( is_active_sidebar( 'featured' ) ) {
-        
         // Customize the loop
         remove_action( 'genesis_loop', 'genesis_do_loop' );
         add_action( 'genesis_loop', 'landscape_home_loop_helper' );
         add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
-
-    //}
 }
 
 /**
