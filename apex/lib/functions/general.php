@@ -4,12 +4,12 @@
  *
  * This file contains any general functions
  *
- * @package      apex
- * @author         Jon Breitenbucher <jbreitenbucher@wooster.edu>
- * @copyright     Copyright (c) 2012, The College of Wooster
- * @license        http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @version        SVN: $Id$
- * @since           1.0
+ * @package    apex
+ * @author     Jon Breitenbucher <jbreitenbucher@wooster.edu>
+ * @copyright  Copyright (c) 2012, The College of Wooster
+ * @license    http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @version    SVN: $Id$
+ * @since      1.0
  *
  */
 
@@ -21,7 +21,7 @@
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
- * @since        1.0
+ * @since       1.0
  *
  */
 
@@ -66,7 +66,7 @@ add_filter( 'menu_order', 'apex_custom_menu_order' );
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
- * @since        1.0
+ * @since       1.0
  *
  */
 
@@ -89,7 +89,7 @@ add_action('pre_get_posts', 'apex_no_child_posts');
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
- * @since        1.0
+ * @since       1.0
  *
  */
 
@@ -105,7 +105,7 @@ add_filter( 'genesis_post_info', 'post_info_filter' );
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
- * @since        1.0
+ * @since       1.0
  *
  */
 
@@ -120,7 +120,7 @@ add_filter('genesis_next_link_text','apex_next_post_link_text');
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
- * @since        1.0
+ * @since       1.0
  *
  */
 
@@ -131,11 +131,11 @@ function apex_previous_post_link_text(){
 add_filter('genesis_prev_link_text','apex_previous_post_link_text');
 
 /**
- * Remove Header Right Widget
+ * Remove Genesis Widget Areas
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
- * @since        1.0
+ * @since       1.0
  *
  */
 
@@ -145,11 +145,11 @@ function apex_remove_sidebars() {
 }
 
 /**
- * Technology Header
+ * APEX Header
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
- * @since        1.0
+ * @since       1.0
  *
  */
 
@@ -160,11 +160,6 @@ function apex_header() {
             echo '<h1 id="title"><a href="' . get_home_url() . '/planning-portfolios/" title="Planning Portfolios">Planning Portfolios</a></h1>';
         echo '</div>';
     echo '</div><!-- end #title-area -->';
-    //echo '<div id="title-area">';
-    //echo '<h1 class="logo"><a href="http://wooster.edu">WOOSTER</a></h1>';
-    //do_action( 'genesis_site_title' );
-    //do_action( 'genesis_site_description' );
-    //echo '</div><!-- end #title-area -->';
 }
 
 // Customize the credits
