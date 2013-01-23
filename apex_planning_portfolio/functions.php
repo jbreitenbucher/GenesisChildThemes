@@ -18,9 +18,9 @@
  * to the correct hooks and filters. All the functions themselves
  * are defined below this setup function.
  *
- * @author       Jon Breitenbucher <jbreitenbucher@wooster.edu>
- * @version 	SVN: $Id$
- * @since 	1.0
+ * @author  Jon Breitenbucher <jbreitenbucher@wooster.edu>
+ * @version SVN: $Id$
+ * @since   1.0
  *
  */
 

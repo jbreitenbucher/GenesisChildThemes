@@ -21,7 +21,7 @@
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
- * @since        1.0
+ * @since       1.0
  *
  */
 
@@ -66,7 +66,7 @@ add_filter( 'menu_order', 'apex_port_custom_menu_order' );
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
- * @since        1.0
+ * @since       1.0
  *
  */
 
@@ -89,7 +89,7 @@ add_action('pre_get_posts', 'apex_port_no_child_posts');
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
- * @since        1.0
+ * @since       1.0
  *
  */
 
@@ -105,7 +105,7 @@ add_filter( 'genesis_post_info', 'post_info_filter' );
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
- * @since        1.0
+ * @since       1.0
  *
  */
 
@@ -120,7 +120,7 @@ add_filter('genesis_next_link_text','apex_port_next_post_link_text');
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
- * @since        1.0
+ * @since       1.0
  *
  */
 
@@ -131,11 +131,11 @@ function apex_port_previous_post_link_text(){
 add_filter('genesis_prev_link_text','apex_port_previous_post_link_text');
 
 /**
- * Remove Header Right Widget
+ * Remove Genesis Widget Areas
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
- * @since        1.0
+ * @since       1.0
  *
  */
 
@@ -145,27 +145,20 @@ function apex_port_remove_sidebars() {
 }
 
 /**
- * Technology Header
+ * APEX Portfolio Header
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
- * @since        1.0
+ * @since       1.0
  *
  */
 
 function apex_port_header() {
 	echo '<div id="title-area">';
-        //echo '<a href="http://wooster.edu/apex_port"><img src="'. get_stylesheet_directory_uri() .'/images/apex_port_white.png" alt="APEX" /></a>';
         echo '<div id="title-wrap">';
             do_action( 'genesis_site_title' );
-            //do_action( 'genesis_site_description' );
         echo '</div>';
     echo '</div><!-- end #title-area -->';
-    //echo '<div id="title-area">';
-    //echo '<h1 class="logo"><a href="http://wooster.edu">WOOSTER</a></h1>';
-    //do_action( 'genesis_site_title' );
-    //do_action( 'genesis_site_description' );
-    //echo '</div><!-- end #title-area -->';
 }
 
 // Customize the credits
