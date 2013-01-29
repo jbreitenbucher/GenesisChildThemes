@@ -1,0 +1,1726 @@
+/*
+    Theme Name: The Pedestal Group Theme
+	Theme URI: http://thepedestalgroup.com
+	Description: The Pedestal Group Theme is a two or three column child theme created for the Genesis Framework.
+    Author: Orthogonal Creations
+    Author URI: http://orthogonalcreations.com
+ 
+    Version: 1.8
+ 
+    Tags: blue, gray, white, orange, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments
+ 
+    Template: genesis
+    Template Version: 1.8
+ 
+	License: GNU General Public License v2.0 (or later)
+	License URI: http://www.opensource.org/licenses/gpl-license.php
+*/
+
+/* Table of Contents
+
+* Variables
+* Import Fonts
+* Defaults
+* Hyperlinks
+* Body
+* Wrap
+* Header
+* Image Header - Partial Width
+* Image Header - Full Width
+* Header / Primary / Secondary Navigation
+* Primary Navigation Extras
+* Inner
+* Breadcrumb
+* Taxonomy Description
+* Content-Sidebar Wrap
+* Content
+* Column Classes
+* Featured Post Grid
+* Headlines
+* Ordered / Unordered Lists
+* Post Info
+* Post Meta
+* Author Box
+* Sticky Posts
+* Archive Page
+* Post Icons
+* Images
+* Post Navigation
+* Primary / Secondary Sidebars
+* Dropdowns
+* Featured Page / Post
+* User Profile
+* Buttons
+* Search Form
+* eNews & Updates Widget
+* Calendar Widget
+* Footer Widgets
+* Footer
+* Comments
+* Gravity Forms
+* Responsive Design
+
+*/
+
+/* Variables
+------------------------------------------------------------ */
+$blue: #3a75c4;
+$orange: #f77f00;
+$altblue: #224675;
+$altorange: #914a00;
+$grey: #e9e9e9;
+$headingfont: 'trajan-pro-3', serif;
+$bodyfont: 'calluna', sans-serif;
+
+
+/* Defaults
+------------------------------------------------------------ */
+html {
+    font-size: 62.5%;
+}
+
+body,
+h1,
+h2,
+h2 a,
+h2 a:visited,
+h3,
+h4,
+h5,
+h6,
+p,
+select,
+textarea {
+	color: #333;
+	font-family: $bodyfont;
+	font-size: 18px;
+	font-size: 1.8rem;
+	font-weight: 500;
+	line-height: 1.5625;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+blockquote,
+input,
+select,
+textarea,
+.author-box,
+.breadcrumb,
+.sticky,
+.taxonomy-description,
+.wp-caption {
+	background-color: $grey;
+	border: 1px solid #ddd;
+}
+
+input,
+label,
+select,
+textarea {
+	color: #333;
+	font-family: $bodyfont;
+	font-size: 16px;
+	font-size: 1.6rem;
+	font-weight: 300;
+}
+
+li,
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ol li {
+	list-style-type: decimal;
+}
+
+
+/* Hyperlinks
+------------------------------------------------------------ */
+
+a,
+a:visited {
+	color: $blue;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a img {
+	border: none;
+}
+
+
+/* Body
+------------------------------------------------------------ */
+
+body {
+	background: $grey url(images/handmadepaper/handmadepaper.png) repeat;
+}
+
+::-moz-selection {
+	background-color: $grey;
+	color: #fff;
+}
+
+::selection {
+	background-color: $grey;
+	color: #fff;
+}
+
+
+/* Wrap
+------------------------------------------------------------ */
+
+.wrap {
+	margin: 0 auto;
+	width: 1140px;
+}
+
+
+/* Header
+------------------------------------------------------------ */
+
+#header {
+    position: relative;
+	margin: 0 auto;
+	min-height: 100px;
+	width: 100%;
+	z-index: 1;
+}
+
+#title-area {
+    background: url(images/pedestal-100.png) 74% 0%  no-repeat;
+	float: left;
+	margin: 32px 0 0;
+	width: 25%;
+}
+
+#title {
+	font-family: $headingfont;
+	min-height: 100px;
+	font-size: 42px;
+	font-size: 4.2rem;
+	line-height: 1.25;
+	margin: 2% 0 0 15%;
+}
+
+#title a,
+#title a:hover {
+	color: $blue;
+	text-decoration: none;
+}
+
+.header-image #title-area,
+.header-image #title,
+.header-image #title a {
+	display: block;
+	float: left;
+	height: 120px;
+	overflow: hidden;
+	text-indent: -9999px;
+}
+
+.header-image #title-area {
+	margin: 0;
+	width: 25%;
+}
+
+.header-full-width #title-area,
+.header-full-width #title,
+.header-full-width #title a,
+.header-image #title,
+.header-image #title a {
+	width: 100%;
+}
+
+#description {
+	color: $altblue;
+	float: right;
+	font-size: 12px;
+	font-size: 1.2rem;
+	font-style: italic;
+	margin: -2% 20% 0 0;
+}
+
+.header-image #description {
+	display: block;
+	overflow: hidden;
+}
+
+#header .widget-area {
+	float: right;
+	width: 75%;
+}
+
+/* Header / Primary / Secondary Navigation
+------------------------------------------------------------ */
+
+#nav {
+    position: relative;
+    background-color:$orange;
+    border-bottom: 1px solid $altblue;
+    height: 50px;
+    width: 100%;
+    z-index: 2;
+}
+
+#nav.wrap {
+    background-color:$orange;
+    width: 100%;
+}
+
+.menu-primary,
+.menu-secondary,
+#header .menu {
+	background-color:$orange;
+	clear: both;
+	color: $blue;
+	font-family: $headingfont;
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin: 0 auto;
+	padding-top: 5px;
+	overflow: hidden;
+	margin-left: 2%;
+	width: 100%;
+}
+
+#header .menu {
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+}
+
+/*.menu-primary {
+	border-bottom: 1px solid $altblue;
+	border-top: 1px solid #ddd;
+}*/
+
+.menu-secondary {
+	border-bottom: 1px solid #ddd;
+	border-top: none;
+}
+
+.menu-primary ul,
+.menu-secondary ul,
+#header .menu ul {
+	float: left;
+	/*width: 100%;*/
+}
+
+.menu-primary li,
+.menu-secondary li,
+#header .menu li {
+	float: left;
+	list-style-type: none;
+}
+
+.menu-primary a,
+.menu-secondary a,
+#header .menu a {
+	border-right: 1px solid $altblue;
+	color: $blue;
+	display: block;
+	padding: 7px 15px 6px;
+	position: relative;
+	text-decoration: none;
+}
+
+.menu-primary li a:active,
+.menu-primary li a:hover,
+/*.menu-primary .current_page_item a,
+.menu-primary .current-cat a,
+.menu-primary .current-menu-item a,*/
+.menu-secondary li a:active,
+.menu-secondary li a:hover,
+.menu-secondary .current_page_item a,
+.menu-secondary .current-cat a,
+.menu-secondary .current-menu-item a,
+#header .menu li a:active,
+#header .menu li a:hover,
+#header .menu .current_page_item a,
+#header .menu .current-cat a,
+#header .menu .current-menu-item a {
+	background-color: $grey;
+	color: $altblue;
+}
+
+.menu-primary li li a,
+.menu-primary li li a:link,
+.menu-primary li li a:visited,
+.menu-secondary li li a,
+.menu-secondary li li a:link,
+.menu-secondary li li a:visited,
+#header .menu li li a,
+#header .menu li li a:link,
+#header .menu li li a:visited {
+	background: none;
+	background-color:$grey;
+	border: 1px solid $altblue;
+	border-top: none;
+	color: $altblue;
+	font-size: 14px;
+	font-size: 1.4rem;
+	padding: 9px 10px 8px;
+	position: relative;
+	text-transform: none;
+	width: 138px;
+}
+
+.menu-primary li li a:active,
+.menu-primary li li a:hover,
+.menu-secondary li li a:active,
+.menu-secondary li li a:hover,
+#header .menu li li a:active,
+#header .menu li li a:hover {
+	background-color: $grey;
+	color: $altblue;
+}
+
+.menu-primary li ul,
+.menu-secondary li ul,
+#header .menu li ul {
+	height: auto;
+	left: -9999px;
+	margin: 0 0 0 -1px;
+	position: absolute;
+	width: 160px;
+	z-index: 9999;
+}
+
+.menu-primary li ul a,
+.menu-secondary li ul a,
+#header .menu li ul a {
+	width: 140px;
+}
+
+.menu-primary li ul ul,
+.menu-secondary li ul ul,
+#header .menu li ul ul {
+	margin: -36px 0 0 159px;
+}
+
+.menu li:hover ul ul,
+.menu li.sfHover ul ul {
+	left: -9999px;
+}
+
+.menu li:hover,
+.menu li.sfHover {
+	position: static;
+}
+
+ul.menu li:hover>ul,
+ul.menu li.sfHover ul,
+#header .menu li:hover>ul,
+#header .menu li.sfHover ul {
+	left: auto;
+}
+
+.menu-primary li a.sf-with-ul,
+.menu-secondary li a.sf-with-ul,
+#header .menu li a.sf-with-ul {
+	padding-right: 25px;
+}
+
+.menu li a .sf-sub-indicator,
+.menu li li a .sf-sub-indicator,
+.menu li li li a .sf-sub-indicator {
+	background: url(images/icon-plus.png) no-repeat;
+	height: 16px;
+	position: absolute;
+	right: 8px;
+	text-indent: -9999px;
+	top: 10px;
+	width: 16px;
+}
+
+#wpadminbar li:hover ul ul {
+	left: 0;
+}
+
+#menu-icon {
+    display: none; /* hide menu icon initially */
+}
+
+
+/* Primary Navigation Extras
+------------------------------------------------------------ */
+
+.menu li.right {
+	float: right;
+	padding: 7px 15px 6px;
+}
+
+.menu li.right a {
+	background: none;
+	border: none;
+	color: #333;
+	display: inline;
+	text-decoration: none;
+}
+
+.menu li.right a:hover {
+	color: $altorange;
+	text-decoration: none;
+}
+
+.menu li.search {
+	padding: 0 10px;
+}
+
+.menu li.rss a {
+	background: url(images/rss.png) no-repeat center left;
+	margin: 0 0 0 10px;
+	padding: 0 0 0 16px;
+}
+
+.menu li.twitter a {
+	background: url(images/twitter-nav.png) no-repeat center left;
+	padding: 0 0 0 20px;
+}
+
+
+/* Inner
+------------------------------------------------------------ */
+
+#inner {
+	clear: both;
+	overflow: hidden;
+	padding: 20px 0;
+}
+
+
+/* Breadcrumb
+------------------------------------------------------------ */
+
+.breadcrumb {
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin: -10px 0 30px;
+	padding: 5px 10px;
+}
+
+
+/* Taxonomy Description
+------------------------------------------------------------ */
+
+.taxonomy-description {
+	background-color: #fff;
+	margin: -10px 0 30px;
+	padding: 0 0 15px;
+}
+
+.taxonomy-description p {
+	font-size: 16px;
+	font-size: 1.6rem;
+	padding: 15px 15px 0;
+}
+
+
+/* Content-Sidebar Wrap
+------------------------------------------------------------ */
+
+#content-sidebar-wrap {
+	float: left;
+	width: 100%;
+}
+
+.content-sidebar #content-sidebar-wrap,
+.full-width-content #content-sidebar-wrap,
+.sidebar-content #content-sidebar-wrap {
+	width: 100%;
+}
+
+.sidebar-content-sidebar #content-sidebar-wrap,
+.sidebar-sidebar-content #content-sidebar-wrap {
+	float: right;
+}
+
+
+/* Content
+------------------------------------------------------------ */
+
+#content,
+#content-sidebar-wrap {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	float: left;
+	width: 100%;
+}
+
+.hentry,
+.page.page-template-page_blog-php .hentry {
+	border-bottom: double $altblue;
+	clear: both;
+	margin: 0 0 20px;
+	padding: 0 0 30px;
+	overflow: hidden;
+}
+
+.page .hentry,
+.single .hentry {
+	border: none;
+	margin: 0;
+}
+
+/*.page #content,
+.single #content {
+	padding: 0 20%;
+}*/
+
+.page.page-template-page_blog-php #content {
+	padding: 0;
+}
+
+.entry-content {
+	overflow: hidden;
+}
+
+.entry-content p {
+	margin: 0 0 25px;
+}
+
+blockquote, .home div#testemonials .textwidget {
+	background: url(images/blockquote.png) no-repeat;
+	border: none;
+	margin: 5px 5px 20px;
+	padding: 25px 30px 5px 70px;
+}
+
+blockquote p, .home div#testemonials .textwidget {
+	color: #333;
+	font-style: italic;
+}
+
+p.subscribe-to-comments {
+	padding: 20px 0 10px;
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignright,
+.even .alignleft {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+.clear-line {
+	border-bottom: 1px solid $altblue;
+	clear: both;
+	margin: 0 0 25px;
+}
+
+.crp_related {
+    padding: 20px 0 0 0;
+}
+
+
+/* Column Classes
+------------------------------------------------------------ */
+
+.five-sixths,
+.four-fifths,
+.four-sixths,
+.one-fifth,
+.one-fourth,
+.one-half,
+.one-sixth,
+.one-third,
+.three-fifths,
+.three-fourths,
+.three-sixths,
+.two-fifths,
+.two-fourths,
+.two-sixths,
+.two-thirds {
+	float: left;
+	margin: 0 0 20px;
+	padding-left: 3%;
+}
+
+.one-half,
+.three-sixths,
+.two-fourths {
+	width: 48%;
+}
+
+.one-third,
+.two-sixths {
+	width: 31%;
+}
+
+.four-sixths,
+.two-thirds {
+	width: 65%;
+}
+
+.one-fourth {
+	width: 22.5%;
+}
+
+.three-fourths {
+	width: 73.5%;
+}
+
+.one-fifth {
+	width: 17.4%;
+}
+
+.two-fifths {
+	width: 37.8%;
+}
+
+.three-fifths {
+	width: 58.2%;
+}
+
+.four-fifths {
+	width: 78.6%;
+}
+
+.one-sixth {
+	width: 14%;
+}
+
+.five-sixths {
+	width: 82%;
+}
+
+.first {
+	clear: both;
+	padding-left: 0;
+}
+
+
+/* Featured Post Grid
+------------------------------------------------------------ */
+
+.genesis-grid-even,
+.genesis-grid-odd {
+	margin: 0 0 20px;
+	padding: 0 0 15px;
+	width: 48%;
+}
+
+.genesis-grid-even {
+	float: right;
+}
+
+.genesis-grid-odd {
+	clear: both;
+	float: left;
+}
+
+
+/* Headlines
+------------------------------------------------------------ */
+
+h1,
+h2,
+h2 a,
+h2 a:visited,
+h3,
+h4,
+h5,
+h6 {
+    color: $blue;
+	font-family: $headingfont;
+	line-height: 1.25;
+	margin: 0 0 10px;
+}
+
+.page h1, .single h1 {
+    color: $orange;
+}
+
+h1 {
+	font-size: 32px;
+	font-size: 3.2rem;
+}
+
+.taxonomy-description h1 {
+	margin: 0;
+}
+
+h2,
+h2 a,
+h2 a:visited {
+	font-size: 30px;
+	font-size: 3rem;
+}
+
+h2 a,
+h2 a:visited {
+	color: $orange;
+	font-family: $headingfont;
+}
+
+h2 a:hover {
+	color: $altorange;
+	text-decoration: none;
+}
+
+.widget-area h2,
+.widget-area h2 a {
+    color: $altblue;
+	font-size: 18px;
+	font-size: 1.8rem;
+	margin: 0 0 5px;
+}
+
+h3 {
+	font-size: 26px;
+	font-size: 2.6rem;
+}
+
+h4 {
+	font-size: 22px;
+	font-size: 2.2rem;
+}
+
+.taxonomy-description h1,
+.widget-area h4 {
+	background-color: $grey;
+	border-bottom: 1px solid #ddd;
+	font-size: 18px;
+	font-size: 1.8rem;
+	padding: 9px 10px 8px;
+}
+
+.widget-area h4 a {
+	color: $blue;
+	text-decoration: none;
+}
+
+#footer-widgets h4 {
+    color: $altblue;
+	background: none;
+	border: none;
+	padding: 0;
+}
+
+h5 {
+	font-size: 20px;
+	font-size: 2rem;
+}
+
+
+/* Ordered / Unordered Lists
+------------------------------------------------------------ */
+
+.entry-content ol,
+.entry-content ul {
+	margin: 0;
+	padding: 0 0 25px;
+}
+
+.archive-page ul li,
+.entry-content ul li {
+	list-style-type: square;
+	margin: 0 0 0 30px;
+	padding: 0;
+}
+
+.entry-content ol li {
+	margin: 0 0 0 35px;
+}
+
+.archive-page ul ul,
+.entry-content ol ol,
+.entry-content ul ul {
+	padding: 0;
+}
+
+.crp_related ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+
+/* Post Info
+------------------------------------------------------------ */
+
+.post-info {
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin: -5px 0 15px;
+}
+
+
+/* Post Meta
+------------------------------------------------------------ */
+
+.post-meta {
+	border-top: 1px solid $altblue;
+	clear: both;
+	font-size: 16px;
+	font-size: 1.6rem;
+	padding: 5px 0 0;
+}
+
+
+/* Author Box
+------------------------------------------------------------ */
+
+.author-box {
+	background-color: $grey;
+	margin: 0 0 40px;
+	overflow: hidden;
+	padding: 10px;
+}
+
+.author-box p {
+	font-size: 14px;
+}
+
+
+/* Sticky Posts
+------------------------------------------------------------ */
+
+.sticky {
+	background-color: $grey;
+	margin: -10px 0 40px;
+	padding: 20px;
+}
+
+
+/* Archive Page
+------------------------------------------------------------ */
+
+.archive-page {
+	float: left;
+	padding: 20px 0 0;
+	width: 45%;
+}
+
+
+/* Post Icons
+------------------------------------------------------------ */
+
+.post-comments,
+.tags {
+	margin: 0 0 0 3px;
+	padding: 0 0 0 10px;
+}
+
+.tags {
+	background: url(images/icon-dot.png) no-repeat left;
+}
+
+
+/* Images
+------------------------------------------------------------ */
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+.avatar,
+.featuredpage img,
+.featuredpost img,
+.post-image {
+	background-color: $grey;
+	border: 1px solid #ddd;
+	padding: 4px;
+}
+
+.author-box .avatar {
+	background-color: #fff;
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.post-image {
+	margin: 0 10px 10px 0;
+}
+
+.comment-list li .avatar {
+	background-color: #fff;
+	float: right;
+	margin: 5px 0 0 10px;
+}
+
+img.centered,
+.aligncenter {
+	display: block;
+	margin: 0 auto 10px;
+}
+
+img.alignnone {
+	display: inline;
+	margin: 0 0 10px;
+}
+
+img.alignleft {
+	display: inline;
+	margin: 0 15px 10px 0;
+}
+
+img.alignright {
+	display: inline;
+	margin: 0 0 10px 15px;
+}
+
+.alignleft {
+	float: left;
+	margin: 0 15px 10px 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 10px 15px;
+}
+
+.wp-caption {
+	padding: 5px;
+	text-align: center;
+}
+
+p.wp-caption-text {
+	font-size: 14px;
+	margin: 5px 0;
+}
+
+.wp-smiley,
+.wp-wink {
+	border: none;
+	float: none;
+}
+
+.gallery-caption {
+}
+
+
+/* Post Navigation
+------------------------------------------------------------ */
+
+.navigation {
+	ffont-size: 16px;
+	font-size: 1.6rem;
+	overflow: hidden;
+	padding: 20px 0;
+	width: 100%;
+}
+
+.navigation li {
+	display: inline;
+}
+
+.navigation li a,
+.navigation li.disabled,
+.navigation li a:hover,
+.navigation li.active a {
+	border: 1px solid $altblue;
+	padding: 5px 8px;
+}
+
+.navigation li a:hover,
+.navigation li.active a {
+	background-color: $altblue;
+}
+
+#testemonials {
+    clear: both;
+    padding: 20px 0 0 0;
+}
+
+/* Primary / Secondary Sidebars
+------------------------------------------------------------ */
+
+.sidebar {
+	display: inline;
+	float: right;
+	font-size: 16px;
+	font-size: 1.6rem;
+	width: 280px;
+}
+
+#sidebar-alt {
+	float: left;
+	width: 150px;
+}
+
+.sidebar-content #sidebar,
+.sidebar-sidebar-content #sidebar {
+	float: left;
+}
+
+.content-sidebar-sidebar #sidebar-alt {
+	float: right;
+}
+
+.sidebar p {
+	font-size: inherit;
+}
+
+.sidebar .widget {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	margin: 0 0 15px;
+	padding: 0 0 15px;
+}
+
+.sidebar.widget-area ol,
+.sidebar.widget-area ul,
+.widget-area .textwidget,
+.widget_tag_cloud div div {
+	padding: 0 15px;
+}
+
+.sidebar.widget-area ul li,
+#footer-widgets .widget-area ul li {
+	border-bottom: 1px solid #ddd;
+	list-style-type: none;
+	margin: 0 0 7px;
+	padding: 0 0 5px;
+	word-wrap: break-word;
+}
+
+.sidebar.widget-area ul ul li {
+	border: none;
+	margin: 0;
+}
+
+
+/* Dropdowns
+------------------------------------------------------------ */
+
+.widget_archive select,
+#cat {
+	display: inline;
+	margin: 5px 15px 0;
+	padding: 3px;
+	width: 85%;
+}
+
+
+/* Featured Page / Post
+------------------------------------------------------------ */
+
+.featuredpage,
+.featuredpost {
+	clear: both;
+	margin: 0 0 15px;
+	overflow: hidden;
+}
+
+.featuredpage .page,
+.featuredpost .post {
+	border-bottom: 1px solid #ddd;
+	margin: 0 0 5px;
+	overflow: hidden;
+	padding: 0 15px 10px;
+}
+
+#footer-widgets .featuredpage .page,
+#footer-widgets .featuredpost .post {
+	margin: 0 0 10px;
+	padding: 0;
+}
+
+.more-from-category {
+	padding: 5px 15px 0;
+}
+
+
+/* User Profile
+------------------------------------------------------------ */
+
+.user-profile {
+	overflow: hidden;
+}
+
+.user-profile p {
+	padding: 5px 15px 0;
+}
+
+.user-profile .posts_link {
+	padding: 0 15px;
+}
+
+
+/* Buttons
+------------------------------------------------------------ */
+
+input[type="button"],
+input[type="submit"] {
+	background: url(images/gradient.png) 0 0;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	line-height: 19px;
+	padding: 5px 7px;
+	text-decoration: none;
+}
+
+input:hover[type="button"],
+input:hover[type="submit"] {
+	background: url(images/gradient.png) 0 -33px;
+	text-decoration: none;
+}
+
+
+/* Search Form
+------------------------------------------------------------ */
+
+#header .searchform {
+	float: right;
+	padding: 12px 0 0;
+}
+
+.sidebar .searchform {
+	padding: 5px 0 0 15px;
+}
+
+.s {
+	margin: 10px -7px 0 0;
+	padding: 6px 5px;
+	width: 180px;
+}
+
+#nav .s {
+	background-color: #fff;
+	margin: 2px -7px 0 0;
+}
+
+
+/* eNews and Update Widget
+------------------------------------------------------------ */
+
+.enews p {
+	padding: 0 15px 5px;
+}
+
+.enews #subscribe {
+	padding: 0 0 0 15px;
+}
+
+.enews #subbox {
+	margin: 5px 0 0 0;
+	padding: 6px 5px;
+	width: 75%;
+}
+
+
+/* Calendar Widget
+------------------------------------------------------------ */
+
+#wp-calendar {
+	width: 100%;
+}
+
+#wp-calendar caption {
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-style: italic;
+	padding: 2px 5px 0 0;
+	text-align: right;
+}
+
+#wp-calendar thead {
+	background-color: #f5f5f5;
+	font-weight: bold;
+	margin: 10px 0 0;
+}
+
+#wp-calendar td {
+	background-color: #f5f5f5;
+	padding: 2px;
+	text-align: center;
+}
+
+
+/* Footer Widgets
+------------------------------------------------------------ */
+
+#footer-widgets {
+	background-color: $orange;
+	border-top: 1px solid $altblue;
+	clear: both;
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin: 0 auto;
+	overflow: hidden;
+	width: 100%;
+}
+
+#footer-widgets .wrap {
+	/*overflow: hidden;*/
+	padding: 20px 30px 10px;
+}
+
+#footer-widgets .widget {
+	background: none;
+	border: none;
+	margin: 0 0 15px;
+	padding: 0;
+}
+
+#footer-widgets .textwidget {
+	padding: 0;
+}
+
+#footer-widgets .widget_tag_cloud div div {
+	padding: 0;
+}
+
+#footer-widgets p {
+	font-size: inherit;
+	margin: 0 0 10px;
+}
+
+#footer-widgets ul {
+	margin: 0;
+}
+
+#footer-widgets ul li {
+	margin: 0 0 0 20px;
+}
+
+#footer-widgets #wp-calendar thead,
+#footer-widgets #wp-calendar td {
+	background: none;
+}
+
+.footer-widgets-1,
+.footer-widgets-2,
+.footer-widgets-3 {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	float: left;
+	padding: 0 20px;
+}
+
+.footer-widgets-1 {
+	width: 50%;
+}
+
+.footer-widgets-2,
+.footer-widgets-3 {
+	width: 25%;
+}
+
+
+/* Latest Tweets
+------------------------------------------------------------ */
+
+#footer-widgets .latest-tweets {
+	background: url(images/latest-tweets.png) top right no-repeat;
+	margin: -40px 0 0;
+	padding: 40px 0 0;
+}
+
+#footer-widgets .latest-tweets ul li {
+	border-bottom: 1px dotted #ddd;
+	margin: 0 0 15px;
+	padding: 0 0 12px;
+}
+
+#footer-widgets .latest-tweets ul li.last {
+	border-bottom: none;
+	margin: 0;
+}
+
+#footer-widgets .latest-tweets a,
+#footer-widgets .latest-tweets a:visited {
+	color: #333;
+}
+
+#footer-widgets .latest-tweets a:hover {
+	color: #fff;
+}
+
+/* Footer
+------------------------------------------------------------ */
+
+#footer {
+	background-color: $altorange;
+	border-top: 1px solid $altblue;
+	clear: both;
+	color: $altblue;
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin: 0 auto;
+	overflow: hidden;
+	width: 100%;
+}
+
+#footer .wrap {
+	overflow: hidden;
+	padding: 10px 15px;
+}
+
+#footer p {
+	font-size: inherit;
+}
+
+#footer a,
+#footer a:visited {
+	color: #fff;
+}
+
+#footer a:hover {
+	color: $altblue;
+	text-decoration: none;
+}
+
+#footer .gototop {
+	float: left;
+	width: 200px;
+}
+
+#footer .creds {
+	float: right;
+	text-align: right;
+	width: 650px;
+}
+
+
+/* Comments
+------------------------------------------------------------ */
+
+#comments,
+#respond {
+	margin: 0 0 15px;
+	overflow: hidden;
+}
+
+#author,
+#comment,
+#email,
+#url {
+	margin: 10px 5px 0 0;
+	padding: 5px;
+	width: 250px;
+}
+
+#comment {
+	height: 150px;
+	margin: 10px 0;
+	width: 98%;
+}
+
+.ping-list {
+	margin: 0 0 40px;
+}
+
+.comment-list ol,
+.ping-list ol {
+	padding: 10px;
+}
+
+.comment-list li,
+.ping-list li {
+	font-weight: bold;
+	list-style-type: none;
+	margin: 15px 0 5px;
+	padding: 10px 15px;
+}
+
+.comment-list li ul li {
+	list-style-type: none;
+	margin-right: -16px;
+}
+
+.comment-content p {
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin: 0 0 20px;
+}
+
+.comment-list cite,
+.ping-list cite {
+	font-style: normal;
+}
+
+.commentmetadata {
+	font-size: 12px;
+	margin: 0 0 5px;
+}
+
+.reply {
+	font-size: 16px;
+	font-size: 1.6rem;
+	font-weight: 300;
+}
+
+.nocomments {
+	text-align: center;
+}
+
+#comments .navigation {
+	display: block;
+}
+
+.bypostauthor {
+}
+
+.thread-alt,
+.thread-even {
+	background-color: $grey;
+}
+
+.alt,
+.depth-1,
+.even {
+	border: 1px solid #ddd;
+}
+
+
+/* Gravity Forms
+------------------------------------------------------------ */
+
+div.gform_wrapper input,
+div.gform_wrapper select,
+div.gform_wrapper textarea {
+	box-sizing: border-box;
+	font-size: 14px !important;
+	font-size: 1.4rem !important;
+	padding: 4px 5px !important;
+}
+
+div.gform_footer input.button {
+	color: #333;
+}
+
+div.gform_wrapper .ginput_complex label {
+	font-size: 14px;
+	font-size: 1.4rem;
+}
+
+div.gform_wrapper li,
+div.gform_wrapper form li {
+	margin: 0 0 10px;
+}
+
+div.gform_wrapper .gform_footer {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* Responsive Design
+------------------------------------------------------------ */
+
+@media only screen and (max-width: 1200px) {
+
+	.wrap {
+		width: 960px;
+	}
+
+	.page #content,
+	.page.page-template-page_blog-php #content,
+	.single #content,
+	#content {
+		padding: 0 10%;
+	}
+	
+	#testemonials {
+    	padding: 0 5%;
+	}
+
+}
+
+@media only screen and (max-width: 1023px) {
+
+	body {
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3,
+	.menu-primary,
+	.menu-secondary,
+	.wrap,
+	#content,
+	#content-sidebar-wrap,
+	#footer .creds,
+	#footer .gototop,
+	#footer-widgets .wrap,
+	#header ul.menu,
+	#header .widget-area,
+	#title-area {
+		width: 100%;
+	}
+	
+	 #testemonials {
+    	 width: 90%;
+	 }
+
+	.menu-primary,
+	.menu-secondary,
+	#description,
+	#footer .creds,
+	#footer .gototop,
+	#header ul.menu,
+	#header .searchform,
+	#title,
+	#title-area {
+		float: none;
+		text-align: center;
+	}
+	
+	#menu-icon {
+        background: $orange url(images/mobile-menu-icon.png) no-repeat left 12px;
+        width: 42px;
+        height: 44px;
+        display: inline-block;
+    }
+    
+    .menu-primary {
+        display: none;
+    }
+
+	#title-area {
+	    background: none;
+		margin: 0;
+		padding: 20px 0 0;
+	}
+	
+	#title {
+	    margin: 2% 0 0 0;
+	}
+	
+	#description {
+	    margin: -2% 0 0 0;
+	}
+
+	#header .menu a {
+		padding: 15px 20px;
+	}
+
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3,
+	#wrap {
+		margin: 0;
+	}
+
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3,
+	#footer-widgets .wrap,
+	#title a,
+	#title a:hover {
+		padding: 0;
+	}
+
+	#header .widget-area {
+		padding: 0 0 20px;
+	}
+
+	#header .searchform {
+		margin: 20px 0 0;
+	}
+
+	#header .s {
+		width: 50%;
+	}
+
+	.menu-primary li,
+	.menu-secondary li,
+	#header ul.menu li {
+		display: inline-block;
+		float: none;
+	}
+
+	.menu-primary a,
+	.menu-secondary a,
+	#header .menu a {
+		border: none;
+	}
+
+	.menu li.right {
+		display: none;
+	}
+
+	.menu li li {
+		text-align: left;
+	 }
+
+	 #footer-widgets .wrap {
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		padding: 40px 40px 0;
+	}
+
+	#footer-widgets .widget {
+		margin: 0 0 40px;
+	}
+
+	#footer-widgets .latest-tweets {
+		margin: -40px 0 40px;
+	}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+	#inner {
+		padding: 30px 0;
+	}
+
+	h1,
+	h2,
+	h2 a,
+	h2 a:visited {
+		clear: both;
+	}
+
+	.even img.alignleft,
+	img.alignright,
+	img.alignleft {
+		display: block;
+		float: none;
+		margin: 0 auto 30px;
+	}
+
+	.archive-page,
+	.five-sixths,
+	.four-fifths,
+	.four-sixths,
+	.one-fifth,
+	.one-fourth,
+	.one-half,
+	.one-sixth,
+	.one-third,
+	.three-fifths,
+	.three-fourths,
+	.three-sixths,
+	.two-fifths,
+	.two-fourths,
+	.two-sixths,
+	.two-thirds {
+		padding: 0;
+		width: 100%;
+	}
+
+	 #footer-widgets .wrap {
+		padding: 0 20px;
+	}
+
+	#footer-widgets .widget {
+		margin: 0 0 20px;
+	}
+
+	#footer .wrap {
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		padding: 20px;
+	}
+
+}
