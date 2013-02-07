@@ -414,9 +414,9 @@ function faculty_add_custom_stylesheet_to_theme_editor() {
     if ( 'themes.php' == $parent_file && current_user_can('edit_themes')) {
         global $wp_themes, $theme;
         if ( empty($wp_themes) )
-            $wp_themes = get_themes();
+            $wp_themes = wp_get_themes();
         if ( empty($theme) )
-            $theme = get_current_theme();
+            $theme = wp_get_theme();
         $wp_themes[$theme]['Stylesheet Files'][] = faculty_get_custom_stylesheet_path();
     }
 }
