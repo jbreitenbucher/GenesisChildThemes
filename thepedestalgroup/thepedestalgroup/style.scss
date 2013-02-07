@@ -195,9 +195,9 @@ body {
 }
 
 #title-area {
-    background: url(images/pedestal-100.png) 74% 0%  no-repeat;
+    background: url(images/pedestal-50.png) 72% 30%  no-repeat;
 	float: left;
-	margin: 32px 0 0;
+	margin: 0;
 	width: 25%;
 }
 
@@ -240,12 +240,12 @@ body {
 }
 
 #description {
-	color: $altblue;
+	color: $blue;
 	float: right;
-	font-size: 12px;
-	font-size: 1.2rem;
+	font-size: 11px;
+	font-size: 1.1rem;
 	font-style: italic;
-	margin: -2% 20% 0 0;
+	margin: -4% 22% 0 0;
 }
 
 .header-image #description {
@@ -370,6 +370,10 @@ body {
 	position: relative;
 	text-transform: none;
 	width: 138px;
+}
+
+.menu-item-home {
+    border-left: 1px solid $altblue;
 }
 
 .menu-primary li li a:active,

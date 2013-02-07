@@ -162,9 +162,9 @@ body {
   z-index: 1; }
 
 #title-area {
-  background: url(images/pedestal-100.png) 74% 0% no-repeat;
+  background: url(images/pedestal-50.png) 72% 30% no-repeat;
   float: left;
-  margin: 32px 0 0;
+  margin: 0;
   width: 25%; }
 
 #title {
@@ -201,12 +201,12 @@ body {
   width: 100%; }
 
 #description {
-  color: #224675;
+  color: #3a75c4;
   float: right;
-  font-size: 12px;
-  font-size: 1.2rem;
+  font-size: 11px;
+  font-size: 1.1rem;
   font-style: italic;
-  margin: -2% 20% 0 0; }
+  margin: -4% 22% 0 0; }
 
 .header-image #description {
   display: block;
@@ -314,6 +314,9 @@ body {
   position: relative;
   text-transform: none;
   width: 138px; }
+
+.menu-item-home {
+  border-left: 1px solid #224675; }
 
 .menu-primary li li a:active,
 .menu-primary li li a:hover,
