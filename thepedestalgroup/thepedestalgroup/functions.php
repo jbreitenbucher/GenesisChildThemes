@@ -40,6 +40,23 @@ if ( !is_page() ) {
     $post_info = '[post_comments] [post_edit]';
     return $post_info;
 }}
+remove_action('genesis_before_post_content', 'genesis_post_info');
+
+/** Add Jetpack share buttons above post */
+remove_filter( 'the_content', 'sharing_display', 19 );
+remove_filter( 'the_excerpt', 'sharing_display', 19 );
+ 
+add_filter( 'the_content', 'share_buttons_above_post', 19 );
+add_filter( 'the_excerpt', 'share_buttons_above_post', 19 );
+ 
+function share_buttons_above_post( $content = '' ) {
+	if ( function_exists( 'sharing_display' ) ) {
+		return sharing_display() . $content;
+	}
+	else {
+		return $content;
+	}
+}
 
 add_action('genesis_after_post_content', 'tpg_related_posts');
 function tpg_related_posts() {
@@ -49,7 +66,7 @@ function tpg_related_posts() {
 /** Modify the length of post excerpts */
 add_filter( 'excerpt_length', 'tpg_custom_excerpt_length' );
 function tpg_custom_excerpt_length($length) {
-    return 100; // pull first 50 words
+    return 100; // pull first 100 words
 }
 
 /** Customize Read More Link */
