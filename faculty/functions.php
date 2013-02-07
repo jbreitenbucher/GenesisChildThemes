@@ -24,10 +24,7 @@ add_image_size( 'slider', 590, 300, TRUE );
 add_image_size( 'featured', 900, 300, TRUE );
 add_image_size('discover-featured', 280, 150, TRUE);
 
-/** Add support for custom background */
-if ( function_exists( 'add_custom_background' ) ) {
-    add_custom_background();
-}
+add_theme_support( 'custom-background' );
 
 /** Add support for custom header **/
 add_theme_support( 'genesis-custom-header', array( 'header_image' => get_stylesheet_directory_uri() . '/images/headers/kauke_towers_940x198.jpg', 'width' => 940, 'height' => faculty_get_design_option('header_image_height'), 'no_header_text' => true, 'header_callback' => 'faculty_custom_header_style', 'admin_header_callback' => 'faculty_custom_header_admin_style' ) );
