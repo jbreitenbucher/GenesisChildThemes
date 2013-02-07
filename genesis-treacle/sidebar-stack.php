@@ -1,6 +1,6 @@
 <div id="sidebar" class="widget-area">
 <?php
-	genesis_before_sidebar_widget_area();
+	do_action( 'genesis_before_sidebar_widget_area' );
 	echo "<div id='sidebar-top' class='widget-area'>";
 		if (!dynamic_sidebar('Top Sidebar')) :
 		endif;
@@ -34,10 +34,7 @@
 	</div>
 	<div id='sidebar-left' class='widget-area'>
 	<?php if (!dynamic_sidebar('Left Sidebar')) : ?>
-		<h4 id="links">Links</h4>
-		<ul>
-		<?php get_links_list() ?>
-		</ul>
+		<?php wp_list_bookmarks('title_before=<h4>&title_after=</h4>') ?>
 		<?php endif; ?>
 		<div id="songs">
 		<h4><?php _e('Now Playing:'); ?></h4>
@@ -77,11 +74,11 @@
 		<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu-header' ) ); ?>
 		<h4><?php _e('categories'); ?></h4>
 		<ul>
-		<?php wp_list_cats ('sort_column=name&optioncount=0&exclude=1,26&feed=rss') ?>
+		<?php wp_list_categories('title_li=0&sort_column=name&optioncount=0&exclude=1,26&feed=rss') ?>
 		</ul>
 		<h4><?php _e('archives'); ?></h4>
 		<select name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'> 
-		  <option value=""><?php echo attribute_escape(__('Select Month')); ?></option> 
+		  <option value=""><?php echo esc_attr(__('Select Month')); ?></option> 
 		  <?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?> </select>
 		<h4><?php _e('Social network'); ?></h4>
 		<ul>
@@ -95,11 +92,11 @@
 		<li><a href="feed:<?php bloginfo('atom_url'); ?>" title="<?php _e('Atom feed'); ?>"><?php _e('Atom'); ?></a></li>
 		<li><a href="feed:<?php bloginfo('comments_rss2_url'); ?>" title="<?php _e('Comments feed in RSS 2.0'); ?>"><?php _e('Comments <abbr title="Really Simple Syndication">RSS</abbr>'); ?></a></li>
 		</ul>
-		<?php if(function_exists(wp_onlinecounter)) { wp_onlinecounter(); } ?>
+		<?php if(function_exists('wp_onlinecounter')) { wp_onlinecounter(); } ?>
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Right Sidebar') ) : ?>
 		<?php endif; ?>
 		</div>
 <?php
-	genesis_after_sidebar_widget_area();
+	do_action( 'genesis_after_sidebar_widget_area' );
 ?>
 </div>
