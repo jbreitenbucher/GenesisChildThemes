@@ -253,7 +253,7 @@ function set_staff_icon() {
     global $post_type;
     ?>
     <style>
-    <?php if (($_GET['post_type'] == 'staff') || ($post_type == 'staff')) : ?>
+    <?php if ((isset($_GET['post_type']) && $_GET['post_type'] == 'staff') || ($post_type == 'staff')) : ?>
     #icon-edit { background:transparent url('<?php echo get_bloginfo('url');?>/wp-admin/images/icons32.png') no-repeat -600px -5px; }
     <?php endif; ?>
  
