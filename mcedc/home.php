@@ -38,7 +38,7 @@ function mcedc_home_loop_helper() {
 
     echo '<div class="featured">';
        echo '<div class="featured-left">';
-           do_shortcode( '[responsive_slider]' );
+           echo do_shortcode( '[responsive_slider]' );
        echo '</div><!-- end .featured-left -->';
 
        echo '<div class="featured-right">';
