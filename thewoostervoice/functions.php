@@ -3,7 +3,7 @@
 require_once(TEMPLATEPATH.'/lib/init.php');
 
 /** Add support for custom background **/
-add_custom_background();
+add_theme_support( 'custom-background' );
 
 /** Add support for custom header **/
 add_theme_support( 'genesis-custom-header', array( 'width' => 960, 'height' => 115 ) );
