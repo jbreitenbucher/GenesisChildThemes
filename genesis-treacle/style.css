@@ -1336,6 +1336,28 @@ iframe {
 	padding-left: 20px;
 	margin-right: 10px;
 	}
+	
+.related_post_title {
+	}
+ul.related_post {
+	list-style-type: none;
+	}
+ul.related_post li {
+	display: inline;
+}
+#content .post ul.related_post li {
+	margin: 0 0 0 .5em;
+}
+ul.related_post li:before {
+	content: "|| ";
+	}
+ul.related_post li:last-child:after {
+	content: " ||";
+	}
+ul.related_post li a {
+	}
+ul.related_post li img {
+	}
 
 /* Plum */
 /* colors
