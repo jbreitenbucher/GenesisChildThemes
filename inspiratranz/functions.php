@@ -3,7 +3,7 @@
 require_once(TEMPLATEPATH.'/lib/init.php');
 
 /** Add support for custom background */
-add_custom_background();
+add_theme_support( 'custom-background' );
 
 /** Customize the Genesis Custom Header to use the Featured Image */
 set_post_thumbnail_size( 800, 258, true ); /*Set the size of thumbnaails to that of our header */
