@@ -451,18 +451,23 @@ ul.menu li.sfHover ul,
 .sidebar-content #content-sidebar-wrap {
   width: 100%; }
 
+.full-width-content #content-sidebar-wrap #content {
+  width: 100%; }
+
 .sidebar-content-sidebar #content-sidebar-wrap,
 .sidebar-sidebar-content #content-sidebar-wrap {
   float: right; }
 
 /* Content
 ------------------------------------------------------------ */
-#content,
 #content-sidebar-wrap {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   float: left;
   width: 100%; }
+  #content-sidebar-wrap #content {
+    width: 60.5%;
+    float: left; }
 
 .hentry,
 .page.page-template-page_blog-php .hentry {
@@ -655,8 +660,8 @@ h4 {
 
 .taxonomy-description h1,
 .widget-area h4 {
-  background-color: #e9e9e9;
-  border-bottom: 1px solid #ddd;
+  background-color: #f77f00;
+  border-bottom: 1px solid #914a00;
   font-size: 18px;
   font-size: 1.8rem;
   padding: 9px 10px 8px; }
@@ -850,7 +855,7 @@ p.wp-caption-text {
   float: right;
   font-size: 16px;
   font-size: 1.6rem;
-  width: 280px; }
+  width: 37%; }
 
 #sidebar-alt {
   float: left;
@@ -867,8 +872,8 @@ p.wp-caption-text {
   font-size: inherit; }
 
 .sidebar .widget {
-  background-color: #fff;
-  border: 1px solid #ddd;
+  /*background-color: #fff;
+  border: 1px solid #ddd;*/
   margin: 0 0 15px;
   padding: 0 0 15px; }
 
@@ -1001,6 +1006,27 @@ input:hover[type="submit"] {
   background-color: #f5f5f5;
   padding: 2px;
   text-align: center; }
+
+/* Cirrus Cloud Widget
+------------------------------------------------------------ */
+#cirrusCloudWidget {
+  margin: 10px auto; }
+
+/* G-Lock Opt-in Widget
+------------------------------------------------------------ */
+div.gsom-optin-form {
+  margin: 5px auto;
+  width: 90%; }
+
+label.gsom-optin-div-label {
+  display: inline; }
+
+div.gsom-optin-form input[type="text"] {
+  width: 70%;
+  float: right; }
+
+#sfi_1360683150277 {
+  float: right; }
 
 /* Footer Widgets
 ------------------------------------------------------------ */
