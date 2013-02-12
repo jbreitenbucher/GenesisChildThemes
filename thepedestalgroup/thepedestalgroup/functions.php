@@ -66,7 +66,7 @@ function tpg_related_posts() {
 /** Modify the length of post excerpts */
 add_filter( 'excerpt_length', 'tpg_custom_excerpt_length' );
 function tpg_custom_excerpt_length($length) {
-    return 100; // pull first 100 words
+    return 145; // pull first 100 words
 }
 
 /** Customize Read More Link */
@@ -94,15 +94,20 @@ remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 /** Add support for 3-column footer widgets */
 add_theme_support( 'genesis-footer-widgets', 3 );
 
-/** Force layout on category */
-add_filter('genesis_pre_get_option_site_layout', '__genesis_return_full_width_content');
+add_action('get_header', 'tpg_remove_sidebar');
+/** Force layout on interior */
+function tpg_remove_sidebar() {
+	if ( is_paged() || is_single() || is_page() ) {
+		add_filter('genesis_pre_get_option_site_layout', '__genesis_return_full_width_content');
+		remove_action( 'genesis_after_content', 'genesis_get_sidebar' );
+	}
+}
 
 // Structural Wrap
 add_theme_support( 'genesis-structural-wraps', array( 'inner','header','footer','footer-widgets','menu-primary' , 'nav') );
 
 
 /** Unregister layout settings */
-genesis_unregister_layout( 'content-sidebar' );
 genesis_unregister_layout( 'sidebar-content' );
 genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
