@@ -554,18 +554,12 @@ ul.menu li.sfHover ul,
 /* Content
 ------------------------------------------------------------ */
 
-#content-sidebar-wrap {
+#content {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	float: left;
-	width: 100%;
-	#content {
-        width: 60.5%;
-        float: left;
-    }
+	width: 60.5%;
 }
-
-
 
 .hentry,
 .page.page-template-page_blog-php .hentry {
@@ -1052,12 +1046,15 @@ p.wp-caption-text {
 /* Primary / Secondary Sidebars
 ------------------------------------------------------------ */
 
-.sidebar {
-	display: inline;
+#sidebar {
+    /*display: inline;*/
 	float: right;
+	width: 37%;
+}
+
+.sidebar {
 	font-size: 16px;
 	font-size: 1.6rem;
-	width: 37%;
 }
 
 #sidebar-alt {
@@ -1565,6 +1562,12 @@ div.gform_wrapper .gform_footer {
 		padding: 0 10%;
 	}
 	
+	#content,
+	#sidebar {
+    	float: none;
+    	width: 100%;
+	}
+	
 	#testemonials {
     	padding: 0 5%;
 	}
@@ -1585,6 +1588,7 @@ div.gform_wrapper .gform_footer {
 	.menu-secondary,
 	.wrap,
 	#content,
+	#sidebar,
 	#content-sidebar-wrap,
 	#footer .creds,
 	#footer .gototop,
@@ -1598,7 +1602,7 @@ div.gform_wrapper .gform_footer {
 	 #testemonials {
     	 width: 90%;
 	 }
-
+	 
 	.menu-primary,
 	.menu-secondary,
 	#description,
