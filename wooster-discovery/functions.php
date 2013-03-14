@@ -212,9 +212,6 @@ function child_prepare_grid_loop() {
 		// Remove the archive thumbnail from the home page
 		remove_action('genesis_post_content', 'genesis_do_post_image');
 		
-		//	Add featured image above title on teasers
-		add_action('genesis_before_post_title', 'expose_homepage_teaser_image');
-		
 		add_action('genesis_before_post', 'child_switch_content');
 	}
 	
