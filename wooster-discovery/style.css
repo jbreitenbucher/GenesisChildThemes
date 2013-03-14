@@ -597,19 +597,23 @@ ul.menu li.sfHover ul,
 
 #content .post, #content .page {
 	background: #FFFFFF;
-	margin: 0 0 10px 0;
-	padding: 15px;
+	margin: 0 1% 10px 0;
+	padding: 1.5%;
 	border: 1px solid #D5D5D5;
 	-moz-box-shadow: 0 0 3px #BBBBBB; 
 	-webkit-box-shadow: 0 0 3px #BBBBBB;
 	overflow: hidden;
 	}
 	
+#content .post .first {
+	margin-left: .5%;
+}
+	
 #content .post img, #content .page img {
 	max-width: 100%;
 	}
 	
-#content .portfolio-posts {
+/*#content .portfolio-posts {
 	background: #FFFFFF;
 	float: left;
 	width: 286px;
@@ -680,7 +684,7 @@ ul.menu li.sfHover ul,
 	
 #content .portfolio-posts p {
 	line-height: 20px;
-	}
+	}*/
 	
 #content .post p {
 	margin: 0;
@@ -1546,7 +1550,7 @@ img.wp-smiley, img.wp-wink {
 .two-thirds {
     float: left;
     margin: 0 0 20px;
-    padding-left: 3%;
+    /*padding-left: 3%;*/
 }
  
 .one-half,
@@ -1557,7 +1561,7 @@ img.wp-smiley, img.wp-wink {
  
 .one-third,
 .two-sixths {
-    width: 31%;
+    width: 29%;
 }
  
 .four-sixths,
