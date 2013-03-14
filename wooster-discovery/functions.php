@@ -252,10 +252,6 @@ function child_grid_loop_content() {
 
 }
 
-function expose_homepage_teaser_image() {
-	printf( '<p><a href="%s">%s</a></p>', get_permalink(), the_post_thumbnail( 'swt-discover-featured' ) );
-}
-
 function home_feature() {
 	$paged = get_query_var('paged');
 	if ( $paged < 2 && child_is_doing_grid_loop() ) {
