@@ -60,31 +60,6 @@ add_filter( 'custom_menu_order', 'apex_port_custom_menu_order' );
 add_filter( 'menu_order', 'apex_port_custom_menu_order' );
 
 /**
- * Do not display child, grandchild, etc. posts when viewing a parent category
- * and order by title in ascending order unless on the home screen or designated
- * blog page
- *
- * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
- * @version     SVN: $Id$
- * @since       1.0
- *
- */
-
-function apex_port_no_child_posts( $query) {
-    global $wp_query;
-    $id = $wp_query->get_queried_object_id();
-    if ( !is_home() && !is_category( genesis_get_option( 'technology_blog_cat', APEX_SETTINGS_FIELD ) ) ) {
-        if ( $query->is_category ) {
-            $query->set( 'category__in', array( $id ) );
-            $query->set( 'orderby', 'title' );
-            $query->set( 'order', 'asc' );
-        }
-        return $query;
-    }
-}
-add_action('pre_get_posts', 'apex_port_no_child_posts');
-
-/**
  * Customize the post info function
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
