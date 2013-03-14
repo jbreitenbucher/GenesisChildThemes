@@ -20,7 +20,7 @@ function jb_register_settings() {
 	register_setting( JB_SETTINGS_FIELD, JB_SETTINGS_FIELD );
 	add_option( JB_SETTINGS_FIELD , jb_option_defaults() );
 	add_settings_section('jb_main','Main Settings', 'jb_main_section_text', JB_SETTINGS_FIELD );
-	add_settings_field('jb_featured_cat', 'Featured Category', 'jb_featured_cat_slug_setting', JB_SETTINGS_FIELD , 'jb_main');
+	add_settings_field('jb_featured_cat_slug', 'Featured Category', 'jb_featured_cat_slug_setting', JB_SETTINGS_FIELD , 'jb_main');
 	add_settings_field('jb_featured_content_limit', 'Homepage Featured Post Word Count Limit', 'jb_featured_content_limit_setting', JB_SETTINGS_FIELD , 'jb_main');
 	add_settings_field('jb_post_content_limit', 'Post Word Count Limit', 'jb_post_content_limit_setting', JB_SETTINGS_FIELD , 'jb_main');
 }
