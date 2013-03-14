@@ -14,6 +14,9 @@ add_action( 'admin_menu', 'jb_add_menu', 100);
 add_action( 'admin_notices', 'jb_notices' );
 add_action( 'genesis_settings_sanitizer_init', 'jb_sanitization_filters' );
 
+// Add new image sizes 
+add_image_size('grid-thumbnail', 280, 150, TRUE);
+
 // Unregister 3-column site layouts
 genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
@@ -153,10 +156,10 @@ function child_grid_loop_arguments() {
 	$grid_args = array(
 		'features'              => 3,
 		'feature_content_limit' => genesis_get_option( 'jb_featured_content_limit', JB_SETTINGS_FIELD ),
-		'feature_image_size'    => 0,
+		'feature_image_size'    => 'grid-thumbnail',
 		'feature_image_class'   => 'alignleft post-image',
 		'grid_content_limit'    => genesis_get_option( 'jb_post_content_limit', JB_SETTINGS_FIELD ),
-		'grid_image_size'       => 0,
+		'grid_image_size'       => 'grid-thumbnail',
 		'grid_image_class'      => 'alignleft post-image',
 		'more'                  => __( 'Continue reading &#x2192;', 'genesis' ),
 	);
