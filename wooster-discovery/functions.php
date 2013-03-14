@@ -239,10 +239,8 @@ function child_grid_loop_content() {
 
 		if ( $_genesis_loop_args['feature_content_limit'] )
 		echo wp_trim_words( $content , $num_words = $featured_limit, $more = $cont );
-			//the_content_limit( (int) $_genesis_loop_args['feature_content_limit'], esc_html( $_genesis_loop_args['more'] ) );
 		else
 		echo wp_trim_words( $content , $num_words = $featured_limit, $more = $cont );
-			//the_content( esc_html( $_genesis_loop_args['more'] ) );
 	}
 	else {
 		if ( $_genesis_loop_args['grid_image_size'] )
@@ -250,11 +248,8 @@ function child_grid_loop_content() {
 
 		if ( $_genesis_loop_args['grid_content_limit'] ) {
 			echo wp_trim_words( $content , $num_words = $limit, $more = $cont );
-			//the_content_limit( (int) $_genesis_loop_args['grid_content_limit'], esc_html( $_genesis_loop_args['more'] ) );
 		} else {
 			echo wp_trim_words( $content , $num_words = $limit, $more = $cont );
-			//the_excerpt();
-			//printf( '<br /> <a href="%s" class="more-link">%s</a>', get_permalink(), esc_html( $_genesis_loop_args['more'] ) );
 		}
 	}
 
