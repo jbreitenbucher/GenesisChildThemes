@@ -120,141 +120,11 @@ genesis_register_sidebar( array(
 	'description'	=> __( 'This is a featured area under the header.' ),
 ) );
 
-/**
- * Possibly amend the loop.
- * 
- * Specify the conditions under which the grid loop should be used.
- *
- * @author Bill Erickson
- * @author Gary Jones
- * @link   http://code.garyjones.co.uk/genesis-grid-loop-advanced/
- *
- * @return boolean Return true of doing the grid loop, false if not. 
- */
-function child_is_doing_grid_loop() {
-
-	// Amend this conditional to pick where this grid looping occurs.
-	// This says to use the grid loop everywhere except single posts,
-	// single pages and single attachments.
-	return ( ! is_singular() );
-
-}
-
-/**
- * Grid Loop Arguments
- * 
- * Specify all the desired grid loop and query arguments
- *
- * @author Bill Erickson
- * @author Gary Jones
- * @link   http://code.garyjones.co.uk/genesis-grid-loop-advanced/
- *
- * @return array $arguments
- */
-function child_grid_loop_arguments() {
-
-	$grid_args = array(
-		'features'              => 3,
-		'feature_content_limit' => genesis_get_option( 'jb_featured_content_limit', JB_SETTINGS_FIELD ),
-		'feature_image_size'    => 'grid-thumbnail',
-		'feature_image_class'   => 'alignleft post-image',
-		'grid_content_limit'    => genesis_get_option( 'jb_post_content_limit', JB_SETTINGS_FIELD ),
-		'grid_image_size'       => 'grid-thumbnail',
-		'grid_image_class'      => 'alignleft post-image',
-		'more'                  => __( 'Continue reading &#x2192;', 'genesis' ),
-	);
-
-	$query_args = array(
-		'posts_per_page'        => 6
-	);
-	
-	$tax_args = array(
-		'tax_query' => array(
-			array(
-				'taxonomy' => 'category',
-				'field' => 'slug',
-				'terms' => 'home' //genesis_get_option( 'jb_featured_cat_slug', JB_SETTINGS_FIELD )
-			),
-		)
-	);
-
-	return array(
-		'grid_args'  => $grid_args,
-		'query_args' => $query_args,
-		'tax_args' => $tax_args,
-	);
-}
-
 add_action('genesis_before', 'home_feature');
-add_action( 'genesis_before_loop', 'child_prepare_grid_loop' );
-/**
- * Prepare Grid Loop.
- * 
- * Swap out the standard loop with the grid and apply classes.
- *
- * @author Gary Jones
- * @author Bill Erickson
- * @link   http://code.garyjones.co.uk/genesis-grid-loop-advanced/
- */
-function child_prepare_grid_loop() {
-
-	if ( child_is_doing_grid_loop() ) {
-		
-		// Remove the standard loop
-		remove_action( 'genesis_loop', 'genesis_do_loop' );
-	
-		// Use the prepared grid loop
-		add_action( 'genesis_loop', 'child_do_grid_loop' );
-	
-		// Add some extra post classes to the grid loop so we can style the columns
-		add_filter( 'genesis_grid_loop_post_class', 'child_grid_loop_post_class' );
-		
-		// Remove the archive thumbnail from the home page
-		remove_action('genesis_post_content', 'genesis_do_post_image');
-		
-		add_action('genesis_before_post', 'child_switch_content');
-	}
-	
-}
-
-function child_switch_content() {
-	remove_action('genesis_post_content', 'genesis_grid_loop_content');
-	add_action('genesis_post_content', 'child_grid_loop_content');
-}
-
-function child_grid_loop_content() {
-
-	global $_genesis_loop_args;
-	$content = get_the_content('');
-	$featured_limit = (int) $_genesis_loop_args['feature_content_limit'];
-	$limit = (int) $_genesis_loop_args['grid_content_limit'];
-	$cont = '&hellip; <div class="more-link"><a href="'. get_permalink() . '">'. esc_html( $_genesis_loop_args['more'] )  .'</a></div>';
-
-	if ( in_array( 'genesis-feature', get_post_class() ) ) {
-		if ( $_genesis_loop_args['feature_image_size'] )
-			printf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), genesis_get_image( array( 'size' => $_genesis_loop_args['feature_image_size'], 'attr' => array( 'class' => esc_attr( $_genesis_loop_args['feature_image_class'] ) ) ) ) );
-
-		if ( $_genesis_loop_args['feature_content_limit'] )
-		echo wp_trim_words( $content , $num_words = $featured_limit, $more = $cont );
-		else
-		echo wp_trim_words( $content , $num_words = $featured_limit, $more = $cont );
-	}
-	else {
-		if ( $_genesis_loop_args['grid_image_size'] )
-			printf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), genesis_get_image( array( 'size' => $_genesis_loop_args['grid_image_size'], 'attr' => array( 'class' => esc_attr( $_genesis_loop_args['grid_image_class'] ) ) ) ) );
-
-		if ( $_genesis_loop_args['grid_content_limit'] ) {
-			echo wp_trim_words( $content , $num_words = $limit, $more = $cont );
-		} else {
-			echo wp_trim_words( $content , $num_words = $limit, $more = $cont );
-		}
-	}
-
-}
 
 function home_feature() {
 	$paged = get_query_var('paged');
-	if ( $paged < 2 && child_is_doing_grid_loop() ) {
+	if ( $paged < 2 ) {
 		add_action('genesis_before_content','expose_feature');
 	}
 }
@@ -269,131 +139,6 @@ function expose_feature() {
 		echo '</div><!-- end .featured -->';
 
 	}
-}
-
-add_action( 'pre_get_posts', 'child_grid_query' );
-/**
- * Grid query to get the posts that will appear in the grid.
- * 
- * Any changes to the actual query (posts per page, category…) should be here.
- *
- * @author Bill Erickson
- * @author Gary Jones
- * @link   http://code.garyjones.co.uk/genesis-grid-loop-advanced/
- *
- * @param WP_Query $query
- */
-function child_grid_query( $query ) {
-	
-	// Only apply to main query, if this matches our grid query conditional, and if it isn't in the back-end
-	if ( $query->is_main_query() && child_is_doing_grid_loop() && ! is_admin() ) {
-
-
-		// Get all arguments
-		$args = child_grid_loop_arguments();
-		
-		// Don't edit below, this does the logic to figure out how many posts on each page
-		$posts_per_page = $args['query_args']['posts_per_page'];
-		$features = $args['grid_args']['features'];
-		$offset = 0;
-		$paged = $query->query_vars['paged'];
-		if ( 0 == $paged )
-			// If first page, add number of features to grid posts, so balance is maintained
-			//$posts_per_page += $features;
-			$posts_per_page = $features;
-		else
-			// Keep the offset maintained from our page 1 adjustment
-			//$offset = ( $paged - 1 ) * $posts_per_page + $features;
-			$offset = ( $paged - 2 ) * $posts_per_page + $features;
-		
-		$query->set( 'posts_per_page', $posts_per_page );
-		$query->set( 'offset', $offset );
-	}
-	
-}
-
-/**
- * Prepare the grid loop.
- * 
- * Only use grid-specific arguments. All query args should be done in the
- * child_grid_query() function.
- *  
- * @author Gary Jones
- * @author Bill Erickson
- * @link   http://code.garyjones.co.uk/genesis-grid-loop-advanced/
- *
- * @uses genesis_grid_loop() Requires Genesis 1.5
- *
- * @global WP_Query $wp_query Post query object.
- */
-function child_do_grid_loop() {
-
-	global $wp_query;
-
-	// Grid specific arguments
-	$all_args = child_grid_loop_arguments();
-	$grid_args = $all_args['grid_args'];
-	$tax_args = $all_args['tax_args'];
-
-	// Combine with original query
-	$args = array_merge( $wp_query->query_vars, $grid_args, $tax_args );
-
-	// Create the Grid Loop
-	genesis_grid_loop( $args );
-
-}
-
-/**
- * Add some extra body classes to grid posts.
- * 
- * Change the $columns value to alter how many columns wide the grid uses.
- *
- * @author Gary Jones
- * @author Bill Erickson
- * @link   http://code.garyjones.co.uk/genesis-grid-loop-advanced/
- * 
- * @global array   $_genesis_loop_args
- * @global integer $loop_counter
- *
- * @param array $grid_classes 
- */
-function child_grid_loop_post_class( $grid_classes ) {
-
-	global $_genesis_loop_args, $loop_counter;
-
-	// Alter this number to change the number of columns - used to add class names
-	$columns = 3;
-	
-	// Be able to convert the number of columns to the class name in Genesis
-	$fractions = array( '', 'half', 'third', 'quarter', 'fifth', 'sixth' );
-
-	// Only want extra classes on grid posts, not feature posts
-	if ( $loop_counter >= $_genesis_loop_args['features'] ) {
-		// Make a note of which column we're in
-		$column_number = ( ( $loop_counter - $_genesis_loop_args['features'] ) % $columns ) + 1;
-		
-		// Add genesis-grid-column-? class to know how many columns across we are
-		$grid_classes[] = sprintf( 'genesis-grid-column-%d', $column_number );
-
-		// Add one-* class to make it correct width
-		$grid_classes[] = sprintf( 'one-' . $fractions[$columns - 1], $columns );
-		
-		// Add a class to the first column, so we're sure of starting a new row with no padding-left
-		switch ($column_number) {
-				case 1:
-						$grid_classes[] = 'first';
-						break;
-		    case 2:
-		        $grid_classes[] = 'second';
-		        break;
-		    case 3:
-		        $grid_classes[] = 'third';
-		        break;
-		}
-	} 
-
-	return $grid_classes;
-
 }
 
 /**
@@ -463,7 +208,10 @@ function be_grid_loop_pagination( $query = false ) {
 function be_grid_loop_query_args( $query ) {
 	$grid_args = be_grid_loop_pagination( $query );
 	if( $query->is_main_query() && !is_admin() && $grid_args ) {
- 		$query->set('category_name' => genesis_get_option( 'jb_featured_cat_slug', JB_SETTINGS_FIELD ) );
+
+		// All Grid Loops
+		$query->set( 'category_name',  genesis_get_option( 'jb_featured_cat_slug', JB_SETTINGS_FIELD ) );
+
 		// First Page
 		$page = $query->query_vars['paged'];
 		if( ! $page ) {
@@ -586,3 +334,24 @@ function be_fix_posts_nav() {
 	
 }
 add_filter( 'genesis_after_endwhile', 'be_fix_posts_nav', 5 );
+
+/**
+ * Grid Content
+ * Change the number of words in excerpt if in the grid loop
+ */
+function be_grid_content() {
+ 
+  // First, we make sure we're in the grid loop.
+	if( ! be_grid_loop_pagination() )
+		return;
+ 
+	// Change length if teaser
+	if( in_array( 'teaser', get_post_class() ) )
+		$length = genesis_get_option( 'jb_post_content_limit', JB_SETTINGS_FIELD );
+	else
+		$length = genesis_get_option( 'jb_featured_content_limit', JB_SETTINGS_FIELD );
+ 
+	echo '<p>' . wp_trim_words( get_the_excerpt(), $length ) . '</p>';
+}
+add_action( 'genesis_post_content', 'be_grid_content' );
+remove_action( 'genesis_post_content', 'genesis_do_post_content' );
