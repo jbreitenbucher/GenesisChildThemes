@@ -364,13 +364,19 @@ h2 a:visited,
 	width: 15.277777777%; /* 176px / 1152px */
 }
 
-.footer-widgets-1,
-.footer-widgets-2,
-.footer-widgets-3,
 .sidebar,
 #header .widget-area {
 	width: 30.555555555%; /* 352px / 1152px */
 }
+
+.footer-widgets-1,
+.footer-widgets-2,
+.footer-widgets-3,
+.footer-widgets-4,
+.footer-widgets-5 {
+	width: 16.666666666%; /* 192px / 1152px */
+}
+
 
 .content-sidebar-sidebar .sidebar,
 .sidebar-content-sidebar .sidebar,
@@ -405,6 +411,8 @@ h2 a:visited,
 
 .footer-widgets-1,
 .footer-widgets-2,
+.footer-widgets-3,
+.footer-widgets-4,
 .sidebar-content #sidebar,
 .sidebar-sidebar-content #sidebar,
 #content,
@@ -416,7 +424,7 @@ h2 a:visited,
 }
 
 .content-sidebar-sidebar #sidebar-alt,
-.footer-widgets-3,
+.footer-widgets-5,
 .sidebar,
 .sidebar-content #content,
 .sidebar-content-sidebar #content-sidebar-wrap,
@@ -482,8 +490,8 @@ h2 a:visited,
 
 .entry,
 .page .post.entry {
-	margin-bottom: 80px;
-	margin-bottom: 5rem;
+	margin-bottom: 16px;
+	margin-bottom: 1rem;
 }
 
 .single .entry {
@@ -493,6 +501,10 @@ h2 a:visited,
 
 .page .entry {
 	margin: 0;
+}
+
+.home .post img {
+	border-radius: 10px;
 }
 
 .entry-content {
@@ -703,8 +715,14 @@ p.pages,
 }
 
 .genesis-nav-menu.menu-primary,
-.genesis-nav-menu.menu-secondary {
+.genesis-nav-menu.menu-secondary,
+.genesis-nav-menu.menu-tertiary {
 	border-bottom: 1px solid #ccc;
+}
+
+.genesis-nav-menu.menu-secondary,
+.genesis-nav-menu.menu-tertiary {
+	float: right;
 }
 
 .genesis-nav-menu ul {
@@ -839,6 +857,10 @@ h6,
 	margin-bottom: 1rem;
 }
 
+.entry-title a {
+	margin-bottom: 0;
+}
+
 .author-box h1 {
 	margin: 0
 }
@@ -851,6 +873,28 @@ h6,
 .archive-title {
 	margin-bottom: 24px;
 	margin-bottom: 1.5rem;
+}
+
+.home div.post h2.entry-title {
+	border-radius: 10px;
+	padding: 5px;
+}
+
+.home div.post h2.entry-title,
+.home div.post h2.entry-title a {
+	color: white;
+}
+
+.home div.category-category-1 h2.entry-title {
+	background: rgba(53,205,206,0.5);
+}
+
+.home div.category-category-2 h2.entry-title {
+	background: rgba(176,48,57,0.5);
+}
+
+.home div.category-category-3 h2.entry-title {
+	background: rgba(169,65,183,0.5);
 }
 
 
