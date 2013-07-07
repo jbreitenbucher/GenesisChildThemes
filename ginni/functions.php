@@ -3,7 +3,7 @@
 require_once( get_template_directory() . '/lib/init.php' );
 
 // Child theme (do not remove)
-define( 'CHILD_THEME_NAME', 'Ginni Child Theme' );
+define( 'CHILD_THEME_NAME', 'EOS Child Theme' );
 define( 'CHILD_THEME_URL', 'http://thepedestalgroup.com' );
 
 // Add Viewport meta tag for mobile browsers
@@ -14,6 +14,11 @@ function sample_viewport_meta_tag() {
 
 // Add support for custom background
 add_theme_support( 'custom-background' );
+
+// Custom image sizes
+add_image_size( 'slider', 1110, 300, TRUE );
+add_image_size( 'home-posts', 350, 262, TRUE );
+add_image_size( 'interior-header', 1152, 120, TRUE );
 
 // Customize the Genesis Custom Header to use the Featured Image
 set_post_thumbnail_size( 1152, 120, true ); /*Set the size of thumbnails to that of our header */
@@ -29,14 +34,9 @@ function jb_custom_header_style() {
 }
 
 // Add support for custom header
-add_theme_support( 'genesis-custom-header', array( 'width' => 1152, 'height' => 120 ) );
+add_theme_support( 'genesis-custom-header', array( 'width' => 420, 'height' => 70 ) );
 
 add_action( 'genesis_after_header', 'jb_custom_header_style', 12 );
-
-// Custom image sizes
-add_image_size( 'slider', 1110, 300, TRUE );
-add_image_size( 'home-posts', 350, 262, TRUE );
-add_image_size( 'interior-header', 1152, 120, TRUE );
 
 // Add Featured Image to Posts
 add_action( 'genesis_after_post_content', 'child_do_single_post_image' );
@@ -56,7 +56,7 @@ remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_before_header', 'genesis_do_subnav', 12 );
 
 // Add new navbar
-add_action('genesis_before_header', 'tertiary', 11);
+//add_action('genesis_before_header', 'tertiary', 11);
 function tertiary() {
 require( get_stylesheet_directory() .'/tertiary.php');
 }
@@ -132,6 +132,20 @@ genesis_register_sidebar(array(
 	'name'=>'Slider',
 	'id' => 'slider',
 	'description' => 'This is the widget area on the homepage for a slider'
+));
+
+/** Register Homepage Widget area */
+genesis_register_sidebar(array(
+	'name'=>'Home Left Column',
+	'id' => 'home-left',
+	'description' => 'This is the widget area for the left column on the homepage.'
+));
+
+/** Register Homepage Widget area */
+genesis_register_sidebar(array(
+	'name'=>'Home Right Column',
+	'id' => 'home-right',
+	'description' => 'This is the widget area for the right column on the homepage.'
 ));
 
 /** Register Social Widget area */

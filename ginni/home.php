@@ -1,31 +1,41 @@
 <?php
 
-add_action( 'genesis_meta', 'jb_home_genesis_meta' );
-
+add_action( 'genesis_meta', 'eos_home_genesis_meta' );
 /**
- * Home Post Class
- * @since 1.0.0
+ * Add widget support for homepage. If no widgets active, display the default loop.
  *
- * Breaks the posts into three columns
- * @link http://www.billerickson.net/code/grid-loop-using-post-class
- *
- * @param array $classes
- * @return array
  */
-function be_home_post_class( $classes ) {
-	$classes[] = 'one-half';
-	global $wp_query;
-	if( 0 == $wp_query->current_post || 0 == $wp_query->current_post % 2 )
-		$classes[] = 'first';
-	return $classes;
-}
-add_filter( 'post_class', 'be_home_post_class' );
+function eos_home_genesis_meta() {
 
-function eight_posts_on_homepage( $query ) {
-    if ( $query->is_home() && $query->is_main_query() ) {
-        $query->set( 'posts_per_page', '8' );
-    }
+	if ( is_active_sidebar( 'home-left' ) || is_active_sidebar( 'home-right' ) || is_active_sidebar( 'slider' )  ) {
+		
+		add_action( 'genesis_after_header', 'jb_home_slider' );
+		remove_action( 'genesis_loop', 'genesis_do_loop' );
+		add_action( 'genesis_loop', 'eos_home_loop_helper' );
+
+	}
 }
-add_action( 'pre_get_posts', 'eight_posts_on_homepage' );
+
+function eos_home_loop_helper() {
+	
+	echo '<div class="home-content">';
+	
+	if ( is_active_sidebar( 'home-left' ) ) {
+		echo '<div class="home-left">';
+		dynamic_sidebar( 'home-left' );
+		echo '</div><!-- end .home-left -->';
+	}
+	
+	if ( is_active_sidebar( 'home-right' ) ) {
+		echo '<div class="home-right">';
+		dynamic_sidebar( 'home-right' );
+		echo '</div><!-- end .home-right -->';
+	}
+	
+	echo '</div><!-- end .home-content -->';
+	
+}
+
+remove_action('genesis_after_endwhile', 'genesis_posts_nav');
 
 genesis();
