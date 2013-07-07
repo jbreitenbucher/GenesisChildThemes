@@ -12,6 +12,21 @@ function sample_viewport_meta_tag() {
 	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>';
 }
 
+//add_action( 'pre_get_posts', 'six_posts_on_homepage' );
+/**
+ * Set number of posts on homepage
+ * 
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/customize-the-wordpress-query/
+ * @param object $query data
+ *
+ */
+function six_posts_on_homepage( $query ) {
+    if ( $query->is_home() && $query->is_main_query() ) {
+        $query->set( 'posts_per_page', '6' );
+    }
+}
+
 // Add support for custom background
 add_theme_support( 'custom-background' );
 
