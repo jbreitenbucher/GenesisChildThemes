@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Single Staff
+ * Template Name: Single Staff
  *
  * This template is called to display the page for a single staff member. 
  *
@@ -30,28 +30,53 @@
 add_action('genesis_before','it_single_loop_setup');
 function it_single_loop_setup() {
 	
-	// Remove Before Loop
-	remove_action('genesis_before_loop','genesis_do_before_loop' );
-	
-	// Remove Post Info
-	remove_action('genesis_before_post_content', 'genesis_post_info');
-	
-	// Customize Post Content
-	remove_action('genesis_post_content','genesis_do_post_content');
-	add_action('genesis_post_content','it_person_post_content');
-	
-	// Remove Title, After Title, and Post Image
-	remove_action('genesis_post_title', 'genesis_do_post_title');
-	remove_action('genesis_after_post_title', 'genesis_do_after_post_title');
-	remove_action('genesis_post_content', 'genesis_do_post_image');
-	
-	// Remove Post Meta
-	remove_action('genesis_after_post_content', 'genesis_post_meta');
-	
-	// Customize After Endwhile
-	remove_action('genesis_after_endwhile','genesis_do_after_endwhile');
-	remove_action('genesis_after_endwhile', 'genesis_posts_nav');
-	add_action('genesis_after_endwhile', 'it_person_after_endwhile');
+	if ( ! genesis_html5() ) {
+	    	// Remove Before Loop
+	   	 remove_action('genesis_before_loop','genesis_do_before_loop' );
+    
+	   	 // Remove Post Info
+	   	 remove_action('genesis_before_post_content', 'genesis_post_info');
+    
+	   	 // Customize Post Content
+	   	 remove_action('genesis_post_content','genesis_do_post_content');
+	   	 add_action('genesis_post_content','it_person_post_content');
+    
+	   	 // Remove Title, After Title, and Post Image
+	   	 remove_action('genesis_post_title', 'genesis_do_post_title');
+	   	 remove_action('genesis_after_post_title', 'genesis_do_after_post_title');
+	   	 remove_action('genesis_post_content', 'genesis_do_post_image');
+    
+	    	// Remove Post Meta
+	    	remove_action('genesis_after_post_content', 'genesis_post_meta');
+    
+	    	// Customize After Endwhile
+	    	remove_action('genesis_after_endwhile','genesis_do_after_endwhile');
+	    	remove_action('genesis_after_endwhile', 'genesis_posts_nav');
+	    	add_action('genesis_after_endwhile', 'it_person_after_endwhile');
+	} else {
+	    	// Remove Before Loop
+	   	 remove_action('genesis_before_loop','genesis_do_before_loop' );
+    
+	   	 // Remove Post Info
+	   	 remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+    
+	   	 // Customize Post Content
+  		remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
+  		add_action( 'genesis_entry_content', 'it_person_post_content' );
+    
+	   	 // Remove Title, After Title, and Post Image
+  		remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+  		remove_action('genesis_after_post_title', 'genesis_do_after_post_title');
+  	    	remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );
+    
+	    	// Remove Post Meta
+	    	remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+    
+	    	// Customize After Endwhile
+	   	 remove_action('genesis_after_endwhile','genesis_do_after_endwhile');
+	   	 remove_action('genesis_after_endwhile', 'genesis_posts_nav');
+	    	add_action('genesis_after_endwhile', 'it_person_after_endwhile');
+	}
 }
 
 /**

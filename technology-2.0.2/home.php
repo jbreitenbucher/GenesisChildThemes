@@ -50,19 +50,19 @@ function it_home_loop_helper() {
 	echo '<div class="home-middle">';
 	
 	if ( is_active_sidebar( 'home-middle-1' ) ) {
-		echo '<div class="home-middle-1">';
+		echo '<div class="home-middle-1 first one-third">';
 		dynamic_sidebar( 'home-middle-1' );
 		echo '</div><!-- end .home-middle-1 -->';
 	}
 	
 	if ( is_active_sidebar( 'home-middle-2' ) ) {
-		echo '<div class="home-middle-2">';
+		echo '<div class="home-middle-2 one-third">';
 		dynamic_sidebar( 'home-middle-2' );
 		echo '</div><!-- end .home-middle-2 -->';
 	}
 	
 	if ( is_active_sidebar( 'home-middle-3' ) ) {
-		echo '<div class="home-middle-3">';
+		echo '<div class="home-middle-3 one-third">';
 		dynamic_sidebar( 'home-middle-3' );
 		echo '</div><!-- end .home-middle-3 -->';
 	}
@@ -72,13 +72,13 @@ function it_home_loop_helper() {
 	echo '<div class="home-bottom">';
 	
 	if ( is_active_sidebar( 'home-bottom-1' ) ) {
-		echo '<div class="home-bottom-1">';
+		echo '<div class="home-bottom-1 first one-half">';
 		dynamic_sidebar( 'home-bottom-1' );
 		echo '</div><!-- end .home-bottom-1 -->';
 	}
 	
 	if ( is_active_sidebar( 'home-bottom-2' ) ) {
-		echo '<div class="home-bottom-2">';
+		echo '<div class="home-bottom-2 one-half">';
 		dynamic_sidebar( 'home-bottom-2' );
 		echo '</div><!-- end .home-bottom-2 -->';
 	}

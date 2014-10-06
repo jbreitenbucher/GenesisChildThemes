@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Role
+ * Template Name: Role Page
  *
  * This page is called when viewing a teram associated with the Role taxonomy.
  *
@@ -30,24 +30,45 @@
 add_action('genesis_before','it_role_loop_setup');
 function it_role_loop_setup() {
 	
-	// Customize Before Loop
-	remove_action('genesis_before_loop','genesis_do_before_loop' );
-	add_action('genesis_before_loop','it_role_before_loop');
-	
-	// Remove Post Info
-	remove_action('genesis_before_post_content', 'genesis_post_info');
-	
-	// Customize Post Content
-	remove_action('genesis_post_content','genesis_do_post_content');
-	add_action('genesis_post_content','it_role_post_content');
-	
-	// Remove Title, After Title, and Post Image
-	remove_action('genesis_post_title', 'genesis_do_post_title');
-	remove_action('genesis_after_post_title', 'genesis_do_after_post_title');
-	remove_action('genesis_post_content', 'genesis_do_post_image');
-	
-	// Remove Post Meta
-	remove_action('genesis_after_post_content', 'genesis_post_meta');
+	if ( ! genesis_html5() ) {
+	    	// Customize Before Loop
+	    	remove_action('genesis_before_loop','genesis_do_before_loop' );
+	   	 add_action('genesis_before_loop','it_role_before_loop');
+    
+	    	// Remove Post Info
+	    	remove_action('genesis_before_post_content', 'genesis_post_info');
+    
+	    	// Customize Post Content
+	   	 remove_action('genesis_post_content','genesis_do_post_content');
+	   	 add_action('genesis_post_content','it_role_post_content');
+    
+	    	// Remove Title, After Title, and Post Image
+	    	remove_action('genesis_post_title', 'genesis_do_post_title');
+	   	 remove_action('genesis_after_post_title', 'genesis_do_after_post_title');
+	   	 remove_action('genesis_post_content', 'genesis_do_post_image');
+    
+	   	 // Remove Post Meta
+	   	 remove_action('genesis_after_post_content', 'genesis_post_meta');
+	} else {
+	    	// Customize Before Loop
+	   	 remove_action('genesis_before_loop','genesis_do_before_loop' );
+	  	  add_action('genesis_before_loop','it_role_before_loop');
+    
+	    	// Remove Post Info
+	    	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+    
+	    	// Customize Post Content
+	  	remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
+	  	add_action( 'genesis_entry_content', 'it_role_post_content' );
+    
+	   	 // Remove Title, After Title, and Post Image
+   		remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+   		remove_action('genesis_after_post_title', 'genesis_do_after_post_title');
+   	    	remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );
+    
+	  	  // Remove Post Meta
+	   	 remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+	}
 }
 
 /**

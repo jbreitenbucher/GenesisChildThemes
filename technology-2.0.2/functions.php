@@ -37,6 +37,12 @@ function child_theme_setup() {
 
 	$content_width = apply_filters( 'content_width', 580, 0, 910 );
 	
+	//* Add HTML5 markup structure
+	add_theme_support( 'html5' );
+	
+	//* Add custom header support
+	add_theme_support( 'custom-header' );
+	
 	// Add support for theme options
 	add_action( 'admin_init', 'tech_reset' );
 	add_action( 'admin_init', 'tech_register_settings' );
@@ -70,8 +76,8 @@ function child_theme_setup() {
 	
 	// Add support for structural wraps
 	add_theme_support( 'genesis-structural-wraps', array( 'header', 'nav', 'subnav', 'inner', 'footer-widgets', 'footer' ) );
-	add_action( 'genesis_before_header', 'tech_structure_begin' );
-	add_action( 'genesis_after_footer', 'tech_structure_end' );
+	//add_action( 'genesis_before_header', 'tech_structure_begin' );
+	//add_action( 'genesis_after_footer', 'tech_structure_end' );
 
 	// Add support for 3-column footer widgets
 	add_theme_support( 'genesis-footer-widgets', 3 );
@@ -111,6 +117,6 @@ function child_theme_setup() {
 		'description'	=> __( 'This is the second column of the home bottom section.', 'informationtechnology' ),
 	) );
 	
-	// Add Viewport meta tag for mobile browsers
-	add_action( 'genesis_meta', 'add_viewport_meta_tag' );
+	//* Add viewport meta tag for mobile browsers
+	add_theme_support( 'genesis-responsive-viewport' );
 }

@@ -494,15 +494,15 @@ function tech_remove_sidebars() {
  */
 
 function tech_header() {
-	echo '<div id="title-area">';
-		echo '<div id="logo">';
-		echo '<a href="http://wooster.edu"><img src="'. get_stylesheet_directory_uri() .'/images/wooster/logotype-gold-tb.png" alt="Wooster" /></a>';
-		echo '</div>';
-		echo '<div id="title-wrap">';
+	echo '<div class="title-area">';
+		echo '<div class="logo">';
+		echo '<a href="http://wooster.edu"><img src="'. get_stylesheet_directory_uri() .'/images/wooster/logotype_gold.gif" alt="Wooster" /></a>';
+		echo '</div><!-- end .logo -->';
+		echo '<div class="title-wrap">';
 			do_action( 'genesis_site_title' );
 			do_action( 'genesis_site_description' );
-		echo '</div>';
-	echo '</div><!-- end #title-area -->';
+		echo '</div><!-- end .title-wrap -->';
+	echo '</div><!-- end .title-area -->';
 }
 
 /**
@@ -582,8 +582,38 @@ function add_viewport_meta_tag() {
 	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>';
 }
 
+/** Customize the entire footer
+*/
+remove_action( 'genesis_footer', 'genesis_do_footer' );
+add_action( 'genesis_footer', 'it_custom_footer' );
+function it_custom_footer() {
+	?>
+	<div class="footerimages">
+	<div class="logotype">
+		<?php echo '<img src="'. get_stylesheet_directory_uri() .'/images/wooster/wordmark.gif" alt="The College of Wooster - Independent Minds. Working Together" width="200" height="70" />'?>
+	</div>
+</div>
+<div class="footernav">
+	<ul>
+		<li><a href="http://wooster.edu/about/visit/">Maps &amp; Directions</a>&nbsp;|&nbsp;</li>
+		<li><a href="http://wooster.edu/offices/hr/opportunities/">Employment</a>&nbsp;|&nbsp;</li>
+		<li><a href="http://wooster.edu/about/contact/">Contact Us</a>&nbsp;|&nbsp;</li>
+		<li><a href="http://wooster.edu/offices/web/terms/">Terms &amp; Conditions</a>&nbsp;|&nbsp;</li>
+		<li><a href="http://email.wooster.edu">Email</a>&nbsp;|&nbsp;</li>
+		<li><a href="http://scotweb.wooster.edu">ScotWeb</a>&nbsp;|&nbsp;</li>
+		<li><a href="http://scotblogs.wooster.edu">ScotBlogs</a>&nbsp;|&nbsp;</li>
+		<li><a href="http://wooster.edu/academics/libraries/">Libraries</a>&nbsp;|&nbsp;</li>
+		<li><a href="http://whn.sites.wooster.edu">WHN</a></li>
+	</ul>
+</div>
+<div class=​"footercontact">
+	1189 Beall Avenue, Wooster, Ohio 44691. (330) 263-2000 &copy;<?php echo date("Y") ?> The College of Wooster. All Rights Reserved.
+<div>
+	<?php
+}
+
 /**
- * Amend breadcrumb arguments.
+ * YouTube Video page template.
  *
  * @author      Tammy Hart
  * @link        http://wp.tutsplus.com/tutorials/theme-development/create-a-youtube-videos-page-template-from-an-rss-feed/
