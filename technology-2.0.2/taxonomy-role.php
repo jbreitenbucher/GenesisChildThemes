@@ -55,16 +55,20 @@ function it_role_loop_setup() {
 	  	  add_action('genesis_before_loop','it_role_before_loop');
     
 	    	// Remove Post Info
-	    	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+	    	remove_action( 'genesis_entry_header', 'genesis_post_info' );
     
 	    	// Customize Post Content
 	  	remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 	  	add_action( 'genesis_entry_content', 'it_role_post_content' );
     
 	   	 // Remove Title, After Title, and Post Image
+		 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
+		 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
+		 remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
    		remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
    		remove_action('genesis_after_post_title', 'genesis_do_after_post_title');
-   	    	remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );
+   	    	remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4);
+		remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8);
     
 	  	  // Remove Post Meta
 	   	 remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
@@ -84,7 +88,7 @@ function it_role_before_loop() {
 	$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 	echo '<h1>' . $term->name . '</h1>';
 	if( !is_paged() ) { 
-		echo '<div>' . $term->description . '</div>';
+		echo '<div>' . apply_filters('the_content', $term->description) . '</div>';
 	}
 	if( !is_paged() && $term->slug == genesis_get_option('technology_staff_student_role', IT_SETTINGS_FIELD ) )
 		{

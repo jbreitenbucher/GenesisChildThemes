@@ -190,7 +190,7 @@ function tech_add_menu() {
 function tech_admin_page() { ?>
 	
 	<div class="wrap">
-		<?php screen_icon( 'options-general' ); ?>	
+		<?php //screen_icon( 'options-general' ); ?>	
 		<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 		
 		<form method="post" action="options.php">

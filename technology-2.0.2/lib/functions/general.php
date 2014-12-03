@@ -275,11 +275,11 @@ function set_staff_icon() {
 	?>
 	<style>
 	<?php if ((isset($_GET['post_type']) && $_GET['post_type'] == 'itpeople') || ($post_type == 'itpeople')) : ?>
-	#icon-edit { background:transparent url('<?php echo get_bloginfo('url');?>/wp-admin/images/icons32.png') no-repeat -600px -5px; }
+	#icon-edit { background:transparent url('<?php echo home_url('url');?>/wp-admin/images/icons32.png') no-repeat -600px -5px; }
 	<?php endif; ?>
  
-	#adminmenu #menu-posts-itpeople div.wp-menu-image{background:transparent url('<?php echo get_bloginfo('url');?>/wp-admin/images/menu.png') no-repeat scroll -300px -33px;}
-	#adminmenu #menu-posts-itpeople:hover div.wp-menu-image,#adminmenu #menu-posts-itpeople.wp-has-current-submenu div.wp-menu-image{background:transparent url('<?php echo get_bloginfo('url');?>/wp-admin/images/menu.png') no-repeat scroll -300px -1px;}		
+	#adminmenu #menu-posts-itpeople div.wp-menu-image{background:transparent url('<?php echo home_url('url');?>/wp-admin/images/menu.png') no-repeat scroll -300px -33px;}
+	#adminmenu #menu-posts-itpeople:hover div.wp-menu-image,#adminmenu #menu-posts-itpeople.wp-has-current-submenu div.wp-menu-image{background:transparent url('<?php echo home_url('url');?>/wp-admin/images/menu.png') no-repeat scroll -300px -1px;}		
 		</style>
 		<?php
 }
@@ -554,7 +554,7 @@ function tech_breadcrumb_args( $args ) {
 			$args['labels']['post_type']	 = '';
 			return $args;
 	}
-	elseif ( is_taxonomy('role') ) {
+	elseif ( is_tax('role') ) {
 		$args['sep'] = ' &#8594; ';
 			$args['labels']['author']		 = 'Articles written by ';
 			$args['labels']['category']		 = ''; // Genesis 1.6 and later

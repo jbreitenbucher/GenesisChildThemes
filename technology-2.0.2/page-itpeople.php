@@ -72,6 +72,7 @@ function it_staff_loop_setup() {
  		remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
  		remove_action('genesis_after_post_title', 'genesis_do_after_post_title');
  	    	remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );
+		remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
 
    		// Remove Post Meta
     			remove_action( 'genesis_entry_footer', 'genesis_post_meta' );	
