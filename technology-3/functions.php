@@ -35,12 +35,7 @@ function child_theme_setup() {
 
     $content_width = apply_filters( 'content_width', 580, 0, 910 );
     
-    // Add support for theme options
-    add_action( 'admin_init', 'tech_reset' );
-    add_action( 'admin_init', 'tech_register_settings' );
-    add_action( 'admin_menu', 'tech_add_menu', 100);
-    add_action( 'admin_notices', 'tech_notices' );
-    add_action( 'genesis_settings_sanitizer_init', 'tech_staff_sanitization_filters' );
+    // Remove footer widget are on all pages added seperately to Home
     remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
     
     // Unregister 3-column site layouts
@@ -89,7 +84,7 @@ function child_theme_setup() {
     } 
 
     // Add support for color styles (as of Genesis 1.8)
-    add_theme_support( 'genesis-style-selector', array( 'it-wooster' => 'Wooster' ) );
+    //add_theme_support( 'genesis-style-selector', array( 'it-wooster' => 'Wooster' ) );
     
     // Add support for structural wraps
     add_theme_support( 'genesis-structural-wraps', array( 'header', 'nav', 'subnav', 'inner', 'footer-widgets', 'footer' ) );

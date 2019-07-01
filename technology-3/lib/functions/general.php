@@ -237,7 +237,8 @@ add_filter( 'parse_query', 'tech_taxonomy_filter_post_type_request' );
 function change_tech_itpeople_size( $query ) {
     if ( $query->is_main_query() && !is_admin() && is_post_type_archive( 'itpeople' ) ) { // Make sure it is a archive page
         $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-        $query->set( 'posts_per_page', genesis_get_option( 'technology_staff_posts_per_page', IT_SETTINGS_FIELD ) );
+        //$query->set( 'posts_per_page', genesis_get_option( 'technology_staff_posts_per_page', IT_SETTINGS_FIELD ) );
+        $query->set( 'posts_per_page', get_option( 'technology_staff_posts_per_page', 4 ) );
         $query->set( 'paged', $paged ); // Set the post archive to be paged
     }
 }
@@ -256,7 +257,8 @@ add_filter( 'pre_get_posts', 'change_tech_itpeople_size' ); // Hook our custom f
 
 function tech_tax_filter_posts_per_page( $value ) {
     if ( !is_admin() ) {
-        return ( is_tax( 'role' ) ) ? genesis_get_option( 'technology_staff_posts_per_page', IT_SETTINGS_FIELD ) : $value;
+        //return ( is_tax( 'role' ) ) ? genesis_get_option( 'technology_staff_posts_per_page', IT_SETTINGS_FIELD ) : $value;
+        return ( is_tax( 'role' ) ) ? get_option( 'technology_staff_posts_per_page', 4 ) : $value;
     }
 }
 add_filter( 'option_posts_per_page', 'tech_tax_filter_posts_per_page' );
@@ -390,7 +392,8 @@ add_filter( 'post_updated_messages', 'tech_itpeople_updated_messages' );
 function tech_no_child_posts( $query ) {
     global $wp_query;
     $id = $wp_query->get_queried_object_id();
-    if ( !is_home() && !is_category( genesis_get_option( 'technology_blog_cat', IT_SETTINGS_FIELD ) ) ) {
+    //if ( !is_home() && !is_category( genesis_get_option( 'technology_blog_cat', IT_SETTINGS_FIELD ) ) ) {
+    if ( !is_home() && !is_category( get_option( 'technology_blog_cat', 'it-blog' ) ) ) {
         if ( $query->is_category ) {
             $query->set( 'category__in', array( $id ) );
             $query->set( 'orderby', 'title' );

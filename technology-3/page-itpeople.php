@@ -102,12 +102,14 @@ function it_page_loop() {
             'meta_key' => 'it_last_name_text',
             'orderby' => 'meta_value',
             'order' => 'ASC',
-            'posts_per_page' => genesis_get_option('technology_staff_posts_per_page', IT_SETTINGS_FIELD ),
+            //'posts_per_page' => genesis_get_option('technology_staff_posts_per_page', IT_SETTINGS_FIELD ),
+            'posts_per_page' => get_option('technology_staff_posts_per_page', 4 ),
             'tax_query' => array(
                 array(
                     'taxonomy' => 'role',
                     'field' => 'slug',
-                    'terms' => preg_split("/[,]+/", genesis_get_option('technology_staff_professional_roles', IT_SETTINGS_FIELD ) ),
+                    //'terms' => preg_split("/[,]+/", genesis_get_option('technology_staff_professional_roles', IT_SETTINGS_FIELD ) ),
+                    'terms' => preg_split("/[,]+/", get_option('technology_staff_professional_roles', '' ) ),
                 ),
             )
         );

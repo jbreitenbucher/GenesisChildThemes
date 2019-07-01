@@ -14,11 +14,8 @@
  *
  */
 
-// Define our theme settings
-define( 'IT_SETTINGS_FIELD', 'it-settings' );
-
-// Admin
-require_once( get_stylesheet_directory() . '/lib/admin/admin.php' );
+// Customizer settings
+require_once( get_stylesheet_directory() . '/lib/customizer/customizer.php' );
 
 // Functions
 require_once( get_stylesheet_directory() . '/lib/functions/general.php' );
