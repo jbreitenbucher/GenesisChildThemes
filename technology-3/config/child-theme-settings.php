@@ -26,10 +26,10 @@ return array(
 		'trackbacks_pages'          => 0,  // bool
 		'content_archive'           => 'excerpt',
 		'content_archive_limit'     => 0,
-		'content_archive_thumbnail' => 1,
+		'content_archive_thumbnail' => 0,
 		'image_size'                => 'thumbnail',
 		'image_alignment'           => 'alignleft',
-		'posts_nav'                 => 'prev-next',
+		'posts_nav'                 => 'numeric',
 		'site_layout'               => 'content-sidebar',
 	),
 	'posts_per_page'       => 10,

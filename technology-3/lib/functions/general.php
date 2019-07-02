@@ -499,7 +499,7 @@ function tech_remove_sidebars() {
 function tech_header() {
     echo '<header class="site-header" itemscope itemtype="https://schema.org/WPHeader">';
         echo '<div class="wrap">';
-                echo '<a href="http://wooster.edu" class="custom-logo-link" rel="home"><img src="'. get_stylesheet_directory_uri() .'/images/wooster/logotype-gold-tb.png" class="custom-logo" alt="Wooster" /></a>';
+                echo '<a href="http://wooster.edu" class="custom-logo-link" rel="home"><img src="'. get_stylesheet_directory_uri() .'/images/logotype-gold-tb.png" class="custom-logo" alt="Wooster" /></a>';
                 do_action( 'genesis_site_title' );
                 do_action( 'genesis_site_description' );
         echo '</div><!-- end .wrap -->';

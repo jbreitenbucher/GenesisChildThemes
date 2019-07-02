@@ -76,7 +76,9 @@ function it_staff_loop_setup() {
  */
 
 function it_page_before_loop() {
-    echo '<h1>Information and Planning Staff</h1>';
+    if(get_option('technology_staff_page_heading') != ''){
+        printf('<header class="entry-header"><h1 class="entry-title" itemprop="headline">%s</h1></header>',get_option('technology_staff_page_heading'));
+    }
     $c = 0; // set up a counter so we know which post we're currently showing
     $image_align = 'alignright'; // set up a variable to hold an extra CSS class
     the_content();

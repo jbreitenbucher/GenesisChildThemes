@@ -227,7 +227,7 @@ class Genesis_Custom_Featured_Post extends WP_Widget {
 						 * }
 						 */
 						$title   = apply_filters( 'genesis_featured_post_title', $title, $instance, $args );
-						$heading = genesis_a11y( 'headings' ) ? 'h4' : 'h3';
+						$heading = genesis_a11y( 'headings' ) ? 'h3' : 'h4';
 
 						$header .= genesis_markup(
 							array(

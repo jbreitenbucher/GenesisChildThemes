@@ -72,6 +72,22 @@ function it_customizer_settings( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting( 'technology_staff_page_heading' , array(
+		'type'			=> 'option',
+    	'default'		=> '',
+		'transport'		=> 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+		) 
+	);
+
+	$wp_customize->add_control( 'technology_staff_page_heading_contol', array(
+		'label'    => __( 'Heading to display on the Staff page. (optional)', 'it-theme' ),
+		'section'  => 'it_settings',
+		'settings' => 'technology_staff_page_heading',
+		'type'     => 'text',
+		)
+	);
+
 	$wp_customize->add_setting( 'tech_blog_cat_setting' , array(
 		'type'			=> 'option',
     	'default'		=> 'it-blog',
