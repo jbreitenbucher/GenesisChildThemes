@@ -1065,6 +1065,22 @@ img.alignright,
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
+.site-header .wrap {
+	text-align: center;
+}
+
+.custom-logo-link,
+.site-title,
+.site-description {
+	width: 100%;
+	padding:0;
+	margin: 0 auto;
+}
+
+.site-description {
+	padding-bottom: 10px;
+}
+
 /* Title Area
 --------------------------------------------- */
 
@@ -1099,7 +1115,6 @@ img.alignright,
 	font-weight: 600;
 	line-height: 1;
 	margin-bottom: 0;
-	padding: 32px 30px 0 0;
 	text-shadow: hsla(0, 0%, 0%, 1) 1px 1px;
 	text-transform: uppercase;
 	float: right;
@@ -1128,7 +1143,6 @@ img.alignright,
 	position: relative !important;
 	clear: right;
 	top: 5px;
-	padding-right: 30px;
 	font-size: 14px;
 	font-style: italic;
 	text-shadow: hsla(0, 0%, 0%, 1) 1px 1px;
@@ -1899,6 +1913,27 @@ ul.tsm-tabs.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-c
 		top: 32px;
 	}
 
+	.site-header .wrap {
+		text-align: initial;
+	}
+
+	.custom-logo-link,
+	.site-title,
+	.site-description {
+		width: initial;
+		padding:initial;
+		margin: initial;
+	}
+
+	.site-title {
+		padding: 32px 30px 0 0;
+	}
+
+	.site-description {
+		padding-bottom: 10px;
+		padding-right: 30px;
+	}
+
 	/* Genesis Menu
 	--------------------------------------------- */
 
@@ -1973,9 +2008,6 @@ ul.tsm-tabs.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-c
 
 	.nav-primary {
 		background-color: hsla(46, 89%, 55%, 1);
-		/*border-radius: 5px;
-		clear: none;
-		float: right;*/
 		width: auto;
 	}
 
