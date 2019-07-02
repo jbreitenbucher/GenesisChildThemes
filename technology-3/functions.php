@@ -31,7 +31,8 @@ function child_theme_setup() {
     
     // Child theme (do not remove)
     define( 'CHILD_THEME_NAME', 'Technology Theme' );
-    define( 'CHILD_THEME_URL', 'http://educationaltechnology.wooster.edu/' );
+    define( 'CHILD_THEME_URL', 'https://github.com/jbreitenbucher/GenesisChildThemes/technology-3' );
+    define( 'CHILD_THEME_VERSION', '3.0.0' );
 
     $content_width = apply_filters( 'content_width', 580, 0, 910 );
     
@@ -82,9 +83,6 @@ function child_theme_setup() {
         $parts = explode( '?', $src ); 	
         return $parts[0]; 
     } 
-
-    // Add support for color styles (as of Genesis 1.8)
-    //add_theme_support( 'genesis-style-selector', array( 'it-wooster' => 'Wooster' ) );
     
     // Add support for structural wraps
     add_theme_support( 'genesis-structural-wraps', array( 'header', 'nav', 'subnav', 'inner', 'footer-widgets', 'footer' ) );
@@ -151,63 +149,58 @@ function child_theme_setup() {
         'after_title' => '</h2>',
     ) );
 
-// Wrap entry titles in widgets in h3 tags and on posts in h2 tags
-add_filter( 'genesis_entry_title_wrap', 'tech_set_custom_entry_title_wrap' );
-function tech_set_custom_entry_title_wrap( $wrap ) {
+    // Wrap entry titles in widgets in h3 tags and on posts in h2 tags
+    add_filter( 'genesis_entry_title_wrap', 'tech_set_custom_entry_title_wrap' );
+    function tech_set_custom_entry_title_wrap( $wrap ) {
+        if ( is_singular( 'post' ) ) {
+            $wrap = 'h2';
+        }
+        return $wrap;
+    }
 
-	if ( is_singular( 'post' ) ) {
-		$wrap = 'h2';
-	}
+    include_once( get_stylesheet_directory() . '/lib/widgets/genesis-custom-featured-post-widget.php' );
 
-	return $wrap;
+    add_action( 'widgets_init', 'it_custom_widget_init' );
+    function it_custom_widget_init() {
+        register_widget('Genesis_Custom_Featured_Post');
+    }
 
-}
+    // Load Flexbox Grid
+    add_action( 'wp_enqueue_scripts', 'it_enqueue_flexbox_grid' );
+    function it_enqueue_flexbox_grid() {
+	   wp_enqueue_style( 'flexboxgrid', CHILD_URL . '/css/flexboxgrid.min.css' );
+    }
 
-include_once( get_stylesheet_directory() . '/lib/widgets/genesis-custom-featured-post-widget.php' );
+    add_filter( 'wp_nav_menu_items', 'theme_menu_extras', 10, 2 );
+    /**
+     * Filter menu items, appending either a search form or today's date.
+     *
+     * @param string   $menu HTML string of list items.
+     * @param stdClass $args Menu arguments.
+     *
+     * @return string Amended HTML string of list items.
+     */
+    function theme_menu_extras( $menu, $args ) {
+        //* Change 'primary' to 'secondary' to add extras to the secondary navigation menu
+        if ( 'primary' !== $args->theme_location )
+            return $menu;
+        //* Uncomment this block to add a search form to the navigation menu
 
-add_action( 'widgets_init', 'it_custom_widget_init' );
-function it_custom_widget_init() {
-register_widget('Genesis_Custom_Featured_Post');
-}
-
-// Load Flexbox Grid
-add_action( 'wp_enqueue_scripts', 'it_enqueue_flexbox_grid' );
-function it_enqueue_flexbox_grid() {
-
-	wp_enqueue_style( 'flexboxgrid', CHILD_URL . '/css/flexboxgrid.min.css' );
-
-}
-
-add_filter( 'wp_nav_menu_items', 'theme_menu_extras', 10, 2 );
-/**
- * Filter menu items, appending either a search form or today's date.
- *
- * @param string   $menu HTML string of list items.
- * @param stdClass $args Menu arguments.
- *
- * @return string Amended HTML string of list items.
- */
-function theme_menu_extras( $menu, $args ) {
-    //* Change 'primary' to 'secondary' to add extras to the secondary navigation menu
-    if ( 'primary' !== $args->theme_location )
+        ob_start();
+        get_search_form();
+        $search = ob_get_clean();
+        $menu  .= '<li class="menu-item right search">' . $search . '</li>';
+        //* Uncomment this block to add the date to the navigation menu
+        /*
+        $menu .= '<li class="right date">' . date_i18n( get_option( 'date_format' ) ) . '</li>';
+        */
         return $menu;
-    //* Uncomment this block to add a search form to the navigation menu
+    }
 
-    ob_start();
-    get_search_form();
-    $search = ob_get_clean();
-    $menu  .= '<li class="menu-item right search">' . $search . '</li>';
-    //* Uncomment this block to add the date to the navigation menu
-    /*
-    $menu .= '<li class="right date">' . date_i18n( get_option( 'date_format' ) ) . '</li>';
-    */
-    return $menu;
-}
-
-// Registers the responsive menus.
-if ( function_exists( 'genesis_register_responsive_menus' ) ) {
-    genesis_register_responsive_menus( genesis_get_config( 'responsive-menus' ) );
-}
+    // Registers the responsive menus.
+    if ( function_exists( 'genesis_register_responsive_menus' ) ) {
+        genesis_register_responsive_menus( genesis_get_config( 'responsive-menus' ) );
+    }
     
     // Add Viewport meta tag for mobile browsers
     add_action( 'genesis_meta', 'add_viewport_meta_tag' );

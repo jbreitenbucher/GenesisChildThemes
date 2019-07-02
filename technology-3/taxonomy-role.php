@@ -72,7 +72,6 @@ function it_role_loop_setup() {
 
 function it_role_before_loop() {
     $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-    //echo '<h1>' . $term->name . '</h1>';
     if( !is_paged() ) { 
         echo '<div>' . $term->description . '</div>';
     }

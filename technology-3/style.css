@@ -244,9 +244,7 @@ input,
 select,
 textarea,
 .author-box,
-/*.breadcrumb,*/
 .sticky,
-/*.taxonomy-description,*/
 .wp-caption {
 	background-color: hsla(0, 100%, 100%, 1);
 	border: 1px solid hsla(48, 0%, 25%, 1);
@@ -773,7 +771,7 @@ table td.specialized {
 
 .entry-title a,
 .sidebar .widget-title a {
-	color: hsla(355, 76%, 40%, 1); /*hsla(48, 0%, 25%, 1);*/
+	color: hsla(355, 76%, 40%, 1);
 	text-decoration: none;
 }
 
@@ -1322,10 +1320,6 @@ img.alignright,
 }
 
 .nav-primary {
-	/*clear: right;
-	padding-bottom: 5px;
-	padding-top: 15px;
-	border-radius: 5px;*/
 	background-color: hsla(46, 89%, 55%, 1);
 	width: 100%;
 }
@@ -1334,10 +1328,6 @@ img.alignright,
 --------------------------------------------- */
 
 .nav-secondary {
-	/*clear: right;
-	float: left;
-	padding-bottom: 15px;
-	margin-top: 15px;*/
 	background-color: hsla(0, 0%, 50%, 1);
 }
 
@@ -1367,8 +1357,6 @@ img.alignright,
 }
 
 .nav-secondary a {
-	/*margin-left: 10px;
-	margin-right: 10px;*/
 	padding: 5px;
 }
 
@@ -1608,27 +1596,15 @@ ____________________________________________________________________________ */
 ------------------------------------------------------------ */
 
 .home-middle {
-	/*margin: 0 auto;
-	overflow: hidden;
-	padding: 0 0 5px;
-	width: 100%;*/
 }
 
 .home-middle-1 {
-	/*float: left;
-	margin: 0 1% 0 0;
-	width: 32.66666666666667%;*/
 }
 
 .home-middle-2 {
-	/*float: left;
-	margin: 0 1% 0 0;
-	width: 32.66666666666667%;*/
 }
 
 .home-middle-3 {
-	/*float: right;
-	width: 32.66666666666667%;*/
 }
 
 
@@ -1636,19 +1612,12 @@ ____________________________________________________________________________ */
 ------------------------------------------------------------ */
 
 .home-bottom {
-	/*margin: 0 auto;
-	padding: 0 0 25px;
-	width: 100%;*/
 }
 
 .home-bottom-1 {
-	/*float: left;
-	width: 65%;*/
 }
 
 .home-bottom-2 {
-	/*float: right;
-	width: 33%;*/
 }
 .home-bottom h2,
 .home-middle h2,

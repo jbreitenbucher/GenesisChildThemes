@@ -29,7 +29,6 @@ function it_all_archive_loop_setup() {
     
     // Customize Before Loop
     remove_action('genesis_before_loop','genesis_do_before_loop' );
-    add_action('genesis_before_loop','it_archive_before_loop');
     
     // Remove Post Info
     //* Remove the entry header markup (requires HTML5 theme support)
@@ -53,26 +52,8 @@ function it_all_archive_loop_setup() {
     remove_action('genesis_entry_header', 'genesis_do_post_title');
     remove_action('genesis_entry_header', 'genesis_do_after_post_title');
     remove_action('genesis_entry_content', 'genesis_do_post_image');
-    
-    // Remove Post Meta
-    //remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_open', 5 );
-    //remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 );
-    //remove_action('genesis_entry_footer', 'genesis_post_meta');
 }
 
-/**
- * Customize Before Loop
- *
- * @author       Jon Breitenbucher <jbreitenbucher@wooster.edu>
- * @version      SVN: $Id$
- * @since        1.0
- *
- */
-
-function it_archive_before_loop() {
-    $c = 0; // set up a counter so we know which post we're currently showing
-    $image_align = 'alignright'; // set up a variable to hold an extra CSS class
-}
 
 /**
  * Customize Post Content

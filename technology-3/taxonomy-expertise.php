@@ -44,7 +44,7 @@ function it_expertise_loop_setup() {
     remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 
     //* Remove the post format image (requires HTML5 theme support)
-remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );
+    remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );
     
     // Customize Post Content
     remove_action('genesis_entry_content','genesis_do_post_content');
@@ -72,7 +72,6 @@ remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );
 
 function it_expertise_before_loop() {
     $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-    //echo '<h1>' . $term->name . '</h1>';
     if( !is_paged() ) { 
         echo '<div>' . $term->description . '</div>';
     }

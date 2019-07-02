@@ -43,7 +43,7 @@ function it_archive_loop_setup() {
     remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 
     //* Remove the post format image (requires HTML5 theme support)
-remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );
+    remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );
     
     // Customize Post Content
     remove_action('genesis_entry_content','genesis_do_post_content');
