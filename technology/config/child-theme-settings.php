@@ -5,9 +5,12 @@
  * Genesis 2.9+ updates these settings when themes are activated.
  *
  * @package technology
- * @author  Jon Breitenbucher <jbreitenbucher@wooster.edu>
+ * @author  Jon Breitenbucher
  * @license GPL-2.0-or-later
- * @link    http://educationaltechnology.wooster.edu
+ * @link    https://github.com/jbreitenbucher/GenesisChildThemes/technology-3
+ * @version SVN: $Id$
+ * @since   3.0
+ *
  */
 
 return array(

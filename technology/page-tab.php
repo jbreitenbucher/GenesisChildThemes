@@ -5,6 +5,9 @@
  * @author Mike Hemberger - @JiveDig
  * @link http://thestizmedia.com/tabbed-content-page-template-genesis
  * @package Genesis child theme
+ * @license GPL-2.0-or-later
+ * @version SVN: $Id$
+ * @since   2.0
  */
 
 /*

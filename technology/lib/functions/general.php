@@ -4,12 +4,12 @@
  *
  * This file contains any general functions
  *
- * @package      technology
- * @author       Jon Breitenbucher <jbreitenbucher@wooster.edu>
- * @copyright    Copyright (c) 2012, The College of Wooster
- * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @version      SVN: $Id$
- * @since        1.0
+ * @package technology
+ * @author  Jon Breitenbucher
+ * @license GPL-2.0-or-later
+ * @link    https://github.com/jbreitenbucher/GenesisChildThemes/technology-3
+ * @version SVN: $Id$
+ * @since   1.0
  *
  */
 
@@ -27,7 +27,7 @@
 
 function tech_remove_menus () {
     global $menu;
-    $restricted = array(__(''));
+    $restricted = array(__('', 'technology') );
     // Example:
     //$restricted = array(__('Dashboard'), __('Posts'), __('Media'), __('Links'), __('Pages'), __('Appearance'), __('Tools'), __('Users'), __('Settings'), __('Comments'), __('Plugins'));
     end ($menu);
@@ -76,9 +76,9 @@ add_filter( 'menu_order', 'tech_custom_menu_order' );
 function tech_itpeople_columns($defaults) {
     $columns = array(
         'cb' => '<input type="checkbox" />',
-        'title' => __( 'Name' ),
-        'role' => __( 'Role' ),
-        'date' => __( 'Date' )
+        'title' => __( 'Name', 'technology'),
+        'role' => __( 'Role', 'technology' ),
+        'date' => __( 'Date', 'technology' )
     );
 
     return $columns;
@@ -184,7 +184,7 @@ function tech_taxonomy_filter_restrict_manage_posts() {
         foreach ( $filters as $tax_slug ) {
             $tax_obj = get_taxonomy( $tax_slug );
             wp_dropdown_categories( array(
-                'show_option_all' => __('Show All '.$tax_obj->label ),
+                'show_option_all' => __('Show All '.$tax_obj->label, 'technology' ),
                 'taxonomy'    => $tax_slug,
                 'name'        => $tax_obj->name,
                 'orderby'     => 'name',
@@ -354,19 +354,19 @@ function tech_itpeople_updated_messages( $messages ) {
 
   $messages['itpeople'] = array(
     0 => '', // Unused. Messages start at index 1.
-    1 => sprintf( __('Staff Memeber updated. <a href="%s">View Staff Member</a>'), esc_url( get_permalink($post_ID) ) ),
-    2 => __('Custom field updated.'),
-    3 => __('Custom field deleted.'),
-    4 => __('Staff Member updated.'),
+    1 => sprintf( '%s <a href="%s">%s</a>',__('Staff Memeber updated.', 'technology'), esc_url( get_permalink($post_ID) ), __('View Staff Member', 'technology') ),
+    2 => __('Custom field updated.', 'technology'),
+    3 => __('Custom field deleted.', 'technology'),
+    4 => __('Staff Member updated.', 'technology'),
     /* translators: %s: date and time of the revision */
-    5 => isset($_GET['revision']) ? sprintf( __('Staff Member restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-    6 => sprintf( __('Staff Memeber published. <a href="%s">View staff member</a>'), esc_url( get_permalink($post_ID) ) ),
-    7 => __('Staff Member saved.'),
-    8 => sprintf( __('Staff Member submitted. <a target="_blank" href="%s">Preview staff member</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
-    9 => sprintf( __('Staff Member scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview staff member</a>'),
+    5 => isset($_GET['revision']) ? sprintf( __('%s %s'), __('Staff Member restored to revision from', 'technnology'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+    6 => printf( '%s <a href="%s">%s</a>',__('Staff Memeber published.', 'technology'), esc_url( get_permalink($post_ID) ), __('View staff member', 'technology') ),
+    7 => __('Staff Member saved.', 'technology'),
+    8 => sprintf( '%s <a target="_blank" href="%s">%s</a>', __('Staff Member submitted.', 'technology'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ), __('Preview staff member', 'technology') ),
+    9 => sprintf( '%1$s <strong>%2$s</strong>. <a target="_blank" href="%3$s">%4$s</a>', __('Staff Member scheduled for:', 'technology'),
       // translators: Publish box date format, see http://php.net/date
-      date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
-    10 => sprintf( __('Staff Member draft updated. <a target="_blank" href="%s">Preview staff member</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+      date_i18n( __( 'M j, Y @ G:i', 'technology' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ), __('Preview staff member', 'technology') ),
+    10 => sprintf( '%s <a target="_blank" href="%s">%s</a>', __('Staff Member draft updated.', 'technology'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ), __('Preview staff member', 'technology') ),
   );
 
   return $messages;

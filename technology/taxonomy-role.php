@@ -1,13 +1,16 @@
 <?php
 /**
- * Template Name: People Archive
  *
- * This template will be used to list the itpeople post type archive.
+ * Role
  *
- * @package      technology
- * @author       Jon Breitenbucher <jbreitenbucher@wooster.edu>
- * @copyright    Copyright (c) 2012, The College of Wooster
- * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * This page is called when viewing a term associated with the Role taxonomy.
+ *
+ * @package technology
+ * @author  Jon Breitenbucher
+ * @license GPL-2.0-or-later
+ * @link    https://github.com/jbreitenbucher/GenesisChildThemes/technology-3
+ * @version SVN: $Id$
+ * @since   1.0
  *
  */
 
@@ -24,12 +27,12 @@
  *
  */
 
-add_action('genesis_before','it_archive_loop_setup');
-function it_archive_loop_setup() {
+add_action('genesis_before','it_role_loop_setup');
+function it_role_loop_setup() {
     
     // Customize Before Loop
     remove_action('genesis_before_loop','genesis_do_before_loop' );
-    add_action('genesis_before_loop','it_archive_before_loop');
+    add_action('genesis_archive_title_descriptions','it_role_before_loop');
     
     // Remove Post Info
     //* Remove the entry header markup (requires HTML5 theme support)
@@ -47,7 +50,7 @@ function it_archive_loop_setup() {
     
     // Customize Post Content
     remove_action('genesis_entry_content','genesis_do_post_content');
-    add_action('genesis_entry_content','it_archive_entry_content');
+    add_action('genesis_entry_content','it_role_entry_content');
     
     // Remove Title, After Title, and Post Image
     remove_action('genesis_entry_header', 'genesis_do_post_title');
@@ -69,7 +72,11 @@ function it_archive_loop_setup() {
  *
  */
 
-function it_archive_before_loop() {
+function it_role_before_loop() {
+    $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+    if( !is_paged() ) { 
+        echo '<div>' . $term->description . '</div>';
+    }
     $c = 0; // set up a counter so we know which post we're currently showing
     $image_align = 'alignright'; // set up a variable to hold an extra CSS class
 }
@@ -83,7 +90,7 @@ function it_archive_before_loop() {
  *
  */
 
-function it_archive_entry_content () {
+function it_role_entry_content () {
     global $post, $c;
     $c++; // increment the counter
     if( $c % 2 != 0) {
@@ -131,5 +138,13 @@ function it_archive_entry_content () {
         the_excerpt();
     echo '</div><!--end #about -->';
 }
+
+function it_person_entry_class( $attributes ) {
+  
+  $attributes['class'] = $attributes['class'].' person';
+    return $attributes;
+
+}
+add_filter( 'genesis_attr_entry', 'it_person_entry_class' );
 
 genesis();

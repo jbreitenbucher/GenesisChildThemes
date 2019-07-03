@@ -2,10 +2,12 @@
 /**
  * Functions
  *
- * @package      technology
- * @author       Jon Breitenbucher <jbreitenbucher@wooster.edu>
- * @copyright    Copyright (c) 2012, The College of Wooster
- * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @package technology
+ * @author  Jon Breitenbucher
+ * @license GPL-2.0-or-later
+ * @link    https://github.com/jbreitenbucher/GenesisChildThemes/technology-3
+ * @version SVN: $Id$
+ * @since   1.0
  *
  */
 
@@ -24,10 +26,13 @@
 
 add_action('genesis_setup','child_theme_setup', 15);
 function child_theme_setup() {
-    
+
     // Start the engine
     require_once( get_template_directory() . '/lib/init.php' );
     require_once( get_stylesheet_directory() . '/lib/init.php' );
+
+    //* Set Localization (do not remove)
+    load_child_theme_textdomain( 'technology', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'technology' ) );
     
     // Child theme (do not remove)
     define( 'CHILD_THEME_NAME', 'Technology Theme' );
@@ -64,14 +69,14 @@ function child_theme_setup() {
     add_filter('image_size_names_choose', 'my_image_sizes');
     function my_image_sizes($sizes) {
         $addsizes = array(
-            "home-bottom" => __( "Home Bottom"),
-            "home-middle" => __( "Home Middle"),
-            "home-featured" => __( "Home Featured"),
-            "post-heading-image" => __( "Post Heading Image"),
-            "classroom-image" => __( "Classroom Image"),
-            "classroom-square" => __( "Classroom Square"),
-            "profile-picture-listing" => __( "Profile Picture Listing"),
-            "profile-picture-single" => __( "Profile Picture Single"),
+            "home-bottom" => __( "Home Bottom", 'technology'),
+            "home-middle" => __( "Home Middle", 'technology'),
+            "home-featured" => __( "Home Featured", 'technology'),
+            "post-heading-image" => __( "Post Heading Image", 'technology'),
+            "classroom-image" => __( "Classroom Image", 'technology'),
+            "classroom-square" => __( "Classroom Square", 'technology'),
+            "profile-picture-listing" => __( "Profile Picture Listing, 'technology'"),
+            "profile-picture-single" => __( "Profile Picture Single", 'technology'),
         );
         $newsizes = array_merge($sizes, $addsizes);
         return $newsizes;
@@ -108,43 +113,43 @@ function child_theme_setup() {
     // Register Sidebars
     genesis_register_sidebar( array(
         'id'            => 'featured',
-        'name'          => __( 'Featured', 'informationtechnology' ),
-        'description'   => __( 'This is the featured section.', 'informationtechnology' ),
+        'name'          => __( 'Featured', 'technology' ),
+        'description'   => __( 'This is the featured section.', 'technology' ),
 		'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ) );
     genesis_register_sidebar( array(
         'id'            => 'home-middle-1',
-        'name'          => __( 'Home Middle #1', 'informationtechnology' ),
-        'description'   => __( 'This is the first column of the home middle section.', 'informationtechnology' ),
+        'name'          => __( 'Home Middle #1', 'technology' ),
+        'description'   => __( 'This is the first column of the home middle section.', 'technology' ),
 		'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ) );
     genesis_register_sidebar( array(
         'id'            => 'home-middle-2',
-        'name'          => __( 'Home Middle #2', 'informationtechnology' ),
-        'description'   => __( 'This is the second column of the home middle section.', 'informationtechnology' ),
+        'name'          => __( 'Home Middle #2', 'technology' ),
+        'description'   => __( 'This is the second column of the home middle section.', 'technology' ),
 		'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ) );
     genesis_register_sidebar( array(
         'id'            => 'home-middle-3',
-        'name'          => __( 'Home Middle #3', 'informationtechnology' ),
-        'description'   => __( 'This is the third column of the home middle section.', 'informationtechnology' ),
+        'name'          => __( 'Home Middle #3', 'technology' ),
+        'description'   => __( 'This is the third column of the home middle section.', 'technology' ),
 		'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ) );
     genesis_register_sidebar( array(
         'id'            => 'home-bottom-1',
-        'name'          => __( 'Home Bottom #1', 'informationtechnology' ),
-        'description'   => __( 'This is the first column of the home bottom section.', 'informationtechnology' ),
+        'name'          => __( 'Home Bottom #1', 'technology' ),
+        'description'   => __( 'This is the first column of the home bottom section.', 'technology' ),
 		'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ) );
     genesis_register_sidebar( array(
         'id'            => 'home-bottom-2',
-        'name'          => __( 'Home Bottom #2', 'informationtechnology' ),
-        'description'   => __( 'This is the second column of the home bottom section.', 'informationtechnology' ),
+        'name'          => __( 'Home Bottom #2', 'technology' ),
+        'description'   => __( 'This is the second column of the home bottom section.', 'technology' ),
 		'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ) );

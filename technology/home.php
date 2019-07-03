@@ -2,10 +2,12 @@
 /**
  * Home - Used for the homepage
  *
- * @package      technology
- * @author       Jon Breitenbucher <jbreitenbucher@wooster.edu>
- * @copyright    Copyright (c) 2012, The College of Wooster
- * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @package technology
+ * @author  Jon Breitenbucher
+ * @license GPL-2.0-or-later
+ * @link    https://github.com/jbreitenbucher/GenesisChildThemes/technology-3
+ * @version SVN: $Id$
+ * @since   1.0
  *
  */
 

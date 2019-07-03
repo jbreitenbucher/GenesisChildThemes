@@ -1,13 +1,15 @@
 <?php
 /**
- * Template Name: Search
+ * Template Name: Expertise
  *
- * This template will be used to list the itpeople post type archive.
+ * This template should be used for the Areas of Expertise listing page.
  *
- * @package      technology
- * @author       Jon Breitenbucher <jbreitenbucher@wooster.edu>
- * @copyright    Copyright (c) 2012, The College of Wooster
- * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @package technology
+ * @author  Jon Breitenbucher
+ * @license GPL-2.0-or-later
+ * @link    https://github.com/jbreitenbucher/GenesisChildThemes/technology-3
+ * @version SVN: $Id$
+ * @since   1.0
  *
  */
 
@@ -24,11 +26,12 @@
  *
  */
 
-add_action('genesis_before','it_search_loop_setup');
-function it_search_loop_setup() {
+add_action('genesis_before','it_areas_of_expertise_loop_setup');
+function it_areas_of_expertise_loop_setup() {
     
     // Customize Before Loop
     remove_action('genesis_before_loop','genesis_do_before_loop' );
+    add_action('genesis_before_loop','it_areas_of_expertise_before_loop');
     
     // Remove Post Info
     //* Remove the entry header markup (requires HTML5 theme support)
@@ -46,14 +49,31 @@ function it_search_loop_setup() {
     
     // Customize Post Content
     remove_action('genesis_entry_content','genesis_do_post_content');
-    add_action('genesis_entry_content','it_search_entry_content');
+    add_action('genesis_entry_content','it_areas_of_expertise_entry_content');
     
     // Remove Title, After Title, and Post Image
     remove_action('genesis_entry_header', 'genesis_do_post_title');
     remove_action('genesis_entry_header', 'genesis_do_after_post_title');
     remove_action('genesis_entry_content', 'genesis_do_post_image');
+    
+    // Remove Post Meta
+    remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_open', 5 );
+    remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 );
+    remove_action('genesis_entry_footer', 'genesis_post_meta');
 }
 
+/**
+ * Customize Before Loop
+ *
+ * @author       Jon Breitenbucher <jbreitenbucher@wooster.edu>
+ * @version      SVN: $Id$
+ * @since        1.0
+ *
+ */
+
+function it_areas_of_expertise_before_loop() {
+    the_content();
+}
 
 /**
  * Customize Post Content
@@ -64,21 +84,26 @@ function it_search_loop_setup() {
  *
  */
 
-function it_search_entry_content () {
-    echo '<article class="search-result">';
-    	echo '<a class="entry-image-link" href="' . get_permalink() . '" tabindex="-1" aria-hidden="true">' . get_the_post_thumbnail( get_the_ID(), 'thumbnail' ) . '</a>';
-    	echo '<header class="entry-header">';
-        	echo '<h2 class="entry-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
-    	echo '</header>';
-    	echo '<div class="entry-content">';
-        	$excerpt = get_the_excerpt();
-            if( empty( $excerpt ) )
-                $excerpt = get_post_meta( get_the_ID(), '_yoast_wpseo_metadesc', true );
-            if( !empty( $excerpt ) )
-                echo apply_filters( 'the_excerpt', $excerpt );
-        	echo '<p><a class="read-more" href="' . get_permalink() . '" tabindex="-1" aria-hidden="true">Read More<span class="screen-reader-text"> of ' . get_the_title() . '</span></a></p>';
-    	echo '</div>';
-	echo '</article>';
+function it_areas_of_expertise_entry_content () {
+    $taxonomy     = 'expertise';
+    $orderby      = 'name'; 
+    $show_count   = 0;      // 1 for yes, 0 for no
+    $pad_counts   = 0;      // 1 for yes, 0 for no
+    $hierarchical = 0;      // 1 for yes, 0 for no
+    $title        = '';
+
+    $args = array(
+      'taxonomy'     => $taxonomy,
+      'orderby'      => $orderby,
+      'show_count'   => $show_count,
+      'pad_counts'   => $pad_counts,
+      'hierarchical' => $hierarchical,
+      'title_li'     => $title
+    );
+    
+    echo '<ul class="styles">';
+    echo wp_list_categories( $args );
+    echo '</ul>';
 }
 
 genesis();

@@ -1,11 +1,14 @@
 <?php
 /**
- * Genesis Sample child theme.
+ * Technology child theme.
  *
- * @package Genesis Sample
- * @author  StudioPress
+ * @package technology
+ * @author  Jon Breitenbucher
  * @license GPL-2.0-or-later
- * @link    https://my.studiopress.com/themes/genesis-sample/
+ * @link    https://github.com/jbreitenbucher/GenesisChildThemes/technology-3
+ * @version SVN: $Id$
+ * @since   3.0
+ *
  */
 
 /**
