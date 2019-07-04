@@ -7,7 +7,7 @@
  * @package technology
  * @author  Jon Breitenbucher
  * @license GPL-2.0-or-later
- * @link    https://github.com/jbreitenbucher/GenesisChildThemes/technology-3
+ * @link    https://github.com/jbreitenbucher/GenesisChildThemes/technology
  * @version SVN: $Id$
  * @since   3.0
  *

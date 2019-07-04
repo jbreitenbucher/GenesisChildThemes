@@ -7,7 +7,7 @@
  * @package technology
  * @author  Jon Breitenbucher
  * @license GPL-2.0-or-later
- * @link    https://github.com/jbreitenbucher/GenesisChildThemes/technology-3
+ * @link    https://github.com/jbreitenbucher/GenesisChildThemes/technology
  * @version SVN: $Id$
  * @since   1.0
  *
@@ -350,23 +350,25 @@ add_filter( 'title_save_pre', 'tech_save_new_title' );
  */
 
 function tech_itpeople_updated_messages( $messages ) {
-  global $post, $post_ID;
+  global $post;
+
+  $post_ID = $post->ID;
 
   $messages['itpeople'] = array(
     0 => '', // Unused. Messages start at index 1.
-    1 => sprintf( '%s <a href="%s">%s</a>',__('Staff Memeber updated.', 'technology'), esc_url( get_permalink($post_ID) ), __('View Staff Member', 'technology') ),
-    2 => __('Custom field updated.', 'technology'),
-    3 => __('Custom field deleted.', 'technology'),
-    4 => __('Staff Member updated.', 'technology'),
+    1 => sprintf( __('Staff Memeber updated. <a href="%s">View Staff Member</a>', 'technology'), esc_url( get_permalink($post_ID) ) ),
+    2 => esc_html__('Custom field updated.', 'technology'),
+    3 => esc_html__('Custom field deleted.', 'technology'),
+    4 => esc_html__('Staff Member updated.', 'technology'),
     /* translators: %s: date and time of the revision */
-    5 => isset($_GET['revision']) ? sprintf( __('%s %s'), __('Staff Member restored to revision from', 'technnology'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-    6 => printf( '%s <a href="%s">%s</a>',__('Staff Memeber published.', 'technology'), esc_url( get_permalink($post_ID) ), __('View staff member', 'technology') ),
-    7 => __('Staff Member saved.', 'technology'),
-    8 => sprintf( '%s <a target="_blank" href="%s">%s</a>', __('Staff Member submitted.', 'technology'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ), __('Preview staff member', 'technology') ),
-    9 => sprintf( '%1$s <strong>%2$s</strong>. <a target="_blank" href="%3$s">%4$s</a>', __('Staff Member scheduled for:', 'technology'),
+    5 => isset($_GET['revision']) ? sprintf( esc_html__('Staff Member restored to revision from %s', 'technology'),wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+    6 => sprintf( __('Staff Memeber published. <a href="%s">View staff member</a>', 'technology'), esc_url( get_permalink($post_ID) ) ),
+    7 => esc_html__('Staff Member saved.', 'technology'),
+    8 => sprintf( __('Staff Member submitted. <a target="_blank" href="%s">Preview staff member</a>', 'technology'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+    9 => sprintf( __('Staff Member scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview staff member</a>', 'technology'),
       // translators: Publish box date format, see http://php.net/date
-      date_i18n( __( 'M j, Y @ G:i', 'technology' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ), __('Preview staff member', 'technology') ),
-    10 => sprintf( '%s <a target="_blank" href="%s">%s</a>', __('Staff Member draft updated.', 'technology'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ), __('Preview staff member', 'technology') ),
+      date_i18n( __( 'M j, Y @ G:i', 'technology' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
+    10 => sprintf( __('Staff Member draft updated. <a target="_blank" href="%s">Preview staff member</a>', 'technology'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
   );
 
   return $messages;

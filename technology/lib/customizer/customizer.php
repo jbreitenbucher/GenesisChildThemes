@@ -7,7 +7,7 @@
  * @package technology
  * @author  Jon Breitenbucher
  * @license GPL-2.0-or-later
- * @link    https://github.com/jbreitenbucher/GenesisChildThemes/technology-3
+ * @link    https://github.com/jbreitenbucher/GenesisChildThemes/technology
  * @version SVN: $Id$
  * @since   3.0
  *
@@ -16,10 +16,10 @@
 add_action( 'customize_register', 'it_customizer_settings' );
 function it_customizer_settings( $wp_customize ) {
 	$wp_customize->add_section( 'it_settings' , array(
-    	'title'			=> __('Technology Theme Specific', 'technology'),
+    	'title'			=> esc_html__('Technology Theme Specific', 'technology'),
     	'priority'		=> 30,
     	'capability'	=> 'edit_theme_options', //Capability needed to tweak
-		'description'	=> __('Allows you to customize some settings specific to the Technology Theme.', 'technology'),
+		'description'	=> esc_html__('Allows you to customize some settings specific to the Technology Theme.', 'technology'),
 		'panel'			=> 'genesis',
 		)
 	);
@@ -33,7 +33,7 @@ function it_customizer_settings( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 'technology_staff_posts_per_page_contol', array(
-		'label'    => __( 'Staff Per Page', 'technology' ),
+		'label'    => esc_html__( 'Staff Per Page', 'technology' ),
 		'section'  => 'it_settings',
 		'settings' => 'technology_staff_posts_per_page',
 		'type'     => 'number',
@@ -49,7 +49,7 @@ function it_customizer_settings( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 'technology_staff_student_role_contol', array(
-		'label'    => __( 'Category used to identify STAs', 'technology' ),
+		'label'    => esc_html__( 'Category used to identify STAs', 'technology' ),
 		'section'  => 'it_settings',
 		'settings' => 'technology_staff_student_role',
 		'type'     => 'text',
@@ -65,7 +65,7 @@ function it_customizer_settings( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 'technology_staff_professional_roles_contol', array(
-		'label'    => __( 'Category(ies) used to identify professional staff', 'technology' ),
+		'label'    => esc_html__( 'Category(ies) used to identify professional staff', 'technology' ),
 		'section'  => 'it_settings',
 		'settings' => 'technology_staff_professional_roles',
 		'type'     => 'text',
@@ -81,7 +81,7 @@ function it_customizer_settings( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 'technology_staff_page_heading_contol', array(
-		'label'    => __( 'Heading to display on the Staff page. (optional)', 'technology' ),
+		'label'    => esc_html__( 'Heading to display on the Staff page. (optional)', 'technology' ),
 		'section'  => 'it_settings',
 		'settings' => 'technology_staff_page_heading',
 		'type'     => 'text',
@@ -97,7 +97,7 @@ function it_customizer_settings( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 'tech_blog_cat_setting_contol', array(
-		'label'    => __( 'Category used to identify blog posts', 'technology' ),
+		'label'    => esc_html__( 'Category used to identify blog posts', 'technology' ),
 		'section'  => 'it_settings',
 		'settings' => 'tech_blog_cat_setting',
 		'type'     => 'text',

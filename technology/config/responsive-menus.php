@@ -5,7 +5,7 @@
  * @package technology
  * @author  Jon Breitenbucher
  * @license GPL-2.0-or-later
- * @link    https://github.com/jbreitenbucher/GenesisChildThemes/technology-3
+ * @link    https://github.com/jbreitenbucher/GenesisChildThemes/technology
  * @version SVN: $Id$
  * @since   3.0
  *
@@ -21,6 +21,6 @@ return array(
 		),
 	),
 	'extras' => array(
-		'media_query_width' => '960px',
+		'media_query_width' => '961px',
 	),
 );

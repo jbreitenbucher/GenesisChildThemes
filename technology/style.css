@@ -1,6 +1,6 @@
 /*
 Theme Name: Technology Theme 3.0.0
-Theme URI: https://github.com/jbreitenbucher/GenesisChildThemes/technology-3
+Theme URI: https://github.com/jbreitenbucher/GenesisChildThemes/technology
 Description: Technology is a two column child theme created for the Genesis Framework. The theme is based on the Associate theme by StudioPress and adds a custom post types for Information Technology Staff.
 Author: Jon Breitenbucher
 Author URI: https://github.com/jbreitenbucher/
@@ -1898,7 +1898,7 @@ ul.tsm-tabs.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-c
 
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 961px) {
 
 	/* Site Header
 	--------------------------------------------- */

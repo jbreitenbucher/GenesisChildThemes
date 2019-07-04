@@ -7,7 +7,7 @@
  * @package technology
  * @author  Jon Breitenbucher
  * @license GPL-2.0-or-later
- * @link    https://github.com/jbreitenbucher/GenesisChildThemes/technology-3
+ * @link    https://github.com/jbreitenbucher/GenesisChildThemes/technology
  * @version SVN: $Id$
  * @since   1.0
  *
@@ -27,57 +27,57 @@ function tech_create_metaboxes( $meta_boxes ) {
     $prefix = 'it_'; // start with an underscore to hide fields from custom fields list
     $meta_boxes[] = array(
         'id' => 'staff_info_metabox',
-        'title' => __('Information', 'technology'),
+        'title' => esc_html__('Information', 'technology'),
         'pages' => array('itpeople'), // post type
         'context' => 'normal',
         'priority' => 'low',
         'show_names' => true, // Show field names on the left
         'fields' => array(
             array(
-                'name' => __('First Name', 'technology'),
+                'name' => esc_html__('First Name', 'technology'),
                 'desc' => '',
                 'id' => $prefix . 'first_name_text',
                 'type' => 'text'
             ),
             array(
-                'name' => __('Last Name', 'technology'),
+                'name' => esc_html__('Last Name', 'technology'),
                 'desc' => '',
                 'id' => $prefix . 'last_name_text',
                 'type' => 'text'
             ),
             array(
-                'name' => __('Title', 'technology'),
-                'desc' => __('Your position title.', 'technology'),
+                'name' => esc_html__('Title', 'technology'),
+                'desc' => esc_html__('Your position title.', 'technology'),
                 'id' => $prefix . 'title_text',
                 'type' => 'text'
             ),
             array(
-                'name' => __('Office', 'technology'),
-                'desc' => __('Your office number.', 'technology'),
+                'name' => esc_html__('Office', 'technology'),
+                'desc' => esc_html__('Your office number.', 'technology'),
                 'id' => $prefix . 'office_text',
                 'type' => 'text'
             ),
             array(
-                'name' => __('Phone Number', 'technology'),
-                'desc' => __('Your campus phone number.', 'technology'),
+                'name' => esc_html__('Phone Number', 'technology'),
+                'desc' => esc_html__('Your campus phone number.', 'technology'),
                 'id' => $prefix . 'phone_number_text',
                 'type' => 'text'
             ),
             array(
-                'name' => __('e-mail Address', 'technology'),
-                'desc' => __('Your campus e-mail.', 'technology'),
+                'name' => esc_html__('e-mail Address', 'technology'),
+                'desc' => esc_html__('Your campus e-mail.', 'technology'),
                 'id' => $prefix . 'email_address_text',
                 'type' => 'text'
             ),
             array(
-                'name' => __('Address', 'technology'),
-                'desc' => __('Your campus address.', 'technology'),
+                'name' => esc_html__('Address', 'technology'),
+                'desc' => esc_html__('Your campus address.', 'technology'),
                 'id' => $prefix . 'address_textarea',
                 'type' => 'textarea'
             ),
             array(
-                'name' => __('About Me', 'technology'),
-                'desc' => __('Give a brief description about your technology interests and your duties.', 'technology'),
+                'name' => esc_html__('About Me', 'technology'),
+                'desc' => esc_html__('Give a brief description about your technology interests and your duties.', 'technology'),
                 'id' => $prefix . 'about_me_wysiwyg',
                 'type' => 'wysiwyg',
                 'options' => array(
@@ -87,15 +87,15 @@ function tech_create_metaboxes( $meta_boxes ) {
                 ),
             ),
             array(
-                'name' => __('Role', 'technology'),
+                'name' => esc_html__('Role', 'technology'),
                 'desc' => '',
                 'id' => $prefix . 'role_taxonomy_select',
                 'taxonomy' => 'role', //Enter Taxonomy Slug
                 'type' => 'taxonomy_select',    
             ),
             array(
-                'name' => __('Areas of Expertise', 'technology'),
-                'desc' => __('What are your areas of expertise?', 'technology'),
+                'name' => esc_html__('Areas of Expertise', 'technology'),
+                'desc' => esc_html__('What are your areas of expertise?', 'technology'),
                 'id' => $prefix . 'expertise_taxonomy_multicheck',
                 'taxonomy' => 'expertise', //Enter Taxonomy Slug
                 'type' => 'taxonomy_multicheck',    
