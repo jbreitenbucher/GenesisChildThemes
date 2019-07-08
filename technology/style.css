@@ -1102,6 +1102,10 @@ img.alignright,
 	width: 32.291666666%;
 }
 
+.custom-logo {
+	padding: .5em 1em;;
+}
+
 .wp-custom-logo .title-area img {
 	width: auto;
 }
@@ -1924,6 +1928,10 @@ ul.tsm-tabs.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-c
 		width: initial;
 		padding:initial;
 		margin: initial;
+	}
+
+	.custom-logo {
+		margin: 0 0 0 7%;
 	}
 
 	.site-title {
