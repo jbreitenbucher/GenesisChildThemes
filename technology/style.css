@@ -1062,6 +1062,7 @@ img.alignright,
 .site-header {
 	background: url(images/wrap.jpg) repeat-x;
 	background-color: hsla(0, 0%, 0%, 1);
+	background-size:auto 15%;
 	color: hsla(0, 100%, 100%, 1);
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 }
@@ -1545,6 +1546,7 @@ p.entry-meta {
 	background: hsla(48, 0%, 95%, 0.7);
 	font-size: 16px;
 	line-height: 1.5;
+	padding: 15px 0 0 3.5%;
 }
 
 .sidebar .widget {
@@ -1912,6 +1914,7 @@ ul.tsm-tabs.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-c
 		position: sticky;
 		top: 0;
 		z-index: 9999;
+		background-size:auto 25%;
 	}
 
 	.admin-bar .site-header {
@@ -2058,7 +2061,6 @@ ul.tsm-tabs.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-c
 	.sidebar {
 		float: right;
 		width: 30%;
-		padding: 15px 0 0 3.5%;
 	}
 
 	.sidebar-content .sidebar {
