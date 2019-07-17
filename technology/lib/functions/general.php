@@ -598,3 +598,36 @@ function add_viewport_meta_tag() {
 
 // Add support for Genesis Simple Sidebars to Projects in a Box post type
 add_post_type_support( 'project', 'genesis-simple-sidebars' );
+
+add_filter( 'genesis_structural_wrap-footer-widgets','tech_add_class_to_footer_widgets_structural_wrap', 10, 2);
+/**
+ * Add class to footer widgets area wrap.
+ *
+ * @param string $original_output Existing footer widgets area wrap container markup.
+ * @return string $output Amended markup for footer widgets area wrap.
+ */
+function tech_add_class_to_footer_widgets_structural_wrap( $output, $original_output ) {
+    // add row class to opening markup
+    if ( 'open' == $original_output )
+        $output .= '<div class="wrap row">';
+    
+    elseif ( 'close' == $original_output )
+        $output .= '</div>;';
+    
+    return $output;
+}
+
+add_filter( 'genesis_attr_footer-widget-area', 'tech_add_footer_widget_area_classes', 10, 2 );
+/**
+ * Add classes to footer widget area container.
+ *
+ * @param string $attributes Existing footer widget area container markup.
+ * @return string Amended markup for footer widget area container.
+ */
+function tech_add_footer_widget_area_classes( $attributes ) {
+	// add original plus extra CSS classes
+	$attributes['class'] = $attributes['class'] . ' col-xs-12 col-sm-12 col-md-6 col-lg-4';
+
+	// return the attributes
+	return $attributes;
+}

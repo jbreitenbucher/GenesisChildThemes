@@ -540,6 +540,10 @@ thead
 	font-weight: 700;
 }
 
+td {
+	border-right: 1px solid hsla(46, 89%, 55%, 1);
+}
+
 th {
 	font-weight: 600;
 	padding: 0 10px 10px;
@@ -1062,7 +1066,7 @@ img.alignright,
 .site-header {
 	background: url(images/tartanslant.gif) no-repeat;
 	background-color: hsla(0, 0%, 0%, 1);
-	background-size:auto 25%;
+	background-size:auto 15%;
 	background-position:0 0;
 	color: hsla(0, 100%, 100%, 1);
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
@@ -1662,7 +1666,8 @@ ____________________________________________________________________________ */
     padding: 10px 12px;
 }
 
-.widget-wrap h2 {
+.widget-wrap h2,
+.widget-wrap h3.widgettitle {
     color: hsla(0, 100%, 100%, 1);
     font-size: 24px;
     line-height: 30px;
@@ -1670,16 +1675,19 @@ ____________________________________________________________________________ */
 }
 
 .home-middle-1 .widget-wrap h2,
-.home-bottom-1 .widget-wrap h2 {
+.home-bottom-1 .widget-wrap h2,
+.footer-widgets-1 .widget-wrap h3 {
     background: url(images/headline-1.png);
 }
 
 .home-middle-2 .widget-wrap h2,
-.home-bottom-2 .widget-wrap h2 {
+.home-bottom-2 .widget-wrap h2,
+.footer-widgets-2 .widget-wrap h3 {
     background: url(images/headline-2.png);
 }
 
-.home-middle-3 .widget-wrap h2 {
+.home-middle-3 .widget-wrap h2,
+.footer-widgets-3 .widget-wrap h3 {
     background: url(images/headline-3.png);
 }
 
@@ -1695,7 +1703,10 @@ ____________________________________________________________________________ */
 .home-middle-1 h3,
 .home-bottom-2 h3,
 .home-middle-2 h3, 
-.home-middle-3 h3 {
+.home-middle-3 h3,
+.footer-widgets-1 .widget-wrap h3.entry-title,
+.footer-widgets-2 .widget-wrap h3.entry-title,
+.footer-widgets-3 .widget-wrap h3.entry-title {
     background: none;
 	font-size: 18px;
 }
@@ -1909,6 +1920,7 @@ ul.tsm-tabs.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-c
 		position: sticky;
 		top: 0;
 		z-index: 9999;
+		background-size:auto 25%;
 	}
 
 	.admin-bar .site-header {
