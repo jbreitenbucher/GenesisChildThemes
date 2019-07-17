@@ -518,10 +518,6 @@ table {
 	word-break: break-all;
 }
 
-/*tbody {
-	border-bottom: 1px solid #eee;
-}*/
-
 td,
 th {
 	text-align: left;
@@ -558,27 +554,6 @@ td:last-child,
 th:last-child {
 	padding-right: 5px;
 }
-
-/*table td {
-	width: 90px;
-}
-
-table td.classroom {
-	width: 70px !important;
-}
-
-table td.hardware {
-	width: 100px !important;
-}
-
-table td.software {
-	width: 100px !important;
-}
-
-table td.specialized {
-	width: 115px !important;
-}*/
-
 
 /* Screen Reader Text
 --------------------------------------------- */
@@ -1064,16 +1039,20 @@ img.alignright,
 ---------------------------------------------------------------------------- */
 
 .site-header {
-	background: url(images/tartanslant.gif) no-repeat;
 	background-color: hsla(0, 0%, 0%, 1);
-	background-size:auto 15%;
-	background-position:0 0;
 	color: hsla(0, 100%, 100%, 1);
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
 .site-header .wrap {
+	background: url(images/tartanslant.gif) no-repeat;
+	background-size:auto 25%;
+	background-position:0 0;
 	text-align: center;
+}
+
+.site-header .nav-primary .wrap {
+	background: none;
 }
 
 .custom-logo-link,
@@ -1277,9 +1256,9 @@ img.alignright,
 .menu-toggle:hover,
 .sub-menu-toggle:focus,
 .sub-menu-toggle:hover {
-	background-color: transparent;
+	background-color: hsla(0, 0%, 0%, 0.8); /*transparent;*/
 	border-width: 0;
-	color: hsla(0, 0%, 0%, 1);
+	color: hsla(0, 0%, 100%, 1);
 }
 
 .menu-toggle {
@@ -1287,7 +1266,7 @@ img.alignright,
 	line-height: 20px;
 	margin-bottom: 10px;
 	margin-top: 10px;
-	padding: 15px 0;
+	padding: 5px 5px;
 	position: relative;
 	z-index: 1000;
 }
@@ -1588,7 +1567,6 @@ p.entry-meta {
 
 .site-footer {
 	background-color: hsla(0, 0%, 0%, 1);
-	/*border-top: 1px solid #eee;*/
 	font-size: 15px;
 	line-height: 1.5;
 	padding: 30px;
@@ -1903,6 +1881,10 @@ ul.tsm-tabs.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-c
 
 @media only screen and (min-width: 480px) {
 
+	.site-header .wrap {
+		background-size:auto 35%;
+	}
+	
 	table {
 		table-layout: auto;
 		word-break: normal;
@@ -1920,7 +1902,10 @@ ul.tsm-tabs.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-c
 		position: sticky;
 		top: 0;
 		z-index: 9999;
-		background-size:auto 25%;
+	}
+	
+	.site-header .wrap {
+		background-size:auto 50%;
 	}
 
 	.admin-bar .site-header {
