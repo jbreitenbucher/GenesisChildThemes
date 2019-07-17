@@ -612,7 +612,7 @@ function tech_add_class_to_footer_widgets_structural_wrap( $output, $original_ou
         $output .= '<div class="wrap row">';
     
     elseif ( 'close' == $original_output )
-        $output .= '</div>;';
+        $output .= '</div>';
     
     return $output;
 }
