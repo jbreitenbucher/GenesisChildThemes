@@ -150,7 +150,7 @@ html {
 
 @font-face {
     font-family: 'EB Garamond';  
-    src: url(http://fonts.googleapis.com/css?family=EB+Garamond);  
+    src: url(//fonts.googleapis.com/css?family=EB+Garamond);
     font-weight: normal;  
 }
 
@@ -1060,9 +1060,10 @@ img.alignright,
 ---------------------------------------------------------------------------- */
 
 .site-header {
-	background: url(images/wrap.jpg) repeat-x;
+	background: url(images/tartanslant.gif) no-repeat;
 	background-color: hsla(0, 0%, 0%, 1);
-	background-size:auto 15%;
+	background-size:auto 25%;
+	background-position:0 0;
 	color: hsla(0, 100%, 100%, 1);
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 }
@@ -1094,11 +1095,6 @@ img.alignright,
 }
 
 .wp-custom-logo .title-area {
-	float: left;
-	width: 32.291666666%;
-}
-
-.custom-logo .title-area {
 	float: left;
 	width: 32.291666666%;
 }
@@ -1546,7 +1542,6 @@ p.entry-meta {
 	background: hsla(48, 0%, 95%, 0.7);
 	font-size: 16px;
 	line-height: 1.5;
-	padding: 15px 0 0 3.5%;
 }
 
 .sidebar .widget {
@@ -1914,7 +1909,6 @@ ul.tsm-tabs.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-c
 		position: sticky;
 		top: 0;
 		z-index: 9999;
-		background-size:auto 25%;
 	}
 
 	.admin-bar .site-header {
@@ -1938,7 +1932,7 @@ ul.tsm-tabs.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-c
 	}
 
 	.site-title {
-		padding: 32px 30px 0 0;
+		padding: 5px 30px 0 0;
 	}
 
 	.site-description {
@@ -2061,6 +2055,7 @@ ul.tsm-tabs.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-c
 	.sidebar {
 		float: right;
 		width: 30%;
+		padding: 15px 0 0 3.5%;
 	}
 
 	.sidebar-content .sidebar {
