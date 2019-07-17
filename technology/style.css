@@ -518,9 +518,9 @@ table {
 	word-break: break-all;
 }
 
-tbody {
+/*tbody {
 	border-bottom: 1px solid #eee;
-}
+}*/
 
 td,
 th {
@@ -529,7 +529,7 @@ th {
 }
 
 td, thead {
-	border-top: 1px solid hsla(48, 100%, 75%, 1);
+	border-top: 1px solid hsla(46, 89%, 55%, 1);
 	padding:3px 2px 2px 3px;
 }
 
@@ -547,15 +547,15 @@ th {
 
 td:first-child,
 th:first-child {
-	padding-left: 0;
+	padding-left: 5px;
 }
 
 td:last-child,
 th:last-child {
-	padding-right: 0;
+	padding-right: 5px;
 }
 
-table td {
+/*table td {
 	width: 90px;
 }
 
@@ -573,7 +573,7 @@ table td.software {
 
 table td.specialized {
 	width: 115px !important;
-}
+}*/
 
 
 /* Screen Reader Text
