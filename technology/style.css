@@ -1162,11 +1162,11 @@ img.alignright,
 	background: url(images/nav-line.png) no-repeat right;
 	color: hsla(0, 0%, 0%, 1);
 	display: block;
-	font-size: 15px;
+	font-size: 1em;
 	font-weight: 400;
 	outline-offset: -1px;
-	padding-bottom: 12px;
-	padding-top: 12px;
+	padding-bottom: 6px;
+	padding-top: 6px;
 	text-decoration: none;
 }
 
@@ -1202,7 +1202,7 @@ img.alignright,
 
 .genesis-nav-menu .sub-menu a {
 	background-color: hsla(46, 89%, 55%, 1);
-	font-size: 14px;
+	font-size: .8em;
 	position: relative;
 	word-wrap: break-word;
 }
@@ -1645,11 +1645,15 @@ ____________________________________________________________________________ */
 }
 
 .widget-wrap h2,
-.widget-wrap h3.widgettitle {
+.footer-widgets .widget-wrap .widget-title {
     color: hsla(0, 100%, 100%, 1);
     font-size: 24px;
     line-height: 30px;
     padding: 10px 12px;
+}
+
+.sidebar .widget-wrap .widget-title {
+	color: hsla(0, 0%, 0%, 1);
 }
 
 .home-middle-1 .widget-wrap h2,
@@ -1997,7 +2001,7 @@ ul.tsm-tabs.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-c
 
 	.genesis-responsive-menu {
 		display: block;
-		padding-top: 15px;
+		padding-top: 0px;
 	}
 
 	.menu-toggle,

@@ -24,11 +24,11 @@
  */
 
 function tech_create_metaboxes( $meta_boxes ) {
-    $prefix = 'it_'; // start with an underscore to hide fields from custom fields list
+    $prefix = 'tech_'; // start with an underscore to hide fields from custom fields list
     $meta_boxes[] = array(
         'id' => 'staff_info_metabox',
         'title' => esc_html__('Information', 'technology'),
-        'pages' => array('itpeople'), // post type
+        'pages' => array('techpeople'), // post type
         'context' => 'normal',
         'priority' => 'low',
         'show_names' => true, // Show field names on the left

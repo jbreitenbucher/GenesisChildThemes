@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Expertise
+ * Template Name: Expertise Page
  *
  * This template should be used for the Areas of Expertise listing page.
  *
@@ -26,12 +26,12 @@
  *
  */
 
-add_action('genesis_before','it_areas_of_expertise_loop_setup');
-function it_areas_of_expertise_loop_setup() {
+add_action('genesis_before','tech_areas_of_expertise_loop_setup');
+function tech_areas_of_expertise_loop_setup() {
     
     // Customize Before Loop
     remove_action('genesis_before_loop','genesis_do_before_loop' );
-    add_action('genesis_before_loop','it_areas_of_expertise_before_loop');
+    add_action('genesis_before_loop','tech_areas_of_expertise_before_loop');
     
     // Remove Post Info
     //* Remove the entry header markup (requires HTML5 theme support)
@@ -49,7 +49,7 @@ function it_areas_of_expertise_loop_setup() {
     
     // Customize Post Content
     remove_action('genesis_entry_content','genesis_do_post_content');
-    add_action('genesis_entry_content','it_areas_of_expertise_entry_content');
+    add_action('genesis_entry_content','tech_areas_of_expertise_entry_content');
     
     // Remove Title, After Title, and Post Image
     remove_action('genesis_entry_header', 'genesis_do_post_title');
@@ -71,7 +71,7 @@ function it_areas_of_expertise_loop_setup() {
  *
  */
 
-function it_areas_of_expertise_before_loop() {
+function tech_areas_of_expertise_before_loop() {
     the_content();
 }
 
@@ -84,7 +84,7 @@ function it_areas_of_expertise_before_loop() {
  *
  */
 
-function it_areas_of_expertise_entry_content () {
+function tech_areas_of_expertise_entry_content () {
     $taxonomy     = 'expertise';
     $orderby      = 'name'; 
     $show_count   = 0;      // 1 for yes, 0 for no

@@ -85,7 +85,7 @@ function child_theme_setup() {
     add_filter( 'script_loader_src', '_remove_script_version', 15, 1 ); 
     add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
     function _remove_script_version( $src ){ 
-        $parts = explode( '?', $src ); 	
+        $parts = explode( '?', $src );  
         return $parts[0]; 
     } 
     
@@ -96,16 +96,16 @@ function child_theme_setup() {
 
     // Add support for 3-column footer widgets
     add_theme_support( 'genesis-footer-widgets', 3 );
-	
-	//* Enable Genesis Accessibility Components
-	add_theme_support( 'genesis-accessibility', array(
+    
+    //* Enable Genesis Accessibility Components
+    add_theme_support( 'genesis-accessibility', array(
     '404-page',
     'drop-down-menu',
     'headings',
     'rems',
     'search-form',
     'skip-links',
-	) );
+    ) );
 
     // Customize breadcrumb display
     add_filter( 'genesis_breadcrumb_args', 'tech_breadcrumb_args' );
@@ -115,42 +115,42 @@ function child_theme_setup() {
         'id'            => 'featured',
         'name'          => __( 'Featured', 'technology' ),
         'description'   => __( 'This is the featured section.', 'technology' ),
-		'before_title' => '<h2 class="widget-title">',
+        'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ) );
     genesis_register_sidebar( array(
         'id'            => 'home-middle-1',
         'name'          => __( 'Home Middle #1', 'technology' ),
         'description'   => __( 'This is the first column of the home middle section.', 'technology' ),
-		'before_title' => '<h2 class="widget-title">',
+        'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ) );
     genesis_register_sidebar( array(
         'id'            => 'home-middle-2',
         'name'          => __( 'Home Middle #2', 'technology' ),
         'description'   => __( 'This is the second column of the home middle section.', 'technology' ),
-		'before_title' => '<h2 class="widget-title">',
+        'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ) );
     genesis_register_sidebar( array(
         'id'            => 'home-middle-3',
         'name'          => __( 'Home Middle #3', 'technology' ),
         'description'   => __( 'This is the third column of the home middle section.', 'technology' ),
-		'before_title' => '<h2 class="widget-title">',
+        'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ) );
     genesis_register_sidebar( array(
         'id'            => 'home-bottom-1',
         'name'          => __( 'Home Bottom #1', 'technology' ),
         'description'   => __( 'This is the first column of the home bottom section.', 'technology' ),
-		'before_title' => '<h2 class="widget-title">',
+        'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ) );
     genesis_register_sidebar( array(
         'id'            => 'home-bottom-2',
         'name'          => __( 'Home Bottom #2', 'technology' ),
         'description'   => __( 'This is the second column of the home bottom section.', 'technology' ),
-		'before_title' => '<h2 class="widget-title">',
+        'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ) );
 
@@ -165,15 +165,15 @@ function child_theme_setup() {
 
     include_once( get_stylesheet_directory() . '/lib/widgets/genesis-custom-featured-post-widget.php' );
 
-    add_action( 'widgets_init', 'it_custom_widget_init' );
-    function it_custom_widget_init() {
+    add_action( 'widgets_init', 'tech_custom_widget_init' );
+    function tech_custom_widget_init() {
         register_widget('Genesis_Custom_Featured_Post');
     }
 
     // Load Flexbox Grid
-    add_action( 'wp_enqueue_scripts', 'it_enqueue_flexbox_grid' );
-    function it_enqueue_flexbox_grid() {
-	   wp_enqueue_style( 'flexboxgrid', CHILD_URL . '/css/flexboxgrid.min.css' );
+    add_action( 'wp_enqueue_scripts', 'tech_enqueue_flexbox_grid' );
+    function tech_enqueue_flexbox_grid() {
+       wp_enqueue_style( 'flexboxgrid', CHILD_URL . '/css/flexboxgrid.min.css' );
     }
 
     add_filter( 'wp_nav_menu_items', 'theme_menu_extras', 10, 2 );

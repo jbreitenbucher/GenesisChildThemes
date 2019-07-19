@@ -23,7 +23,7 @@
  *
  */
 
-function tech_create_itpeople_post_type() {
+function tech_create_techpeople_post_type() {
     $labels = array(
         'name' => esc_html_x('Staff', 'post type general name', 'technology'),
         'singular_name' => esc_html_x('Staff Member', 'post type singular name', 'technology'),
@@ -49,6 +49,6 @@ function tech_create_itpeople_post_type() {
         'menu_icon' => 'dashicons-groups',
         'has_archive' => 'people',
     );
-    register_post_type('itpeople',$args);
+    register_post_type('techpeople',$args);
 }
-add_action( 'init', 'tech_create_itpeople_post_type' );
+add_action( 'init', 'tech_create_techpeople_post_type' );

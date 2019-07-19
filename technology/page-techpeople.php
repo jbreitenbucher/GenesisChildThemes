@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Staff
+ * Template Name: Staff Listing
  *
  * This template should be used for the Staff listing page.
  *
@@ -26,16 +26,16 @@
  *
  */
 
-add_action('genesis_before','it_staff_loop_setup');
-function it_staff_loop_setup() {
+add_action('genesis_before','tech_staff_loop_setup');
+function tech_staff_loop_setup() {
     
     // Customize Before Loop
     remove_action('genesis_before_loop','genesis_do_before_loop' );
-    add_action('genesis_before_loop','it_page_before_loop');
+    add_action('genesis_before_loop','tech_page_before_loop');
     
     // Customize Loop
     remove_action('genesis_loop', 'genesis_do_loop');
-    add_action('genesis_loop', 'it_page_loop');
+    add_action('genesis_loop', 'tech_page_loop');
     
     // Remove Post Info
     //* Remove the entry header markup (requires HTML5 theme support)
@@ -53,7 +53,7 @@ function it_staff_loop_setup() {
     
     // Customize Post Content
     remove_action('genesis_entry_content','genesis_do_post_content');
-    add_action('genesis_entry_content','it_page_entry_content');
+    add_action('genesis_entry_content','tech_page_entry_content');
     
     // Remove Title, After Title, and Post Image
     remove_action('genesis_entry_header', 'genesis_do_post_title');
@@ -75,8 +75,8 @@ function it_staff_loop_setup() {
  *
  */
 
-function it_page_before_loop() {
-    if(get_option('technology_staff_page_heading') != ''){
+function tech_page_before_loop() {
+    if(!is_paged() && get_option('technology_staff_page_heading') != ''){
         printf('<header class="entry-header"><h1 class="entry-title" itemprop="headline">%s</h1></header>',get_option('technology_staff_page_heading'));
     }
     $c = 0; // set up a counter so we know which post we're currently showing
@@ -87,7 +87,7 @@ function it_page_before_loop() {
 /**
  * Customize Loop
  *
- * Query the itpeople post type using the role taxonomy for terms set in the
+ * Query the techpeople post type using the role taxonomy for terms set in the
  * theme options for the professional staff roles.
  *
  * @author       Jon Breitenbucher <jbreitenbucher@wooster.edu>
@@ -96,12 +96,12 @@ function it_page_before_loop() {
  *
  */
 
-function it_page_loop() {
+function tech_page_loop() {
     global $paged;
         $args = array(
-            'post_type' => 'itpeople',
+            'post_type' => 'techpeople',
             'paged' => $paged,
-            'meta_key' => 'it_last_name_text',
+            'meta_key' => 'tech_last_name_text',
             'orderby' => 'meta_value',
             'order' => 'ASC',
             'posts_per_page' => get_option('technology_staff_posts_per_page', 4 ),
@@ -126,7 +126,7 @@ function it_page_loop() {
  *
  */
 
-function it_page_entry_content () {
+function tech_page_entry_content () {
     global $post, $c;
     $c++; // increment the counter
     if( $c % 2 != 0) {
@@ -137,20 +137,20 @@ function it_page_entry_content () {
     }
     $expertise = get_the_term_list($post->ID, 'expertise', '', ', ', '');
     genesis_entry_header_markup_open();
-    if (genesis_get_custom_field('it_title_text') != '') {
-            printf( '<h2 class="name"><a href="%s" title="%s">%s</a>, <span class="title">%s</span></h2>', get_permalink(), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('it_title_text') );
+    if (genesis_get_custom_field('tech_title_text') != '') {
+            printf( '<h2 class="name"><a href="%s" title="%s">%s</a>, <span class="title">%s</span></h2>', get_permalink(), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('tech_title_text') );
         } else {
             printf( '<h2 class="name"><a href="%s" title="%s">%s</a></h2>', get_permalink(), the_title_attribute('echo=0'), get_the_title() );
         }
     echo '<p class="contact clear">';
-        if( genesis_get_custom_field('it_phone_number_text') != '' && genesis_get_custom_field('it_email_address_text') == '') {                     
-            printf( '<span class="phone">phone: %s</span>', genesis_get_custom_field('it_phone_number_text') );
+        if( genesis_get_custom_field('tech_phone_number_text') != '' && genesis_get_custom_field('tech_email_address_text') == '') {                     
+            printf( '<span class="phone">phone: %s</span>', genesis_get_custom_field('tech_phone_number_text') );
         }
-        if( genesis_get_custom_field('it_email_address_text') != '' && genesis_get_custom_field('it_phone_number_text') == '') {                    
-            printf('<span class="email">e-mail: <a href="mailto:%s">%s</a></span>', antispambot(genesis_get_custom_field('it_email_address_text')), antispambot(genesis_get_custom_field('it_email_address_text')) );
+        if( genesis_get_custom_field('tech_email_address_text') != '' && genesis_get_custom_field('tech_phone_number_text') == '') {                    
+            printf('<span class="email">e-mail: <a href="mailto:%s">%s</a></span>', antispambot(genesis_get_custom_field('tech_email_address_text')), antispambot(genesis_get_custom_field('tech_email_address_text')) );
         }
-        if( genesis_get_custom_field('it_email_address_text') != '' && genesis_get_custom_field('it_phone_number_text') != '') {                    
-            printf('<span class="phone">phone: %s</span> | <span class="email">e-mail: <a href="mailto:%s">%s</a></span>', genesis_get_custom_field('it_phone_number_text'), antispambot(genesis_get_custom_field('it_email_address_text')), antispambot(genesis_get_custom_field('it_email_address_text')) );
+        if( genesis_get_custom_field('tech_email_address_text') != '' && genesis_get_custom_field('tech_phone_number_text') != '') {                    
+            printf('<span class="phone">phone: %s</span> | <span class="email">e-mail: <a href="mailto:%s">%s</a></span>', genesis_get_custom_field('tech_phone_number_text'), antispambot(genesis_get_custom_field('tech_email_address_text')), antispambot(genesis_get_custom_field('tech_email_address_text')) );
         }
     echo '</p><!--#end contact-->';
                 
@@ -175,12 +175,12 @@ function it_page_entry_content () {
     echo '</div><!--end #about -->';
 }
 
-function it_person_entry_class( $attributes ) {
+function tech_person_entry_class( $attributes ) {
   
   $attributes['class'] = $attributes['class'].' person';
     return $attributes;
 
 }
-add_filter( 'genesis_attr_entry', 'it_person_entry_class' );
+add_filter( 'genesis_attr_entry', 'tech_person_entry_class' );
 
 genesis();

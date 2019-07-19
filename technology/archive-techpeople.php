@@ -2,7 +2,7 @@
 /**
  * Template Name: People Archive
  *
- * This template will be used to list the itpeople post type archive.
+ * This template will be used to list the techpeople post type archive.
  *
  * @package technology
  * @author  Jon Breitenbucher
@@ -26,12 +26,12 @@
  *
  */
 
-add_action('genesis_before','it_archive_loop_setup');
-function it_archive_loop_setup() {
+add_action('genesis_before','tech_archive_loop_setup');
+function tech_archive_loop_setup() {
     
     // Customize Before Loop
     remove_action('genesis_before_loop','genesis_do_before_loop' );
-    add_action('genesis_before_loop','it_archive_before_loop');
+    add_action('genesis_before_loop','tech_archive_before_loop');
     
     // Remove Post Info
     //* Remove the entry header markup (requires HTML5 theme support)
@@ -49,7 +49,7 @@ function it_archive_loop_setup() {
     
     // Customize Post Content
     remove_action('genesis_entry_content','genesis_do_post_content');
-    add_action('genesis_entry_content','it_archive_entry_content');
+    add_action('genesis_entry_content','tech_archive_entry_content');
     
     // Remove Title, After Title, and Post Image
     remove_action('genesis_entry_header', 'genesis_do_post_title');
@@ -71,7 +71,7 @@ function it_archive_loop_setup() {
  *
  */
 
-function it_archive_before_loop() {
+function tech_archive_before_loop() {
     $c = 0; // set up a counter so we know which post we're currently showing
     $image_align = 'alignright'; // set up a variable to hold an extra CSS class
 }
@@ -85,7 +85,7 @@ function it_archive_before_loop() {
  *
  */
 
-function it_archive_entry_content () {
+function tech_archive_entry_content () {
     global $post, $c;
     $c++; // increment the counter
     if( $c % 2 != 0) {
@@ -96,20 +96,20 @@ function it_archive_entry_content () {
     }
     $expertise = get_the_term_list($post->ID, 'expertise', '', ', ', '');
     genesis_entry_header_markup_open();
-    if (genesis_get_custom_field('it_title_text') != '') {
-            printf( '<h2 class="name"><a href="%s" title="%s">%s</a>, <span class="title">%s</span></h2>', get_permalink(), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('it_title_text') );
+    if (genesis_get_custom_field('tech_title_text') != '') {
+            printf( '<h2 class="name"><a href="%s" title="%s">%s</a>, <span class="title">%s</span></h2>', get_permalink(), the_title_attribute('echo=0'), get_the_title(), genesis_get_custom_field('tech_title_text') );
         } else {
             printf( '<h2 class="name"><a href="%s" title="%s">%s</a></h2>', get_permalink(), the_title_attribute('echo=0'), get_the_title() );
         }
     echo '<p class="contact clear">';
-        if( genesis_get_custom_field('it_phone_number_text') != '' && genesis_get_custom_field('it_email_address_text') == '') {                     
-            printf( '<span class="phone">phone: %s</span>', genesis_get_custom_field('it_phone_number_text') );
+        if( genesis_get_custom_field('tech_phone_number_text') != '' && genesis_get_custom_field('tech_email_address_text') == '') {                     
+            printf( '<span class="phone">phone: %s</span>', genesis_get_custom_field('tech_phone_number_text') );
         }
-        if( genesis_get_custom_field('it_email_address_text') != '' && genesis_get_custom_field('it_phone_number_text') == '') {                    
-            printf('<span class="email">e-mail: <a href="mailto:%s">%s</a></span>', antispambot(genesis_get_custom_field('it_email_address_text')), antispambot(genesis_get_custom_field('it_email_address_text')) );
+        if( genesis_get_custom_field('tech_email_address_text') != '' && genesis_get_custom_field('tech_phone_number_text') == '') {                    
+            printf('<span class="email">e-mail: <a href="mailto:%s">%s</a></span>', antispambot(genesis_get_custom_field('tech_email_address_text')), antispambot(genesis_get_custom_field('tech_email_address_text')) );
         }
-        if( genesis_get_custom_field('it_email_address_text') != '' && genesis_get_custom_field('it_phone_number_text') != '') {                    
-            printf('<span class="phone">phone: %s</span> | <span class="email">e-mail: <a href="mailto:%s">%s</a></span>', genesis_get_custom_field('it_phone_number_text'), antispambot(genesis_get_custom_field('it_email_address_text')), antispambot(genesis_get_custom_field('it_email_address_text')) );
+        if( genesis_get_custom_field('tech_email_address_text') != '' && genesis_get_custom_field('tech_phone_number_text') != '') {                    
+            printf('<span class="phone">phone: %s</span> | <span class="email">e-mail: <a href="mailto:%s">%s</a></span>', genesis_get_custom_field('tech_phone_number_text'), antispambot(genesis_get_custom_field('tech_email_address_text')), antispambot(genesis_get_custom_field('tech_email_address_text')) );
         }
     echo '</p><!--#end contact-->';
                 

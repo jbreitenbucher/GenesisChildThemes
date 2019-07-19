@@ -16,15 +16,15 @@
  *
  */
 
-add_action( 'genesis_meta', 'it_home_genesis_meta' );
-function it_home_genesis_meta() {
+add_action( 'genesis_meta', 'tech_home_genesis_meta' );
+function tech_home_genesis_meta() {
 
     // If any homepage widget area contains widgets use a custom loop
     if ( is_active_sidebar( 'featured' ) || is_active_sidebar( 'home-middle-1' ) || is_active_sidebar( 'home-middle-2' ) || is_active_sidebar( 'home-middle-3' ) || is_active_sidebar( 'home-bottom-1' ) || is_active_sidebar( 'home-bottom-2' ) ) {
         
         // Customize the loop
         remove_action( 'genesis_loop', 'genesis_do_loop' );
-        add_action( 'genesis_loop', 'it_home_loop_helper' );
+        add_action( 'genesis_loop', 'tech_home_loop_helper' );
         add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
     }
@@ -39,7 +39,7 @@ function it_home_genesis_meta() {
  *
  */
 
-function it_home_loop_helper() {
+function tech_home_loop_helper() {
 
     if ( is_active_sidebar( 'featured' ) ) {
         echo '<div class="col-xs featured">';
@@ -87,7 +87,7 @@ function it_home_loop_helper() {
 }
 
 if ( is_active_sidebar( 'footer-1' ) || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') ) {
-	add_action('genesis_after_content', 'genesis_footer_widget_areas');
+    add_action('genesis_after_content', 'genesis_footer_widget_areas');
 }
 
 genesis();

@@ -2,7 +2,7 @@
 /**
  * Template Name: Search
  *
- * This template will be used to list the itpeople post type archive.
+ * This template will be used to list the search results.
  *
  * @package technology
  * @author  Jon Breitenbucher
@@ -26,8 +26,8 @@
  *
  */
 
-add_action('genesis_before','it_search_loop_setup');
-function it_search_loop_setup() {
+add_action('genesis_before','tech_search_loop_setup');
+function tech_search_loop_setup() {
     
     // Customize Before Loop
     remove_action('genesis_before_loop','genesis_do_before_loop' );
@@ -48,7 +48,7 @@ function it_search_loop_setup() {
     
     // Customize Post Content
     remove_action('genesis_entry_content','genesis_do_post_content');
-    add_action('genesis_entry_content','it_search_entry_content');
+    add_action('genesis_entry_content','tech_search_entry_content');
     
     // Remove Title, After Title, and Post Image
     remove_action('genesis_entry_header', 'genesis_do_post_title');
@@ -66,21 +66,21 @@ function it_search_loop_setup() {
  *
  */
 
-function it_search_entry_content () {
+function tech_search_entry_content () {
     echo '<article class="search-result">';
-    	echo '<a class="entry-image-link" href="' . get_permalink() . '" tabindex="-1" aria-hidden="true">' . get_the_post_thumbnail( get_the_ID(), 'thumbnail' ) . '</a>';
-    	echo '<header class="entry-header">';
-        	echo '<h2 class="entry-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
-    	echo '</header>';
-    	echo '<div class="entry-content">';
-        	$excerpt = get_the_excerpt();
+        echo '<a class="entry-image-link" href="' . get_permalink() . '" tabindex="-1" aria-hidden="true">' . get_the_post_thumbnail( get_the_ID(), 'thumbnail' ) . '</a>';
+        echo '<header class="entry-header">';
+            echo '<h2 class="entry-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
+        echo '</header>';
+        echo '<div class="entry-content">';
+            $excerpt = get_the_excerpt();
             if( empty( $excerpt ) )
                 $excerpt = get_post_meta( get_the_ID(), '_yoast_wpseo_metadesc', true );
             if( !empty( $excerpt ) )
                 echo apply_filters( 'the_excerpt', $excerpt );
-        	echo '<p><a class="read-more" href="' . get_permalink() . '" tabindex="-1" aria-hidden="true">Read More<span class="screen-reader-text"> of ' . get_the_title() . '</span></a></p>';
-    	echo '</div>';
-	echo '</article>';
+            echo '<p><a class="read-more" href="' . get_permalink() . '" tabindex="-1" aria-hidden="true">Read More<span class="screen-reader-text"> of ' . get_the_title() . '</span></a></p>';
+        echo '</div>';
+    echo '</article>';
 }
 
 genesis();

@@ -13,9 +13,9 @@
  *
  */
 
-add_action( 'customize_register', 'it_customizer_settings' );
-function it_customizer_settings( $wp_customize ) {
-	$wp_customize->add_section( 'it_settings' , array(
+add_action( 'customize_register', 'tech_customizer_settings' );
+function tech_customizer_settings( $wp_customize ) {
+	$wp_customize->add_section( 'tech_settings' , array(
     	'title'			=> esc_html__('Technology Theme Specific', 'technology'),
     	'priority'		=> 30,
     	'capability'	=> 'edit_theme_options', //Capability needed to tweak
@@ -34,7 +34,7 @@ function it_customizer_settings( $wp_customize ) {
 
 	$wp_customize->add_control( 'technology_staff_posts_per_page_contol', array(
 		'label'    => esc_html__( 'Staff Per Page', 'technology' ),
-		'section'  => 'it_settings',
+		'section'  => 'tech_settings',
 		'settings' => 'technology_staff_posts_per_page',
 		'type'     => 'number',
 		)
@@ -50,7 +50,7 @@ function it_customizer_settings( $wp_customize ) {
 
 	$wp_customize->add_control( 'technology_staff_student_role_contol', array(
 		'label'    => esc_html__( 'Category used to identify STAs', 'technology' ),
-		'section'  => 'it_settings',
+		'section'  => 'tech_settings',
 		'settings' => 'technology_staff_student_role',
 		'type'     => 'text',
 		)
@@ -66,7 +66,7 @@ function it_customizer_settings( $wp_customize ) {
 
 	$wp_customize->add_control( 'technology_staff_professional_roles_contol', array(
 		'label'    => esc_html__( 'Category(ies) used to identify professional staff', 'technology' ),
-		'section'  => 'it_settings',
+		'section'  => 'tech_settings',
 		'settings' => 'technology_staff_professional_roles',
 		'type'     => 'text',
 		)
@@ -82,7 +82,7 @@ function it_customizer_settings( $wp_customize ) {
 
 	$wp_customize->add_control( 'technology_staff_page_heading_contol', array(
 		'label'    => esc_html__( 'Heading to display on the Staff page. (optional)', 'technology' ),
-		'section'  => 'it_settings',
+		'section'  => 'tech_settings',
 		'settings' => 'technology_staff_page_heading',
 		'type'     => 'text',
 		)
@@ -98,7 +98,7 @@ function it_customizer_settings( $wp_customize ) {
 
 	$wp_customize->add_control( 'tech_blog_cat_setting_contol', array(
 		'label'    => esc_html__( 'Category used to identify blog posts', 'technology' ),
-		'section'  => 'it_settings',
+		'section'  => 'tech_settings',
 		'settings' => 'tech_blog_cat_setting',
 		'type'     => 'text',
 		)

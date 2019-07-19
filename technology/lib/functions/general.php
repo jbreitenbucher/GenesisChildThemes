@@ -63,7 +63,7 @@ add_filter( 'custom_menu_order', 'tech_custom_menu_order' );
 add_filter( 'menu_order', 'tech_custom_menu_order' );
 
 /**
- * Customize columns on itpeople post type
+ * Customize columns on techpeople post type
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
@@ -73,7 +73,7 @@ add_filter( 'menu_order', 'tech_custom_menu_order' );
  *
  */
 
-function tech_itpeople_columns($defaults) {
+function tech_techpeople_columns($defaults) {
     $columns = array(
         'cb' => '<input type="checkbox" />',
         'title' => __( 'Name', 'technology'),
@@ -96,7 +96,7 @@ function tech_itpeople_columns($defaults) {
  *
  */
  
-function tech_manage_itpeople_columns( $column_name, $post_id ) {
+function tech_manage_techpeople_columns( $column_name, $post_id ) {
     $taxonomy = $column_name;
     $post_type = get_post_type($post_id);
     $terms = get_the_terms($post_id, $taxonomy);
@@ -120,7 +120,7 @@ function tech_manage_itpeople_columns( $column_name, $post_id ) {
  *
  */
  
-function tech_itpeople_sortable_columns( $columns ) {
+function tech_techpeople_sortable_columns( $columns ) {
 
     $columns['title'] = 'title';
     return $columns;
@@ -140,17 +140,17 @@ function tech_itpeople_sortable_columns( $columns ) {
 function tech_name_column_orderby( $query ) {
     if( is_admin() ) {
         if (isset($query->query_vars['post_type'])) {
-            if ($query->query_vars['post_type'] == 'itpeople') {
+            if ($query->query_vars['post_type'] == 'techpeople') {
 
-                $query->set('meta_key', 'it_last_name_text');
+                $query->set('meta_key', 'tech_last_name_text');
                 $query->set('orderby', 'meta_value');
             }
         }
     }
 }
-add_filter( 'manage_itpeople_posts_columns', 'tech_itpeople_columns' );
-add_action( 'manage_itpeople_posts_custom_column', 'tech_manage_itpeople_columns', 10, 2 );
-add_filter( 'manage_edit-movie_sortable_columns', 'tech_itpeople_sortable_columns' );
+add_filter( 'manage_techpeople_posts_columns', 'tech_techpeople_columns' );
+add_action( 'manage_techpeople_posts_custom_column', 'tech_manage_techpeople_columns', 10, 2 );
+add_filter( 'manage_edit-movie_sortable_columns', 'tech_techpeople_sortable_columns' );
 add_filter( 'parse_query', 'tech_name_column_orderby' );
 
 /*
@@ -224,7 +224,7 @@ function tech_taxonomy_filter_post_type_request( $query ) {
 add_filter( 'parse_query', 'tech_taxonomy_filter_post_type_request' );
 
 /**
- * Customize posts_per_page on itpeople archive pages
+ * Customize posts_per_page on techpeople archive pages
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
@@ -234,14 +234,14 @@ add_filter( 'parse_query', 'tech_taxonomy_filter_post_type_request' );
  *
  */
 
-function change_tech_itpeople_size( $query ) {
-    if ( $query->is_main_query() && !is_admin() && is_post_type_archive( 'itpeople' ) ) { // Make sure it is a archive page
+function change_tech_techpeople_size( $query ) {
+    if ( $query->is_main_query() && !is_admin() && is_post_type_archive( 'techpeople' ) ) { // Make sure it is a archive page
         $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
         $query->set( 'posts_per_page', get_option( 'technology_staff_posts_per_page', 6 ) );
         $query->set( 'paged', $paged ); // Set the post archive to be paged
     }
 }
-add_filter( 'pre_get_posts', 'change_tech_itpeople_size' ); // Hook our custom function onto the request filter
+add_filter( 'pre_get_posts', 'change_tech_techpeople_size' ); // Hook our custom function onto the request filter
 
 /**
  * Customize posts_per_page on role taxonomy pages
@@ -262,7 +262,7 @@ function tech_tax_filter_posts_per_page( $value ) {
 add_filter( 'option_posts_per_page', 'tech_tax_filter_posts_per_page' );
 
 /**
- * Customize itpeople post type icon
+ * Customize techpeople post type icon
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
@@ -274,19 +274,19 @@ function set_staff_icon() {
     global $post_type;
     ?>
     <style>
-    <?php if (($_GET['post_type'] == 'itpeople') || ($post_type == 'itpeople')) : ?>
+    <?php if (($_GET['post_type'] == 'techpeople') || ($post_type == 'techpeople')) : ?>
     #icon-edit { background:transparent url('<?php echo get_bloginfo('url');?>/wp-admin/images/icons32.png') no-repeat -600px -5px; }
     <?php endif; ?>
  
-    #adminmenu #menu-posts-itpeople div.wp-menu-image{background:transparent url('<?php echo get_bloginfo('url');?>/wp-admin/images/menu.png') no-repeat scroll -300px -33px;}
-    #adminmenu #menu-posts-itpeople:hover div.wp-menu-image,#adminmenu #menu-posts-itpeople.wp-has-current-submenu div.wp-menu-image{background:transparent url('<?php echo get_bloginfo('url');?>/wp-admin/images/menu.png') no-repeat scroll -300px -1px;}        
+    #adminmenu #menu-posts-techpeople div.wp-menu-image{background:transparent url('<?php echo get_bloginfo('url');?>/wp-admin/images/menu.png') no-repeat scroll -300px -33px;}
+    #adminmenu #menu-posts-techpeople:hover div.wp-menu-image,#adminmenu #menu-posts-techpeople.wp-has-current-submenu div.wp-menu-image{background:transparent url('<?php echo get_bloginfo('url');?>/wp-admin/images/menu.png') no-repeat scroll -300px -1px;}        
         </style>
         <?php
 }
 //add_action( 'admin_head', 'set_staff_icon' );
 
 /**
- * Remove support for Title and WYSIWYG editor on itpeople post type
+ * Remove support for Title and WYSIWYG editor on techpeople post type
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
@@ -294,14 +294,14 @@ function set_staff_icon() {
  *
  */
 
-function tech_itpeople_custom_init() {
-    remove_post_type_support( 'itpeople', 'editor' );
-    remove_post_type_support( 'itpeople', 'title' );
+function tech_techpeople_custom_init() {
+    remove_post_type_support( 'techpeople', 'editor' );
+    remove_post_type_support( 'techpeople', 'title' );
 }
-add_action( 'init', 'tech_itpeople_custom_init' );
+add_action( 'init', 'tech_techpeople_custom_init' );
 
 /**
- * Remove the role taxonomy from the itpeople post type screen
+ * Remove the role taxonomy from the techpeople post type screen
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
@@ -310,13 +310,13 @@ add_action( 'init', 'tech_itpeople_custom_init' );
  */
 
 function tech_remove_custom_taxonomy() {
-    remove_meta_box( 'tagsdiv-role', 'itpeople', 'side' );
-	remove_meta_box( 'tagsdiv-expertise', 'itpeople', 'side' );
+    remove_meta_box( 'tagsdiv-role', 'techpeople', 'side' );
+    remove_meta_box( 'tagsdiv-expertise', 'techpeople', 'side' );
 }
 add_action( 'admin_menu', 'tech_remove_custom_taxonomy' );
 
 /**
- * Set the title from the first and last name for itpeople post type
+ * Set the title from the first and last name for techpeople post type
  *
  * @author      Jon Breitenbucher <jbreitenbucher@wooster.edu>
  * @version     SVN: $Id$
@@ -327,9 +327,9 @@ add_action( 'admin_menu', 'tech_remove_custom_taxonomy' );
  */
 
 function tech_save_new_title( $people_title ) {
-      if ($_POST['post_type'] == 'itpeople') :
-           $fname = $_POST['it_first_name_text'];
-           $lname = $_POST['it_last_name_text'];
+      if ($_POST['post_type'] == 'techpeople') :
+           $fname = $_POST['tech_first_name_text'];
+           $lname = $_POST['tech_last_name_text'];
            $fnamelname  = $fname.' '.$lname;
            $people_title = $fnamelname;
       endif;
@@ -349,12 +349,12 @@ add_filter( 'title_save_pre', 'tech_save_new_title' );
  *
  */
 
-function tech_itpeople_updated_messages( $messages ) {
+function tech_techpeople_updated_messages( $messages ) {
   global $post;
 
   $post_ID = $post->ID;
 
-  $messages['itpeople'] = array(
+  $messages['techpeople'] = array(
     0 => '', // Unused. Messages start at index 1.
     1 => sprintf( __('Staff Memeber updated. <a href="%s">View Staff Member</a>', 'technology'), esc_url( get_permalink($post_ID) ) ),
     2 => esc_html__('Custom field updated.', 'technology'),
@@ -373,7 +373,7 @@ function tech_itpeople_updated_messages( $messages ) {
 
   return $messages;
 }
-add_filter( 'post_updated_messages', 'tech_itpeople_updated_messages' );
+add_filter( 'post_updated_messages', 'tech_techpeople_updated_messages' );
 
 /**
  * Do not display child, grandchild, etc. posts when viewing a parent category
@@ -417,8 +417,8 @@ add_action( 'pre_get_posts', 'tech_no_child_posts' );
 
 function tech_staff_alpha_order_posts( $query ) {
 
-    if ( $query->is_main_query() && !is_admin() && is_tax( 'role' ) && !is_page_template( 'page-itpeople.php' ) ) {
-        $query->set( 'meta_key', 'it_last_name_text' );
+    if ( $query->is_main_query() && !is_admin() && is_tax( 'role' ) && !is_page_template( 'page-techpeople.php' ) ) {
+        $query->set( 'meta_key', 'tech_last_name_text' );
         $query->set( 'orderby', 'meta_value' );
         $query->set( 'order', 'ASC' );
         return $query;
@@ -557,7 +557,7 @@ function tech_structure_end() {
  *
  */
 function tech_breadcrumb_args( $args ) {
-    if ( is_post_type_archive('itpeople') ) {
+    if ( is_post_type_archive('techpeople') ) {
         $args['sep'] = ' &#8594; ';
         $args['labels']['author']        = 'Articles written by ';
             $args['labels']['category']      = ''; // Genesis 1.6 and later
@@ -621,13 +621,13 @@ add_filter( 'genesis_attr_footer-widget-area', 'tech_add_footer_widget_area_clas
 /**
  * Add classes to footer widget area container.
  *
- * @param string $attributes Existing footer widget area container markup.
- * @return string Amended markup for footer widget area container.
+ * @param string $attributes Existing footer widget areas container markup.
+ * @return string Amended markup for footer widget areas container.
  */
 function tech_add_footer_widget_area_classes( $attributes ) {
-	// add original plus extra CSS classes
-	$attributes['class'] = $attributes['class'] . ' col-xs-12 col-sm-12 col-md-6 col-lg-4';
+    // add original plus extra CSS classes
+    $attributes['class'] = $attributes['class'] . ' col-xs-12 col-sm-12 col-md-6 col-lg-4';
 
-	// return the attributes
-	return $attributes;
+    // return the attributes
+    return $attributes;
 }

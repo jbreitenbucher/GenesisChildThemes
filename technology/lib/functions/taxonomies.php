@@ -45,7 +45,7 @@ function tech_create_role_taxonomy(){
 
     register_taxonomy(  
         'role',  
-        'itpeople',  
+        'techpeople',  
         array(  
             'hierarchical' => false,  
             'labels' => $labels,  
@@ -77,7 +77,7 @@ function tech_create_expertise_taxonomy(){
 
     register_taxonomy(  
         'expertise',  
-        'itpeople',  
+        'techpeople',  
         array(  
             'hierarchical' => false,  
             'labels' => $labels,  
