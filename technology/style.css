@@ -470,7 +470,7 @@ input[type="submit"]:hover,
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"]:hover,
 .button:focus,
 .button:hover {
-	background-color: hsla(48, 100%, 25%, 1);
+	background-color: hsla(0, 0%, 0%, 0.8);
 	border-width: 0;
 	color: hsla(0, 100%, 100%, 1);
 }
@@ -1525,6 +1525,7 @@ p.entry-meta {
 	background: hsla(48, 0%, 95%, 0.7);
 	font-size: 16px;
 	line-height: 1.5;
+	padding: 15px 1.5% 0 1.5%;
 }
 
 .sidebar .widget {
@@ -1534,6 +1535,21 @@ p.entry-meta {
 .sidebar p {
 	margin-bottom: 20px;
 }
+
+.randomvideosidebar {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+}
+
+.randomvideosidebar iframe {
+	position: absolute;
+	top: 30px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
 
 /* Footer Widgets
 ---------------------------------------------------------------------------- */
@@ -2056,7 +2072,6 @@ ul.tsm-tabs.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-c
 	.sidebar {
 		float: right;
 		width: 30%;
-		padding: 15px 0 0 3.5%;
 	}
 
 	.sidebar-content .sidebar {
